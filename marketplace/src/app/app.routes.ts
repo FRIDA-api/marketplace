@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { ApiLandscapeComponent } from './api-landscape/api-landscape.component';
-import { HomePageComponent } from './home-page/home-page.component';
+import { ApiMatrixComponent } from './pages/api-landscape/api-matrix.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 export const routes: Routes = [
   { path: '', component: HomePageComponent },
-  { path: 'api-landscape', component: ApiLandscapeComponent },
+  { path: 'api-matrix', component: ApiMatrixComponent },
   { path: '**', redirectTo: '' },
 ];

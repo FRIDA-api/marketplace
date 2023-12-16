@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ApiLandscapeComponent } from './api-landscape.component';
+import { ApiMatrixComponent } from './api-matrix.component';
 
 describe('ApiLandscapeComponent', () => {
-  let component: ApiLandscapeComponent;
-  let fixture: ComponentFixture<ApiLandscapeComponent>;
+  let component: ApiMatrixComponent;
+  let fixture: ComponentFixture<ApiMatrixComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ApiLandscapeComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(ApiLandscapeComponent);
+      imports: [ApiMatrixComponent],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(ApiMatrixComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
