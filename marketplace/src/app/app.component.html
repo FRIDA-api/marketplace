@@ -1,15 +1,19 @@
-<h1>{{ title }}</h1>
-<nav>
-  <ul>
-    <li>
-      <a
-        routerLink="/api-matrix"
-        routerLinkActive="active"
-        ariaCurrentWhenActive="page"
-      >
-        API Matrix
-      </a>
-    </li>
-  </ul>
-</nav>
-<router-outlet></router-outlet>
+<header>
+  <h1>{{ title }}</h1>
+  <nav>
+    <ul>
+      <li>
+        <a
+          routerLink="/api-matrix"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+        >
+          API Matrix
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
