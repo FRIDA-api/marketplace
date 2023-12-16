@@ -5,10 +5,14 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class ApiInformationService {
+export class ApiDataService {
   private http = inject(HttpClient);
 
+  private basePath = 'assets/data/';
+
   getApiMatrixData(): Observable<any> {
-    return this.http.get('assets/api-matrix');
+    return this.http.get(this.basePath + 'api-matrix.json', {
+      responseType: 'json',
+    });
   }
 }

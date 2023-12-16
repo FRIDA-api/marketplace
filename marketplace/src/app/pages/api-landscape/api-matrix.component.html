@@ -1,1 +1,4 @@
 <p>api-matrix works!</p>
+@if (matrixData$ | async; as matrixData) {
+  <p>{{ matrixData | json }}</p>
+}
