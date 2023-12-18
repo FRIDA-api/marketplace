@@ -37,3 +37,39 @@ $marketplace-theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+// Media queries for larger screens
+@media (min-width: 600px) {
+  main {
+    max-width: 90%;
+  }
+}
+
+@media  (min-width: 768px) {
+  main {
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 992px) {
+  main {
+    max-width: 70%;
+  }
+}
+
+@media (min-width: 1200px) {
+  main {
+    max-width: 60%;
+  }
+}
