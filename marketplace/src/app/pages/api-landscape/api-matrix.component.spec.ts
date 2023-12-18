@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ApiMatrixComponent } from './api-matrix.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('ApiLandscapeComponent', () => {
   let component: ApiMatrixComponent;
@@ -8,7 +9,7 @@ describe('ApiLandscapeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ApiMatrixComponent],
+      imports: [ApiMatrixComponent, HttpClientTestingModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ApiMatrixComponent);

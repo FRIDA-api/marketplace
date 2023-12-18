@@ -35,8 +35,18 @@ $marketplace-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
+:root {
+  --main-color: #1AB3B9;
+  --secondary-color: #82f4d8;
+}
+
+@font-face {
+  font-family: Comfortaa;
+  src: url(assets/fonts/comfortaa--v40-normal-300.woff2);
+}
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: "Comfortaa", "Helvetica Neue", sans-serif; }
 
 
 body {
