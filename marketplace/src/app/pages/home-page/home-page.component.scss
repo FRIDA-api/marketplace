@@ -1,14 +1,14 @@
 .api-card {
-  max-width: 400px;
+  max-width: 25rem;
 }
 
 .cards-container {
   display: flex;
-  gap: 10px 20px;
+  gap: 0.625rem 1.25rem;
 }
 
 .card-title {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .card-image {
