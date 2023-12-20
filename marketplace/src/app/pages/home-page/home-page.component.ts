@@ -3,6 +3,7 @@ import {MatCardModule} from "@angular/material/card";
 import {NgForOf, NgOptimizedImage} from "@angular/common";
 import {MatDividerModule} from '@angular/material/divider';
 import {ApiDataService} from "@common/services/api-data.service";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-home-page',
@@ -11,7 +12,8 @@ import {ApiDataService} from "@common/services/api-data.service";
     MatCardModule,
     NgForOf,
     MatDividerModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    RouterLink
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'

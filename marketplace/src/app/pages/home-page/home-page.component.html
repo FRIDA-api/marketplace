@@ -1,6 +1,7 @@
 <div class="cards-container">
   <div *ngFor="let api of apiList">
-    <mat-card class="api-card">
+    <!-- TODO: Change to correct route -->
+    <mat-card class="api-card" routerLink="/api-matrix">
       <mat-card-header>
         <mat-card-title class="card-title">{{ api.name }}</mat-card-title>
       </mat-card-header>
