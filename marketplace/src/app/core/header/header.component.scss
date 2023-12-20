@@ -1,0 +1,53 @@
+.header {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    
+    background-color: var(--main-color);
+}
+
+.frida-image {
+    width: 50px;
+    aspect-ratio: 1/1;
+}
+
+.frida-name {
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 0.5rem;
+    padding-right: 2rem;
+    
+    &:hover {
+        cursor: pointer;
+    }
+
+    span:last-child {
+        font-size: 1.75rem;
+        font-weight: bold;
+        letter-spacing: 4.5px;
+    }
+}
+
+.header-link {
+    padding: 1rem 1rem;
+    margin: 0 0.5rem;
+    background-color: var(--secondary-color);
+
+    border: 1px solid transparent;
+    border-radius: 1rem;
+
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+        background-color: darken($color: #82f4d8, $amount: 20);
+        border-color: black;
+        cursor: pointer;
+    }
+
+    &.active {
+        background-color: darken($color: #82f4d8, $amount: 20);
+        border-color: black;
+    }
+}
