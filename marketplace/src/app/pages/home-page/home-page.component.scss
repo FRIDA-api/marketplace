@@ -4,7 +4,8 @@
 }
 
 .mat-mdc-card.mdc-card:hover {
-  box-shadow: 4px 4px 2px 1px rgba(26, 179, 185, 0.1);
+  border: 0.063rem solid rgba(26, 179, 185, 0.3);
+  box-shadow: 0.25rem 0.25rem 0.125rem 0.063rem rgba(26, 179, 185, 0.1);
 }
 
 .cards-container {
