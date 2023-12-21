@@ -1,8 +1,31 @@
-@if (matrixData$ | async; as matrixDataSource) {
-  <div class="grid-layout">
-    <div>1</div>
-    <div class="api-column">1</div>
-    <div class="api-column">1</div>
-    <div class="api-column">1</div>
-  </div>
-}
+<div class="container">
+  @if (matrixData$ | async; as matrixDataSource) {
+    <div class="header-row">
+      <mat-form-field class="example-full-width">
+        <span matPrefix> </span>
+        <input type="search" matInput placeholder="Search" name="search" />
+        <button matSuffix mat-button><mat-icon>search</mat-icon></button>
+      </mat-form-field>
+      <span class="api-column center api-title">apiName1</span>
+      <span class="api-column center api-title">apiName2</span>
+      <span class="api-column center api-title">apiName3</span>
+    </div>
+    @for (item of matrixDataSource; track $index) {
+      <div id="row">
+        <span>
+          <h2 class="company-title">test {{ $index }}</h2>
+          <div class="extra-information">extra Company Info</div>
+        </span>
+        <span class="api-column">
+          <app-api-status class="center" [apiStatus]="'isPlanned'" />
+        </span>
+        <span class="api-column">
+          <app-api-status class="center" [apiStatus]="'inDevelopment'" />
+        </span>
+        <span class="api-column">
+          <app-api-status class="center" [apiStatus]="'inProduction'" />
+        </span>
+      </div>
+    }
+  }
+</div>

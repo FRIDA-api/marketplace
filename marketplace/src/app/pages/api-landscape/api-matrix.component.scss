@@ -1,13 +1,48 @@
-:host{
-  height: 100%;
-}
-.grid-layout {
+
+.container {
   padding-top: 5rem;
+}
+.extra-information {
+  visibility: hidden;
+}
+.header-row {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(4, 25%);
+  height: 4rem;
+  margin-bottom: 10px;
+  grid-template-columns: repeat(4, calc(25% - 2rem));
 }
-.api-column {
-  background-color: #2fb8be;
 
+.api-title {
+  color: white;
+  font-size: 2rem;
+  &:hover {
+    cursor: pointer;
+  }
+
+}
+#row{
+  display: grid;
+  gap: 2rem;
+  &:hover {
+    background-color: #3da1a6;
+    .extra-information {
+      visibility: visible;
+      height: 150px;
+    }
+    .api-column {
+      background-color: #3da1a6;
+    }
+  }
+  grid-template-columns: repeat(4, calc(25% - 2rem));
+}
+
+.api-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #28888c;
+}
+.company-title {
+  border-bottom: 2px solid white;
 }

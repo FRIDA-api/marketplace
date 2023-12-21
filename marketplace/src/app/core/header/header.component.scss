@@ -7,12 +7,12 @@
 }
 
 .frida-image {
-    position: absolute;
-    left: 0;
-    max-width: 10%;
-    height: auto;
-    &:hover {
-      cursor: pointer;
+  position: absolute;
+  left: 2rem;
+  max-width: 10%;
+  height: auto;
+  &:hover {
+    cursor: pointer;
   }
 }
 

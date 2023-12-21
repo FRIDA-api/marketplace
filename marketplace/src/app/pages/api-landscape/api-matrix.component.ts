@@ -1,29 +1,19 @@
-import {
-  trigger,
-  state,
-  style,
-  transition,
-  animate,
-} from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ApiDataService } from '@common/services/api-data.service';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ApiStatusComponent } from '@common/components/api-status/api-status.component';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatTableModule } from '@angular/material/table';
 @Component({
   selector: 'app-api-matrix',
   standalone: true,
-  imports: [CommonModule, MatTableModule, MatButtonModule, MatIconModule],
-  animations: [
-    trigger('detailExpand', [
-      state('collapsed,void', style({ height: '0px', minHeight: '0' })),
-      state('expanded', style({ height: '*' })),
-      transition(
-        'expanded <=> collapsed',
-        animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)'),
-      ),
-    ]),
+  imports: [
+    CommonModule,
+    ApiStatusComponent,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
   ],
   templateUrl: './api-matrix.component.html',
   styleUrl: './api-matrix.component.scss',
