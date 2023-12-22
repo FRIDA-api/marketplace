@@ -1,12 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Observable } from 'rxjs';
-import {ApiDownloadModel} from "@common/models/api-download.model";
+import { MonoTypeOperatorFunction, Observable } from 'rxjs';
+import { ApiDownloadModel } from '@common/models/api-download.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiDataService {
+  pipe(arg0: MonoTypeOperatorFunction<unknown>) {
+    throw new Error('Method not implemented.');
+  }
   private http = inject(HttpClient);
 
   private basePath = 'assets/data/';
@@ -24,8 +27,11 @@ export class ApiDataService {
   }
 
   getApiDownloads() {
-    return this.http.get<ApiDownloadModel[]>(this.basePath + 'api-download.json', {
-      responseType: 'json',
-    });
+    return this.http.get<ApiDownloadModel[]>(
+      this.basePath + 'api-download.json',
+      {
+        responseType: 'json',
+      },
+    );
   }
 }
