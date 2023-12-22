@@ -5,6 +5,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ApiStatusComponent } from '@common/components/api-status/api-status.component';
 import { MatIconModule } from '@angular/material/icon';
+import {DownloadComponent} from "./download/download.component";
+import {CommentService} from "./services/comment.service";
+import {CommentComponent} from "./comment/comment.component";
 @Component({
   selector: 'app-api-matrix',
   standalone: true,
@@ -14,12 +17,15 @@ import { MatIconModule } from '@angular/material/icon';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
+    DownloadComponent,
+    CommentComponent,
   ],
   templateUrl: './api-matrix.component.html',
   styleUrl: './api-matrix.component.scss',
 })
 export class ApiMatrixComponent {
   private apiInformationService = inject(ApiDataService);
+  private apiCommentService = inject(CommentService);
 
   public matrixData$ = this.apiInformationService.getApiMatrixData();
   columnsToDisplay = [
@@ -30,4 +36,7 @@ export class ApiMatrixComponent {
   ];
   columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
   expandedElement: any;
+
+  downloadApi$ = this.apiInformationService.getApiDownloads();
+  commentApi$ = this.apiCommentService.getApiDownloads();
 }

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import {ApiDetails} from "../../pages/home-page/home-page.component";
+import {ApiDownloadModel} from "@common/models/api-download.model";
 
 @Injectable({
   providedIn: 'root',
@@ -19,6 +19,12 @@ export class ApiDataService {
 
   getApiInformationData(): Observable<any> {
     return this.http.get(this.basePath + 'api-information.json', {
+      responseType: 'json',
+    });
+  }
+
+  getApiDownloads() {
+    return this.http.get<ApiDownloadModel[]>(this.basePath + 'api-download.json', {
       responseType: 'json',
     });
   }
