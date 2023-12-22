@@ -1,1 +1,15 @@
-<p>home-page works!</p>
+<div class="cards-container">
+  <div *ngFor="let api of apiList">
+    <!-- TODO: Change to correct route -->
+    <mat-card class="api-card" routerLink="/api-matrix">
+      <mat-card-header>
+        <mat-card-title class="card-title">{{ api.name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="card-content">
+        <p>{{ api.shortDescription }}</p>
+      </mat-card-content>
+      <img mat-card-image class="card-image" ngSrc="{{ api.iconPath }}" alt="API Logo" height="100"
+           width="100">
+    </mat-card>
+  </div>
+</div>

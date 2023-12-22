@@ -1,47 +1,48 @@
-table {
-  width: 100%;
+
+.container {
+  padding-top: 5rem;
+}
+.extra-information {
+  visibility: hidden;
+}
+.header-row {
+  display: grid;
+  gap: 2rem;
+  height: 4rem;
+  margin-bottom: 10px;
+  grid-template-columns: repeat(4, calc(25% - 2rem));
 }
 
-tr.example-detail-row {
-  height: 0;
+.api-title {
+  color: white;
+  font-size: 2rem;
+  &:hover {
+    cursor: pointer;
+  }
+
+}
+#row{
+  display: grid;
+  gap: 2rem;
+  &:hover {
+    background-color: #3da1a6;
+    .extra-information {
+      visibility: visible;
+      height: 150px;
+    }
+    .api-column {
+      background-color: #3da1a6;
+    }
+  }
+  grid-template-columns: repeat(4, calc(25% - 2rem));
 }
 
-tr.example-element-row:not(.example-expanded-row):hover {
-  background: whitesmoke;
-}
-
-tr.example-element-row:not(.example-expanded-row):active {
-  background: #efefef;
-}
-
-.example-element-row td {
-  border-bottom-width: 0;
-}
-
-.example-element-detail {
-  overflow: hidden;
+.api-column {
   display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #28888c;
 }
-
-.example-element-diagram {
-  min-width: 80px;
-  border: 2px solid black;
-  padding: 8px;
-  font-weight: lighter;
-  margin: 8px 0;
-  height: 104px;
-}
-
-.example-element-symbol {
-  font-weight: bold;
-  font-size: 40px;
-  line-height: normal;
-}
-
-.example-element-description {
-  padding: 16px;
-}
-
-.example-element-description-attribution {
-  opacity: 0.5;
+.company-title {
+  border-bottom: 2px solid white;
 }

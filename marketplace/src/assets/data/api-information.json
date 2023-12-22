@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Pension API",
+    "shortDescription": "The FRIDA use case focuses on the provision of data for transparency in retirement provision, e.g. using a pension cockpit",
+    "iconPath": "./assets/icons/pension-api.png"
+  },
+  {
+    "name": "Health-Care API",
+    "shortDescription": "The FRIDA use case focuses on use cases in the healthcare sector, e.g. integrated contract and benefit management",
+    "iconPath": "./assets/icons/health-care-api.png"
+  },
+  {
+    "name": "Car-Claims API",
+    "shortDescription": "The FRIDA use case focuses on the exchange of insurance data in the event of a claim, e.g. via wallet",
+    "iconPath": "./assets/icons/car-claims-api.png"
+  },
+  {
+    "name": "Cyber API",
+    "shortDescription": "The FRIDA use case focuses on use cases in the context of cyber insurance, e.g. the standardization of key risk indicators and data exchange between third-party providers and insurers",
+    "iconPath": "./assets/icons/cyber-api.png"
+  }
+]

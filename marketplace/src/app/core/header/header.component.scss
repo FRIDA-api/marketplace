@@ -1,33 +1,21 @@
 .header {
-    padding: 0.5rem;
+    padding: 2rem;
     display: flex;
+    justify-content: center;
     align-items: center;
-    
-    background-color: var(--main-color);
+    background-color: black;
 }
 
 .frida-image {
-    width: 50px;
-    aspect-ratio: 1/1;
+  position: absolute;
+  left: 2rem;
+  max-width: 10%;
+  height: auto;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
-.frida-name {
-    display: flex;
-    flex-direction: column;
-
-    padding-left: 0.5rem;
-    padding-right: 2rem;
-    
-    &:hover {
-        cursor: pointer;
-    }
-
-    span:last-child {
-        font-size: 1.75rem;
-        font-weight: bold;
-        letter-spacing: 4.5px;
-    }
-}
 
 .header-link {
     padding: 1rem 1rem;

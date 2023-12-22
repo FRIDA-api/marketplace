@@ -1,0 +1,25 @@
+.api-card {
+  max-width: 25rem;
+  cursor: pointer;
+}
+
+.mat-mdc-card.mdc-card:hover {
+  border: 0.063rem solid rgba(26, 179, 185, 0.3);
+  box-shadow: 0.25rem 0.25rem 0.125rem 0.063rem rgba(26, 179, 185, 0.1);
+}
+
+.cards-container {
+  display: flex;
+  gap: 0.625rem 1.25rem;
+  margin: 0.625rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+.card-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
