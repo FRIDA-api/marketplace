@@ -45,8 +45,10 @@ $marketplace-theme: mat.define-light-theme((
   src: url(assets/fonts/comfortaa--v40-normal-300.woff2);
 }
 
-html, body { height: 100%; overflow: hidden;
-min-height: 100%; }
+html, body {
+  height: 100%; overflow: hidden;
+  min-height: 100%;
+}
 body {
   margin: 0;
   font-family: "Comfortaa", "Helvetica Neue", sans-serif;
