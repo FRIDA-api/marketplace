@@ -1,0 +1,319 @@
+openapi: 3.0.1
+info:
+  title: FRIDA PensionSerivce
+  description: This spec describes the pension service and its needed APIs
+  termsOfService: 'https://github.com/FRIDA-official'
+  contact:
+    email: anton.rott@accenture.com
+  version: '1.1'
+externalDocs:
+  description: External documentation
+  url: 'https://frida-official.github.io/FRIDA-pension/docs/FRIDA_PensionInformation_OA3_en.html'
+paths:
+  /ContractDetails:
+    post:
+      summary: Query the details for a specific contract     
+      security:
+        - oAuth2:
+          - ContractDetails              
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContractDetailsResponse'
+        '403':
+          description: Authorization error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorList'
+        '500':
+          description: Generic Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorList'
+      requestBody:
+        $ref: '#/components/requestBodies/ContractDetailsRequest'
+  /Contracts:
+    post:
+        summary: Query all visible contracts defined in the user portal    
+        security:
+          - oAuth2:
+            - Contracts
+        responses:
+          '200':
+            description: Success
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/VisableContractsResponse'
+          '403':
+            description: Authorization error
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ErrorList'
+          '500':
+            description: Unexpected error
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ErrorList'
+        requestBody:
+          $ref: '#/components/requestBodies/VisableContractsRequest'
+components:
+  requestBodies:
+    ContractDetailsRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ContractDetailsRequest'
+      description: Fetch contract details for a specific contract
+      required: true
+    VisableContractsRequest:
+      content:
+        application/json: 
+          schema:
+            $ref: '#/components/schemas/VisableContractsRequest'
+      description: Here, we use the user id of the specific user to know which contracts to fetch
+      required: true
+  schemas:
+    VisableContractsRequest:
+      type: object
+      properties:
+        id_client:
+          type: string
+    VisableContractsResponse:
+      type: object
+      properties:
+        list_contractsOfClient:
+          type: array 
+          items:
+            type: string
+            description: contract of client     
+    Interest:
+      type: object
+      properties:
+        number_interest:
+          type: number
+          format: double
+    Factor:
+      type: object
+      properties:
+        number_factor:
+          type: number
+          format: double
+    Amount:
+      type: object
+      properties:
+        sum:
+          type: number
+          format: double
+        currency:
+          type: string
+          format: string
+          example: 'EUR'
+    Date:
+      type: string
+      format: date
+      description: Date in YYYY-DD-MM Format
+    ErrorList:
+      type: object
+      required:
+        - errors
+      properties:
+        errors:
+          type: array
+          items:
+            type: object
+            required:
+              - code
+              - title
+              - detail
+            properties:
+              code:
+                type: string
+                description: The code of the error
+              title:
+                type: string
+                description: A displayable title of the error type
+              detail:
+                type: string
+                description: Detail of the error
+              meta:
+                type: object
+                description: Optional additional data for specific error types
+    ContractDetailsRequest:
+      type: object
+      properties:
+        contractNumber:
+          type: string
+          format: string
+          description: Unique Identifier for contract
+    ContractDetailsResponse:
+      type: object
+      properties:
+        contractList:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContractCore'
+    Product:
+      type: object
+      properties:
+        productId:
+          type: string
+          format: string
+        currentPensionAssets:
+          $ref: '#/components/schemas/Amount'
+        
+    ContractCore:
+      type: object
+      required: 
+        - productId
+      properties:
+        productList:
+          type: array
+          items:
+            $ref: '#/components/schemas/Product'
+        amount_payments_contribution_current:
+          $ref: '#/components/schemas/Amount'
+        amount_contribution_payments_current_employer_and_employee:
+          $ref: '#/components/schemas/Amount'
+        amount_paid_annually_allowances_current:
+          $ref: '#/components/schemas/Amount'
+        factor_pension_for_10k_savings:
+          $ref: '#/components/schemas/Factor'
+        amount_pension_assets_insurance_current_value:
+          $ref: '#/components/schemas/Amount'
+        amount_pension_assets_insurance_current_fund_value:
+          $ref: '#/components/schemas/Amount'
+        amount_pension_as_of_today:
+          $ref: '#/components/schemas/Amount'
+        interest_extrapolation_assumptions_net_interest_different_scenarios:
+          $ref: '#/components/schemas/Interest'
+        type_of_insurance:
+          oneOf:
+            - $ref: '#/components/schemas/TypeOfInsurance'
+            - enum:
+                - id: '1'
+                  full_name_de: 'Direktversicherung (klassisch)'
+                - id: '2'
+                  full_name_de: 'Riester Versicherung (klassisch)'
+                - id: '3'
+                  full_name_de: 'Basisrente - klassisch'
+        percent_profit_participation_current:
+          type: number
+          format: double
+        amount_payments_contribution:
+          $ref: '#/components/schemas/Amount'        
+        date_notification_status_contract:
+          $ref: '#/components/schemas/Date'
+        date_retirement_in_contract:
+          $ref: '#/components/schemas/Date'
+        interest_total_return_current:
+          $ref: '#/components/schemas/Interest'
+        amount_fund_capital_ with_fund_growth_by_percent:
+          $ref: '#/components/schemas/Amount' 
+        amount_fund_capital_with_growth_at_start_of_retirement_based_on_current_contributions:
+          $ref: '#/components/schemas/Amount'
+        amount_fund_capital_with_growth_at_start_of_retirement_without_further_contributions:
+          $ref: '#/components/schemas/Amount'
+        percent_guaranteed:
+          type: number
+          format: double
+        amount_guarantee_capital_start_of_retirement:
+          $ref: '#/components/schemas/Amount' 
+        amount_guaranteed_capital_as_of_today:
+          $ref: '#/components/schemas/Amount'
+        amount_capital_guaranteed_based_on_current_contributions:
+          $ref: '#/components/schemas/Amount'
+        amount_capital_guaranteed_without_further_contributions:
+          $ref: '#/components/schemas/Amount'
+        factor_pension_for_10k_savings_guaranteed:
+          $ref: '#/components/schemas/Factor'
+        interest_guaranteed:
+          $ref: '#/components/schemas/Interest'
+        amount_extrapolation_pension_assets:
+          $ref: '#/components/schemas/Amount'
+        amount_extrapolation_pension_assets_guaranteed:
+          $ref: '#/components/schemas/Amount'
+        amount_pension_with_participation_based_on_current_contributions:
+          $ref: '#/components/schemas/Amount'
+        amount_pension_with_participation_based_on_current_contributions_and_allowances:
+          $ref: '#/components/schemas/Amount'
+        amount_pension_with_participation_without_further_contributions_and_without_allowances:
+          $ref: '#/components/schemas/Amount'
+        amount_pension_with_participation_without_further_contributions:
+          $ref: '#/components/schemas/Amount'
+        amount_pension_with_fund_growth_by_percent:
+          $ref: '#/components/schemas/Amount'
+        amount_pension_guaranteed_based_on_current_contributions:
+          $ref: '#/components/schemas/Amount'
+        amount_pension_guranteed_based_on_current_contributions_and_allowances:
+          $ref: '#/components/schemas/Amount'
+        amount_pension_guranteed_without_further_contributions_and_without_allowances:
+          $ref: '#/components/schemas/Amount'
+        amount_pension_guaranteed_without_further_contributions:
+          $ref: '#/components/schemas/Amount'
+        flag_child_allowances:
+          type: boolean
+        children:
+          type: array
+          items: 
+            $ref: '#/components/schemas/Child'
+        id_pia_class:
+          oneOf:
+            - $ref: '#/components/schemas/PIAClass'
+            - enum:
+                - CRK1
+                - CRK2
+                - CRK3
+                - CRK4
+                - CRK5
+        factor_pension_if_not_converted_into_oldage_pension:
+          $ref: '#/components/schemas/Factor'
+        amount_riester_credit_payments_and_allowances_as_of_today:
+          $ref: '#/components/schemas/Amount'
+        date_start_insurance_contract:
+          $ref: '#/components/schemas/Date'
+        name_policyholder:
+          type: string
+    TypeOfInsurance:
+      type: object
+      description: Complex object for type of insurance, according to GDV
+      properties:
+        id:
+          type: string
+        full_name_de:
+          type: string
+    PIAClass:
+      type: object
+      description: Complex object for PIA Class, according to https://produktinformationsstelle.de/
+      properties:
+        id:
+          type: string
+    Child:
+      type: object
+      properties:
+        birthdate:
+          $ref: '#/components/schemas/Date'
+  securitySchemes:
+    oAuth2:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: 'https://frida-demo.okta.com/oauth2/default/v1/authorize?nonce=kdkdkl'
+          scopes:
+            Contracts: Read all visible contracts
+            ContractDetails: Read contract details
+            openid: OpenId subject
+        authorizationCode:
+          authorizationUrl: 'https://frida-demo.okta.com/oauth2/default/v1/authorize?nonce=kdkdkl'
+          tokenUrl: 'https://frida-demo.okta.com/oauth2/default/v1/token?nonce=kdkdkl'
+          scopes:
+            Contracts: Read all visible contracts
+            ContractDetails: Read contract details
+            openid: OpenId subject

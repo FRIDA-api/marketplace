@@ -7,6 +7,7 @@ import { ApiDataService } from '@common/services/api-data.service';
 import { Observable } from 'rxjs';
 
 export interface ApiDetails {
+  id: string;
   name: string;
   shortDescription: string;
   iconPath: string;
