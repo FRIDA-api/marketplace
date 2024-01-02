@@ -55,6 +55,9 @@ body {
   background: radial-gradient(at top center, #22d9e0 0%, #000000 100%) no-repeat scroll center center / cover;
 }
 
+app-api-documentation .mat-expansion-panel-body {
+  padding: 0px !important;
+}
 .center {
   display: flex;
   height: 100%;
