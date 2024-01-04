@@ -1,12 +1,8 @@
 import { CommonModule, DOCUMENT } from '@angular/common';
-import {
-  Component,
-  Input,
-  OnInit,
-  ViewEncapsulation,
-  inject,
-} from '@angular/core';
+
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
+
 import SwaggerUI from 'swagger-ui';
 
 type Api = {
@@ -53,6 +49,13 @@ export class ApiDocumentationComponent implements OnInit {
     SwaggerUI({
       url: '/assets/api/FRIDA_PensionInformation_OA3_full_en.yaml',
       domNode: this.document.getElementById('swagger-ui'),
+      deepLinking: true,
+      defaultModelsExpandDepth: 10,
+      defaultModelExpandDepth: 10,
+      syntaxHighlight: {
+        activate: true,
+        theme: 'tomorrow-night',
+      },
     });
   }
 }

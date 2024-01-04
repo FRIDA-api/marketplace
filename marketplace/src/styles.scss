@@ -1,7 +1,6 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -20,13 +19,15 @@ $marketplace-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$marketplace-theme: mat.define-light-theme((
-  color: (
-    primary: $marketplace-primary,
-    accent: $marketplace-accent,
-    warn: $marketplace-warn,
+$marketplace-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $marketplace-primary,
+      accent: $marketplace-accent,
+      warn: $marketplace-warn,
+    ),
   )
-));
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -36,7 +37,7 @@ $marketplace-theme: mat.define-light-theme((
 /* You can add global styles to this file, and also import other style files */
 
 :root {
-  --main-color: #1AB3B9;
+  --main-color: #1ab3b9;
   --secondary-color: #82f4d8;
 }
 
@@ -45,14 +46,19 @@ $marketplace-theme: mat.define-light-theme((
   src: url(assets/fonts/comfortaa--v40-normal-300.woff2);
 }
 
-html, body {
-  height: 100%; overflow: hidden;
+html,
+body {
+  height: 100%;
+  overflow: hidden;
   min-height: 100%;
 }
 body {
+  --mat-sort-arrow-color: white;
   margin: 0;
   font-family: "Comfortaa", "Helvetica Neue", sans-serif;
-  background: radial-gradient(at top center, #22d9e0 0%, #000000 100%) no-repeat scroll center center / cover;
+  color: white;
+  background: radial-gradient(at top center, #22d9e0 0%, #000000 100%) no-repeat
+    scroll center center / cover;
 }
 
 app-api-documentation .mat-expansion-panel-body {
@@ -66,7 +72,7 @@ app-api-documentation .mat-expansion-panel-body {
 }
 
 main {
-  background-color: white;
+  //background-color: white;
   max-width: 100%;
   margin: 0 auto;
 }
@@ -78,7 +84,7 @@ main {
   }
 }
 
-@media  (min-width: 768px) {
+@media (min-width: 768px) {
   main {
     max-width: 80%;
   }
@@ -94,4 +100,39 @@ main {
   main {
     max-width: 60%;
   }
+}
+
+.swagger-ui {
+  color: white !important;
+
+  table,
+  a,
+  .opblock-summary-description,
+  .wrapper,
+  .models,
+  .model-title,
+  .models-control,
+  .model-toggle,
+  .scheme-container {
+    background: unset !important;
+    color: white !important;
+  }
+}
+// .swagger-ui .model-box {
+//   display: flex;
+//   justify-content: space-between;
+//   .model-box {
+//     width: 100%;
+//     .model {
+//       width: 100%;
+//     }
+//   }
+// }
+
+.swagger-ui .model-box button > span:last-child {
+  display: none;
+}
+.swagger-ui .model-toggle {
+  //top: 0px;
+  color: white !important;
 }
