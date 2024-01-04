@@ -18,5 +18,15 @@
     "name": "Cyber API",
     "shortDescription": "The FRIDA use case focuses on use cases in the context of cyber insurance, e.g. the standardization of key risk indicators and data exchange between third-party providers and insurers",
     "iconPath": "./assets/icons/cyber-api.png"
+  },
+  {
+    "name": "Document API",
+    "shortDescription": "Choose the Mailbox of your choices for receiving our insurance related Documents",
+    "iconPath": "./assets/icons/cyber-api.png"
+  },
+  {
+    "name": "Building API",
+    "shortDescription": "Get all insurance relevant Data for your Building and add them with Data from external sources",
+    "iconPath": "./assets/icons/cyber-api.png"
   }
 ]
