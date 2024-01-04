@@ -7,4 +7,20 @@
   top: 0;
 }
 
+.bg-svg-1 {
+  position: absolute;
+  width: 1920px;
+  top: -500px;
+  left: -600px;
+  transform: rotate(-30deg);
+  scale: .5;
+}
 
+.bg-svg-2 {
+  position: absolute;
+  width: 1920px;
+  top: -450px;
+  right: -600px;
+  transform: rotate(30deg);
+  scale: .5;
+}
