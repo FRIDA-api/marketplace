@@ -18,7 +18,7 @@
   margin: 0 1rem;
 
   color: rgba(255, 255, 255, 0.8);
-  background-color: rgba($color: #ffffff, $alpha: .2);
+  background-color: rgba(#ffffff, 0.2);
 
   cursor: pointer;
   border-radius: 4px;
@@ -26,27 +26,26 @@
 
   position: relative;
 
-
   &:hover {
     box-shadow: 0 0 40px rgba(92, 182, 181, 0.4);
   }
 
   .card-title {
     font-size: 1.5rem;
-    padding-bottom: .5rem;
+    padding-bottom: 0.5rem;
   }
-  
+
   .card-content {
     display: flex;
     flex-direction: row;
-    gap: .5rem;
+    gap: 0.5rem;
 
     img {
-      opacity: .3;
+      opacity: 0.3;
 
       position: absolute;
-      right: .5rem;
-      top: .5rem;
+      right: 0.5rem;
+      top: 0.5rem;
     }
   }
 }

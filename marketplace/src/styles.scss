@@ -110,7 +110,6 @@ main {
   color: white !important;
   .btn.authorize {
     background: transparent;
-
     border-image: linear-gradient(#52ffff, #2aa2da) 5;
     border-width: 4px;
     border-style: solid;
@@ -121,6 +120,11 @@ main {
       color: #39c3e7;
     }
   }
+  .arrow,
+  .model-toggle.collapsed {
+    filter: invert(99%) sepia(0%) saturate(416%) hue-rotate(314deg)
+      brightness(116%) contrast(100%);
+  }
   table,
   a,
   .opblock-summary-description,
@@ -128,27 +132,54 @@ main {
   .models,
   .model-title,
   .models-control,
-  .model-toggle,
+  h2,
+  p,
+  .description,
   .scheme-container {
     background: unset !important;
     color: white !important;
   }
 }
-// .swagger-ui .model-box {
-//   display: flex;
-//   justify-content: space-between;
-//   .model-box {
-//     width: 100%;
-//     .model {
-//       width: 100%;
-//     }
-//   }
-// }
+.swagger-ui .model-box:has(div) {
+  width: 100%;
+  .model-box {
+    width: 100%;
+    .model {
+      width: 100%;
+    }
+  }
+}
 
-.swagger-ui .model-box button > span:last-child {
-  display: none;
+.swagger-ui .prop-type {
+  display: flex;
+  color: rgb(181, 189, 104);
+}
+.swagger-ui .prop-format {
+  color: rgb(222, 147, 95);
+}
+.swagger-ui .model-title__text,
+.swagger-ui .model-title {
+  font-size: 12px;
+}
+
+.swagger-ui .model {
+  color: rgb(222, 147, 95);
+}
+.swagger-ui .model td .model {
+  padding-right: 20px !important;
+  max-width: 300px;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 .swagger-ui .model-toggle {
-  //top: 0px;
-  color: white !important;
+  top: 0px;
+  vertical-align: middle;
+  filter: invert(99%) sepia(0%) saturate(416%) hue-rotate(314deg)
+    brightness(116%) contrast(100%);
+}
+.swagger-ui .model-toggle:after {
+  height: 1rem !important;
+}
+.swagger-ui .model-hint {
+  display: none;
 }

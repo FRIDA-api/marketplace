@@ -1,0 +1,209 @@
+openapi: 3.0.1
+info:
+  title: FRIDA Car Insurance Policy Cards
+  description: >-
+    Die FRIDA Car Claims API ermöglichen es Nutzer:innen die wichtigsten
+    Policendaten auf jedem Smartphone einfach und sicher per Wallet
+    abzuspeichern.
+
+    Im Schadenfall können so die wichtigsten Versicherungsdaten mit wenigen
+    Klicks aufgerufen und ein standardisierter, volldigitaler Schadenprozess
+    angestoßen werden.
+
+
+    Mit der FRIDA Car Claims API sprechen alle Versicherer die gleiche Sprache.
+
+    Sowohl Versicherungsunternehmen, als auch Drittanbietern wird es vereinfacht
+    Policendaten in digitale Wallets zu überführen und stets aktuell zu halten.x
+
+
+    ![](./assets/sequence.mmd.svg "")
+  termsOfService: 'https://github.com/FRIDA-official'
+  contact:
+    name: Vinh Hoi Le Chau
+    url: 'https://www.missmp.eu'
+    email: vinh.lechau@missmp.eu
+  version: 0.0.1
+servers:
+  - url: 'https://test-api-impl-backend-jaxrs.herokuapp.com/v2'
+    description: Staging
+  - url: 'https://test-api-impl-backend-jaxrs.xyz.com/v2'
+    description: Production
+paths:
+  /policies/passes:
+    post:
+      summary: Create Policy Pass
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pass'
+      responses:
+        '200':
+          description: Success
+      tags:
+        - Passes
+    delete:
+      summary: Delete Policy Pass
+      responses:
+        '200':
+          description: Success
+      tags:
+        - Passes
+    put:
+      summary: Update Policy Pass
+      tags:
+        - Passes
+      responses:
+        '200':
+          description: Success
+        '403':
+          description: Authorization error
+        '500':
+          description: Generic Error
+  /policies/webhooks:
+    post:
+      summary: Create Policy Webhook
+      responses:
+        '200':
+          description: Success
+      tags:
+        - Webhooks
+    put:
+      summary: Update Policy Webhook
+      tags:
+        - Webhooks
+      responses:
+        '200':
+          description: Success
+        '403':
+          description: Authorization error
+        '500':
+          description: Generic Error
+    delete:
+      summary: Delete Policy Webhook
+      responses:
+        '200':
+          description: Success
+      tags:
+        - Webhooks
+components:
+  schemas:
+    Pass:
+      description: >-
+        Holds all information required to manage and render a car insurance
+        pass.
+      properties:
+        additionalServices:
+          description: Additional services field text
+          type: string
+        coverage:
+          description: Coverage field text
+          type: string
+        firstName:
+          description: Insurance Holder name and title
+          type: string
+        genericDate1:
+          description: >-
+            Generic fields 8.ff serve as additional content fields provided
+            through API. Additional back fields can be included in the pass.
+          type: string
+        genericDate2:
+          description: >-
+            Generic fields 8.ff serve as additional content fields provided
+            through API. Additional back fields can be included in the pass.
+          type: string
+        genericDetails1:
+          description: >-
+            Generic fields 8.ff serve as additional content fields provided
+            through API. Additional back fields can be included in the pass.
+          type: string
+        genericDetails2:
+          description: >-
+            Generic fields 8.ff serve as additional content fields provided
+            through API. Additional back fields can be included in the pass.
+          type: string
+        genericDetails3:
+          description: >-
+            Generic fields 8.ff serve as additional content fields provided
+            through API. Additional back fields can be included in the pass.
+          type: string
+        genericNumber1:
+          description: >-
+            Generic fields 8.ff serve as additional content fields provided
+            through API. Additional back fields can be included in the pass.
+          type: integer
+        genericNumber2:
+          description: >-
+            Generic fields 8.ff serve as additional content fields provided
+            through API. Additional back fields can be included in the pass.
+          type: integer
+        genericString1:
+          description: >-
+            Generic fields 8.ff serve as additional content fields provided
+            through API. Additional back fields can be included in the pass.
+          type: string
+        genericString2:
+          description: >-
+            Generic fields 8.ff serve as additional content fields provided
+            through API. Additional back fields can be included in the pass.
+          type: string
+        genericString3:
+          description: >-
+            Generic fields 8.ff serve as additional content fields provided
+            through API. Additional back fields can be included in the pass.
+          type: string
+        genericString4:
+          description: >-
+            Generic fields 8.ff serve as additional content fields provided
+            through API. Additional back fields can be included in the pass.
+          type: string
+        genericString5:
+          description: >-
+            Generic fields 8.ff serve as additional content fields provided
+            through API. Additional back fields can be included in the pass.
+          type: string
+        genericString6:
+          description: >-
+            Generic fields 8.ff serve as additional content fields provided
+            through API. Additional back fields can be included in the pass.
+          type: string
+        genericboolean1:
+          description: >-
+            Generic fields 8.ff serve as additional content fields provided
+            through API. Additional back fields can be included in the pass.
+          type: boolean
+        lastName:
+          description: Insurance Holder name and title
+          type: string
+        makeModel:
+          description: Vehicle Details text
+          type: string
+        mileage:
+          description: Vehicle Details text
+          type: string
+        ncb:
+          description: Vehicle Details text
+          type: string
+        policyNumber:
+          description: Policy Number Headline
+          type: string
+        regDate:
+          description: Vehicle Details text
+          type: string
+        title:
+          description: Insurance Holder name and title
+          type: string
+        vehicleReg:
+          description: Vehicle Registration content
+          type: string
+        vin:
+          description: Vehicle Details text
+          type: string
+      required:
+        - vehicleReg
+        - title
+        - firstName
+        - lastName
+        - policyNumber
+      type: object

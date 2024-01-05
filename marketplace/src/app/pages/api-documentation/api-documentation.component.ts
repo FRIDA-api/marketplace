@@ -48,6 +48,7 @@ export class ApiDocumentationComponent implements OnInit {
     console.log(this.apiPathParameter);
     SwaggerUI({
       url: '/assets/api/FRIDA_PensionInformation_OA3_full_en.yaml',
+      //url: '/assets/api/FRIDA_CAR_OA3_full.en.yaml',
       domNode: this.document.getElementById('swagger-ui'),
       deepLinking: true,
       defaultModelsExpandDepth: 10,
