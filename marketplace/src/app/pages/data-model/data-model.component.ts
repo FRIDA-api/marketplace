@@ -1,5 +1,5 @@
 import {Component, inject} from "@angular/core";
-import {AsyncPipe} from "@angular/common";
+import {AsyncPipe, CommonModule} from "@angular/common";
 import {CommentComponent} from "./comment/comment.component";
 import {DownloadComponent} from "./download/download.component";
 import {ApiDataService} from "@common/services/api-data.service";
@@ -11,7 +11,8 @@ import {CommentService} from "./services/comment.service";
   imports: [
     AsyncPipe,
     CommentComponent,
-    DownloadComponent
+    DownloadComponent,
+    CommonModule,
   ],
   templateUrl: './data-model.component.html',
   styleUrl: './data-model.component.scss'
