@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "swagger-ui/dist/swagger-ui.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -95,6 +96,7 @@
               "src/assets"
             ],
             "styles": [
+              "swagger-ui/dist/swagger-ui.css",
               "src/styles.scss"
             ],
             "scripts": []
