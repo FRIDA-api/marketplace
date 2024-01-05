@@ -25,7 +25,6 @@ import {CommentComponent} from "./comment/comment.component";
 })
 export class ApiMatrixComponent {
   private apiInformationService = inject(ApiDataService);
-  private apiCommentService = inject(CommentService);
 
   public matrixData$ = this.apiInformationService.getApiMatrixData();
   columnsToDisplay = [
@@ -36,7 +35,4 @@ export class ApiMatrixComponent {
   ];
   columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
   expandedElement: any;
-
-  downloadApi$ = this.apiInformationService.getApiDownloads();
-  commentApi$ = this.apiCommentService.getApiDownloads();
 }
