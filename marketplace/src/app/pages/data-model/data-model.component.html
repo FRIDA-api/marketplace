@@ -1,0 +1,14 @@
+<div class="download-and-comment-section">
+  <section class="download-section">
+    <h2 class="section-headline">Downloads</h2>
+    @for (downloadItem of downloadApi$ | async; track $index) {
+      <app-download [input]="downloadItem"></app-download>
+    }
+  </section>
+  <section class="comment-section">
+    <h2 class="section-headline">Leave us comments</h2>
+    @for (commendItem of commentApi$ | async; track $index) {
+      <app-comment [input]="commendItem"></app-comment>
+    }
+  </section>
+</div>
