@@ -5,6 +5,7 @@ import {DataModelComponent} from "./pages/data-model/data-model.component";
 
 export const routes: Routes = [
   { path: '', component: HomePageComponent },
+  { path: 'api-catalogue', component: HomePageComponent },
   { path: 'api-matrix', component: ApiMatrixComponent },
   { path: 'data-model', component: DataModelComponent },
   { path: '**', redirectTo: '' },
