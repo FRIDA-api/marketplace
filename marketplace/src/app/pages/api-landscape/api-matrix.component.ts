@@ -5,9 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ApiStatusComponent } from '@common/components/api-status/api-status.component';
 import { MatIconModule } from '@angular/material/icon';
-import {DownloadComponent} from "./download/download.component";
-import {CommentService} from "./services/comment.service";
-import {CommentComponent} from "./comment/comment.component";
+
 @Component({
   selector: 'app-api-matrix',
   standalone: true,
@@ -17,8 +15,6 @@ import {CommentComponent} from "./comment/comment.component";
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    DownloadComponent,
-    CommentComponent,
   ],
   templateUrl: './api-matrix.component.html',
   styleUrl: './api-matrix.component.scss',

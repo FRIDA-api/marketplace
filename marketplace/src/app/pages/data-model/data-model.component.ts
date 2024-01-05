@@ -1,9 +1,9 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject} from "@angular/core";
 import {AsyncPipe} from "@angular/common";
+import {CommentComponent} from "./comment/comment.component";
+import {DownloadComponent} from "./download/download.component";
 import {ApiDataService} from "@common/services/api-data.service";
-import {CommentService} from "../api-landscape/services/comment.service";
-import {CommentComponent} from "../api-landscape/comment/comment.component";
-import {DownloadComponent} from "../api-landscape/download/download.component";
+import {CommentService} from "./services/comment.service";
 
 @Component({
   selector: 'app-data-model',
