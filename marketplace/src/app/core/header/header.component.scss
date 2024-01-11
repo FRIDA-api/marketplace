@@ -1,8 +1,12 @@
 .header {
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: sticky;
+  top: 0;
+
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 500;
 }
 
 .frida-image {
@@ -54,6 +58,7 @@
   }
 
   .header {
+    position: static;
     flex-direction: column;
     gap: 1.5rem;
   }
@@ -61,6 +66,7 @@
 
 @media  (max-width: 800px) {
   nav {
+    position: static;
     display: flex;
     flex-direction: column;
     align-items: center;
