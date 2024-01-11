@@ -51,8 +51,8 @@ export class ApiDocumentationComponent implements AfterViewInit {
       //url: '/assets/api/FRIDA_CAR_OA3_full.en.yaml',
       domNode: this.document.getElementById('swagger-ui'),
       deepLinking: true,
-      defaultModelsExpandDepth: 10,
-      defaultModelExpandDepth: 10,
+      defaultModelsExpandDepth: 4,
+      defaultModelExpandDepth: 4,
       syntaxHighlight: {
         activate: true,
         theme: 'tomorrow-night',

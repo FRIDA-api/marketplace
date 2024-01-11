@@ -106,19 +106,11 @@ main {
   }
 }
 
+.overflow-auto {
+  overflow: auto;
+}
+
 .swagger-ui {
-  .btn.authorize {
-    // background: transparent;
-    // border-image: linear-gradient(#52ffff, #2aa2da) 5;
-    // border-width: 4px;
-    // border-style: solid;
-    // border-radius: 10px;
-    // border: red blue;
-    // color: white;
-    // :hover {
-    //   color: #39c3e7;
-    // }
-  }
   .arrow,
   .model-toggle.collapsed {
     filter: invert(99%) sepia(0%) saturate(416%) hue-rotate(314deg)
@@ -140,6 +132,7 @@ main {
 .swagger-ui .model-box:has(div) {
   width: 100%;
   .model-box {
+    overflow: auto;
     width: 100%;
     .model {
       width: 100%;
