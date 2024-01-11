@@ -111,6 +111,11 @@ main {
 }
 
 .swagger-ui {
+
+  .info {
+    margin: 0 !important;
+  }
+
   .arrow,
   .model-toggle.collapsed {
     filter: invert(99%) sepia(0%) saturate(416%) hue-rotate(314deg)
@@ -185,4 +190,18 @@ main {
   .renderedMarkdown p {
     color: white !important;
   }
+}
+
+.mat-expansion-panel {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.mat-expansion-panel-header {
+  height: initial !important;
+}
+
+.mat-expansion-indicator::after {
+  color: white !important;
 }

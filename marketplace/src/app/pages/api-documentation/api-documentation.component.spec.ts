@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ApiDocumentationComponent } from './api-documentation.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ApiDocumentationComponent', () => {
   let component: ApiDocumentationComponent;
@@ -8,7 +10,7 @@ describe('ApiDocumentationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ApiDocumentationComponent]
+      imports: [ApiDocumentationComponent, MatExpansionModule, BrowserAnimationsModule]
     })
     .compileComponents();
     

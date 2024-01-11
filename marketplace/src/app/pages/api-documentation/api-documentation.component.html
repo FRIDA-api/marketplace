@@ -1,36 +1,33 @@
 <div class="api-layout">
-  <div>
-    @for (company of companies; track company;) {
+  <div class="sidemenu-container">
     <mat-accordion>
-      <mat-expansion-panel
-        (opened)="panelOpenState = true"
-        (closed)="panelOpenState = false"
-      >
+    @for (company of companyInformation; track company) {
+      <mat-expansion-panel>
         <mat-expansion-panel-header>
-          <mat-panel-title> {{ company.companyName }}</mat-panel-title>
+          <mat-panel-title class="level-one-title">
+            <img src="/assets/icons/car-claims-api.png" alt="" class="image">
+            {{ company.companyName }}</mat-panel-title>
         </mat-expansion-panel-header>
 
-        @for(category of company.categories; track category;) {
-        <mat-accordion>
-          <mat-expansion-panel
-            class="category"
-            (opened)="panelOpenState = true"
-            (closed)="panelOpenState = false"
-          >
-            <mat-expansion-panel-header>
-              <mat-panel-title> {{ category.categoryName }}</mat-panel-title>
-            </mat-expansion-panel-header>
-            @for(api of category.apis; track api;) {
-            <div>{{ api.url }}</div>
-            }
-          </mat-expansion-panel>
-        </mat-accordion>
+        @for(category of company.categories; track category) {
+        <mat-expansion-panel>
+          <mat-expansion-panel-header class="level-two-header">
+            <mat-panel-title class="level-two-title"> {{ category.categoryName }}</mat-panel-title>
+          </mat-expansion-panel-header>
+          
+          @for(api of category.apis; track api) {
+          <div (click)="selectApi(api.url)" class="level-three-title">{{ api.name }}</div>
+          }
+        
+        </mat-expansion-panel>
         }
+
       </mat-expansion-panel>
-    </mat-accordion>
     }
+
+    </mat-accordion>
   </div>
+
   <div id="swagger-ui"></div>
 
-  <div></div>
 </div>

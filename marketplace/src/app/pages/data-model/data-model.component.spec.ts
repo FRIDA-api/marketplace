@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DataModelComponent } from './data-model.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('DataModelComponent', () => {
   let component: DataModelComponent;
@@ -8,7 +9,7 @@ describe('DataModelComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DataModelComponent]
+      imports: [DataModelComponent, HttpClientTestingModule]
     })
     .compileComponents();
     
