@@ -1,25 +1,24 @@
 @if (apiList$ | async; as apiList) {
-  <div class="cards-container">
-    @for (api of apiList; track api) {
-      <div>
-        <mat-card class="api-card" routerLink="/api-matrix">
-          <mat-card-header>
-            <mat-card-title class="card-title">{{ api.name }}</mat-card-title>
-          </mat-card-header>
-          <mat-card-content class="card-content">
-            <p>{{ api.shortDescription }}</p>
-            <img
-            mat-card-image
-            class="card-image"
-            ngSrc="{{ api.iconPath }}"
-            alt="API Logo"
-            height="65"
-            width="65"
-          />
-          </mat-card-content>
-
-        </mat-card>
-      </div>
-    }
+<div class="cards-container">
+  @for (api of apiList; track api) {
+  <div>
+    <mat-card class="api-card" [routerLink]="['/apis', api.id]">
+      <mat-card-header>
+        <mat-card-title class="card-title">{{ api.name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="card-content">
+        <p>{{ api.shortDescription }}</p>
+        <img
+          mat-card-image
+          class="card-image"
+          [ngSrc]="api.iconPath"
+          alt="API Logo"
+          height="65"
+          width="65"
+        />
+      </mat-card-content>
+    </mat-card>
   </div>
+  }
+</div>
 }

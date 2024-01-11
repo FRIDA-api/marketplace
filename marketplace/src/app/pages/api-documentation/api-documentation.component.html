@@ -1,0 +1,36 @@
+<div class="api-layout">
+  <div>
+    @for (company of companies; track company;) {
+    <mat-accordion>
+      <mat-expansion-panel
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title> {{ company.companyName }}</mat-panel-title>
+        </mat-expansion-panel-header>
+
+        @for(category of company.categories; track category;) {
+        <mat-accordion>
+          <mat-expansion-panel
+            class="category"
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title> {{ category.categoryName }}</mat-panel-title>
+            </mat-expansion-panel-header>
+            @for(api of category.apis; track api;) {
+            <div>{{ api.url }}</div>
+            }
+          </mat-expansion-panel>
+        </mat-accordion>
+        }
+      </mat-expansion-panel>
+    </mat-accordion>
+    }
+  </div>
+  <div id="swagger-ui"></div>
+
+  <div></div>
+</div>
