@@ -107,6 +107,10 @@ main {
 }
 
 .swagger-ui {
+
+  .info {
+    margin: 0 !important;
+  }
   .btn.authorize {
     // background: transparent;
     // border-image: linear-gradient(#52ffff, #2aa2da) 5;
