@@ -1,6 +1,6 @@
 import { CommonModule, DOCUMENT } from '@angular/common';
 
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, inject } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 
 import SwaggerUI from 'swagger-ui';
@@ -24,7 +24,7 @@ type CompanyInformation = {
   templateUrl: './api-documentation.component.html',
   styleUrl: './api-documentation.component.scss',
 })
-export class ApiDocumentationComponent implements OnInit {
+export class ApiDocumentationComponent implements AfterViewInit {
   //This parameter comes from the router path
   @Input() apiPathParameter!: string;
   private document = inject(DOCUMENT);
@@ -44,7 +44,7 @@ export class ApiDocumentationComponent implements OnInit {
   });
 
   public panelOpenState = false;
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     console.log(this.apiPathParameter);
     SwaggerUI({
       url: '/assets/api/FRIDA_PensionInformation_OA3_full_en.yaml',

@@ -107,18 +107,17 @@ main {
 }
 
 .swagger-ui {
-  color: white !important;
   .btn.authorize {
-    background: transparent;
-    border-image: linear-gradient(#52ffff, #2aa2da) 5;
-    border-width: 4px;
-    border-style: solid;
-    border-radius: 10px;
-    border: red blue;
-    color: white;
-    :hover {
-      color: #39c3e7;
-    }
+    // background: transparent;
+    // border-image: linear-gradient(#52ffff, #2aa2da) 5;
+    // border-width: 4px;
+    // border-style: solid;
+    // border-radius: 10px;
+    // border: red blue;
+    // color: white;
+    // :hover {
+    //   color: #39c3e7;
+    // }
   }
   .arrow,
   .model-toggle.collapsed {
@@ -132,8 +131,6 @@ main {
   .models,
   .model-title,
   .models-control,
-  h2,
-  p,
   .description,
   .scheme-container {
     background: unset !important;
@@ -167,7 +164,6 @@ main {
 }
 .swagger-ui .model td .model {
   padding-right: 20px !important;
-  max-width: 300px;
   word-wrap: break-word;
   overflow: hidden;
 }
@@ -182,4 +178,18 @@ main {
 }
 .swagger-ui .model-hint {
   display: none;
+}
+.swagger-ui
+  .response
+  *:not(.content-type, .dialog-ux, .prop, .prop-type, .renderedMarkdown, p) {
+  color: white;
+}
+.swagger-ui .model .star {
+  color: #cd450a !important;
+}
+.swagger-ui {
+  .title,
+  .renderedMarkdown p {
+    color: white !important;
+  }
 }
