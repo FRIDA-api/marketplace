@@ -1,5 +1,54 @@
 .api-layout {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: 10rem 1fr 5rem;
+  gap: 1rem;
+  grid-template-columns: 16rem 1fr 5rem;
+}
+
+.level-one-title {
+  font-weight: 600;
+  color: white;
+  padding: .8rem 0;
+}
+
+.level-two-header {
+  margin-left: 2.5rem;
+  padding-left: .5rem;
+} 
+
+.level-two-title {
+  color: white;
+  padding: .6rem 0;
+}
+
+.level-three-title {
+  padding: .2rem 0 .2rem 3.5rem;
+  color: gray;
+
+  &:hover {
+    color: teal;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &:last-of-type {
+    padding-bottom: .6rem;
+  }
+}
+
+
+.image {
+  width: 1rem;
+  aspect-ratio: 1/1;
+  margin-right: .5rem;
+}
+
+#swagger-ui {
+  border-left: 1px solid rgba($color: #ffffff, $alpha: .3);
+  border-right: 1px solid rgba($color: #ffffff, $alpha: .3);
+  padding: 0 1rem;
+  margin-top: 4rem;
+}
+
+.sidemenu-container {
+  padding-top: 4rem;
 }

@@ -197,3 +197,17 @@ main {
     color: white !important;
   }
 }
+
+.mat-expansion-panel {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.mat-expansion-panel-header {
+  height: initial !important;
+}
+
+.mat-expansion-indicator::after {
+  color: white !important;
+}
