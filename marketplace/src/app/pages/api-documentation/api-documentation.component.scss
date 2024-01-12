@@ -13,7 +13,7 @@
 .level-two-header {
   margin-left: 2.5rem;
   padding-left: .5rem;
-} 
+}
 
 .level-two-title {
   color: white;
@@ -51,4 +51,12 @@
 
 .sidemenu-container {
   padding-top: 4rem;
+}
+
+.select-text {
+  color: white;
+  border-left: 1px solid rgba($color: #ffffff, $alpha: .3);
+  border-right: 1px solid rgba($color: #ffffff, $alpha: .3);
+  padding: 0 1rem;
+  margin-top: 4rem;
 }

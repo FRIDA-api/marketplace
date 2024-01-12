@@ -126,7 +126,7 @@ export class ApiDocumentationComponent implements OnChanges {
   private readonly router = inject(Router);
 
   selectApi(apiUrl: string) {
-    this.router.navigateByUrl(`/apis/${apiUrl}`);
+    this.router.navigateByUrl(`/api-explorer/${apiUrl}`);
   }
 
   ngOnChanges(): void {
