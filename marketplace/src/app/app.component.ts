@@ -28,7 +28,6 @@ export class AppComponent implements OnInit {
   @ViewChild('main', { static: true }) el!: ElementRef;
 
   private readonly destroyRef = inject(DestroyRef);
-  private viewportScroller = inject(ViewportScroller);
 
   scrollPosition = 0;
 
@@ -40,9 +39,6 @@ export class AppComponent implements OnInit {
       });
   }
   backToTop() {
-    this.viewportScroller.scrollToPosition([0, 0]);
-
-    console.log(this.scrollPosition);
-    window.scrollTo(0, 0);
+    this.el.nativeElement.scrollTop = 0;
   }
 }

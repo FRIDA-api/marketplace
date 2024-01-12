@@ -40,20 +40,23 @@
 }
 
 .back-to-top {
+  all: unset;
   visibility: hidden;
   transition: all 0.25s ease-in-out;
   position: fixed;
-  bottom: 0;
-  right: 0;
+  bottom: 25px;
+  right: 25px;
   display: inline-flex;
 
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  margin: 0 21em 6em 0;
-  border-radius: 50%;
+  border-radius: 4px;
   padding: 0.25em;
-  width: 80px;
-  height: 80px;
-  background-color: #f8f8f8;
+  width: 40px;
+  height: 40px;
+  background-color: #1ab3b9;
+  &:hover {
+    background-color: #22d9e0;
+  }
 }
