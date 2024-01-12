@@ -36,5 +36,15 @@
     </mat-accordion>
   </div>
 
-  <div id="swagger-ui"></div>
+  <div>
+    @if (!apiPathParameter) {
+      <div class="select-text">
+        <h1>API Documentation</h1>
+        <p>This page shows the OpenAPI specifications of the different insurance APIs. To show one specification please select one on the left.</p>
+        <p>The side menu contains companies that implement one or more FRIDA APIs. If you want to see the recommendations from FRIDA please select specifications under FRIDA.</p>
+      </div>
+    }
+
+    <div id="swagger-ui" [ngStyle]="apiPathParameter ? {visibility: 'visible'} : {visibility: 'hidden'}"></div>
+  </div>
 </div>
