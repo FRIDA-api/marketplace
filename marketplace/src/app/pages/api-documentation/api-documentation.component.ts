@@ -1,6 +1,6 @@
 import { CommonModule, DOCUMENT, Location } from '@angular/common';
 
-import { AfterViewInit, Component, Input, OnChanges, inject } from '@angular/core';
+import {AfterViewInit, Component, Input, OnChanges, inject, SimpleChanges} from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 
@@ -33,6 +33,89 @@ export class ApiDocumentationComponent implements OnChanges {
   private document = inject(DOCUMENT);
 
   companyInformation: CompanyInformation[] = [
+    {
+      companyName: "FRIDA",
+      categories: [
+        {
+          categoryName: "Pension",
+          apis: [
+            {
+              name: "Get pension API",
+              url: "pension-api"
+            },
+            {
+              name: "Get more pension API",
+              url: "pension-api"
+            }
+          ]
+        },
+        {
+          categoryName: "Health Care",
+          apis: [
+            {
+              name: "Get health care API",
+              url: "health-care-api"
+            },
+            {
+              name: "Get more health care API",
+              url: "health-care-api"
+            }
+          ]
+        },
+        {
+          categoryName: "Car",
+          apis: [
+            {
+              name: "Get car API",
+              url: "car-claims-api"
+            },
+            {
+              name: "Get more car API",
+              url: "car-claims-api"
+            }
+          ]
+        },
+        {
+          categoryName: "Cyber",
+          apis: [
+            {
+              name: "Get cyber API",
+              url: "cyber-api"
+            },
+            {
+              name: "Get more cyber API",
+              url: "cyber-api"
+            }
+          ]
+        },
+        {
+          categoryName: "Document",
+          apis: [
+            {
+              name: "Get document API",
+              url: "document-api"
+            },
+            {
+              name: "Get more document API",
+              url: "document-api"
+            }
+          ]
+        },
+        {
+          categoryName: "Building",
+          apis: [
+            {
+              name: "Get building API",
+              url: "building-api"
+            },
+            {
+              name: "Get more building API",
+              url: "building-api"
+            }
+          ]
+        }
+      ]
+    },
     {
       companyName: "HDI",
       categories: [
