@@ -2,7 +2,7 @@
 <div class="cards-container">
   @for (api of apiList; track api) {
   <div>
-    <mat-card class="api-card" [routerLink]="['/apis', api.id]">
+    <mat-card class="api-card" [routerLink]="['/api-explorer', api.id]">
       <mat-card-header>
         <mat-card-title class="card-title">{{ api.name }}</mat-card-title>
       </mat-card-header>
