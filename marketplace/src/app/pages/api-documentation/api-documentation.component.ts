@@ -1,6 +1,18 @@
-import { CommonModule, DOCUMENT, Location } from '@angular/common';
+import {
+  CommonModule,
+  DOCUMENT,
+  Location,
+  isPlatformBrowser,
+} from '@angular/common';
 
-import { AfterViewInit, Component, Input, OnChanges, inject } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  Input,
+  OnChanges,
+  PLATFORM_ID,
+  inject,
+} from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 
@@ -25,7 +37,7 @@ type CompanyInformation = {
   imports: [CommonModule, MatExpansionModule, RouterModule],
   templateUrl: './api-documentation.component.html',
   styleUrl: './api-documentation.component.scss',
-  host: { ngSkipHydration: 'true' }
+  host: { ngSkipHydration: 'true' },
 })
 export class ApiDocumentationComponent implements OnChanges {
   //This parameter comes from the router path
@@ -34,114 +46,116 @@ export class ApiDocumentationComponent implements OnChanges {
 
   companyInformation: CompanyInformation[] = [
     {
-      companyName: "HDI",
+      companyName: 'HDI',
       categories: [
         {
-          categoryName: "Pension",
+          categoryName: 'Pension',
           apis: [
             {
-              name: "Get pension API",
-              url: ""
+              name: 'Get pension API',
+              url: '',
             },
             {
-              name: "Get more pension API",
-              url: ""
-            }
-          ]
+              name: 'Get more pension API',
+              url: '',
+            },
+          ],
         },
         {
-          categoryName: "Car",
+          categoryName: 'Car',
           apis: [
             {
-              name: "Get car API",
-              url: ""
+              name: 'Get car API',
+              url: '',
             },
             {
-              name: "Get more car API",
-              url: ""
-            }
-          ]
+              name: 'Get more car API',
+              url: '',
+            },
+          ],
         },
         {
-          categoryName: "Freedom",
+          categoryName: 'Freedom',
           apis: [
             {
-              name: "Get freedom API",
-              url: ""
+              name: 'Get freedom API',
+              url: '',
             },
             {
-              name: "Get more freedom API",
-              url: ""
-            }
-          ]
-        }
-      ]
+              name: 'Get more freedom API',
+              url: '',
+            },
+          ],
+        },
+      ],
     },
     {
-      companyName: "GetSafe",
+      companyName: 'GetSafe',
       categories: [
         {
-          categoryName: "Pension",
+          categoryName: 'Pension',
           apis: [
             {
-              name: "Get pension API",
-              url: ""
+              name: 'Get pension API',
+              url: '',
             },
             {
-              name: "Get more pension API",
-              url: ""
-            }
-          ]
+              name: 'Get more pension API',
+              url: '',
+            },
+          ],
         },
         {
-          categoryName: "Car",
+          categoryName: 'Car',
           apis: [
             {
-              name: "Get car API",
-              url: ""
+              name: 'Get car API',
+              url: '',
             },
             {
-              name: "Get more car API",
-              url: ""
-            }
-          ]
+              name: 'Get more car API',
+              url: '',
+            },
+          ],
         },
         {
-          categoryName: "Freedom",
+          categoryName: 'Freedom',
           apis: [
             {
-              name: "Get freedom API",
-              url: "car"
+              name: 'Get freedom API',
+              url: 'car',
             },
             {
-              name: "Get more freedom API",
-              url: ""
-            }
-          ]
-        }
-      ]
-    }
+              name: 'Get more freedom API',
+              url: '',
+            },
+          ],
+        },
+      ],
+    },
   ];
 
   private readonly router = inject(Router);
-
+  private readonly platformId = inject(PLATFORM_ID);
   selectApi(apiUrl: string) {
     this.router.navigateByUrl(`/apis/${apiUrl}`);
   }
 
   ngOnChanges(): void {
     console.log(this.apiPathParameter);
-    SwaggerUI({
-      url: '/assets/api/FRIDA_PensionInformation_OA3_full_en.yaml',
-      //url: '/assets/api/FRIDA_CAR_OA3_full.en.yaml',
-      domNode: this.document.getElementById('swagger-ui'),
-      deepLinking: true,
-      defaultModelsExpandDepth: 4,
-      defaultModelExpandDepth: 4,
-      syntaxHighlight: {
-        activate: true,
-        theme: 'tomorrow-night',
-      },
-    });
+    if (isPlatformBrowser(this.platformId)) {
+      SwaggerUI({
+        url: '/assets/api/FRIDA_PensionInformation_OA3_full_en.yaml',
+        //url: '/assets/api/FRIDA_CAR_OA3_full.en.yaml',
+        domNode: this.document.getElementById('swagger-ui'),
+        deepLinking: true,
+        defaultModelsExpandDepth: 4,
+        defaultModelExpandDepth: 4,
+        syntaxHighlight: {
+          activate: true,
+          theme: 'tomorrow-night',
+        },
+      });
+    }
   }
 }

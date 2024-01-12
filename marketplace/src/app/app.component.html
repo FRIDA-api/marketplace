@@ -1,14 +1,26 @@
-<div class="scrollable-container" #main>
+<div class="scrollable-container" #main id="main">
   <div class="poly-container">
     <img src="/assets/images/poly-bg-white-01.svg" class="bg-svg-1" alt="" />
     <img src="/assets/images/poly-bg-white-01.svg" class="bg-svg-2" alt="" />
   </div>
 
   <div class="main-elevated">
-    <app-header [scrollPosition]="scrollPostion"></app-header>
-
+    <app-header [scrollPosition]="scrollPosition" />
     <main>
       <router-outlet></router-outlet>
     </main>
+    <button
+      (click)="backToTop()"
+      [ngStyle]="
+        scrollPosition >= 200
+          ? { visibility: 'visible ' }
+          : { visibility: 'hidden ' }
+      "
+      class="back-to-top"
+    >
+      <span class="content">Content </span>
+    </button>
   </div>
+
+  <app-footer />
 </div>
