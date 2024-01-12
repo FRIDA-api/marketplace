@@ -7,8 +7,11 @@ import { DataModelComponent } from './pages/data-model/data-model.component';
 export const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'api-catalogue', component: HomePageComponent },
-  { path: 'api-explorer/:apiPathParameter', component: ApiDocumentationComponent },
-  { path: 'api-explorer', component: ApiDocumentationComponent },
+  { path: 'api-explorer', redirectTo: 'api-explorer/', pathMatch: 'full' },
+  {
+    path: 'api-explorer/:apiPathParameter',
+    component: ApiDocumentationComponent,
+  },
   { path: 'data-model', component: DataModelComponent },
   { path: '**', redirectTo: '' },
 ];

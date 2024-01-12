@@ -4,6 +4,7 @@ import {
   Component,
   Input,
   OnChanges,
+  OnInit,
   PLATFORM_ID,
   inject,
 } from '@angular/core';
@@ -31,11 +32,10 @@ type CompanyInformation = {
   imports: [CommonModule, MatExpansionModule, RouterModule],
   templateUrl: './api-documentation.component.html',
   styleUrl: './api-documentation.component.scss',
-  host: { ngSkipHydration: 'true' },
 })
 export class ApiDocumentationComponent implements OnChanges {
   //This parameter comes from the router path
-  @Input() apiPathParameter!: string;
+  @Input() apiPathParameter: string | undefined;
   private document = inject(DOCUMENT);
 
   companyInformation: CompanyInformation[] = [
@@ -219,7 +219,6 @@ export class ApiDocumentationComponent implements OnChanges {
   }
 
   ngOnChanges(): void {
-    console.log(this.apiPathParameter);
     if (isPlatformBrowser(this.platformId)) {
       SwaggerUI({
         url: '/assets/api/FRIDA_PensionInformation_OA3_full_en.yaml',
