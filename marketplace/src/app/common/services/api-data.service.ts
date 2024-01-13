@@ -26,9 +26,9 @@ export class ApiDataService {
     });
   }
 
-  getApiDownloads() {
+  getApiDownloads(apiName: string) {
     return this.http.get<ApiDownloadModel[]>(
-      this.basePath + 'api-download.json',
+      `${this.basePath}api-${apiName}-download.json`,
       {
         responseType: 'json',
       },

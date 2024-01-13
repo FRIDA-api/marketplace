@@ -1,0 +1,12 @@
+<a class="download-container" [href]="input?.downloadUrl" target="_blank">
+  <div class="information-container">
+    <p class="download-text">Download {{input?.name}}</p>
+    <div class="metadata-container">
+      <img class="verion-image" [src]="'./assets/icons/version-icon.png'" alt="" width="16px" height="16px">
+      <span>{{ input?.version }}</span>
+      <img class="release-image" [src]="'./assets/icons/release-icon.png'" alt="" width="16px" height="16px">
+      <span>{{ input?.releaseDate }}</span>
+    </div>
+  </div>
+  
+</a>

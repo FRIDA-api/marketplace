@@ -22,3 +22,92 @@
   }
 </div>
 }
+
+<h1 class="download-headline">Download FRIDA API Models</h1>
+<p class="download-description">If you have any questions, recommendations or bugs you want to share, please leave an GitHub Issue in the corresponding GitHub Repository linked below. In case of the need of privat consultation or general request please reach out to us via mail <a href="mailto:frida@frida.com">frida&#64;frida.com</a></p>
+
+<div class="download-container">
+  <div class="download-area">
+    <div class="top-level-download-container">
+      <img [src]="(pensionApi$ | async)?.at(0)?.iconUrl" alt="" width="48px" height="48xp">
+      
+      <div>
+        <h2>Pension API</h2>
+        <a href="https://github.com/FRIDA-api/FRIDA-car">https://github.com/FRIDA-api/FRIDA-pension</a>  
+      </div>
+     </div>
+    @for (downloadItem of pensionApi$ | async; track $index) {
+      <app-download [input]="downloadItem"></app-download>
+    }
+  </div>
+
+  <div class="download-area">
+    <div class="top-level-download-container">
+      <img [src]="(healthCareApi$ | async)?.at(0)?.iconUrl" alt="" width="48px" height="48xp">
+
+      <div>
+        <h2>Health-Care API</h2>
+        <a href="https://github.com/FRIDA-api/FRIDA-car">https://github.com/FRIDA-api/FRIDA-car</a>
+      </div>
+    </div>
+    @for (downloadItem of healthCareApi$ | async; track $index) {
+      <app-download [input]="downloadItem"></app-download>
+    }
+  </div>
+
+  <div class="download-area">
+    <div class="top-level-download-container">
+      <img [src]="(carclaimsApi$ | async)?.at(0)?.iconUrl" alt="" width="48px" height="48xp">
+
+      <div>
+        <h2>Car-Claims API</h2>
+        <a href="https://github.com/FRIDA-api/FRIDA-car">https://github.com/FRIDA-api/FRIDA-car</a>
+      </div>
+    </div>
+    @for (downloadItem of carclaimsApi$ | async; track $index) {
+      <app-download [input]="downloadItem"></app-download>
+    }
+  </div>
+
+  <div class="download-area">
+    <div class="top-level-download-container">
+      <img [src]="(cyberApi$ | async)?.at(0)?.iconUrl" alt="" width="48px" height="48xp">
+
+      <div>
+        <h2>Cyber API</h2>
+        <a href="https://github.com/FRIDA-api/FRIDA-car">https://github.com/FRIDA-api/FRIDA-car</a>
+      </div>
+    </div>
+    @for (downloadItem of cyberApi$ | async; track $index) {
+      <app-download [input]="downloadItem"></app-download>
+      }
+  </div>
+
+  <div class="download-area">
+    <div class="top-level-download-container">
+      <img [src]="(documentApi$ | async)?.at(0)?.iconUrl" alt="" width="48px" height="48xp">
+
+      <div>
+        <h2>Document API</h2>
+        <a href="https://github.com/FRIDA-api/FRIDA-car">https://github.com/FRIDA-api/FRIDA-car</a>
+      </div>
+    </div>
+    @for (downloadItem of documentApi$ | async; track $index) {
+      <app-download [input]="downloadItem"></app-download>
+    }
+  </div>
+
+  <div class="download-area">
+    <div class="top-level-download-container">
+      <img [src]="(buildingApi$ | async)?.at(0)?.iconUrl" alt="" width="48px" height="48xp">
+
+      <div>
+        <h2>Building API</h2>
+        <a href="https://github.com/FRIDA-api/FRIDA-car">https://github.com/FRIDA-api/FRIDA-car</a>
+      </div>
+    </div>
+    @for (downloadItem of buildingApi$ | async; track $index) {
+      <app-download [input]="downloadItem"></app-download>
+    }
+  </div>
+</div>
