@@ -36,7 +36,7 @@
     </mat-accordion>
   </div>
 
-  <div>
+  <div class="content">
     @if (!apiPathParameter) {
     <div class="select-text">
       <h1>API Documentation</h1>
@@ -54,9 +54,7 @@
 
     <div
       id="swagger-ui"
-      [ngStyle]="
-        apiPathParameter ? { visibility: 'visible' } : { visibility: 'hidden' }
-      "
+      [ngStyle]="apiPathParameter ? { display: 'block' } : { display: 'none' }"
     ></div>
   </div>
 </div>

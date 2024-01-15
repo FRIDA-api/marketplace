@@ -35,12 +35,17 @@
 
 .main-elevated {
   position: relative;
-  min-height: calc(100% - 101px);
+  display: flex;
+  flex-direction: column;
   z-index: 99;
 }
-
+main {
+  flex-grow: 1;
+  padding-bottom: 5rem;
+}
 .back-to-top {
   all: unset;
+
   visibility: hidden;
   transition: all 0.25s ease-in-out;
   position: fixed;
@@ -55,6 +60,7 @@
   padding: 0.25em;
   width: 40px;
   height: 40px;
+  z-index: 1000;
   background-color: #1ab3b9;
   &:hover {
     background-color: #22d9e0;
