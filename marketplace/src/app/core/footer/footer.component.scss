@@ -3,9 +3,13 @@
   height: 100px;
 
   width: 100%;
-
+  position: relative;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 500;
+}
+.copyright {
+  color: #ffffff54;
+  font-size: 14px;
 }
