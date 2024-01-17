@@ -35,5 +35,32 @@
 
 .main-elevated {
   position: relative;
+  min-height: calc(100% - 101px);
   z-index: 99;
+}
+main {
+  padding-bottom: 5rem;
+}
+.back-to-top {
+  all: unset;
+
+  visibility: hidden;
+  transition: all 0.25s ease-in-out;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: inline-flex;
+
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 0.25em;
+  width: 40px;
+  height: 40px;
+  z-index: 1000;
+  background-color: #1ab3b9;
+  &:hover {
+    background-color: #22d9e0;
+  }
 }

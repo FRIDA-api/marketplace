@@ -1,33 +1,60 @@
 <div class="api-layout">
   <div class="sidemenu-container">
     <mat-accordion>
-    @for (company of companyInformation; track company) {
+      @for (company of companyInformation; track company) {
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title class="level-one-title">
-            <img src="/assets/icons/car-claims-api.png" alt="" class="image">
-            {{ company.companyName }}</mat-panel-title>
+            <img
+              src="/assets/icons/slobo.jpeg"
+              alt=""
+              width="16px"
+              height="16px"
+              class="image"
+            />
+            {{ company.companyName }}</mat-panel-title
+          >
         </mat-expansion-panel-header>
 
         @for(category of company.categories; track category) {
         <mat-expansion-panel>
           <mat-expansion-panel-header class="level-two-header">
-            <mat-panel-title class="level-two-title"> {{ category.categoryName }}</mat-panel-title>
+            <mat-panel-title class="level-two-title">
+              {{ category.categoryName }}</mat-panel-title
+            >
           </mat-expansion-panel-header>
-          
+
           @for(api of category.apis; track api) {
-          <div (click)="selectApi(api.url)" class="level-three-title">{{ api.name }}</div>
+          <div (click)="selectApi(api.url)" class="level-three-title">
+            {{ api.name }}
+          </div>
           }
-        
         </mat-expansion-panel>
         }
-
       </mat-expansion-panel>
-    }
-
+      }
     </mat-accordion>
   </div>
 
-  <div id="swagger-ui"></div>
+  <div class="content">
+    @if (!apiPathParameter) {
+    <div class="select-text">
+      <h1>API Documentation</h1>
+      <p>
+        This page shows the OpenAPI specifications of the different insurance
+        APIs. To show one specification please select one on the left.
+      </p>
+      <p>
+        The side menu contains companies that implement one or more FRIDA APIs.
+        If you want to see the recommendations from FRIDA please select
+        specifications under FRIDA.
+      </p>
+    </div>
+    }
 
+    <div
+      id="swagger-ui"
+      [ngStyle]="apiPathParameter ? { display: 'block' } : { display: 'none' }"
+    ></div>
+  </div>
 </div>

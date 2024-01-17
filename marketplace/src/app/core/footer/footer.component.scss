@@ -1,0 +1,15 @@
+.footer {
+  border-top: 1px solid rgba($color: #ffffff, $alpha: 0.3);
+  height: 100px;
+
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.copyright {
+  color: #ffffff54;
+  font-size: 14px;
+}
