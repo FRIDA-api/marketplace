@@ -35,12 +35,10 @@
 
 .main-elevated {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  min-height: calc(100% - 101px);
   z-index: 99;
 }
 main {
-  flex-grow: 1;
   padding-bottom: 5rem;
 }
 .back-to-top {
