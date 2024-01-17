@@ -24,16 +24,16 @@
 }
 
 <h1 class="download-headline">Download FRIDA API Models</h1>
-<p class="download-description">If you have any questions, recommendations or bugs you want to share, please leave an GitHub Issue in the corresponding GitHub Repository linked below. In case of the need of privat consultation or general request please reach out to us via mail <a href="mailto:frida@frida.com">frida&#64;frida.com</a></p>
+<p class="download-description">If you have any questions, recommendations or bugs you want to share, please leave a GitHub Issue in the corresponding GitHub Repository linked below. In case you need private consultation or have a general request please reach out to us via mail <a href="mailto:frida@frida.com">frida&#64;frida.com</a></p>
 
 <div class="download-container">
   <div class="download-area">
     <div class="top-level-download-container">
       <img [src]="(pensionApi$ | async)?.at(0)?.iconUrl" alt="" width="48px" height="48xp">
-      
+
       <div>
         <h2>Pension API</h2>
-        <a href="https://github.com/FRIDA-api/FRIDA-car">https://github.com/FRIDA-api/FRIDA-pension</a>  
+        <a href="https://github.com/FRIDA-api/FRIDA-car">https://github.com/FRIDA-api/FRIDA-pension</a>
       </div>
      </div>
     @for (downloadItem of pensionApi$ | async; track $index) {
