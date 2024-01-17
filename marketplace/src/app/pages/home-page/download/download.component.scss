@@ -1,0 +1,32 @@
+.download-container {
+  display: flex;
+  align-content: flex-start;
+  color: black;
+  text-decoration: none;
+
+  padding: .25rem .5rem;
+  margin-bottom: 1rem;
+
+  &:hover {
+    background-color: rgba($color: #ffffff, $alpha: 0.3);
+  }
+}
+
+.information-container {
+  color: white;
+
+  p {
+    margin: 0;
+    padding: 0;
+    padding-bottom: .3em;
+  }
+}
+
+.download-image, .verion-image, .release-image {
+  padding-right: .5rem;
+  opacity: 0.3;
+}
+
+.release-image {
+  padding-left: 1rem;
+}

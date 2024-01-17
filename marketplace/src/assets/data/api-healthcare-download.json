@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Health-Care API",
+    "version": "1.1.0",
+    "releaseDate": "27.02.2023",
+    "downloadUrl": "./assets/data/api-download.json",
+    "iconUrl": "./assets/icons/health-care-api.png"
+  },
+  {
+    "name": "Health-Care API",
+    "version": "1.0.0",
+    "releaseDate": "27.02.2022",
+    "downloadUrl": "./assets/data/api-download.json",
+    "iconUrl": "./assets/icons/health-care-api.png"
+  },
+  {
+    "name": "Health-Care API",
+    "version": "0.1.0-beta",
+    "releaseDate": "27.02.2021",
+    "downloadUrl": "./assets/data/api-download.json",
+    "iconUrl": "./assets/icons/health-care-api.png"
+  },
+  {
+    "name": "Health-Care API",
+    "version": "0.0.1-alpha",
+    "releaseDate": "27.02.2020",
+    "downloadUrl": "./assets/data/api-download.json",
+    "iconUrl": "./assets/icons/health-care-api.png"
+  }
+]
