@@ -27,12 +27,12 @@
     "id": "document-api",
     "name": "Document API",
     "shortDescription": "Choose the Mailbox of your choices for receiving our insurance related Documents",
-    "iconPath": "./assets/icons/cyber-api.png"
+    "iconPath": "./assets/icons/document-api.png"
   },
   {
     "id": "building-api",
     "name": "Building API",
     "shortDescription": "Get all insurance relevant Data for your Building and add them with Data from external sources",
-    "iconPath": "./assets/icons/cyber-api.png"
+    "iconPath": "./assets/icons/building-api.png"
   }
 ]
