@@ -23,6 +23,7 @@ type Category = {
 };
 type CompanyInformation = {
   companyName: string;
+  pathToIcon: string;
   categories: Category[];
 };
 
@@ -41,6 +42,7 @@ export class ApiDocumentationComponent implements OnChanges {
   companyInformation: CompanyInformation[] = [
     {
       companyName: 'FRIDA',
+      pathToIcon: './assets/icons/favicon_300x300.png',
       categories: [
         {
           categoryName: 'Pension',
@@ -124,6 +126,7 @@ export class ApiDocumentationComponent implements OnChanges {
     },
     {
       companyName: 'HDI',
+      pathToIcon: './assets/icons/hdi-logo.png',
       categories: [
         {
           categoryName: 'Pension',
@@ -168,6 +171,7 @@ export class ApiDocumentationComponent implements OnChanges {
     },
     {
       companyName: 'GetSafe',
+      pathToIcon: './assets/icons/getsage-logo.png',
       categories: [
         {
           categoryName: 'Pension',
