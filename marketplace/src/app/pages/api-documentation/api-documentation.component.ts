@@ -31,6 +31,7 @@ export class ApiDocumentationComponent implements OnChanges {
   private readonly platformId = inject(PLATFORM_ID);
   private readonly dataService = inject(ApiDataService);
 
+  noApiFound: boolean = false;
   companyInformation: Observable<CompanyInformation[]> = this.dataService.getApiDocumentation();
   
   selectApi(apiUrl: string) {
@@ -38,10 +39,23 @@ export class ApiDocumentationComponent implements OnChanges {
   }
 
   ngOnChanges(): void {
-    if (isPlatformBrowser(this.platformId)) {
+    if (!isPlatformBrowser(this.platformId)) {
+      console.log("Not supported for ssr renderd files");
+      return;
+    }
+
+    this.companyInformation.subscribe(data => {
+      const dataUrl = this.findMatchingApi(data);
+      if (dataUrl === "") {
+        this.noApiFound = true;
+        return;
+      }
+
+      this.noApiFound = false;
       SwaggerUI({
-        url: '/assets/api/FRIDA_PensionInformation_OA3_full_en.yaml',
-        //url: '/assets/api/FRIDA_CAR_OA3_full.en.yaml',
+        url: dataUrl,
+        // url: '/assets/api/FRIDA_PensionInformation_OA3_full_en.yaml',
+        // url: '/assets/api/FRIDA_CAR_OA3_full.en.yaml',
         domNode: this.document.getElementById('swagger-ui'),
         deepLinking: true,
         defaultModelsExpandDepth: 4,
@@ -51,6 +65,20 @@ export class ApiDocumentationComponent implements OnChanges {
           theme: 'tomorrow-night',
         },
       });
+    })
+
+  }
+
+  private findMatchingApi(companyInformation: CompanyInformation[]) {
+    for (const company of companyInformation) {
+      for (const categorie of company.categories) {
+        for (const api of categorie.apis) {
+          if (api.url === this.apiPathParameter) {
+            return api.dataUrl;
+          }
+        }
+      }
     }
+    return "";
   }
 }

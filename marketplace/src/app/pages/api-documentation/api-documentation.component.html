@@ -37,7 +37,7 @@
   </div>
 
   <div class="content">
-    @if (!apiPathParameter) {
+    @if (!apiPathParameter || noApiFound) {
     <div class="select-text">
       <h1>API Documentation</h1>
       <p>

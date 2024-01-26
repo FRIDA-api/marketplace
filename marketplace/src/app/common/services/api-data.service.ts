@@ -6,6 +6,7 @@ import { ApiDownloadModel } from '@common/models/api-download.model';
 export type Api = {
   name: string;
   url: string;
+  dataUrl: string;
 };
 
 export type Category = {

@@ -8,11 +8,13 @@
         "apis": [
           {
             "name": "Get pension API",
-            "url": "pension-api"
+            "url": "pension-api",
+            "dataUrl": "/assets/api/FRIDA_PensionInformation_OA3_full_en.yaml"
           },
           {
-            "name": "Get more pension API",
-            "url": "pension-api"
+            "name": "Coming Soon",
+            "url": "pension-api",
+            "dataUrl": ""
           }
         ]
       },
@@ -20,12 +22,9 @@
         "categoryName": "Health Care",
         "apis": [
           {
-            "name": "Get health care API",
-            "url": "health-care-api"
-          },
-          {
-            "name": "Get more health care API",
-            "url": "health-care-api"
+            "name": "Coming Soon",
+            "url": "health-care-api",
+            "dataUrl": ""
           }
         ]
       },
@@ -33,12 +32,14 @@
         "categoryName": "Car",
         "apis": [
           {
-            "name": "Get car API",
-            "url": "car-claims-api"
+            "name": "Get car claims API",
+            "url": "car-claims-api",
+            "dataUrl": "/assets/api/FRIDA_CAR_OA3_full.en.yaml"
           },
           {
-            "name": "Get more car API",
-            "url": "car-claims-api"
+            "name": "Coming soon",
+            "url": "car-claims-api",
+            "dataUrl": ""
           }
         ]
       },
@@ -46,12 +47,9 @@
         "categoryName": "Cyber",
         "apis": [
           {
-            "name": "Get cyber API",
-            "url": "cyber-api"
-          },
-          {
-            "name": "Get more cyber API",
-            "url": "cyber-api"
+            "name": "Coming soon",
+            "url": "cyber-api",
+            "dataUrl": ""
           }
         ]
       },
@@ -59,12 +57,9 @@
         "categoryName": "Document",
         "apis": [
           {
-            "name": "Get document API",
-            "url": "document-api"
-          },
-          {
-            "name": "Get more document API",
-            "url": "document-api"
+            "name": "Coming soon",
+            "url": "document-api",
+            "dataUrl": ""
           }
         ]
       },
@@ -72,12 +67,9 @@
         "categoryName": "Building",
         "apis": [
           {
-            "name": "Get building API",
-            "url": "building-api"
-          },
-          {
-            "name": "Get more building API",
-            "url": "building-api"
+            "name": "Coming soon",
+            "url": "building-api",
+            "dataUrl": ""
           }
         ]
       }
@@ -88,43 +80,8 @@
     "pathToIcon": "./assets/icons/hdi-logo.png",
     "categories": [
       {
-        "categoryName": "Pension",
-        "apis": [
-          {
-            "name": "Get pension API",
-            "url": ""
-          },
-          {
-            "name": "Get more pension API",
-            "url": ""
-          }
-        ]
-      },
-      {
-        "categoryName": "Car",
-        "apis": [
-          {
-            "name": "Get car API",
-            "url": ""
-          },
-          {
-            "name": "Get more car API",
-            "url": ""
-          }
-        ]
-      },
-      {
-        "categoryName": "Freedom",
-        "apis": [
-          {
-            "name": "Get freedom API",
-            "url": ""
-          },
-          {
-            "name": "Get more freedom API",
-            "url": ""
-          }
-        ]
+        "name": "Coming soon",
+        "apis": []
       }
     ]
   },
@@ -133,43 +90,8 @@
     "pathToIcon": "./assets/icons/getsage-logo.png",
     "categories": [
       {
-        "categoryName": "Pension",
-        "apis": [
-          {
-            "name": "Get pension API",
-            "url": ""
-          },
-          {
-            "name": "Get more pension API",
-            "url": ""
-          }
-        ]
-      },
-      {
-        "categoryName": "Car",
-        "apis": [
-          {
-            "name": "Get car API",
-            "url": ""
-          },
-          {
-            "name": "Get more car API",
-            "url": ""
-          }
-        ]
-      },
-      {
-        "categoryName": "Freedom",
-        "apis": [
-          {
-            "name": "Get freedom API",
-            "url": "car"
-          },
-          {
-            "name": "Get more freedom API",
-            "url": ""
-          }
-        ]
+        "name": "Coming soon",
+        "apis": []
       }
     ]
   }
