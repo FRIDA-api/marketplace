@@ -1,4 +1,4 @@
-# EXCLAIMER
+# DISCLAIMER
 This is the development branch for the final submission for the lecture "moderne webframeworks" lead by Christian Gawron on the south westphalia university of applied siences. Other branches may contain a more up-to-data version of the project.
 
 # Description of the project
