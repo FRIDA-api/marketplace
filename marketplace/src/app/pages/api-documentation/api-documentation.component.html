@@ -50,11 +50,10 @@
         specifications under FRIDA.
       </p>
     </div>
-    } @else {
-      <div
-      id="swagger-ui"
-      [ngStyle]="apiPathParameter ? { display: 'block' } : { display: 'none' }"
-    ></div>
     }
+    <div
+      id="swagger-ui"
+      [ngStyle]="apiPathParameter && !noApiFound ? { display: 'block' } : { display: 'none' }"
+    ></div>
   </div>
 </div>
