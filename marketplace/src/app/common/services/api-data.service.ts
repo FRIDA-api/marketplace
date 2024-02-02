@@ -31,7 +31,7 @@ export class ApiDataService {
 
   private basePath = 'assets/data/';
 
-  getApiDocumentation() {
+  getApiDocumentation(): Observable<CompanyInformation[]> {
     return this.http.get<CompanyInformation[]>(this.basePath + 'api-documentation.json', {
       responseType: 'json',
     });

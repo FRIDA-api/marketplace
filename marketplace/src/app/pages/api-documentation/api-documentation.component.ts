@@ -32,7 +32,7 @@ export class ApiDocumentationComponent implements OnChanges {
   private readonly dataService = inject(ApiDataService);
 
   noApiFound: boolean = false;
-  companyInformation: Observable<CompanyInformation[]> = this.dataService.getApiDocumentation();
+  companyInformation$: Observable<CompanyInformation[]> = this.dataService.getApiDocumentation();
   
   selectApi(apiUrl: string) {
     this.router.navigateByUrl(`/api-explorer/${apiUrl}`);
@@ -44,7 +44,7 @@ export class ApiDocumentationComponent implements OnChanges {
       return;
     }
 
-    this.companyInformation.subscribe(data => {
+    this.companyInformation$.subscribe(data => {
       const dataUrl = this.findMatchingApi(data);
       if (dataUrl === "") {
         this.noApiFound = true;
