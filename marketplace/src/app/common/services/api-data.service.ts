@@ -3,6 +3,23 @@ import { Injectable, inject } from '@angular/core';
 import { MonoTypeOperatorFunction, Observable } from 'rxjs';
 import { ApiDownloadModel } from '@common/models/api-download.model';
 
+export type Api = {
+  name: string;
+  url: string;
+  dataUrl: string;
+};
+
+export type Category = {
+  categoryName: string;
+  apis: Api[];
+};
+
+export type CompanyInformation = {
+  companyName: string;
+  pathToIcon: string;
+  categories: Category[];
+};
+
 @Injectable({
   providedIn: 'root',
 })
@@ -14,8 +31,8 @@ export class ApiDataService {
 
   private basePath = 'assets/data/';
 
-  getApiMatrixData(): Observable<any> {
-    return this.http.get(this.basePath + 'api-matrix.json', {
+  getApiDocumentation(): Observable<CompanyInformation[]> {
+    return this.http.get<CompanyInformation[]>(this.basePath + 'api-documentation.json', {
       responseType: 'json',
     });
   }

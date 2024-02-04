@@ -1,30 +1,9 @@
 [
   {
     "name": "Car-Claims API",
-    "version": "1.1.0",
-    "releaseDate": "27.02.2023",
-    "downloadUrl": "./assets/data/api-download.json",
-    "iconUrl": "./assets/icons/car-claims-api.png"
-  },
-  {
-    "name": "Car-Claims API",
     "version": "1.0.0",
-    "releaseDate": "27.02.2022",
-    "downloadUrl": "./assets/data/api-download.json",
-    "iconUrl": "./assets/icons/car-claims-api.png"
-  },
-  {
-    "name": "Car-Claims API",
-    "version": "0.1.0-beta",
-    "releaseDate": "27.02.2021",
-    "downloadUrl": "./assets/data/api-download.json",
-    "iconUrl": "./assets/icons/car-claims-api.png"
-  },
-  {
-    "name": "Car-Claims API",
-    "version": "0.0.1-alpha",
-    "releaseDate": "27.02.2020",
-    "downloadUrl": "./assets/data/api-download.json",
+    "releaseDate": "26.01.2024",
+    "downloadUrl": "https://github.com/FRIDA-api/FRIDA-car/releases/download/1.0.0/car.yaml",
     "iconUrl": "./assets/icons/car-claims-api.png"
   }
 ]

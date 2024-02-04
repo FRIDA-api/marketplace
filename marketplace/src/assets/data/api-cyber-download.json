@@ -1,23 +1,9 @@
 [
   {
-    "name": "Cyber API",
-    "version": "1.0.0",
-    "releaseDate": "27.02.2022",
-    "downloadUrl": "./assets/data/api-download.json",
-    "iconUrl": "./assets/icons/cyber-api.png"
-  },
-  {
-    "name": "Cyber API",
-    "version": "0.1.0-beta",
-    "releaseDate": "27.02.2021",
-    "downloadUrl": "./assets/data/api-download.json",
-    "iconUrl": "./assets/icons/cyber-api.png"
-  },
-  {
-    "name": "Cyber API",
-    "version": "0.0.1-alpha",
-    "releaseDate": "27.02.2020",
-    "downloadUrl": "./assets/data/api-download.json",
+    "name": "",
+    "version": "0.0.0",
+    "releaseDate": "Coming Soon",
+    "downloadUrl": "",
     "iconUrl": "./assets/icons/cyber-api.png"
   }
 ]

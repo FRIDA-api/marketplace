@@ -1,12 +1,12 @@
 <div class="api-layout">
   <div class="sidemenu-container">
     <mat-accordion>
-      @for (company of companyInformation; track company) {
+      @for (company of companyInformation$ | async; track company) {
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title class="level-one-title">
             <img
-              src="/assets/icons/slobo.jpeg"
+              src="{{ company.pathToIcon }}"
               alt=""
               width="16px"
               height="16px"
@@ -37,7 +37,7 @@
   </div>
 
   <div class="content">
-    @if (!apiPathParameter) {
+    @if (!apiPathParameter || noApiFound) {
     <div class="select-text">
       <h1>API Documentation</h1>
       <p>
@@ -51,10 +51,9 @@
       </p>
     </div>
     }
-
     <div
       id="swagger-ui"
-      [ngStyle]="apiPathParameter ? { display: 'block' } : { display: 'none' }"
+      [ngStyle]="apiPathParameter && !noApiFound ? { display: 'block' } : { display: 'none' }"
     ></div>
   </div>
 </div>

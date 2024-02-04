@@ -1,30 +1,16 @@
 [
   {
     "name": "Pension API",
-    "version": "1.1.0",
-    "releaseDate": "27.02.2023",
-    "downloadUrl": "./assets/data/api-download.json",
+    "version": "0.0.2",
+    "releaseDate": "26.01.2024",
+    "downloadUrl": "https://github.com/FRIDA-api/FRIDA-pension/releases/download/0.0.2/pension.yaml",
     "iconUrl": "./assets/icons/pension-api.png"
   },
   {
     "name": "Pension API",
-    "version": "1.0.0",
-    "releaseDate": "27.02.2022",
-    "downloadUrl": "./assets/data/api-download.json",
-    "iconUrl": "./assets/icons/pension-api.png"
-  },
-  {
-    "name": "Pension API",
-    "version": "0.1.0-beta",
-    "releaseDate": "27.02.2021",
-    "downloadUrl": "./assets/data/api-download.json",
-    "iconUrl": "./assets/icons/pension-api.png"
-  },
-  {
-    "name": "Pension API",
-    "version": "0.0.1-alpha",
-    "releaseDate": "27.02.2020",
-    "downloadUrl": "./assets/data/api-download.json",
+    "version": "0.0.1",
+    "releaseDate": "11.01.2024",
+    "downloadUrl": "https://github.com/FRIDA-api/FRIDA-pension/releases/download/0.0.1/FRIDA_PensionInformation_OA3_full_en.yaml",
     "iconUrl": "./assets/icons/pension-api.png"
   }
 ]

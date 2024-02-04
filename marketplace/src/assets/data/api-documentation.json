@@ -1,0 +1,98 @@
+[
+  {
+    "companyName": "FRIDA",
+    "pathToIcon": "./assets/icons/favicon_300x300.png",
+    "categories": [
+      {
+        "categoryName": "Pension",
+        "apis": [
+          {
+            "name": "Get pension API",
+            "url": "pension-api",
+            "dataUrl": "/assets/api/FRIDA_PensionInformation_OA3_full_en.yaml"
+          },
+          {
+            "name": "Coming Soon",
+            "url": "pension-api",
+            "dataUrl": ""
+          }
+        ]
+      },
+      {
+        "categoryName": "Health Care",
+        "apis": [
+          {
+            "name": "Coming Soon",
+            "url": "health-care-api",
+            "dataUrl": ""
+          }
+        ]
+      },
+      {
+        "categoryName": "Car",
+        "apis": [
+          {
+            "name": "Get car claims API",
+            "url": "car-claims-api",
+            "dataUrl": "/assets/api/FRIDA_CAR_OA3_full.en.yaml"
+          },
+          {
+            "name": "Coming soon",
+            "url": "car-claims-api",
+            "dataUrl": ""
+          }
+        ]
+      },
+      {
+        "categoryName": "Cyber",
+        "apis": [
+          {
+            "name": "Coming soon",
+            "url": "cyber-api",
+            "dataUrl": ""
+          }
+        ]
+      },
+      {
+        "categoryName": "Document",
+        "apis": [
+          {
+            "name": "Coming soon",
+            "url": "document-api",
+            "dataUrl": ""
+          }
+        ]
+      },
+      {
+        "categoryName": "Building",
+        "apis": [
+          {
+            "name": "Coming soon",
+            "url": "building-api",
+            "dataUrl": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "companyName": "HDI",
+    "pathToIcon": "./assets/icons/hdi-logo.png",
+    "categories": [
+      {
+        "name": "Coming soon",
+        "apis": []
+      }
+    ]
+  },
+  {
+    "companyName": "GetSafe",
+    "pathToIcon": "./assets/icons/getsage-logo.png",
+    "categories": [
+      {
+        "name": "Coming soon",
+        "apis": []
+      }
+    ]
+  }
+]
