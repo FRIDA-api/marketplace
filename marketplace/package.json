@@ -9,7 +9,8 @@
     "test": "ng test",
     "serve:ssr:marketplace": "node dist/marketplace/server/server.mjs",
     "e2e:test": "npx playwright test",
-    "e2e:report": "npx playwright show-report"
+    "e2e:report": "npx playwright show-report",
+    "e2e:test:ci": "start-server-and-test start http://localhost:4200 e2e:test"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +28,7 @@
     "@angular/ssr": "^17.0.7",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
+    "start-server-and-test": "^2.0.3",
     "swagger-ui": "^5.10.5",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
