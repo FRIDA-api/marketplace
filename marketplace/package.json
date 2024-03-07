@@ -7,7 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:marketplace": "node dist/marketplace/server/server.mjs"
+    "serve:ssr:marketplace": "node dist/marketplace/server/server.mjs",
+    "e2e:test": "npx playwright test",
+    "e2e:report": "npx playwright show-report"
   },
   "private": true,
   "dependencies": {
@@ -33,6 +35,7 @@
     "@angular-devkit/build-angular": "^17.0.7",
     "@angular/cli": "^17.0.7",
     "@angular/compiler-cli": "^17.0.0",
+    "@playwright/test": "^1.41.2",
     "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",

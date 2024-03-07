@@ -22,10 +22,10 @@ import SwaggerUI from 'swagger-ui';
   styleUrl: './api-documentation.component.scss',
 })
 export class ApiDocumentationComponent implements OnChanges {
-  
+
   //This parameter comes from the router path
   @Input() apiPathParameter: string | undefined;
-  
+
   private document = inject(DOCUMENT);
   private readonly router = inject(Router);
   private readonly platformId = inject(PLATFORM_ID);
@@ -33,7 +33,7 @@ export class ApiDocumentationComponent implements OnChanges {
 
   noApiFound: boolean = false;
   companyInformation$: Observable<CompanyInformation[]> = this.dataService.getApiDocumentation();
-  
+
   selectApi(apiUrl: string) {
     this.router.navigateByUrl(`/api-explorer/${apiUrl}`);
   }
@@ -45,7 +45,7 @@ export class ApiDocumentationComponent implements OnChanges {
     }
 
     this.companyInformation$.subscribe(data => {
-      const dataUrl = this.findMatchingApi(data);
+      const dataUrl = this.findMatchingApi(data, this.apiPathParameter);
       if (dataUrl === "") {
         this.noApiFound = true;
         return;
@@ -67,11 +67,11 @@ export class ApiDocumentationComponent implements OnChanges {
 
   }
 
-  private findMatchingApi(companyInformation: CompanyInformation[]) {
+  public findMatchingApi(companyInformation: CompanyInformation[], apiPathParameter?: string) {
     for (const company of companyInformation) {
-      for (const categorie of company.categories) {
-        for (const api of categorie.apis) {
-          if (api.url === this.apiPathParameter) {
+      for (const category of company.categories) {
+        for (const api of category.apis) {
+          if (api.url === apiPathParameter) {
             return api.dataUrl;
           }
         }
