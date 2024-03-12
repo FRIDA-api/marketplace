@@ -1,7 +1,9 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable, inject } from '@angular/core';
-import { MonoTypeOperatorFunction, Observable } from 'rxjs';
-import { ApiDownloadModel } from '@common/models/api-download.model';
+import {HttpClient} from '@angular/common/http';
+import {Injectable, inject} from '@angular/core';
+import {MonoTypeOperatorFunction, Observable} from 'rxjs';
+import {ApiDownloadModel} from '@common/models/api-download.model';
+import {environment} from "../../../environments/environment";
+import {ReleaseModel} from "@common/models/release.model";
 
 export type Api = {
   name: string;
@@ -27,6 +29,7 @@ export class ApiDataService {
   pipe(arg0: MonoTypeOperatorFunction<unknown>) {
     throw new Error('Method not implemented.');
   }
+
   private http = inject(HttpClient);
 
   private basePath = 'assets/data/';
@@ -51,4 +54,14 @@ export class ApiDataService {
       },
     );
   }
+
+  getReleases(githubRepositoryName: string): Observable<ReleaseModel[]> {
+    return this.http.get<ReleaseModel[]>(`${environment.backendUrl}/releases/FRIDA-api/${githubRepositoryName}`, {responseType: 'json'})
+  }
+
+  // TODO: handle application/octet-stream, maybe this isn't the right content type?
+  getAsset(githubRepositoryName: string, assetId: number): Observable<any> {
+    return this.http.get<ReleaseModel[]>(`${environment.backendUrl}/releases/FRIDA-api/${githubRepositoryName}/assets/${assetId}`)
+  }
+
 }
