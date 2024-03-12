@@ -1,3 +1,3 @@
 export const environment = {
-  backendUrl: ''
+  backendUrl: 'http://localhost:8080'
 };
