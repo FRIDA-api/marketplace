@@ -1,38 +1,96 @@
 [
   {
     "id": "pension-api",
-    "name": "Pension API",
-    "shortDescription": "The FRIDA use case focuses on the provision of data for transparency in retirement provision, e.g. using a pension cockpit",
-    "iconPath": "./assets/icons/pension-api.png"
-  },
-  {
-    "id": "health-care-api",
-    "name": "Health-Care API",
-    "shortDescription": "The FRIDA use case focuses on use cases in the healthcare sector, e.g. integrated contract and benefit management",
-    "iconPath": "./assets/icons/health-care-api.png"
+    "nameDE": "PensionAPI",
+    "nameEN": "PensionAPI",
+    "descriptionDE": "Bereitstellung von Daten zur Transparenz in der Altersvorsorge z.B. mithilfe eines Rentencockpits.",
+    "descriptionEN": "Provision of data for transparency in pension provision, e.g. with the help of a pension cockpit.",
+    "iconPath": "./assets/icons/pension-api.png",
+    "tags": [
+      "pension"
+    ]
   },
   {
     "id": "car-claims-api",
-    "name": "Car-Claims API",
-    "shortDescription": "The FRIDA use case focuses on the exchange of insurance data in the event of a claim, e.g. via wallet",
-    "iconPath": "./assets/icons/car-claims-api.png"
+    "nameDE": "Car-ClaimsAPI",
+    "nameEN": "Car-ClaimsAPI",
+    "descriptionDE": "Einheitliche Darstellung von Kfz- Versicherungsdaten (z.B. in einem digitalen Wallet), die im Schadenfall ausgetauscht und versendet werden können.",
+    "descriptionEN": "Standardized presentation of vehicle insurance data (e.g. in a digital wallet) that can be exchanged and sent in the event of a claim.",
+    "iconPath": "./assets/icons/car-claims-api.png",
+    "tags": [
+      "car",
+      "claims",
+      "assistance",
+      "payment",
+      "mobile",
+      "industrial-lines"
+    ]
+  },
+  {
+    "id": "real-estate-api",
+    "nameDE": "RealEstateAPI (Policy)",
+    "nameEN": "RealEstateAPI (Policy)",
+    "descriptionDE": "Austausch von Daten rund um die Gebäudeversicherung, damit diese bei bspw. Vergabe von Modernisierungsdarlehen verwendet werden können.",
+    "descriptionEN": "Exchange of data relating to building insurance so that this can be used, for example, when granting modernization loans.",
+    "iconPath": "./assets/icons/real-estate-api.png",
+    "tags": [
+      "property-casualty",
+      "assistance",
+      "payment",
+      "risk-management",
+      "industrial-lines"
+    ]
+  },
+  {
+    "id": "health-care-api",
+    "nameDE": "Health-CareAPI",
+    "nameEN": "Health-CareAPI",
+    "descriptionDE": "Anwendungsfälle im Gesundheitsbereich, z.B. um das integrierte Vertrags- und Leistungsmanagement.",
+    "descriptionEN": "Use cases in the healthcare sector, e.g. integrated contract and service management.",
+    "iconPath": "./assets/icons/health-care-api.png",
+    "tags": [
+      "health",
+      "assistance",
+      "mobile"
+    ]
+  },
+  {
+    "id": "digital-documents-api",
+    "nameDE": "DigitalDocumentsAPI",
+    "nameEN": "DigitalDocumentsAPI",
+    "descriptionDE": "Austausch von Dokumenten, um z.B. den Überblick über die eigene Versicherungspost zu erhalten.",
+    "descriptionEN": "Exchange of documents, e.g. to maintain an overview of your own insurance mail.",
+    "iconPath": "./assets/icons/digital-documents-api.png",
+    "tags": [
+      "documents",
+      "industrial-lines"
+    ]
   },
   {
     "id": "cyber-api",
-    "name": "Cyber API",
-    "shortDescription": "The FRIDA use case focuses on use cases in the context of cyber insurance, e.g. the standardization of key risk indicators and data exchange between third-party providers and insurers",
-    "iconPath": "./assets/icons/cyber-api.png"
+    "nameDE": "CyberAPI",
+    "nameEN": "CyberAPI",
+    "descriptionDE": "Anwendungsfälle im Kontext von Cyber-Versicherungen (z.B. die Standardisierung von KRIs und den Austausch zwischen Drittanbietern und Versicherern).",
+    "descriptionEN": "Use cases in the context of cyber insurance (e.g. the standardization of KRIs and the exchange between third-party providers and insurers).",
+    "iconPath": "./assets/icons/cyber-api.png",
+    "tags": [
+      "cyber",
+      "assistance",
+      "risk-management",
+      "industrial-lines"
+    ]
   },
   {
-    "id": "document-api",
-    "name": "Document API",
-    "shortDescription": "Choose the Mailbox of your choices for receiving our insurance related Documents",
-    "iconPath": "./assets/icons/document-api.png"
-  },
-  {
-    "id": "building-api",
-    "name": "Building API",
-    "shortDescription": "Get all insurance relevant Data for your Building and add them with Data from external sources",
-    "iconPath": "./assets/icons/building-api.png"
+    "id": "real-estate-api",
+    "nameDE": "RealEstateAPI (Risk)",
+    "nameEN": "RealEstateAPI (Risk)",
+    "descriptionDE": "Austausch von Daten rund um die Immobilie aus Drittsystemen (z.B. Grundsteuer, Softwareanbietern wie SkenData, PriceHubble etc.) Mithilfe einer API soll der Datenaustausch mit allen Anbietern vereinheitlicht werden.",
+    "descriptionEN": "Exchange of property-related data from third-party systems (e.g. property tax, software providers such as SkenData, PriceHubble, etc.) An API is to be used to standardize data exchange with all providers.",
+    "iconPath": "./assets/icons/real-estate-api.png",
+    "tags": [
+      "health",
+      "assistance",
+      "mobile"
+    ]
   }
 ]

@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { MonoTypeOperatorFunction, Observable } from 'rxjs';
 import { ApiDownloadModel } from '@common/models/api-download.model';
+import {TagModel} from "@common/models/tag.model";
+import {ApiInformationModel} from "@common/models/api-information.model";
 
 export type Api = {
   name: string;
@@ -37,8 +39,14 @@ export class ApiDataService {
     });
   }
 
-  getApiInformationData(): Observable<any> {
-    return this.http.get(this.basePath + 'api-information.json', {
+  getTagData() {
+    return this.http.get<TagModel[]>(`${this.basePath}tag-information.json`, {
+      responseType: "json"
+    });
+  }
+
+  getApiInformationData() {
+    return this.http.get<ApiInformationModel[]>(`${this.basePath}api-information.json`, {
       responseType: 'json',
     });
   }
