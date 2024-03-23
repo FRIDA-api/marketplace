@@ -1,3 +1,17 @@
+@if ({
+  apiInformation: apiInformation$ | async,
+  tagInformation: tagInformation$ | async
+}; as data) {
+  @for (api of data.apiInformation; track api.id) {
+    <app-use-case-card
+      [apiData]="api";
+      [tagsData]="data.tagInformation"
+    ></app-use-case-card>
+  }
+}
+
+
+
 @if (apiList$ | async; as apiList) {
 <div class="cards-container">
   @for (api of apiList; track api) {
