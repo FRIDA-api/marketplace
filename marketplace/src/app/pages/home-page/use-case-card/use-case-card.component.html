@@ -10,9 +10,9 @@
     <p>{{ apiData().descriptionDE }}</p>
   </div>
   <div class="tag-container">
-    @for (tag of tagEffect(); track tag?.tagId) {
-      <div class="tag" [style.background-color]="tag?.tagColor">
-        {{ tag?.tagNameDE }}
+    @for (tag of tagComputed(); track tag.tagId) {
+      <div class="tag" [style.background-color]="tag.tagColor">
+        {{ tag.tagNameDE }}
       </div>
     }
   </div>

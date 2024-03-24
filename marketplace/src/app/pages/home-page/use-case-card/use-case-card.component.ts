@@ -19,5 +19,5 @@ export class UseCaseCardComponent {
   apiData = input.required<ApiInformationModel>();
   tagsData = input.required({ transform: (value: TagModel[] | null) => value === null ? [] : value });
 
-  tagEffect: Signal<TagModel[]> = computed(() => this.tagsData().filter((tag) => this.apiData().tags.includes(tag.tagId)));
+  tagComputed: Signal<TagModel[]> = computed(() => this.tagsData().filter((tag) => this.apiData().tags.includes(tag.tagId)));
 }
