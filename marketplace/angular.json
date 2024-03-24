@@ -33,6 +33,11 @@
               "swagger-ui/dist/swagger-ui.css",
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/scss"
+              ]
+            },
             "scripts": [],
             "server": "src/main.server.ts",
             "prerender": true,
