@@ -32,7 +32,6 @@ export interface ApiDetails {
 export class HomePageComponent {
   private readonly apiService = inject(ApiDataService);
   private readonly apiInformationService = inject(ApiDataService);
-  private readonly destroyRef = inject(DestroyRef);
 
   apiInformation$ = this.apiService.getApiInformationData();
   tagInformation$ = this.apiService.getTagData();
