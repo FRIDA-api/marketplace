@@ -5,7 +5,7 @@
     "nameEN": "PensionAPI",
     "descriptionDE": "Bereitstellung von Daten zur Transparenz in der Altersvorsorge z.B. mithilfe eines Rentencockpits.",
     "descriptionEN": "Provision of data for transparency in pension provision, e.g. with the help of a pension cockpit.",
-    "iconPath": "./assets/icons/pension-api.png",
+    "iconPath": "./assets/icons/icon-pensionapi.svg",
     "tags": [
       "pension"
     ]
@@ -16,7 +16,7 @@
     "nameEN": "Car-ClaimsAPI",
     "descriptionDE": "Einheitliche Darstellung von Kfz- Versicherungsdaten (z.B. in einem digitalen Wallet), die im Schadenfall ausgetauscht und versendet werden können.",
     "descriptionEN": "Standardized presentation of vehicle insurance data (e.g. in a digital wallet) that can be exchanged and sent in the event of a claim.",
-    "iconPath": "./assets/icons/car-claims-api.png",
+    "iconPath": "./assets/icons/icon-carclaimsapi.svg",
     "tags": [
       "car",
       "claims",
@@ -32,7 +32,7 @@
     "nameEN": "RealEstateAPI (Policy)",
     "descriptionDE": "Austausch von Daten rund um die Gebäudeversicherung, damit diese bei bspw. Vergabe von Modernisierungsdarlehen verwendet werden können.",
     "descriptionEN": "Exchange of data relating to building insurance so that this can be used, for example, when granting modernization loans.",
-    "iconPath": "./assets/icons/real-estate-api.png",
+    "iconPath": "./assets/icons/icon-realestateapi.svg",
     "tags": [
       "property-casualty",
       "assistance",
@@ -47,7 +47,7 @@
     "nameEN": "Health-CareAPI",
     "descriptionDE": "Anwendungsfälle im Gesundheitsbereich, z.B. um das integrierte Vertrags- und Leistungsmanagement.",
     "descriptionEN": "Use cases in the healthcare sector, e.g. integrated contract and service management.",
-    "iconPath": "./assets/icons/health-care-api.png",
+    "iconPath": "./assets/icons/icon-healthcareapi.svg",
     "tags": [
       "health",
       "assistance",
@@ -60,7 +60,7 @@
     "nameEN": "DigitalDocumentsAPI",
     "descriptionDE": "Austausch von Dokumenten, um z.B. den Überblick über die eigene Versicherungspost zu erhalten.",
     "descriptionEN": "Exchange of documents, e.g. to maintain an overview of your own insurance mail.",
-    "iconPath": "./assets/icons/digital-documents-api.png",
+    "iconPath": "./assets/icons/icon-digitaldocumentsapi.svg",
     "tags": [
       "documents",
       "industrial-lines"
@@ -72,7 +72,7 @@
     "nameEN": "CyberAPI",
     "descriptionDE": "Anwendungsfälle im Kontext von Cyber-Versicherungen (z.B. die Standardisierung von KRIs und den Austausch zwischen Drittanbietern und Versicherern).",
     "descriptionEN": "Use cases in the context of cyber insurance (e.g. the standardization of KRIs and the exchange between third-party providers and insurers).",
-    "iconPath": "./assets/icons/cyber-api.png",
+    "iconPath": "./assets/icons/icon-cyberapi.svg",
     "tags": [
       "cyber",
       "assistance",
@@ -86,7 +86,7 @@
     "nameEN": "RealEstateAPI (Risk)",
     "descriptionDE": "Austausch von Daten rund um die Immobilie aus Drittsystemen (z.B. Grundsteuer, Softwareanbietern wie SkenData, PriceHubble etc.) Mithilfe einer API soll der Datenaustausch mit allen Anbietern vereinheitlicht werden.",
     "descriptionEN": "Exchange of property-related data from third-party systems (e.g. property tax, software providers such as SkenData, PriceHubble, etc.) An API is to be used to standardize data exchange with all providers.",
-    "iconPath": "./assets/icons/real-estate-api.png",
+    "iconPath": "./assets/icons/icon-realestateapi.svg",
     "tags": [
       "health",
       "assistance",
