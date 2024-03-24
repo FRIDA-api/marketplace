@@ -1,8 +1,8 @@
-import { Component, effect, input } from '@angular/core';
+import { Component, computed, input, Signal } from '@angular/core';
 import { ApiInformationModel } from "@common/models/api-information.model";
 import { TagModel } from "@common/models/tag.model";
 import { NgOptimizedImage } from "@angular/common";
-import {RouterLink} from "@angular/router";
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-use-case-card',
@@ -17,17 +17,7 @@ import {RouterLink} from "@angular/router";
 export class UseCaseCardComponent {
 
   apiData = input.required<ApiInformationModel>();
-  tagsData = input.required<TagModel[] | null>();
+  tagsData = input.required({ transform: (value: TagModel[] | null) => value === null ? [] : value });
 
-  calculatedTagsData: (TagModel | undefined)[] = [];
-
-  constructor() {
-    effect(() => {
-      this.apiData().tags.forEach((tagId) => {
-        this.calculatedTagsData.push(
-          this.tagsData()?.find((tagModel) => tagModel.tagId === tagId)
-        )
-      })
-    });
-  }
+  tagEffect: Signal<TagModel[]> = computed(() => this.tagsData().filter((tag) => this.apiData().tags.includes(tag.tagId)));
 }

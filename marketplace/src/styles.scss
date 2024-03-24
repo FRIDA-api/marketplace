@@ -91,17 +91,23 @@ main {
 
 @media (min-width: 768px) {
   main {
-    max-width: 90%;
+    max-width: 95%;
   }
 }
 
 @media (min-width: 992px) {
   main {
-    max-width: 80%;
+    max-width: 90%;
   }
 }
 
 @media (min-width: 1200px) {
+  main {
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 2100px) {
   main {
     max-width: 70%;
   }

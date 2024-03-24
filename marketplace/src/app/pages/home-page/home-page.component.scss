@@ -2,12 +2,19 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-content: flex-start;
-  gap: 20px;
+  align-content: space-between;
+  gap: 22px;
+  width: 100%;
 }
 
 .use-case-card-child {
+  flex: 0 0 100%;
+}
 
+@media screen and (min-width: 1370px) {
+  .use-case-card-child {
+    flex: initial;
+  }
 }
 
 .download-headline {
