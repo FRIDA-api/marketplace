@@ -35,7 +35,7 @@ export class HomePageComponent {
   private readonly destroyRef = inject(DestroyRef);
 
   apiInformation$ = this.apiService.getApiInformationData();
-  tagInformation$ = this.apiService.getApiInformationData();
+  tagInformation$ = this.apiService.getTagData();
 
 
   apiList$ = this.apiService.getApiInformationData();

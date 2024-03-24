@@ -1,1 +1,20 @@
-<p>use-case-card works!</p>
+<div class="container">
+  <div class="hover-container" tabindex="0" [routerLink]="['/api-explorer', apiData().id]">
+    <div class="title-container">
+      <div class="icon-container">
+        <img ngSrc="{{ apiData().iconPath }}" alt="" width="36" height="36">
+      </div>
+      <h2>{{ apiData().nameDE }}</h2>
+    </div>
+    <div class="description-container">
+      <p>{{ apiData().descriptionDE }}</p>
+    </div>
+    <div class="tag-container">
+      @for (tag of calculatedTagsData; track tag?.tagId) {
+        <div class="tag" [style.background-color]="tag?.tagColor">
+          {{ tag?.tagNameDE }}
+        </div>
+      }
+    </div>
+  </div>
+</div>

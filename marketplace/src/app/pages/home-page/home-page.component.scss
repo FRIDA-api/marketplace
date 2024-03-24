@@ -1,53 +1,13 @@
-.cards-container {
+.use-case-card-container {
   display: flex;
-  justify-content: space-around;
-  align-content: stretch;
   flex-wrap: wrap;
-  row-gap: 2rem;
-  margin-bottom: 4rem;
-  margin: auto;
-  left: 0;
-  right: 0;
-  max-width: 1160px;
-  margin-top: 4rem;
+  justify-content: space-between;
+  align-content: flex-start;
+  gap: 20px;
 }
 
-.api-card {
-  width: 22rem;
-  height: 100%;
-  margin: 0 1rem;
+.use-case-card-child {
 
-  color: rgba(255, 255, 255, 0.8);
-  background-color: rgba(#ffffff, 0.2);
-
-  cursor: pointer;
-  border-radius: 4px;
-  transition: all 0.3s ease-in-out;
-
-  position: relative;
-
-  &:hover {
-    box-shadow: 0 0 40px rgba(92, 182, 181, 0.4);
-  }
-
-  .card-title {
-    font-size: 1.5rem;
-    padding-bottom: 0.5rem;
-  }
-
-  .card-content {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-
-    img {
-      opacity: 0.3;
-
-      position: absolute;
-      right: 0.5rem;
-      top: 0.5rem;
-    }
-  }
 }
 
 .download-headline {
@@ -87,7 +47,7 @@
     width: 100%;
     padding-bottom: 1.5rem;
     margin-top: 1.5rem;
-    
+
     img {
       opacity: 0.3;
       margin-right: .5rem;

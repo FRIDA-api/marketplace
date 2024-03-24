@@ -2,40 +2,19 @@
   apiInformation: apiInformation$ | async,
   tagInformation: tagInformation$ | async
 }; as data) {
-  @for (api of data.apiInformation; track api.id) {
-    <app-use-case-card
-      [apiData]="api";
-      [tagsData]="data.tagInformation"
-    ></app-use-case-card>
-  }
-}
-
-
-
-@if (apiList$ | async; as apiList) {
-<div class="cards-container">
-  @for (api of apiList; track api) {
-  <div>
-    <mat-card class="api-card" [routerLink]="['/api-explorer', api.id]">
-      <mat-card-header>
-        <mat-card-title class="card-title">{{ api.name }}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content class="card-content">
-        <p>{{ api.shortDescription }}</p>
-        <img
-          mat-card-image
-          class="card-image"
-          [ngSrc]="api.iconPath"
-          alt="API Logo"
-          height="65"
-          width="65"
-        />
-      </mat-card-content>
-    </mat-card>
+  <div class="use-case-card-container">
+    @for (api of data.apiInformation; track api.id) {
+      <div class="use-case-card-child">
+        <app-use-case-card
+          [apiData]="api"
+          [tagsData]="data.tagInformation"
+        ></app-use-case-card>
+      </div>
+    }
   </div>
-  }
-</div>
+
 }
+
 
 <h1 class="download-headline">Download FRIDA API Models</h1>
 <p class="download-description">If you have any questions, recommendations or bugs you want to share, please leave a GitHub Issue in the corresponding GitHub Repository linked below. In case you need private consultation or have a general request please reach out to us via mail <a href="mailto:frida@frida.com">frida&#64;frida.com</a></p>

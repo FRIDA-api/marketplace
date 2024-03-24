@@ -26,9 +26,7 @@ export type CompanyInformation = {
   providedIn: 'root',
 })
 export class ApiDataService {
-  pipe(arg0: MonoTypeOperatorFunction<unknown>) {
-    throw new Error('Method not implemented.');
-  }
+
   private http = inject(HttpClient);
 
   private basePath = 'assets/data/';
