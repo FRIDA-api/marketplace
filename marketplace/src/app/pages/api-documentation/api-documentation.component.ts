@@ -74,7 +74,7 @@ export class ApiDocumentationComponent implements OnChanges {
   }
 
   // TODO: add other paths or find better solution
-  private mapPathToRepository(): string {
+  mapPathToRepository(): string {
     switch(this.apiPathParameter) {
       case "pension-api": return "FRIDA-pension";
       case "car-claims-api": return "FRIDA-car";
