@@ -47,13 +47,13 @@ export class ApiDocumentationComponent implements OnChanges {
 
     const repository = this.mapPathToRepository()
 
-    if (repository === "") {
+    if (!repository) {
       this.noApiFound = true;
       return;
     }
 
     this.dataService.getLatestAsset(repository).subscribe(data => {
-      if (data === "") {
+      if (data.isEmpty()) {
         this.noApiFound = true;
         return;
       }
@@ -78,7 +78,7 @@ export class ApiDocumentationComponent implements OnChanges {
     switch(this.apiPathParameter) {
       case "pension-api": return "FRIDA-pension";
       case "car-claims-api": return "FRIDA-car";
-      default: return ""
+      default: return "";
     }
   }
 }
