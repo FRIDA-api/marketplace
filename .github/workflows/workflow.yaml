@@ -18,7 +18,8 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      - run: cd marketplace
+      - run: cd marketplace/
+      - run: ls
       - run: npm install
       - run: npm run start
   Unit-Test-Marketplace:
