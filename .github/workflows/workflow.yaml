@@ -22,6 +22,9 @@ jobs:
   Build-Marketplace:
     needs: setup-job
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./marketplace
     steps:
       - name: Build Marketplace
         run: npm run build
@@ -29,6 +32,9 @@ jobs:
   Unit-Test-Marketplace:
     needs: setup-job
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./marketplace
     steps:
       - name: Run unit tests
         run: npm run test
@@ -36,6 +42,9 @@ jobs:
   E2E-Test-Marketplace:
     needs: setup-job
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./marketplace
     steps:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
