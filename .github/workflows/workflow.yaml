@@ -18,7 +18,7 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      - run: ls
+      - run: cd marketplace
       - run: npm install
       - run: npm run start
   Unit-Test-Marketplace:
@@ -26,6 +26,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - run: cd marketplace
       - run: npm i
       - run: npm run test
   E2E-Test-Marketplace:
@@ -36,6 +37,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
+      - run: cd marketplace
       - name: Install dependencies
         run: npm i
       - name: Install Playwright Browsers
