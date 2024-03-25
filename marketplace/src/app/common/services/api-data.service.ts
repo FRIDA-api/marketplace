@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { MonoTypeOperatorFunction, Observable } from 'rxjs';
 import { ApiDownloadModel } from '@common/models/api-download.model';
-import {TagModel} from "@common/models/tag.model";
-import {ApiInformationModel} from "@common/models/api-information.model";
+import { ApiInformationModel } from "@common/models/api-information.model";
+import { TagModel } from "@common/models/tag.model";
+import { Observable } from 'rxjs';
 
 export type Api = {
   name: string;

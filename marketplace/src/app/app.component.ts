@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {
   Component,
   DestroyRef,
@@ -6,16 +7,11 @@ import {
   ViewChild,
   inject,
 } from '@angular/core';
-import {
-  CommonModule,
-  ViewportScroller,
-  isPlatformBrowser,
-} from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './core/header/header.component';
-import { fromEvent } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { RouterOutlet } from '@angular/router';
+import { fromEvent } from 'rxjs';
 import { FooterComponent } from './core/footer/footer.component';
+import { HeaderComponent } from './core/header/header.component';
 
 @Component({
   selector: 'app-root',

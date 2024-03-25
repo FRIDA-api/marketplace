@@ -12,7 +12,7 @@
       routerLink="/api-catalogue"
       routerLinkActive="active"
       ariaCurrentWhenActive="page"
-      >API Catalogue</a
+      >{{ "HEADER.API_CATALOGUE" | translate }}</a
     >
 
     <a
@@ -20,7 +20,17 @@
       routerLink="/api-explorer"
       routerLinkActive="active"
       ariaCurrentWhenActive="page"
-      >API Explorer</a
+      >{{ "HEADER.API_EXPLORER" | translate }}</a
     >
+    <select #langSelect (change)="translate.use(langSelect.value)">
+      @for(language of translate.getLangs(); track language) {
+      <option
+        [value]="language"
+        [selected]="language === translate.currentLang"
+      >
+        {{ language }}
+      </option>
+      }
+    </select>
   </nav>
 </header>

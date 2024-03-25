@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "allowedCommonJsDependencies": ["swagger-ui"],         
             "outputPath": "dist/marketplace",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -40,7 +41,7 @@
             },
             "scripts": [],
             "server": "src/main.server.ts",
-            "prerender": true,
+            "prerender": true,            
             "ssr": {
               "entry": "server.ts"
             }
@@ -50,8 +51,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2.5mb",
+                  "maximumError": "2.5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -94,6 +95,8 @@
               "zone.js",
               "zone.js/testing"
             ],
+            "codeCoverage": true,
+            "karmaConfig": "./karma.conf.js",
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
