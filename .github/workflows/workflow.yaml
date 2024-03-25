@@ -16,9 +16,10 @@ jobs:
           key: ${{ runner.os }}-build-${{ hashFiles('marketplace/**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-build-
-      - name: Install dependencies
-        run: npm ci
-      - run: ls
+      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        name: Install Dependencies if no cache hit
+        continue-on-error: true
+        run: npm i
       - name: Build Marketplace
         run: npm run build
   Unit-Test-Marketplace:
@@ -36,8 +37,10 @@ jobs:
           key: ${{ runner.os }}-build-${{ hashFiles('marketplace/**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-build-
-      - name: Install dependencies
-        run: npm ci
+      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        name: Install Dependencies if no cache hit
+        continue-on-error: true
+        run: npm i
       - name: Run unit tests
         run: npm run test
   E2E-Test-Marketplace:
@@ -55,8 +58,10 @@ jobs:
           key: ${{ runner.os }}-build-${{ hashFiles('marketplace/**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-build-
-      - name: Install dependencies
-        run: npm ci
+      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        name: Install Dependencies if no cache hit
+        continue-on-error: true
+        run: npm i
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
