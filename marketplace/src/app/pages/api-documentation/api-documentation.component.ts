@@ -11,6 +11,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { Router, RouterModule } from '@angular/router';
 import { ApiDataService, CompanyInformation } from '@common/services/api-data.service';
 import { Observable } from 'rxjs';
+import { parse } from 'yaml';
 
 import SwaggerUI from 'swagger-ui';
 
@@ -44,16 +45,22 @@ export class ApiDocumentationComponent implements OnChanges {
       return;
     }
 
-    this.companyInformation$.subscribe(data => {
-      const dataUrl = this.findMatchingApi(data, this.apiPathParameter);
-      if (dataUrl === "") {
+    const repository = this.mapPathToRepository()
+
+    if (!repository) {
+      this.noApiFound = true;
+      return;
+    }
+
+    this.dataService.getLatestAsset(repository).subscribe(data => {
+      if (data.isEmpty()) {
         this.noApiFound = true;
         return;
       }
 
       this.noApiFound = false;
       SwaggerUI({
-        url: dataUrl,
+        spec: parse(data),
         domNode: this.document.getElementById('swagger-ui'),
         deepLinking: true,
         defaultModelsExpandDepth: 4,
@@ -64,19 +71,14 @@ export class ApiDocumentationComponent implements OnChanges {
         },
       });
     })
-
   }
 
-  public findMatchingApi(companyInformation: CompanyInformation[], apiPathParameter?: string) {
-    for (const company of companyInformation) {
-      for (const category of company.categories) {
-        for (const api of category.apis) {
-          if (api.url === apiPathParameter) {
-            return api.dataUrl;
-          }
-        }
-      }
+  // TODO: add other paths or find better solution
+  mapPathToRepository(): string {
+    switch(this.apiPathParameter) {
+      case "pension-api": return "FRIDA-pension";
+      case "car-claims-api": return "FRIDA-car";
+      default: return "";
     }
-    return "";
   }
 }

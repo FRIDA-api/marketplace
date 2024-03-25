@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable, inject } from '@angular/core';
-import { MonoTypeOperatorFunction, Observable } from 'rxjs';
-import { ApiDownloadModel } from '@common/models/api-download.model';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Injectable, inject} from '@angular/core';
+import {Observable} from 'rxjs';
+import {ApiDownloadModel} from '@common/models/api-download.model';
+import {environment} from "../../../environments/environment";
 import {TagModel} from "@common/models/tag.model";
 import {ApiInformationModel} from "@common/models/api-information.model";
 
@@ -57,4 +58,14 @@ export class ApiDataService {
       },
     );
   }
+
+  getLatestAsset(githubRepositoryName: string): Observable<any> {
+    return this.http.get(
+      `${environment.backendUrl}/releases/FRIDA-api/${githubRepositoryName}/assets/latest`,
+      {
+        responseType: "text",
+      }
+    )
+  }
+
 }
