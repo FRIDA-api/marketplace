@@ -31,6 +31,7 @@
     "start-server-and-test": "^2.0.3",
     "swagger-ui": "^5.10.5",
     "tslib": "^2.3.0",
+    "yaml": "^2.4.1",
     "zone.js": "~0.14.2"
   },
   "devDependencies": {

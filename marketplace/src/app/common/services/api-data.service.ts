@@ -1,9 +1,8 @@
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable, inject} from '@angular/core';
-import {MonoTypeOperatorFunction, Observable} from 'rxjs';
+import {Observable} from 'rxjs';
 import {ApiDownloadModel} from '@common/models/api-download.model';
 import {environment} from "../../../environments/environment";
-import {ReleaseModel} from "@common/models/release.model";
 import {TagModel} from "@common/models/tag.model";
 import {ApiInformationModel} from "@common/models/api-information.model";
 
@@ -60,13 +59,13 @@ export class ApiDataService {
     );
   }
 
-  getReleases(githubRepositoryName: string): Observable<ReleaseModel[]> {
-    return this.http.get<ReleaseModel[]>(`${environment.backendUrl}/releases/FRIDA-api/${githubRepositoryName}`, {responseType: 'json'})
-  }
-
-  // TODO: handle application/octet-stream, maybe this isn't the right content type?
-  getAsset(githubRepositoryName: string, assetId: number): Observable<any> {
-    return this.http.get<ReleaseModel[]>(`${environment.backendUrl}/releases/FRIDA-api/${githubRepositoryName}/assets/${assetId}`)
+  getLatestAsset(githubRepositoryName: string): Observable<any> {
+    return this.http.get(
+      `${environment.backendUrl}/releases/FRIDA-api/${githubRepositoryName}/assets/latest`,
+      {
+        responseType: "text",
+      }
+    )
   }
 
 }
