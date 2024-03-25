@@ -34,7 +34,6 @@ export class ApiDocumentationComponent implements OnChanges {
 
   noApiFound: boolean = false;
   companyInformation$: Observable<CompanyInformation[]> = this.dataService.getApiDocumentation();
-  latestRelease$: Observable<string> = this.dataService.getLatestAsset('FRIDA-pension')
 
   selectApi(apiUrl: string) {
     this.router.navigateByUrl(`/api-explorer/${apiUrl}`);
@@ -46,7 +45,14 @@ export class ApiDocumentationComponent implements OnChanges {
       return;
     }
 
-    this.latestRelease$.subscribe(data => {
+    const repository = this.mapPathToRepository()
+
+    if (repository === "") {
+      this.noApiFound = true;
+      return;
+    }
+
+    this.dataService.getLatestAsset(repository).subscribe(data => {
       if (data === "") {
         this.noApiFound = true;
         return;
@@ -65,5 +71,14 @@ export class ApiDocumentationComponent implements OnChanges {
         },
       });
     })
+  }
+
+  // TODO: add other paths or find better solution
+  private mapPathToRepository(): string {
+    switch(this.apiPathParameter) {
+      case "pension-api": return "FRIDA-pension";
+      case "car-claims-api": return "FRIDA-car";
+      default: return ""
+    }
   }
 }
