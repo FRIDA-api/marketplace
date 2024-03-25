@@ -1,24 +1,27 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { provideRouter, withComponentInputBinding } from '@angular/router';
-
 import {
-  HttpBackend,
+  ApplicationConfig,
+  importProvidersFrom
+} from '@angular/core';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
+import {
   HttpClient,
   provideHttpClient,
-  withFetch,
+  withFetch
 } from '@angular/common/http';
 import {
   provideClientHydration,
   withHttpTransferCacheOptions,
 } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { routes } from './app.routes';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
-export function createTranslateLoader(http: HttpBackend) {
+export function createTranslateLoader(
+  http: HttpClient,
+) {
   return new TranslateHttpLoader(
-    new HttpClient(http),
+    http,
     './assets/i18n/',
     '.json'
   );
@@ -33,7 +36,7 @@ export const appConfig: ApplicationConfig = {
         loader: {
           provide: TranslateLoader,
           useFactory: createTranslateLoader,
-          deps: [HttpBackend],
+          deps: [HttpClient],
         },
       }),
     ]),
