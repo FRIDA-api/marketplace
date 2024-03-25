@@ -1,11 +1,11 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import {Component, DestroyRef, inject} from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { RouterLink } from '@angular/router';
 import { ApiDataService } from '@common/services/api-data.service';
-import { Observable } from 'rxjs';
 import { DownloadComponent } from "./download/download.component";
+import {UseCaseCardComponent} from "./use-case-card/use-case-card.component";
 
 export interface ApiDetails {
   id: string;
@@ -19,20 +19,25 @@ export interface ApiDetails {
     standalone: true,
     templateUrl: './home-page.component.html',
     styleUrl: './home-page.component.scss',
-    imports: [
-        MatCardModule,
-        CommonModule,
-        MatDividerModule,
-        NgOptimizedImage,
-        RouterLink,
-        DownloadComponent
-    ]
+  imports: [
+    MatCardModule,
+    CommonModule,
+    MatDividerModule,
+    NgOptimizedImage,
+    RouterLink,
+    DownloadComponent,
+    UseCaseCardComponent
+  ]
 })
 export class HomePageComponent {
-  private apiService = inject(ApiDataService);
-  private apiInformationService = inject(ApiDataService);
+  private readonly apiService = inject(ApiDataService);
+  private readonly apiInformationService = inject(ApiDataService);
 
-  apiList$: Observable<ApiDetails[]> = this.apiService.getApiInformationData();
+  apiInformation$ = this.apiService.getApiInformationData();
+  tagInformation$ = this.apiService.getTagData();
+
+
+  apiList$ = this.apiService.getApiInformationData();
   pensionApi$ = this.apiInformationService.getApiDownloads('pension');
   healthCareApi$ = this.apiInformationService.getApiDownloads('healthcare');
   carclaimsApi$ = this.apiInformationService.getApiDownloads('carclaims');

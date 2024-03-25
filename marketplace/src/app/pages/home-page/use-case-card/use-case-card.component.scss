@@ -1,0 +1,71 @@
+@import "scss/colors.scss";
+
+.container {
+  position: relative;
+  height: calc(100% - 60px);
+  width: calc(100% - 60px);
+
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 3px 6px $box-shadow;
+
+
+  .hover-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 20px;
+
+    &:hover, &:focus {
+      transition: background-color 0.3s ease-out;
+      background-color: rgba($primary, .2);
+    }
+  }
+
+
+  .title-container {
+    display: flex;
+
+    .icon-container {
+      padding: 10px;
+      border-radius: 72px;
+      background-color: $primary;
+    }
+
+    h2 {
+      margin-left: 16px;
+      color: $primary;
+    }
+  }
+
+
+  .description-container {
+    padding: 0 8px;
+  }
+
+
+  .tag-container {
+    padding: 8px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    .tag {
+      padding: 4px 12px;
+      border-radius: 10px;
+    }
+  }
+}
+
+@media screen and (min-width: 1370px) {
+  .container {
+    width: 410px;
+  }
+}
