@@ -23,9 +23,7 @@ jobs:
         continue-on-error: true
         run: npm ci
       - name: Build Marketplace
-        run: npm run build 2> ${{ runner.workspace }}/angular-errors.log
-      - name: Log error details
-        run: cat ${{ runner.workspace }}/angular-errors.log || echo "No error log found"
+        run: npm run build
   Unit-Test-Marketplace:
     runs-on: ubuntu-latest
     defaults:
