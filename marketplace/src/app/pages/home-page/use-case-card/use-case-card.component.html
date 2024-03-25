@@ -1,0 +1,19 @@
+<div class="container">
+  <a class="hover-container" tabindex="0" [routerLink]="['/api-explorer', apiData().id]"><span class="sr-only">{{ apiData().nameDE }}</span></a>
+  <div class="title-container">
+    <div class="icon-container">
+      <img [ngSrc]="apiData().iconPath" alt="" width="52" height="52">
+    </div>
+    <h2>{{ apiData().nameDE }}</h2>
+  </div>
+  <div class="description-container">
+    <p>{{ apiData().descriptionDE }}</p>
+  </div>
+  <div class="tag-container">
+    @for (tag of tagComputed(); track tag.tagId) {
+      <div class="tag" [style.background-color]="tag.tagColor">
+        {{ tag.tagNameDE }}
+      </div>
+    }
+  </div>
+</div>
