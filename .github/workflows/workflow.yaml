@@ -4,11 +4,15 @@ jobs:
   Build-Marketplace:
     runs-on: ubuntu-latest
     steps:
-      - run: npm i
+      - name: Checkout
+        uses: actions/checkout@v2
+      - run: npm ci
       - run: npm run start
   Unit-Test-Marketplace:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - run: npm i
       - run: npm run test
   E2E-Test-Marketplace:
