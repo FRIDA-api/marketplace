@@ -4,15 +4,15 @@
     <div class="icon-container">
       <img [ngSrc]="apiData().iconPath" alt="" width="52" height="52">
     </div>
-    <h2>{{ apiData().nameDE }}</h2>
+    <h2>{{ translate.currentLang | translate: apiData().nameDE: apiData().nameEN }}</h2>
   </div>
   <div class="description-container">
-    <p>{{ apiData().descriptionDE }}</p>
+    <p>{{ translate.currentLang | translate: apiData().descriptionDE: apiData().descriptionEN }}</p>
   </div>
   <div class="tag-container">
     @for (tag of tagComputed(); track tag.tagId) {
       <div class="tag" [style.background-color]="tag.tagColor">
-        {{ tag.tagNameDE }}
+        {{ translate.currentLang | translate: tag.tagNameDE: tag.tagNameEN }}
       </div>
     }
   </div>
