@@ -1,18 +1,11 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import {Component, DestroyRef, inject} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { RouterLink } from '@angular/router';
 import { ApiDataService } from '@common/services/api-data.service';
 import { DownloadComponent } from "./download/download.component";
 import {UseCaseCardComponent} from "./use-case-card/use-case-card.component";
-
-export interface ApiDetails {
-  id: string;
-  name: string;
-  shortDescription: string;
-  iconPath: string;
-}
 
 @Component({
     selector: 'app-home-page',
@@ -37,7 +30,6 @@ export class HomePageComponent {
   tagInformation$ = this.apiService.getTagData();
 
 
-  apiList$ = this.apiService.getApiInformationData();
   pensionApi$ = this.apiInformationService.getApiDownloads('pension');
   healthCareApi$ = this.apiInformationService.getApiDownloads('healthcare');
   carclaimsApi$ = this.apiInformationService.getApiDownloads('carclaims');

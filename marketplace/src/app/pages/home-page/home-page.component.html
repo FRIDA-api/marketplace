@@ -4,12 +4,10 @@
 }; as data) {
   <div class="use-case-card-container">
     @for (api of data.apiInformation; track api.id) {
-      <div class="use-case-card-child">
-        <app-use-case-card
-          [apiData]="api"
-          [tagsData]="data.tagInformation"
-        ></app-use-case-card>
-      </div>
+      <app-use-case-card
+        [apiData]="api"
+        [tagsData]="data.tagInformation"
+      ></app-use-case-card>
     }
   </div>
 }

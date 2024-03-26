@@ -3,7 +3,6 @@
 .container {
   position: relative;
   height: calc(100% - 60px);
-  width: calc(100% - 60px);
 
   background-color: white;
   padding: 30px;
@@ -61,11 +60,5 @@
       padding: 4px 12px;
       border-radius: 10px;
     }
-  }
-}
-
-@media screen and (min-width: 1370px) {
-  .container {
-    width: 410px;
   }
 }
