@@ -32,19 +32,19 @@ export class HomePageComponent {
 
   addedValuesData: { pathToImage: string, translationReference: string }[] = [
     {
-      pathToImage: "assets/icons/icon-healthcareapi.svg",
+      pathToImage: "assets/icons/icon-rest-api.svg",
       translationReference: "HOMEPAGE.ADDED_VALUES_BOX_1",
     },
     {
-      pathToImage: "assets/icons/icon-healthcareapi.svg",
+      pathToImage: "assets/icons/icon-use-case.svg",
       translationReference: "HOMEPAGE.ADDED_VALUES_BOX_2",
     },
     {
-      pathToImage: "assets/icons/icon-healthcareapi.svg",
+      pathToImage: "assets/icons/icon-state-of-the-Art.svg",
       translationReference: "HOMEPAGE.ADDED_VALUES_BOX_3",
     },
     {
-      pathToImage: "assets/icons/icon-healthcareapi.svg",
+      pathToImage: "assets/icons/icon-api-dokumentation.svg",
       translationReference: "HOMEPAGE.ADDED_VALUES_BOX_4",
     }
   ];

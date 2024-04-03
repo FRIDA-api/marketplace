@@ -82,6 +82,10 @@
     grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
     gap: 20px;
 
+    img {
+      height: 64px;
+    }
+
     .added-value-box {
       display: flex;
       flex-direction: column;

@@ -30,7 +30,7 @@
   <div class="added-value-boxes">
     @for (box of addedValuesData; track box.translationReference) {
       <div class="added-value-box">
-        <img [ngSrc]="box.pathToImage" alt="" width="64" height="64">
+        <img [src]="box.pathToImage" alt="">
         <p>{{ box.translationReference | translate }}</p>
       </div>
     }
