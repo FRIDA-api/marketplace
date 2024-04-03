@@ -51,23 +51,17 @@ $marketplace-theme: mat.define-light-theme(
   src: url(assets/fonts/manrope--v14-normal-200.woff2);
 }
 
-html,
-body {
-  height: 100%;
-  overflow: hidden;
-  min-height: 100%;
+* {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
   font-family: "Manrope", "Helvetica Neue", sans-serif;
-  background: radial-gradient(at top center, #22d9e0 0%, #000000 100%) no-repeat
-    scroll center center / cover;
 }
 
 app-api-documentation .mat-expansion-panel-body {
-  padding: 0px !important;
+  padding: 0 !important;
 }
 .center {
   display: flex;
@@ -76,39 +70,38 @@ app-api-documentation .mat-expansion-panel-body {
   justify-content: center;
 }
 
-main {
-  //background-color: white;
+.auto-main-width {
   max-width: 95%;
   margin: 0 auto;
 }
 
 // Media queries for larger screens
 @media (min-width: 600px) {
-  main {
+  .auto-main-width {
     max-width: 95%;
   }
 }
 
 @media (min-width: 768px) {
-  main {
+  .auto-main-width {
     max-width: 95%;
   }
 }
 
 @media (min-width: 992px) {
-  main {
+  .auto-main-width {
     max-width: 90%;
   }
 }
 
 @media (min-width: 1200px) {
-  main {
+  .auto-main-width {
     max-width: 80%;
   }
 }
 
 @media (min-width: 2100px) {
-  main {
+  .auto-main-width {
     max-width: 70%;
   }
 }

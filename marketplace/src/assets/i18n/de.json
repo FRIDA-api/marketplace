@@ -2,5 +2,25 @@
   "HEADER": {
     "API_CATALOGUE": "API-Katalog",
     "API_EXPLORER": "API-Explorer"
+  },
+  "FOOTER": {
+    "FRIDA_SHORT": "FRIDA",
+    "FRIDA_LONG": "Die Open Insurance Initiative in Deutschland",
+    "FRIDA_MAIL": "www.freeinsurancedata.de",
+    "IMPRINT": "Impressum",
+    "DATA_PROTECTION": "Datenschutzhinweis",
+    "PRIVACY_SETTINGS": "Privatsphäre-Einstellungen ändern",
+    "STATUTES": "FRIDA Satzung",
+    "COPYRIGHT": "© Copyright 2023. All rights reserved.&nbsp;&nbsp;&nbsp;FRIDA e.V.&nbsp;&nbsp;&nbsp;c/o InsurLab Germany&nbsp;&nbsp;&nbsp;Hohenzollernring 85-87&nbsp;&nbsp;&nbsp;50672 Köln&nbsp;&nbsp;&nbsp;info@freeinsurancedata.de"
+  },
+  "HOMEPAGE": {
+    "USE_CASES_HEADLINE": "FRIDA Use Cases",
+    "USE_CASES_SUBHEADLINE": "auf einen Blick",
+    "ADDED_VALUES_HEADLINE": "Mehrwerte durch FRIDA Use Cases und APIs",
+    "ADDED_VALUES_INFO": "Mithilfe der FRIDA APIs können neue innovative Services und Geschäftsmodelle für Drittanbieter, Vermittler und Versicherer entstehen. Eine standardisierte, offen dokumentierte Schnittstelle ist hierbei der Schlüssel für eine effiziente Anbindung und der Eintritt in die Plattformökonomie. Endverbraucher (natürliche und juristische Personen) erhalten Zugriff auf ihre Daten und können diese mithilfe neuer dedizierter Services und Plattformen zielgerichtet einsetzen. Versicherer profitieren vom kontrollierten, standardisierten Datenaustausch und können ebenfalls in die Rolle eines Drittanbieters einsteigen, wodurch z.B. Kundenportale oder Beratungsprozesse an Attraktivität für Kunden und Vermittler gewinnen.",
+    "ADDED_VALUES_BOX_1": "REST-APIs | ready to use",
+    "ADDED_VALUES_BOX_2": "Use Case orientiertes, schlankes Datenmodell",
+    "ADDED_VALUES_BOX_3": "State-of-the-Art Mechanismen und Technologien im Hinblick auf die Identifizierung und Authentifizierung (u.a. OAuth2)",
+    "ADDED_VALUES_BOX_4": "API-Dokumentation [GitHub] auf Englisch und Deutsch"
   }
 }
