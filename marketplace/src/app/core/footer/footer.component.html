@@ -1,6 +1,21 @@
-<div class="footer">
-  <div class="copyright">
-    © Copyright 2023. All rights reserved. FRIDA e.V. c/o InsurLab Germany
-    Hohenzollernring 85-87 50672 Köln info&#64;freeinsurancedata.de
+<footer class="footer">
+  <img class="frida-icon" ngSrc="assets/icons/favicon_150x150.png" alt="" width="150" height="150">
+  <h2 class="frida-headline">{{ "FOOTER.FRIDA_SHORT" | translate }}</h2>
+  <p class="frida-text">{{ "FOOTER.FRIDA_LONG" | translate }}</p>
+  <a class="button-link" href="https://www.freeinsurancedata.de" target="_blank">{{ "FOOTER.FRIDA_MAIL" | translate }}</a>
+
+  <div>
+    <a class="extern-logo" href="https://www.linkedin.com/company/free-insurance-data-initiative/" target="_blank"><img ngSrc="assets/icons/favicon_150x150.png" alt="LinkedIn Logo" width="150" height="150"></a>
+    <a class="extern-logo" href="https://twitter.com/frida_germany" target="_blank"><img ngSrc="assets/icons/favicon_150x150.png" alt="Twitter Logo" width="150" height="150"></a>
   </div>
-</div>
+
+  <div class="link-list">
+    <a href="https://freeinsurancedata.de/impressum/" target="_blank">{{ "FOOTER.IMPRINT" | translate }}</a>
+    <a href="https://freeinsurancedata.de/datenschutz/" target="_blank">{{ "FOOTER.DATA_PROTECTION" | translate }}</a>
+    <a href="https://freeinsurancedata.de/datenschutz/" target="_blank">{{ "FOOTER.PRIVACY_SETTINGS" | translate }}</a>
+    <a href="https://freeinsurancedata.de/wp-content/uploads/2022/10/20210611-Satzung.pdf" target="_blank">{{ "FOOTER.STATUTES" | translate }}</a>
+  </div>
+
+  <p class="copyright" [innerHTML]="'FOOTER.COPYRIGHT' | translate"></p>
+
+</footer>
