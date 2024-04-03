@@ -42,21 +42,4 @@ describe('HeaderComponent', () => {
     component.ngOnInit()
     expect(component.translate.use).toHaveBeenCalledWith('en');
   })
-
-  it('should set header background to transparent when scrollPosition is 0', () => {
-    component.scrollPosition = 0;
-    component.ngOnChanges();
-    expect(component.headerRef.nativeElement.style.backgroundColor).toBe('transparent');
-  });
-
-  it('should set header background to black when scrollPosition is 200 or more', () => {
-    component.scrollPosition = 200;
-    component.ngOnChanges();
-    expect(component.headerRef.nativeElement.style.backgroundColor).toBe('black');
-  });
-  it('should set header background to black when scrollPosition is betweenn 0 and 200', () => {
-    component.scrollPosition = 100;
-    component.ngOnChanges();
-    expect(component.headerRef.nativeElement.style.backgroundColor).toBe('rgba(0, 0, 0, 0.5)');
-  });
 });

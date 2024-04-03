@@ -1,29 +1,33 @@
+@import "scss/colors.scss";
+
 .header {
   position: sticky;
   top: 0;
-
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 500;
+
+  padding: 14px;
+  background-color: black;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  row-gap: 24px;
 }
 
 .frida-image {
-  position: absolute;
-  left: 2rem;
-  width: 180px;
-  height: auto;
+  width: 213px;
+  height: 38px;
+
   &:hover {
     cursor: pointer;
   }
 }
 
-
 .header-link {
   color: white;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 18px;
 
 	position: relative;
 	padding: 0.2em 0;
@@ -36,40 +40,31 @@
         left: 0;
         width: 100%;
         height: 0.1em;
-        background-color: white;
+        background-color: $primary;
         transition: opacity 500ms, transform 300ms;
         opacity: 0;
         transform: scale(0);
         transform-origin: center;
     }
 
-    &:hover::after, &:focus::after {
+    &:hover::after, &:focus::after, &.active::after {
         opacity: 1;
-        transform: translate3d(0, 0.2em, 0);
         transform: scale(1);
     }
 }
 
-//Media queries for larger screens
-@media (max-width: 1060px) {
-  .frida-image {
-    position: relative;
-    left: 0;
-  }
-
-  .header {
-    position: static;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
+.contact-button {
+  padding: 16px;
+  background-color: $primary;
+  color: $white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
 }
 
-@media  (max-width: 800px) {
-  nav {
-    position: static;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: .5rem;
+
+@media  (min-width: 900px) {
+  .header {
+    grid-template-columns: max-content 1fr max-content;
   }
 }
