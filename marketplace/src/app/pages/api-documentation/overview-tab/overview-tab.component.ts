@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input, input} from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
 import { TranslateModule } from "@ngx-translate/core";
 
@@ -14,4 +14,5 @@ import { TranslateModule } from "@ngx-translate/core";
 })
 export class OverviewTabComponent {
 
+  @Input() apiName!: string;
 }

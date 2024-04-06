@@ -12,8 +12,8 @@
       <img ngSrc="./assets/icons/icon-pensionapi.svg" alt="" width="80" height="80">
     </div>
     <div class="api-header-text">
-      <h1 class="api-explorer-headline">{{ "API_OVERVIEW.PENSION_API.HEADLINE" | translate }}</h1>
-      <p class="api-explorer-subheadline">{{ "API_OVERVIEW.PENSION_API.SUBHEADLINE" | translate }}</p>
+      <h1 class="api-explorer-headline">{{ "API_OVERVIEW." + getApiName() + ".HEADLINE"  | translate }}</h1>
+      <p class="api-explorer-subheadline">{{ "API_OVERVIEW." + getApiName() + ".SUBHEADLINE" | translate }}</p>
       <div class="tag-container">
         <div class="tag" style="background-color: #6FBEAB">
           Pension
@@ -25,7 +25,7 @@
 
 <section class="api-explorer-tabs-section">
   <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
-    <mat-tab label="{{ 'API_OVERVIEW.TAB_OVERVIEW' | translate }}"><app-overview-tab></app-overview-tab></mat-tab>
+    <mat-tab label="{{ 'API_OVERVIEW.TAB_OVERVIEW' | translate }}"><app-overview-tab [apiName]="getApiName()"></app-overview-tab></mat-tab>
     <mat-tab label="{{ 'API_OVERVIEW.TAB_DOCUMENTATION' | translate }}"></mat-tab>
   </mat-tab-group>
 </section>
