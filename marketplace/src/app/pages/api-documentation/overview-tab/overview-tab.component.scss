@@ -1,0 +1,65 @@
+@import "scss/colors.scss";
+
+.overview-tab-information-section {
+  background: rgba($primary, 0.1);
+  padding: 50px;
+
+  .api-information {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(410px, 100%), 1fr));
+    gap: 16px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+
+    .information-headline {
+      color: $primary;
+      font-size: 24px;
+    }
+
+    .information-question {
+      color: $black;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .information-answer {
+      color: $black;
+      font-size: 16px;
+    }
+
+    .api-icon {
+      text-align: center;
+    }
+  }
+}
+
+.api-value-information-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+
+  .information-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(410px, 100%), 1fr));
+    gap: 16px;
+
+    .information-card {
+      background: $primary;
+      border-radius: 18px;
+      padding: 25px;
+
+      .card-headline {
+        color: $white;
+        font-size: 20px;
+      }
+
+      .card-text {
+        color: $white;
+        font-size: 16px;
+      }
+    }
+  }
+}

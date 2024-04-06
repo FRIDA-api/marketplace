@@ -1,4 +1,4 @@
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import {CommonModule, DOCUMENT, isPlatformBrowser, NgOptimizedImage} from '@angular/common';
 
 import {
   Component,
@@ -13,11 +13,13 @@ import { ApiDataService, CompanyInformation } from '@common/services/api-data.se
 import { Observable } from 'rxjs';
 
 import SwaggerUI from 'swagger-ui';
+import {MatTabsModule} from "@angular/material/tabs";
+import {OverviewTabComponent} from "./overview-tab/overview-tab.component";
 
 @Component({
   selector: 'app-api-documentation',
   standalone: true,
-  imports: [CommonModule, MatExpansionModule, RouterModule],
+  imports: [CommonModule, MatExpansionModule, RouterModule, MatTabsModule, OverviewTabComponent, NgOptimizedImage],
   templateUrl: './api-documentation.component.html',
   styleUrl: './api-documentation.component.scss',
 })
