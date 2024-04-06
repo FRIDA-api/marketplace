@@ -1,4 +1,4 @@
-import {Component, Input, input} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
 import { TranslateModule } from "@ngx-translate/core";
 

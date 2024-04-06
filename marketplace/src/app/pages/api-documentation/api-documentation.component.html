@@ -9,7 +9,7 @@
 <section class="api-explorer-headline-section">
   <div class="api-header">
     <div class="api-icon">
-      <img ngSrc="./assets/icons/icon-pensionapi.svg" alt="" width="80" height="80">
+      <img [ngSrc]="getIconPath()" alt="" width="80" height="80">
     </div>
     <div class="api-header-text">
       <h1 class="api-explorer-headline">{{ "API_OVERVIEW." + getApiName() + ".HEADLINE"  | translate }}</h1>
