@@ -22,5 +22,26 @@
     "ADDED_VALUES_BOX_2": "Use case-oriented, lean data model",
     "ADDED_VALUES_BOX_3": "State-of-the-art mechanisms and technologies with regard to identification and authentication (including OAuth2)",
     "ADDED_VALUES_BOX_4": "API documentation [GitHub] in English and German"
+  },
+  "API_OVERVIEW": {
+    "BACK_TO_OVERVIEW": "Back to overview",
+    "TAB_OVERVIEW": "Overview",
+    "TAB_DOCUMENTATION": "API Documentation",
+    "PENSION_API": {
+      "HEADLINE": "Use Case: Pension API",
+      "SUBHEADLINE": "Making pension assets accessible",
+      "CUSTOMER_PERSPECTIVE_HEADLINE": "Customer perspective",
+      "CUSTOMER_PERSPECTIVE_SUBHEADLINE": "What can I actually expect in old age? How big is my pension gap?",
+      "CUSTOMER_PERSPECTIVE_TEXT": "Answering this question and focusing on it regularly means: paper receipts and a lot of effort to adapt my specially created overview every year.",
+      "FRIDA_SOLUTION_HEADLINE": "How FRIDA solves the problem",
+      "FRIDA_SOLUTION_SUBHEADLINE": "The FRIDA PensionAPI enables third-party providers to make pension contract data transparently available to their users at any time.",
+      "FRIDA_SOLUTION_TEXT": "Users decide for themselves which third-party service they use to aggregate their data.",
+      "CARD_1_HEADLINE": "Open Standard API",
+      "CARD_1_TEXT": "With the FRIDA API, all insurers speak the same language. Third-party providers can use this API to create services with annuity values.",
+      "CARD_2_HEADLINE": "Pension cockpit selection",
+      "CARD_2_TEXT": "As the end consumer, I decide on a pension cockpit of my choice and give it my consent for data access. However, other services can also be created here (e.g. digital estate).",
+      "CARD_3_HEADLINE": "All pension assets in one place",
+      "CARD_3_TEXT": "As a user of a pension cockpit, I can always keep an eye on my expected pension, identify gaps and actively manage my pension provision or seek advice from pension experts."
+    }
   }
 }

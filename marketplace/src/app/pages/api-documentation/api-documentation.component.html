@@ -1,7 +1,7 @@
 <section class="back-to-overview-section">
   <div class="back-to-overview-container">
     <p class="back-to-overview-arrow"><</p>
-    <p class="back-to-overview-text">Zurück zur Übersicht</p>
+    <p class="back-to-overview-text">{{ "API_OVERVIEW.BACK_TO_OVERVIEW" | translate }}</p>
   </div>
   <hr class="back-to-overview-line">
 </section>
@@ -12,8 +12,8 @@
       <img ngSrc="./assets/icons/icon-pensionapi.svg" alt="" width="80" height="80">
     </div>
     <div class="api-header-text">
-      <h1 class="api-explorer-headline">Use Case: Pension API</h1>
-      <p class="api-explorer-subheadline">Rentenwerte zugänglich machen</p>
+      <h1 class="api-explorer-headline">{{ "API_OVERVIEW.PENSION_API.HEADLINE" | translate }}</h1>
+      <p class="api-explorer-subheadline">{{ "API_OVERVIEW.PENSION_API.SUBHEADLINE" | translate }}</p>
       <div class="tag-container">
         <div class="tag" style="background-color: #6FBEAB">
           Pension
@@ -25,8 +25,8 @@
 
 <section class="api-explorer-tabs-section">
   <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
-    <mat-tab label="Überblick"><app-overview-tab></app-overview-tab></mat-tab>
-    <mat-tab label="API Dokumentation"></mat-tab>
+    <mat-tab label="{{ 'API_OVERVIEW.TAB_OVERVIEW' | translate }}"><app-overview-tab></app-overview-tab></mat-tab>
+    <mat-tab label="{{ 'API_OVERVIEW.TAB_DOCUMENTATION' | translate }}"></mat-tab>
   </mat-tab-group>
 </section>
 

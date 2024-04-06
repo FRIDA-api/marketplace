@@ -15,11 +15,12 @@ import { Observable } from 'rxjs';
 import SwaggerUI from 'swagger-ui';
 import {MatTabsModule} from "@angular/material/tabs";
 import {OverviewTabComponent} from "./overview-tab/overview-tab.component";
+import {TranslateModule} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-api-documentation',
   standalone: true,
-  imports: [CommonModule, MatExpansionModule, RouterModule, MatTabsModule, OverviewTabComponent, NgOptimizedImage],
+  imports: [CommonModule, MatExpansionModule, RouterModule, MatTabsModule, OverviewTabComponent, NgOptimizedImage, TranslateModule],
   templateUrl: './api-documentation.component.html',
   styleUrl: './api-documentation.component.scss',
 })

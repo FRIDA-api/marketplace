@@ -22,5 +22,26 @@
     "ADDED_VALUES_BOX_2": "Use Case orientiertes, schlankes Datenmodell",
     "ADDED_VALUES_BOX_3": "State-of-the-Art Mechanismen und Technologien im Hinblick auf die Identifizierung und Authentifizierung (u.a. OAuth2)",
     "ADDED_VALUES_BOX_4": "API-Dokumentation [GitHub] auf Englisch und Deutsch"
+  },
+  "API_OVERVIEW": {
+    "BACK_TO_OVERVIEW": "Zurück zur Übersicht",
+    "TAB_OVERVIEW": "Überblick",
+    "TAB_DOCUMENTATION": "API Dokumentation",
+    "PENSION_API": {
+      "HEADLINE": "Use Case: Pension API",
+      "SUBHEADLINE": "Rentenwerte zugänglich machen",
+      "CUSTOMER_PERSPECTIVE_HEADLINE": "Kundenperspektive",
+      "CUSTOMER_PERSPECTIVE_SUBHEADLINE": "Was erwartet mich eigentlich im Alter? Wie groß ist meine Rentenlücke?",
+      "CUSTOMER_PERSPECTIVE_TEXT": "Diese Frage zu beantworten und regelmäßig im Fokus zu haben bedeutet: Papierbelege und ein hoher Aufwand jährlich meine eigens erstelle Übersicht anzupassen.",
+      "FRIDA_SOLUTION_HEADLINE": "Wie löst FRIDA das Problem",
+      "FRIDA_SOLUTION_SUBHEADLINE": "Die FRIDA PensionAPI ermöglicht es Drittanbietern, Daten zu Altersvorsorgeverträgen ihren Nutzern jederzeit transparent zur Verfügung zu stellen.",
+      "FRIDA_SOLUTION_TEXT": "Nutzer entscheiden selbst, welchen Drittanbieterservice sie für die Aggregation ihrer Daten verwenden.",
+      "CARD_1_HEADLINE": "Open Standard API",
+      "CARD_1_TEXT": "Mit der FRIDA API sprechen alle Versicherer die gleiche Sprache. Für Drittanbieter entsteht die Möglichkeit auf Basis dieser API, Services mit Rentenwerten aufzubauen.",
+      "CARD_2_HEADLINE": "Auswahl Rentencockpit",
+      "CARD_2_TEXT": "Als Endverbraucher entscheide ich mich für ein Rentencockpit meiner Wahl und erteile diesem mein Einverständnis für den Datenzugriff. Hier können aber auch andere Services entstehen (z.B. Digitaler Nachlass).",
+      "CARD_3_HEADLINE": "Alle Rentenwerte an einem Ort",
+      "CARD_3_TEXT": "Als Nutzer eines Rentencockpits habe ich meine erwartete Rente stets im Blick, erkenne Lücken und manage meine Altersvorsorge aktiv oder suche Rat bei Vorsorgeexperten."
+    }
   }
 }
