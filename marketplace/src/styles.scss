@@ -126,10 +126,10 @@ app-api-documentation .mat-expansion-panel-body {
   }
 
   .arrow,
-  .model-toggle.collapsed {
-    filter: invert(99%) sepia(0%) saturate(416%) hue-rotate(314deg)
-      brightness(116%) contrast(100%);
-  }
+  //.model-toggle.collapsed {
+  //  filter: invert(99%) sepia(0%) saturate(416%) hue-rotate(314deg)
+  //    brightness(116%) contrast(100%);
+  //}
   table,
   a,
   .opblock-summary-description,
@@ -140,7 +140,7 @@ app-api-documentation .mat-expansion-panel-body {
   .description,
   .scheme-container {
     background: unset !important;
-    color: white !important;
+    color: black !important;
   }
 }
 .swagger-ui .model-box:has(div) {
@@ -177,8 +177,8 @@ app-api-documentation .mat-expansion-panel-body {
 .swagger-ui .model-toggle {
   top: 0px;
   vertical-align: middle;
-  filter: invert(99%) sepia(0%) saturate(416%) hue-rotate(314deg)
-    brightness(116%) contrast(100%);
+  //filter: invert(99%) sepia(0%) saturate(416%) hue-rotate(314deg)
+  //  brightness(116%) contrast(100%);
 }
 .swagger-ui .model-toggle:after {
   height: 1rem !important;
@@ -189,7 +189,7 @@ app-api-documentation .mat-expansion-panel-body {
 .swagger-ui
   .response
   *:not(.content-type, .dialog-ux, .prop, .prop-type, .renderedMarkdown, p) {
-  color: white;
+  color: black;
 }
 .swagger-ui .model .star {
   color: #cd450a !important;
@@ -197,7 +197,7 @@ app-api-documentation .mat-expansion-panel-body {
 .swagger-ui {
   .title,
   .renderedMarkdown p {
-    color: white !important;
+    color: black !important;
   }
 }
 
