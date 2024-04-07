@@ -14,11 +14,12 @@ import {OverviewTabComponent} from "./overview-tab/overview-tab.component";
 import {TranslateModule} from "@ngx-translate/core";
 import {TagModel} from "@common/models/tag.model";
 import {map, of, switchMap} from "rxjs";
+import {DocumentationTabComponent} from "./documentation-tab/documentation-tab.component";
 
 @Component({
   selector: 'app-api-documentation',
   standalone: true,
-  imports: [CommonModule, MatExpansionModule, RouterModule, MatTabsModule, OverviewTabComponent, NgOptimizedImage, TranslateModule],
+  imports: [CommonModule, MatExpansionModule, RouterModule, MatTabsModule, OverviewTabComponent, NgOptimizedImage, TranslateModule, DocumentationTabComponent],
   templateUrl: './api-documentation.component.html',
   styleUrl: './api-documentation.component.scss',
 })
