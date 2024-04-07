@@ -1,21 +1,19 @@
-import {CommonModule, DOCUMENT, isPlatformBrowser, NgOptimizedImage} from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 
 import {
   Component,
   Input,
-  OnChanges,
-  PLATFORM_ID,
-  inject, SimpleChanges,
+  inject, OnInit,
 } from '@angular/core';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { Router, RouterModule } from '@angular/router';
-import { ApiDataService, CompanyInformation } from '@common/services/api-data.service';
-import { Observable } from 'rxjs';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {RouterModule} from '@angular/router';
+import {ApiDataService} from '@common/services/api-data.service';
 
-import SwaggerUI from 'swagger-ui';
 import {MatTabsModule} from "@angular/material/tabs";
 import {OverviewTabComponent} from "./overview-tab/overview-tab.component";
 import {TranslateModule} from "@ngx-translate/core";
+import {TagModel} from "@common/models/tag.model";
+import {map, of, switchMap} from "rxjs";
 
 @Component({
   selector: 'app-api-documentation',
@@ -24,37 +22,70 @@ import {TranslateModule} from "@ngx-translate/core";
   templateUrl: './api-documentation.component.html',
   styleUrl: './api-documentation.component.scss',
 })
-export class ApiDocumentationComponent implements OnChanges {
+export class ApiDocumentationComponent implements OnInit {
+  private readonly apiService = inject(ApiDataService);
 
   //This parameter comes from the router path
   @Input() apiPathParameter: string | undefined;
 
-  ngOnChanges(changes: SimpleChanges) {
+  apiInformation$ = this.apiService.getApiInformationData()
+  tagData$ = this.apiService.getTagData()
+  tags$ = of<TagModel[]>([]);
 
+  ngOnInit(): void {
+    this.tags$ = this.apiInformation$.pipe(
+      map(apiInfos => {
+        const apiInfo = apiInfos.find(info => info.id === this.apiPathParameter);
+        if (apiInfo) {
+          return apiInfo.tags;
+        } else {
+          throw new Error('API Information nicht gefunden');
+        }
+      }),
+      switchMap(tags => {
+        return this.tagData$.pipe(
+          map(allTags => allTags.filter(tag => tags.includes(tag.tagId)))
+        );
+      })
+    );
   }
 
   getApiName(): string {
-    switch(this.apiPathParameter) {
-      case "pension-api": return "PENSION_API"
-      case "car-claims-api": return "CAR_CLAIMS_API"
-      case "real-estate-api": return "REAL_ESTATE_API"
-      case "health-care-api": return "HEALTH_CARE_API"
-      case "digital-documents-api": return "DIGITAL_DOCUMENTS_API"
-      case "cyber-api": return "CYBER_API"
-      default: return ""
+    switch (this.apiPathParameter) {
+      case "pension-api":
+        return "PENSION_API"
+      case "car-claims-api":
+        return "CAR_CLAIMS_API"
+      case "real-estate-api":
+        return "REAL_ESTATE_API"
+      case "health-care-api":
+        return "HEALTH_CARE_API"
+      case "digital-documents-api":
+        return "DIGITAL_DOCUMENTS_API"
+      case "cyber-api":
+        return "CYBER_API"
+      default:
+        return ""
     }
   }
 
   getIconPath(): string {
     const iconBasePath = "./assets/icons/icon-"
-    switch(this.apiPathParameter) {
-      case "pension-api": return iconBasePath + "pensionapi.svg"
-      case "car-claims-api": return iconBasePath + "carclaimsapi.svg"
-      case "real-estate-api": return iconBasePath + "realestateapi.svg"
-      case "health-care-api": return iconBasePath + "healthcareapi.svg"
-      case "digital-documents-api": return iconBasePath + "digitaldocumentsapi.svg"
-      case "cyber-api": return iconBasePath + "cyberapi.svg"
-      default: return ""
+    switch (this.apiPathParameter) {
+      case "pension-api":
+        return iconBasePath + "pensionapi.svg"
+      case "car-claims-api":
+        return iconBasePath + "carclaimsapi.svg"
+      case "real-estate-api":
+        return iconBasePath + "realestateapi.svg"
+      case "health-care-api":
+        return iconBasePath + "healthcareapi.svg"
+      case "digital-documents-api":
+        return iconBasePath + "digitaldocumentsapi.svg"
+      case "cyber-api":
+        return iconBasePath + "cyberapi.svg"
+      default:
+        return ""
     }
   }
 

@@ -14,11 +14,17 @@
     <div class="api-header-text">
       <h1 class="api-explorer-headline">{{ "API_OVERVIEW." + getApiName() + ".HEADLINE"  | translate }}</h1>
       <p class="api-explorer-subheadline">{{ "API_OVERVIEW." + getApiName() + ".SUBHEADLINE" | translate }}</p>
-      <div class="tag-container">
-        <div class="tag" style="background-color: #6FBEAB">
-          Pension
+      @if ({
+        tags: tags$ | async
+      }; as data) {
+        <div class="tag-container">
+          @for (tag of data.tags; track tag.tagId) {
+            <div class="tag" [style.background-color]="tag.tagColor">
+              {{ tag.tagNameDE }}
+            </div>
+          }
         </div>
-      </div>
+      }
     </div>
   </div>
 </section>
