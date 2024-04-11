@@ -9,7 +9,7 @@ describe('HomePageComponent', () => {
   let fixture: MockedComponentFixture<HomePageComponent>;
 
   beforeEach(async () => {
-    MockBuilder(HomePageComponent)
+    return MockBuilder(HomePageComponent)
       .keep(TranslateModule.forRoot())
       .keep(HttpClientTestingModule)
       .provide({
@@ -19,6 +19,7 @@ describe('HomePageComponent', () => {
       .then(() => {
         fixture = MockRender(HomePageComponent);
         component = fixture.point.componentInstance;
+        fixture.detectChanges();
       })
   });
 

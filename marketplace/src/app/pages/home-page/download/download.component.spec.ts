@@ -1,21 +1,16 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { DownloadComponent } from './download.component';
+import {DownloadComponent} from './download.component';
+import {MockBuilder, MockedComponentFixture, MockRender} from "ng-mocks";
+import {CommonModule} from "@angular/common";
 
 describe('DownloadComponent', () => {
   let component: DownloadComponent;
-  let fixture: ComponentFixture<DownloadComponent>;
+  let fixture: MockedComponentFixture<DownloadComponent, { apiPathParameter: string }>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [DownloadComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(DownloadComponent);
-    component = fixture.componentInstance;
+  beforeEach(() => MockBuilder(DownloadComponent).keep(CommonModule).then(() => {
+    fixture = MockRender(DownloadComponent, {apiPathParameter: 'pension-api',});
+    component = fixture.point.componentInstance;
     fixture.detectChanges();
-  });
+  }));
 
   it('should create', () => {
     expect(component).toBeTruthy();
