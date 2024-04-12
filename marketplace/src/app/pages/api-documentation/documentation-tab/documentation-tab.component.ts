@@ -3,6 +3,7 @@ import SwaggerUI from "swagger-ui";
 import {DOCUMENT, isPlatformBrowser, NgStyle} from "@angular/common";
 import {UseCaseApiService} from "@common/services/use-case-api.service";
 import {TranslateModule} from "@ngx-translate/core";
+import {ApiInformationModel} from "@common/models/api-information.model";
 
 @Component({
   selector: 'app-documentation-tab',
@@ -16,14 +17,12 @@ import {TranslateModule} from "@ngx-translate/core";
 })
 export class DocumentationTabComponent {
 
-  @Input() api!: string;
+  @Input() apiInformation!: ApiInformationModel;
   isActive = input<boolean>();
 
   private document = inject(DOCUMENT);
   private readonly platformId = inject(PLATFORM_ID);
-  private readonly apiInformationService = inject(UseCaseApiService);
 
-  apiInformation = this.apiInformationService.getUseCaseInformation();
 
   initializeApiDocumentation = effect(() => {
      if (this.isActive()) {
@@ -33,7 +32,7 @@ export class DocumentationTabComponent {
        }
 
        SwaggerUI({
-         url: this.currentApiSwaggerPath(),
+         url: this.apiInformation.swaggerPath,
          domNode: this.document.getElementById('swagger-ui'),
          deepLinking: true,
          defaultModelsExpandDepth: 4,
@@ -45,12 +44,4 @@ export class DocumentationTabComponent {
        });
      }
   });
-
-  currentApiSwaggerPath() {
-    return this.apiInformation.find(api => api.id === this.api)?.swaggerPath
-  }
-
-  getGithubLink() {
-    return this.apiInformation.find(api => api.id === this.api)?.githubLink
-  }
 }
