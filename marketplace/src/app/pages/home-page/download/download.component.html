@@ -12,12 +12,50 @@
       {{ "DOWNLOADS.SUBHEADLINE" | translate }}
     </p>
     <div class="downloads-card-container auto-main-width">
-      <!--     @for (api of downloadInformation; track api.id) {
-      <app-use-case-card
-        [apiData]="api"
-        [tagsData]="tagInformation"
-      ></app-use-case-card>
-      } -->
+      @for(downloadContainer of downloadContainers; track downloadContainer.key)
+      {
+      <div class="container">
+        <a class="hover-container" tabindex="0"
+          ><span class="sr-only">
+            {{
+              "DOWNLOADS.TILES." + downloadContainer.key + ".TITLE" | translate
+            }}
+          </span>
+        </a>
+        <div class="title-container">
+          <div class="icon-container">
+            <img
+              ngSrc="./assets/icons/icon-download-img.svg"
+              alt=""
+              width="52"
+              height="52"
+            />
+          </div>
+          <h2>
+            {{
+              "DOWNLOADS.TILES." + downloadContainer.key + ".TITLE" | translate
+            }}
+          </h2>
+        </div>
+        <div class="description-container">
+          @for(download of downloadContainer.downloads; track download){
+          <div class="download-item-container">
+            <img
+              ngSrc="./assets/icons/icon-download.svg"
+              alt=""
+              width="18"
+              height="18"
+            />
+            <div>{{ download.title }}</div>
+          </div>
+          <div class="download-item-content-container">
+            <span>{{ download.version }}</span>
+            <span>{{ download.date }}</span>
+          </div>
+          }
+        </div>
+      </div>
+      }
     </div>
   </div>
 </section>
