@@ -6,8 +6,12 @@
       </a>
     </div>
   }
-
-  <div class="swagger-container">
-    <div id="swagger-ui" [ngStyle]="currentApiSwaggerPath() ? { display: 'block' } : { display: 'none' }"></div>
+  @if (!currentApiSwaggerPath()) {
+    <div class="no-swagger-container">
+      <p class="no-swagger-text">{{ "API_OVERVIEW.COMING_SOON_TEXT" | translate }}</p>
+    </div>
+  }
+  <div class="swagger-container" [ngStyle]="currentApiSwaggerPath() ? { display: 'block' } : { display: 'none' }">
+    <div id="swagger-ui"></div>
   </div>
 </div>

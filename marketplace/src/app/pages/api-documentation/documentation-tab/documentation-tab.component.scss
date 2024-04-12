@@ -20,6 +20,17 @@
       width: fit-content;
     }
   }
+
+  .no-swagger-container {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+
+    .no-swagger-text {
+      font-size: 16px;
+    }
+  }
 }
 
 .swagger-container {
