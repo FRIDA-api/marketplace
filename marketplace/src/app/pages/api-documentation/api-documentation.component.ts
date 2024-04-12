@@ -56,7 +56,7 @@ export class ApiDocumentationComponent implements OnInit {
         return iconBasePath + "pensionapi.svg"
       case "car-claims-api":
         return iconBasePath + "carclaimsapi.svg"
-      case "real-estate-api":
+      case "real-estate-api-policy": case "real-estate-api-risk":
         return iconBasePath + "realestateapi.svg"
       case "health-care-api":
         return iconBasePath + "healthcareapi.svg"

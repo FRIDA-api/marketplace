@@ -103,7 +103,7 @@
       "CARD_3_HEADLINE": "Schadendaten",
       "CARD_3_TEXT": "Die Versicherung des Kunden verarbeitet die erfassten Schadendaten automatisiert."
     },
-    "REAL_ESTATE_API": {
+    "REAL_ESTATE_API_POLICY": {
       "HEADLINE": "Use Case: Building API",
       "SUBHEADLINE": "Daten rund um Immobilien",
       "CUSTOMER_PERSPECTIVE_HEADLINE": "Kundenperspektive",
@@ -166,6 +166,22 @@
       "CARD_2_TEXT": "Aufbau von Cyberdeckungen mit sehr guten Product-Market Fit, Bestandsmonitoring Transparente, einheitliche Datenbasis und Vergleichbarkeit, Professionalisierung von Cyber-Policen, Zentrale Stelle für Risikoermittlung",
       "CARD_3_HEADLINE": "Dritt-/Lösungsanbieter",
       "CARD_3_TEXT": "Entwicklung von Sicherheitsprodukten, Steigerung der Kompetenz durch innovative High-Tech-Instrumente, Zielgerichtete Weiterentwicklung des Dienstleistungsangebots, KRI-Service als Kundenbetreuungs- und Akquise-Tool, Steigerung der Kundenzufriedenheit"
+    },
+    "REAL_ESTATE_API_RISK": {
+      "HEADLINE": "Use Case: Building API",
+      "SUBHEADLINE": "Daten rund um Immobilien",
+      "CUSTOMER_PERSPECTIVE_HEADLINE": "Kundenperspektive",
+      "CUSTOMER_PERSPECTIVE_SUBHEADLINE": "Ich möchte Daten zu einem bzw. meinem Gebäude auf einer Plattform einsehen und entsprechend integrieren bzw. in unterschiedlichen Services nutzen. Neben den Daten, die ein Versicherer im Rahmen der Gebäudeversicherung erhebt und zur Verfügung stellen kann, können auch weitere Gebäudedaten von externen Quellen hinzugezogen werden",
+      "CUSTOMER_PERSPECTIVE_TEXT": "",
+      "FRIDA_SOLUTION_HEADLINE": "Die FRIDA Lösung",
+      "FRIDA_SOLUTION_SUBHEADLINE": "Mithilfe von Standard-APIs, die bei der Übermittlung von Gebäudedaten aus einer Versicherungspolice und zur Übermittlung von Gebäudedaten aus externen Quellen, wie z.B. SkenData, unterstützen, können unzählige Anwendungsfälle innerhalb und außerhalb der Versicherungsbranche entstehen.",
+      "FRIDA_SOLUTION_TEXT": "",
+      "CARD_1_HEADLINE": "Immobiliendaten",
+      "CARD_1_TEXT": "Austausch von Daten rund um Immobilien, die bei Versicherern liegen und zum Beispiel im Rahmen von Vertragsabschlüssen oder Schadenregulierungen einen Mehrwert bieten.",
+      "CARD_2_HEADLINE": "Standardisierter Datenaustausch",
+      "CARD_2_TEXT": "Standardisierung externer Quellen rund um Immobilien wie zum Beispiel Satellitendaten, Drittdienste zur Ermittlung von Grundstücksgrößen.",
+      "CARD_3_HEADLINE": "Anwendung",
+      "CARD_3_TEXT": "Die Building API kann von Kunden, Versicherern, Vetrieben und Dritt-/Lösungsanbietern genutzt werden um verschiedene Ziele zu erreichen (z.B. Inserate einstellen, vereinfachter Datenaustausch, Optimierung von Immobilienplattformen)."
     }
   }
 }

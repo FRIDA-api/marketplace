@@ -103,7 +103,7 @@
       "CARD_3_HEADLINE": "Claims data",
       "CARD_3_TEXT": "The customer's insurance company processes the recorded claims data automatically."
     },
-    "REAL_ESTATE_API": {
+    "REAL_ESTATE_API_POLICY": {
       "HEADLINE": "Use Case: Building API",
       "SUBHEADLINE": "Data relating to real estate",
       "CUSTOMER_PERSPECTIVE_HEADLINE": "Customer perspective",
@@ -166,6 +166,22 @@
       "CARD_2_TEXT": "Development of cyber cover with very good product-market fit, portfolio monitoring Transparent, uniform database and comparability, professionalization of cyber policies, central office for risk identification",
       "CARD_3_HEADLINE": "Third-party/solution provider",
       "CARD_3_TEXT": "Development of security products, Increasing expertise through innovative high-tech tools, Targeted further development of the range of services, KRI service as a customer support and acquisition tool, Increasing customer satisfaction"
+    },
+    "REAL_ESTATE_API_RISK": {
+      "HEADLINE": "Use Case: Building API",
+      "SUBHEADLINE": "Data relating to real estate",
+      "CUSTOMER_PERSPECTIVE_HEADLINE": "Customer perspective",
+      "CUSTOMER_PERSPECTIVE_SUBHEADLINE": "I would like to view data on one or my building on a platform and integrate it accordingly or use it in different services. In addition to the data that an insurer collects and can provide as part of building insurance, other building data from external sources can also be included",
+      "CUSTOMER_PERSPECTIVE_TEXT": "",
+      "FRIDA_SOLUTION_HEADLINE": "The FRIDA solution",
+      "FRIDA_SOLUTION_SUBHEADLINE": "With the help of standard APIs that support the transmission of building data from an insurance policy and the transmission of building data from external sources, such as SkenData, countless use cases can be created within and outside the insurance industry.",
+      "FRIDA_SOLUTION_TEXT": "",
+      "CARD_1_HEADLINE": "Real estate data",
+      "CARD_1_TEXT": "Exchange of data relating to real estate that is held by insurers and offers added value, for example in the context of concluding contracts or settling claims.",
+      "CARD_2_HEADLINE": "Standardized data exchange",
+      "CARD_2_TEXT": "Standardization of external sources relating to real estate, such as satellite data, third-party services for determining property sizes",
+      "CARD_3_HEADLINE": "Application",
+      "CARD_3_TEXT": "The Building API can be used by customers, insurers, vendors and third-party/solution providers to achieve various goals (e.g. posting listings, simplified data exchange, optimization of real estate platforms)."
     }
   }
 }
