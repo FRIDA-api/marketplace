@@ -12,4 +12,6 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class DownloadComponent {
   @Input() input?: ApiDownloadModel | null;
+
+  downloadInformation = [];
 }

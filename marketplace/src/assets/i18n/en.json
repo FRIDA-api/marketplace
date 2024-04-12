@@ -25,6 +25,26 @@
     "ADDED_VALUES_BOX_4": "API documentation [GitHub] in English and German"
   },
   "DOWNLOADS": {
+    "HEADLINE": "All downloads",
+    "SUBHEADLINE": "You can download all documents here",
+    "GOAL": {
+      "TITLE": "Our Goal",
+      "TEXT": "Our aim is to encourage companies to provide their end customers with new services and added value based on our use cases and APIs. We also provide comprehensive information on the topic of open insurance and show how market players can position themselves now and in the future. Our white papers help you to categorize yourself and learn more about Open Insurance.",
+      "BOX": {
+        "TITLE": "Common API and data standards are essential",
+        "LEFT": {
+          "TEXT_1": "Before a use case becomes a use case and an API specification is designed from it, a catalog of criteria is used to determine whether it is a use case that a) is implemented and b) can be scaled. How do we go about this in concrete terms?",
+          "HEADING_1": "How do we go about this in concrete terms?",
+          "TEXT_2": "Use case creation catalog: Every member and every cooperation partner has the opportunity to contribute a use case at any time"
+        },
+        "RIGHT": {
+          "TEXT_1": "Creation of a Use Case Working Group: At least three companies work on the use case",
+          "TEXT_2": "Collaboration model within the UC Working Group: Creation of a technical E2E process from the end customer perspective",
+          "TEXT_3": "Definition of the necessary data fields",
+          "TEXT_4": "Specification of the API based on the API guidelines and the OpenAPI standards 3.0 ff."
+        }
+      }
+    },
     "TILES": {
       "DATA_MODEL": {
         "TITLE": "FRIDA Data model"

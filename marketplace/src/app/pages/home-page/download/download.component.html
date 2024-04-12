@@ -1,46 +1,59 @@
-<a class="download-container" [href]="input?.downloadUrl" target="_blank">
-  <div class="information-container">
-    <p class="download-text">Download {{ input?.name }}</p>
-    <div class="metadata-container">
-      <img
-        class="verion-image"
-        [src]="'./assets/icons/version-icon.png'"
-        alt=""
-        width="16px"
-        height="16px"
-      />
-      <span>{{ input?.version }}</span>
-      <img
-        class="release-image"
-        [src]="'./assets/icons/release-icon.png'"
-        alt=""
-        width="16px"
-        height="16px"
-      />
-      <span>{{ input?.releaseDate }}</span>
-    </div>
+<section class="downloads-card-section">
+  <div class="poly-container">
+    <img src="/assets/images/poly-bg-white-01.svg" class="bg-svg-1" alt="" />
+    <img src="/assets/images/poly-bg-white-01.svg" class="bg-svg-2" alt="" />
   </div>
-</a>
-<div class="container">
-  <a class="hover-container" tabindex="0"
-    ><span class="sr-only">{{ "DOWNLOADS." + +".TITLE" | translate }}</span></a
-  >
-  <div class="title-container">
-    <div class="icon-container">
-      <img [ngSrc]="''" alt="" width="52" height="52" />
-    </div>
-    <h2>{{ "USE_CASES." + +".TITLE" | translate }}</h2>
-  </div>
-  <div class="description-container">
-    <p>
-      {{ "USE_CASES." + +".DESCRIPTION" | translate }}
+
+  <div class="elevated-container">
+    <h1 class="downloads-headline">
+      {{ "DOWNLOADS.HEADLINE" | translate }}
+    </h1>
+    <p class="downloads-subheadline">
+      {{ "DOWNLOADS.SUBHEADLINE" | translate }}
     </p>
-  </div>
-  <div class="tag-container">
-    @for (tag of $any([]); track tag.id) {
-    <div class="tag" [style.background-color]="tag.tagColor">
-      {{ "TAGS." + tag.id | translate }}
+    <div class="downloads-card-container auto-main-width">
+      <!--     @for (api of downloadInformation; track api.id) {
+      <app-use-case-card
+        [apiData]="api"
+        [tagsData]="tagInformation"
+      ></app-use-case-card>
+      } -->
     </div>
-    }
   </div>
-</div>
+</section>
+
+<section class="goal-section auto-main-width">
+  <h2 class="goal-headline">
+    {{ "DOWNLOADS.GOAL.TITLE" | translate }}
+  </h2>
+  <p class="goal-info">
+    {{ "DOWNLOADS.GOAL.TEXT" | translate }}
+  </p>
+
+  <div class="goal-box">
+    <h2 class="goal-subheadline">
+      {{ "DOWNLOADS.GOAL.BOX.TITLE" | translate }}
+    </h2>
+    <div class="goal-grid">
+      <div>
+        <div>{{ "DOWNLOADS.GOAL.BOX.LEFT.TEXT_1" | translate }}</div>
+        <h4>
+          {{ "DOWNLOADS.GOAL.BOX.LEFT.HEADING_1" | translate }}
+        </h4>
+      </div>
+      <div>
+        <li>{{ "DOWNLOADS.GOAL.BOX.RIGHT.TEXT_1" | translate }}</li>
+        <li>{{ "DOWNLOADS.GOAL.BOX.RIGHT.TEXT_2" | translate }}</li>
+      </div>
+    </div>
+    <div class="goal-grid">
+      <div>
+        <li>{{ "DOWNLOADS.GOAL.BOX.LEFT.TEXT_2" | translate }}</li>
+      </div>
+      <div>
+        <li>{{ "DOWNLOADS.GOAL.BOX.RIGHT.TEXT_3" | translate }}</li>
+        <li>{{ "DOWNLOADS.GOAL.BOX.RIGHT.TEXT_4" | translate }}</li>
+      </div>
+    </div>
+  </div>
+</section>

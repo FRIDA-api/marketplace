@@ -25,6 +25,26 @@
     "ADDED_VALUES_BOX_4": "API-Dokumentation [GitHub] auf Englisch und Deutsch"
   },
   "DOWNLOADS": {
+    "HEADLINE": "Alle Downloads",
+    "SUBHEADLINE": "Laden Sie hier die Dokumente herunter",
+    "GOAL": {
+      "TITLE": "Unser Ziel",
+      "TEXT": "Unser Ziel ist es, dass wir Unternehmen ermutigen, ihren Endkunden neue Services und Mehrwerte anhand unserer Use Cases und APIs zur Verfügung zu stellen. Darüber hinaus informieren wir ganzheitlich über das Thema Open Insurance und zeigen auf, wie sich Marktteilnehmer jetzt und in Zukunft positionieren können. Unsere Whitepaper helfen dabei, sich selbst einzuordnen und auch mehr über Open Insurance zu erfahren.",
+      "BOX": {
+        "TITLE": "Gemeinsame API- und Datenstandards sind essentiell",
+        "LEFT": {
+          "TEXT_1": "Bevor ein Use Case ein Use Case wird und daraus eine API-Spezifikation konzipiert wird, wird anhand eines Kriterienkatalogs ermittelt, ob es Use Case ist, der a) umgesetzt wird und b) skaliert werden kann. Wie gehen wir dabei konkret vor?",
+          "HEADING_1": "Wie gehen wir dabei konkret vor?",
+          "TEXT_2": "Use Case Creation Katalog: Jedes Mitglied und jeder Kooperationspartner hat die Möglichkeit jederzeit einen Use Case einzubringen"
+        },
+        "RIGHT": {
+          "TEXT_1": "Aufbau einer Use Case Working Group: Mindestens drei Unternehmen arbeiten an dem Use Case",
+          "TEXT_2": "Zusammenarbeitsmodell innerhalb der UC Working Group: Erstellung eines fachlichen E2E-Prozesses aus der Endkundenperspektive",
+          "TEXT_3": "Definition der notwendigen Datenfelder",
+          "TEXT_4": "Spezifikation der API anhand der API Guidelines und der OpenAPI Standards 3.0 ff."
+        }
+      }
+    },
     "TILES": {
       "DATA_MODEL": {
         "TITLE": "FRIDA Datenmodell"
