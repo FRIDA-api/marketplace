@@ -1,6 +1,4 @@
 export interface TagModel {
-  tagId: string;
-  tagNameDE: string;
-  tagNameEN: string;
+  id: string;
   tagColor: string;
 }

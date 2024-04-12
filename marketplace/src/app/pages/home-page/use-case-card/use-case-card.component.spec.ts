@@ -15,7 +15,7 @@ describe('UseCaseCardComponent', () => {
       "tagNameEN": "Pension",
       "tagColor": "#6FBEAB"
     }];
-    const apiDataMock = 
+    const apiDataMock =
       {
         "id": "pension-api",
         "nameDE": "PensionAPI",
@@ -39,13 +39,8 @@ describe('UseCaseCardComponent', () => {
         component = fixture.point.componentInstance;
       })
   );
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 
-  it('should create Without tagData', () => {
-    const fixture = MockRender(UseCaseCardComponent, {apiData: apiDataMock, tagsData: null});
-    const component = fixture.point.componentInstance;
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

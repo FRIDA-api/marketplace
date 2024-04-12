@@ -1,19 +1,20 @@
 <div class="container">
-  <a class="hover-container" tabindex="0" [routerLink]="['/api-explorer', apiData().id]"><span class="sr-only">{{ apiData().nameDE }}</span></a>
+  <a class="hover-container" tabindex="0" [routerLink]="['/api-explorer', apiData().id]"><span class="sr-only">{{ 'USE_CASES.' + apiData().languageKey + '.TITLE' | translate}}</span></a>
   <div class="title-container">
     <div class="icon-container">
       <img [ngSrc]="apiData().iconPath" alt="" width="52" height="52">
     </div>
-    <h2>{{ translate.currentLang | translate: apiData().nameDE: apiData().nameEN }}</h2>
+    <h2>{{ 'USE_CASES.' + apiData().languageKey + '.TITLE' | translate}}</h2>
   </div>
   <div class="description-container">
-    <p>{{ translate.currentLang | translate: apiData().descriptionDE: apiData().descriptionEN }}</p>
+    <p>{{'USE_CASES.' + apiData().languageKey + '.DESCRIPTION' | translate}}</p>
   </div>
   <div class="tag-container">
-    @for (tag of tagComputed(); track tag.tagId) {
+    @for (tag of tagComputed(); track tag.id) {
       <div class="tag" [style.background-color]="tag.tagColor">
-        {{ translate.currentLang | translate: tag.tagNameDE: tag.tagNameEN }}
+        {{ "TAGS." + tag.id | translate}}
       </div>
     }
   </div>
 </div>
+

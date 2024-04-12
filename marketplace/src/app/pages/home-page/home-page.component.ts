@@ -7,6 +7,8 @@ import { ApiDataService } from '@common/services/api-data.service';
 import { DownloadComponent } from "./download/download.component";
 import { UseCaseCardComponent } from "./use-case-card/use-case-card.component";
 import { TranslateModule } from "@ngx-translate/core";
+import {UseCaseApiService} from "@common/services/use-case-api.service";
+import {TagsApiService} from "@common/services/tags-api.service";
 
 @Component({
     selector: 'app-home-page',
@@ -25,10 +27,11 @@ import { TranslateModule } from "@ngx-translate/core";
     ]
 })
 export class HomePageComponent {
-  private readonly apiService = inject(ApiDataService);
+  private readonly useCasesApi = inject(UseCaseApiService);
+  private readonly tagsApi = inject(TagsApiService);
 
-  apiInformation$ = this.apiService.getApiInformationData();
-  tagInformation$ = this.apiService.getTagData();
+  apiInformation = this.useCasesApi.getUseCaseInformation();
+  tagInformation = this.tagsApi.getTagInformation();
 
   addedValuesData: { pathToImage: string, translationReference: string }[] = [
     {

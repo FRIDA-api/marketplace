@@ -1,9 +1,6 @@
 export interface ApiInformationModel {
   id: string;
-  nameDE: string;
-  nameEN: string;
-  descriptionDE: string;
-  descriptionEN: string;
+  languageKey: string;
   iconPath: string;
   tags: string[];
 }
