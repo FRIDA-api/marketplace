@@ -6,9 +6,8 @@ import { DownloadComponent } from './pages/home-page/download/download.component
 
 export const routes: Routes = [
   { path: '', component: HomePageComponent },
-  { path: 'api-explorer', redirectTo: 'api-explorer/', pathMatch: 'full' },
   {
-    path: 'api-explorer/:apiPathParameter',
+    path: ':apiPathParameter',
     loadComponent: () =>
       import('./pages/api-documentation/api-documentation.component').then(
         () => ApiDocumentationComponent
