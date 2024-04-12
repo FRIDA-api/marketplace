@@ -4,4 +4,5 @@ export interface ApiInformationModel {
   iconPath: string;
   tags: string[];
   githubLink: string;
+  swaggerPath: string;
 }

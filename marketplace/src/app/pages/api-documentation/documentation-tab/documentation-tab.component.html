@@ -6,7 +6,8 @@
       </a>
     </div>
   }
+
   <div class="swagger-container">
-    <div id="swagger-ui"></div>
+    <div id="swagger-ui" [ngStyle]="currentApiSwaggerPath() ? { display: 'block' } : { display: 'none' }"></div>
   </div>
 </div>
