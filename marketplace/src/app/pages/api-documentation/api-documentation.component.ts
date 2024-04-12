@@ -7,14 +7,14 @@ import {
 } from '@angular/core';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {RouterModule} from '@angular/router';
-import {ApiDataService} from '@common/services/api-data.service';
 
 import {MatTabChangeEvent, MatTabsModule} from "@angular/material/tabs";
 import {OverviewTabComponent} from "./overview-tab/overview-tab.component";
 import {TranslateModule} from "@ngx-translate/core";
 import {TagModel} from "@common/models/tag.model";
-import {map, of, switchMap} from "rxjs";
 import {DocumentationTabComponent} from "./documentation-tab/documentation-tab.component";
+import {TagsApiService} from "@common/services/tags-api.service";
+import {UseCaseApiService} from "@common/services/use-case-api.service";
 
 @Component({
   selector: 'app-api-documentation',
@@ -24,33 +24,21 @@ import {DocumentationTabComponent} from "./documentation-tab/documentation-tab.c
   styleUrl: './api-documentation.component.scss',
 })
 export class ApiDocumentationComponent implements OnInit {
-  private readonly apiService = inject(ApiDataService);
+  private readonly useCasesApi = inject(UseCaseApiService);
+  private readonly tagsApi = inject(TagsApiService)
 
   //This parameter comes from the router path
   @Input() apiPathParameter: string | undefined;
 
-  apiInformation$ = this.apiService.getApiInformationData()
-  tagData$ = this.apiService.getTagData()
-  tags$ = of<TagModel[]>([]);
+  apiInformation = this.useCasesApi.getUseCaseInformation();
+  tagData = this.tagsApi.getTagInformation();
 
+  relevantTags: TagModel[] = []
   isApiDocumentationTabActive = false;
 
   ngOnInit(): void {
-    this.tags$ = this.apiInformation$.pipe(
-      map(apiInfos => {
-        const apiInfo = apiInfos.find(info => info.id === this.apiPathParameter);
-        if (apiInfo) {
-          return apiInfo.tags;
-        } else {
-          throw new Error('API Information nicht gefunden');
-        }
-      }),
-      switchMap(tags => {
-        return this.tagData$.pipe(
-          map(allTags => allTags.filter(tag => tags.includes(tag.tagId)))
-        );
-      })
-    );
+    let currentApi = this.apiInformation.find(api => api.id === this.apiPathParameter)
+    this.relevantTags = this.tagData.filter(tag => currentApi!!.tags.includes(tag.id))
   }
 
   onTabChange(event: MatTabChangeEvent) {

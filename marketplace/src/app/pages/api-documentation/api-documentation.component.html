@@ -20,15 +20,13 @@
       <p class="api-explorer-subheadline">
         {{ "API_OVERVIEW." + getApiName() + ".SUBHEADLINE" | translate }}
       </p>
-      @if ({ tags: tags$ | async }; as data) {
       <div class="tag-container">
-        @for (tag of data.tags; track tag.tagId) {
+        @for (tag of relevantTags; track tag.id) {
         <div class="tag" [style.background-color]="tag.tagColor">
-          {{ tag.tagNameDE }}
+          {{ "TAGS." + tag.id | translate }}
         </div>
         }
       </div>
-      }
     </div>
   </div>
 </section>
