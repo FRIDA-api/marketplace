@@ -7,6 +7,8 @@ import { ApiDataService } from '@common/services/api-data.service';
 import { DownloadComponent } from "./download/download.component";
 import { UseCaseCardComponent } from "./use-case-card/use-case-card.component";
 import { TranslateModule } from "@ngx-translate/core";
+import {UseCaseApiService} from "@common/services/use-case-api.service";
+import {TagsApiService} from "@common/services/tags-api.service";
 
 @Component({
     selector: 'app-home-page',
@@ -25,26 +27,27 @@ import { TranslateModule } from "@ngx-translate/core";
     ]
 })
 export class HomePageComponent {
-  private readonly apiService = inject(ApiDataService);
+  private readonly useCasesApi = inject(UseCaseApiService);
+  private readonly tagsApi = inject(TagsApiService);
 
-  apiInformation$ = this.apiService.getApiInformationData();
-  tagInformation$ = this.apiService.getTagData();
+  apiInformation = this.useCasesApi.getUseCaseInformation();
+  tagInformation = this.tagsApi.getTagInformation();
 
   addedValuesData: { pathToImage: string, translationReference: string }[] = [
     {
-      pathToImage: "assets/icons/icon-healthcareapi.svg",
+      pathToImage: "assets/icons/icon-rest-api.svg",
       translationReference: "HOMEPAGE.ADDED_VALUES_BOX_1",
     },
     {
-      pathToImage: "assets/icons/icon-healthcareapi.svg",
+      pathToImage: "assets/icons/icon-use-case.svg",
       translationReference: "HOMEPAGE.ADDED_VALUES_BOX_2",
     },
     {
-      pathToImage: "assets/icons/icon-healthcareapi.svg",
+      pathToImage: "assets/icons/icon-state-of-the-Art.svg",
       translationReference: "HOMEPAGE.ADDED_VALUES_BOX_3",
     },
     {
-      pathToImage: "assets/icons/icon-healthcareapi.svg",
+      pathToImage: "assets/icons/icon-api-dokumentation.svg",
       translationReference: "HOMEPAGE.ADDED_VALUES_BOX_4",
     }
   ];

@@ -1,20 +1,20 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { FooterComponent } from './footer.component';
+import {MockBuilder, MockedComponentFixture, MockRender, MockService} from "ng-mocks";
+import {TranslateModule} from "@ngx-translate/core";
+import {ActivatedRoute} from "@angular/router";
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
-  let fixture: ComponentFixture<FooterComponent>;
+  let fixture: MockedComponentFixture<FooterComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [FooterComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(FooterComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    return MockBuilder(FooterComponent)
+      .keep(TranslateModule.forRoot())
+      .then(() => {
+        fixture = MockRender(FooterComponent);
+        component = fixture.point.componentInstance;
+        fixture.detectChanges();
+      })
   });
 
   it('should create', () => {

@@ -1,21 +1,26 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HomePageComponent } from './home-page.component';
 import {HttpClientTestingModule} from "@angular/common/http/testing";
+import {MockBuilder, MockedComponentFixture, MockRender, MockService} from "ng-mocks";
+import {TranslateModule} from "@ngx-translate/core";
+import {ActivatedRoute} from "@angular/router";
 
 describe('HomePageComponent', () => {
   let component: HomePageComponent;
-  let fixture: ComponentFixture<HomePageComponent>;
+  let fixture: MockedComponentFixture<HomePageComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [HomePageComponent, HttpClientTestingModule]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(HomePageComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    return MockBuilder(HomePageComponent)
+      .keep(TranslateModule.forRoot())
+      .keep(HttpClientTestingModule)
+      .provide({
+        provide: ActivatedRoute,
+        useValue: MockService(ActivatedRoute),
+      })
+      .then(() => {
+        fixture = MockRender(HomePageComponent);
+        component = fixture.point.componentInstance;
+        fixture.detectChanges();
+      })
   });
 
   it('should create', () => {

@@ -38,11 +38,25 @@
     border-radius: 8px;
   }
 
-  .extern-logo {
-    img {
+  .extern-logos {
+    display: flex;
+
+    .extern-logo {
       margin: 22px;
-      width: 60px;
-      height: 60px;
+      width: 64px;
+      height: 64px;
+      background-color: rgba($lightblack, .2);
+      border-radius: 32px;
+      display: block;
+      position: relative;
+
+      img {
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        top: 16px;
+        left: 16px;
+      }
     }
   }
 

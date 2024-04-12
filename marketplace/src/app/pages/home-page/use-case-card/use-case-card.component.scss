@@ -31,14 +31,8 @@
   .title-container {
     display: flex;
 
-    .icon-container {
-      padding: 10px;
-      border-radius: 72px;
-      background-color: $primary;
-    }
-
     h2 {
-      margin-left: 16px;
+      margin: 8px 0 0 16px;
       color: $primary;
     }
   }

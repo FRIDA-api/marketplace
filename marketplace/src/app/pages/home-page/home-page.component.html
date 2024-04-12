@@ -7,19 +7,14 @@
   <div class="elevated-container">
     <h1 class="use-case-headline">{{ "HOMEPAGE.USE_CASES_HEADLINE" | translate }}</h1>
     <p class="use-case-subheadline">{{ "HOMEPAGE.USE_CASES_SUBHEADLINE" | translate }}</p>
-    @if ({
-      apiInformation: apiInformation$ | async,
-      tagInformation: tagInformation$ | async
-    }; as data) {
-      <div class="use-case-card-container auto-main-width">
-        @for (api of data.apiInformation; track api.id) {
-          <app-use-case-card
-            [apiData]="api"
-            [tagsData]="data.tagInformation"
-          ></app-use-case-card>
-        }
-      </div>
-    }
+    <div class="use-case-card-container auto-main-width">
+      @for (api of apiInformation; track api.id) {
+        <app-use-case-card
+          [apiData]="api"
+          [tagsData]="tagInformation"
+        ></app-use-case-card>
+      }
+    </div>
   </div>
 </section>
 
@@ -30,7 +25,7 @@
   <div class="added-value-boxes">
     @for (box of addedValuesData; track box.translationReference) {
       <div class="added-value-box">
-        <img [ngSrc]="box.pathToImage" alt="" width="64" height="64">
+        <img [src]="box.pathToImage" alt="">
         <p>{{ box.translationReference | translate }}</p>
       </div>
     }

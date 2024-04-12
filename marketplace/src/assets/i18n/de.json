@@ -23,6 +23,50 @@
     "ADDED_VALUES_BOX_3": "State-of-the-Art Mechanismen und Technologien im Hinblick auf die Identifizierung und Authentifizierung (u.a. OAuth2)",
     "ADDED_VALUES_BOX_4": "API-Dokumentation [GitHub] auf Englisch und Deutsch"
   },
+  "USE_CASES": {
+    "PENSION_API": {
+      "TITLE": "PensionAPI",
+      "DESCRIPTION": "Bereitstellung von Daten zur Transparenz in der Altersvorsorge z.B. mithilfe eines Rentencockpits."
+    },
+    "CAR_CLAIMS_API": {
+      "TITLE": "Car-ClaimsAPI",
+      "DESCRIPTION": "Einheitliche Darstellung von Kfz- Versicherungsdaten (z.B. in einem digitalen Wallet), die im Schadenfall ausgetauscht und versendet werden können."
+    },
+    "REAL_ESTATE_API_POLICY": {
+      "TITLE": "RealEstateAPI (Policy)",
+      "DESCRIPTION": "Austausch von Daten rund um die Gebäudeversicherung, damit diese bei bspw. Vergabe von Modernisierungsdarlehen verwendet werden können."
+    },
+    "HEALTH_CARE_API": {
+      "TITLE": "Health-CareAPI",
+      "DESCRIPTION": "Anwendungsfälle im Gesundheitsbereich, z.B. um das integrierte Vertrags- und Leistungsmanagement."
+    },
+    "DIGITAL_DOCUMENTS_API": {
+      "TITLE": "DigitalDocumentsAPI",
+      "DESCRIPTION": "Austausch von Dokumenten, um z.B. den Überblick über die eigene Versicherungspost zu erhalten."
+    },
+    "CYBER_API": {
+      "TITLE": "CyberAPI",
+      "DESCRIPTION": "Anwendungsfälle im Kontext von Cyber-Versicherungen (z.B. die Standardisierung von KRIs und den Austausch zwischen Drittanbietern und Versicherern)."
+    },
+    "REAL_ESTATE_API_RISK": {
+      "TITLE": "RealEstateAPI (Risk)",
+      "DESCRIPTION": "Austausch von Daten rund um die Immobilie aus Drittsystemen (z.B. Grundsteuer, Softwareanbietern wie SkenData, PriceHubble etc.) Mithilfe einer API soll der Datenaustausch mit allen Anbietern vereinheitlicht werden."
+    }
+  },
+  "TAGS": {
+    "PENSION": "Pension",
+    "CAR": "Auto",
+    "CLAIMS": "Claims",
+    "ASSISTANCE": "Assistance",
+    "PAYMENT": "Payment",
+    "MOBILE": "Mobile",
+    "INDUSTRIAL_LINES": "Industrial Lines",
+    "PROPERTY_CASUALTY": "Property & Casualty",
+    "RISK_MANAGEMENT": "Risk Management",
+    "CYBER": "Cyber",
+    "DOCUMENTS": "Documents",
+    "HEALTH": "Health"
+  },
   "API_OVERVIEW": {
     "BACK_TO_OVERVIEW": "Zurück zur Übersicht",
     "TAB_OVERVIEW": "Überblick",

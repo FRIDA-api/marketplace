@@ -23,6 +23,50 @@
     "ADDED_VALUES_BOX_3": "State-of-the-art mechanisms and technologies with regard to identification and authentication (including OAuth2)",
     "ADDED_VALUES_BOX_4": "API documentation [GitHub] in English and German"
   },
+  "USE_CASES": {
+    "PENSION_API": {
+      "TITLE": "PensionAPI",
+      "DESCRIPTION": "Provision of data for transparency in pension provision, e.g. with the help of a pension cockpit."
+    },
+    "CAR_CLAIMS_API": {
+      "TITLE": "Car-ClaimsAPI",
+      "DESCRIPTION": "Standardized presentation of vehicle insurance data (e.g. in a digital wallet) that can be exchanged and sent in the event of a claim."
+    },
+    "REAL_ESTATE_API_POLICY": {
+      "TITLE": "RealEstateAPI (Policy)",
+      "DESCRIPTION": "Exchange of data relating to building insurance so that this can be used, for example, when granting modernization loans."
+    },
+    "HEALTH_CARE_API": {
+      "TITLE": "Health-CareAPI",
+      "DESCRIPTION": "Use cases in the healthcare sector, e.g. integrated contract and service management."
+    },
+    "DIGITAL_DOCUMENTS_API": {
+      "TITLE": "DigitalDocumentsAPI",
+      "DESCRIPTION": "Exchange of documents, e.g. to maintain an overview of your own insurance mail."
+    },
+    "CYBER_API": {
+      "TITLE": "CyberAPI",
+      "DESCRIPTION": "Use cases in the context of cyber insurance (e.g. the standardization of KRIs and the exchange between third-party providers and insurers)."
+    },
+    "REAL_ESTATE_API_RISK": {
+      "TITLE": "RealEstateAPI (Risk)",
+      "DESCRIPTION": "Exchange of property-related data from third-party systems (e.g. property tax, software providers such as SkenData, PriceHubble, etc.) An API is to be used to standardize data exchange with all providers."
+    }
+  },
+  "TAGS": {
+    "PENSION": "Pension",
+    "CAR": "Car",
+    "CLAIMS": "Claims",
+    "ASSISTANCE": "Assistance",
+    "PAYMENT": "Payment",
+    "MOBILE": "Mobile",
+    "INDUSTRIAL_LINES": "Industrial Lines",
+    "PROPERTY_CASUALTY": "Property & Casualty",
+    "RISK_MANAGEMENT": "Risk Management",
+    "CYBER": "Cyber",
+    "DOCUMENTS": "Documents",
+    "HEALTH": "Health"
+  },
   "API_OVERVIEW": {
     "BACK_TO_OVERVIEW": "Back to overview",
     "TAB_OVERVIEW": "Overview",
