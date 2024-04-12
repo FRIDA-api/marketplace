@@ -3,11 +3,15 @@ import {ApiDataService, CompanyInformation} from "@common/services/api-data.serv
 import SwaggerUI from "swagger-ui";
 import {Observable} from "rxjs";
 import {DOCUMENT, isPlatformBrowser} from "@angular/common";
+import {UseCaseApiService} from "@common/services/use-case-api.service";
+import {TranslateModule} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-documentation-tab',
   standalone: true,
-  imports: [],
+  imports: [
+    TranslateModule
+  ],
   templateUrl: './documentation-tab.component.html',
   styleUrl: './documentation-tab.component.scss'
 })
@@ -19,8 +23,10 @@ export class DocumentationTabComponent {
   private document = inject(DOCUMENT);
   private readonly platformId = inject(PLATFORM_ID);
   private readonly dataService = inject(ApiDataService);
+  private readonly apiInformationService = inject(UseCaseApiService);
 
   companyInformation$: Observable<CompanyInformation[]> = this.dataService.getApiDocumentation();
+  apiInformation = this.apiInformationService.getUseCaseInformation();
 
   initializeApiDocumentation = effect(() => {
      if (this.isActive()) {
@@ -58,5 +64,9 @@ export class DocumentationTabComponent {
       }
     }
     return "";
+  }
+
+  getGithubLink() {
+    return this.apiInformation.find(api => api.id === this.api)?.githubLink
   }
 }

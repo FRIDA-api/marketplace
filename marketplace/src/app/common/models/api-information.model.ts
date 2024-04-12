@@ -3,4 +3,5 @@ export interface ApiInformationModel {
   languageKey: string;
   iconPath: string;
   tags: string[];
+  githubLink: string;
 }

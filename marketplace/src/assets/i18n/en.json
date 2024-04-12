@@ -71,6 +71,7 @@
     "BACK_TO_OVERVIEW": "Back to overview",
     "TAB_OVERVIEW": "Overview",
     "TAB_DOCUMENTATION": "API Documentation",
+    "VIEW_ON_GITHUB": "View the API specification on Github",
     "PENSION_API": {
       "HEADLINE": "Use Case: Pension API",
       "SUBHEADLINE": "Making pension assets accessible",

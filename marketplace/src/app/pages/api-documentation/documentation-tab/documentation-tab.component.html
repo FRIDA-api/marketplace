@@ -1,3 +1,12 @@
-<div class="swagger-container">
-  <div id="swagger-ui"></div>
+<div class="api-documentation-container">
+  @if (getGithubLink()) {
+    <div class="view-on-github-container">
+      <a class="view-on-github-link" [href]=getGithubLink() target="_blank">
+        {{ "API_OVERVIEW.VIEW_ON_GITHUB" | translate }}
+      </a>
+    </div>
+  }
+  <div class="swagger-container">
+    <div id="swagger-ui"></div>
+  </div>
 </div>

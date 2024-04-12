@@ -1,6 +1,31 @@
 @import "scss/colors.scss";
 
-.swagger-container {
+.api-documentation-container {
   background: rgba($primary, 0.1);
-  padding: 50px;
+
+  .view-on-github-container {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+
+    .view-on-github-link {
+      background-color: $primary;
+      color: $white;
+      font-size: 16px;
+      padding: 20px;
+      border-radius: 18px;
+      text-decoration: none;
+      display: block;
+      width: fit-content;
+    }
+  }
+}
+
+.swagger-container {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

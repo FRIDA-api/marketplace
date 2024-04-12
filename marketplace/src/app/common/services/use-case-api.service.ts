@@ -13,7 +13,8 @@ export class UseCaseApiService {
       iconPath: "./assets/icons/icon-pensionapi.svg",
       tags: [
         "PENSION"
-      ]
+      ],
+      githubLink: "https://github.com/FRIDA-api/FRIDA-pension"
     },
     {
       id: "car-claims-api",
@@ -26,7 +27,8 @@ export class UseCaseApiService {
         "PAYMENT",
         "MOBILE",
         "INDUSTRIAL_LINES"
-      ]
+      ],
+      githubLink: "https://github.com/FRIDA-api/FRIDA-car"
     },
     {
       id: "real-estate-api-policy",
@@ -38,7 +40,8 @@ export class UseCaseApiService {
         "PAYMENT",
         "RISK_MANAGEMENT",
         "INDUSTRIAL_LINES"
-      ]
+      ],
+      githubLink: ""
     },
     {
       id: "health-care-api",
@@ -48,7 +51,8 @@ export class UseCaseApiService {
         "HEALTH",
         "ASSISTANCE",
         "MOBILE"
-      ]
+      ],
+      githubLink: ""
     },
     {
       id: "digital-documents-api",
@@ -57,7 +61,8 @@ export class UseCaseApiService {
       tags: [
         "DOCUMENTS",
         "INDUSTRIAL_LINES"
-      ]
+      ],
+      githubLink: ""
     },
     {
       id: "cyber-api",
@@ -68,7 +73,8 @@ export class UseCaseApiService {
         "ASSISTANCE",
         "RISK_MANAGEMENT",
         "INDUSTRIAL_LINES"
-      ]
+      ],
+      githubLink: ""
     },
     {
       id: "real-estate-api-risk",
@@ -78,7 +84,8 @@ export class UseCaseApiService {
         "HEALTH",
         "ASSISTANCE",
         "MOBILE"
-      ]
+      ],
+      githubLink: ""
     }
   ]
 
