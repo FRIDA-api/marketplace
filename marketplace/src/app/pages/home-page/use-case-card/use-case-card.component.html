@@ -1,12 +1,9 @@
 <div class="container">
-  <a
-    class="hover-container"
-    tabindex="0"
-    [routerLink]="['/api-explorer', apiData().id]"
+  <a class="hover-container" tabindex="0" [routerLink]="[apiData().id]"
     ><span class="sr-only">{{
       "USE_CASES." + apiData().languageKey + ".TITLE" | translate
-    }}</span>
-  </a>
+    }}</span></a
+  >
   <div class="title-container">
     <div class="icon-container">
       <img [ngSrc]="apiData().iconPath" alt="" width="52" height="52" />
