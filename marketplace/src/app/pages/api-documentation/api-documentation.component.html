@@ -11,17 +11,17 @@
 <section class="api-explorer-headline-section">
   <div class="api-header">
     <div class="api-icon">
-      <img [ngSrc]="apiInformation.iconPath" alt="" width="80" height="80" />
+      <img [ngSrc]="apiInformation!.iconPath" alt="" width="80" height="80" />
     </div>
     <div class="api-header-text">
       <h1 class="api-explorer-headline">
-        {{ "API_OVERVIEW." + apiInformation.languageKey + ".HEADLINE" | translate }}
+        {{ "API_OVERVIEW." + apiInformation!.languageKey + ".HEADLINE" | translate }}
       </h1>
       <p class="api-explorer-subheadline">
-        {{ "API_OVERVIEW." + apiInformation.languageKey + ".SUBHEADLINE" | translate }}
+        {{ "API_OVERVIEW." + apiInformation!.languageKey + ".SUBHEADLINE" | translate }}
       </p>
       <div class="tag-container">
-        @for (tag of tags; track tag.id) {
+        @for (tag of tags!; track tag.id) {
         <div class="tag" [style.background-color]="tag.tagColor">
           {{ "TAGS." + tag.id | translate }}
         </div>
@@ -34,10 +34,10 @@
 <section class="api-explorer-tabs-section">
   <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="left" (selectedTabChange)="onTabChange($event)">
     <mat-tab label="{{ 'API_OVERVIEW.TAB_OVERVIEW' | translate }}">
-      <app-overview-tab [apiInformation]="apiInformation"></app-overview-tab>
+      <app-overview-tab [apiInformation]="apiInformation!"></app-overview-tab>
     </mat-tab>
     <mat-tab label="{{ 'API_OVERVIEW.TAB_DOCUMENTATION' | translate }}">
-      <app-documentation-tab [apiInformation]="apiInformation" [isActive]="isApiDocumentationTabActive"></app-documentation-tab>
+      <app-documentation-tab [apiInformation]="apiInformation!" [isActive]="isApiDocumentationTabActive"></app-documentation-tab>
     </mat-tab>
   </mat-tab-group>
 </section>
