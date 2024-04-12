@@ -9,7 +9,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {RouterModule} from '@angular/router';
 import {ApiDataService} from '@common/services/api-data.service';
 
-import {MatTabsModule} from "@angular/material/tabs";
+import {MatTabChangeEvent, MatTabsModule} from "@angular/material/tabs";
 import {OverviewTabComponent} from "./overview-tab/overview-tab.component";
 import {TranslateModule} from "@ngx-translate/core";
 import {TagModel} from "@common/models/tag.model";
@@ -33,6 +33,8 @@ export class ApiDocumentationComponent implements OnInit {
   tagData$ = this.apiService.getTagData()
   tags$ = of<TagModel[]>([]);
 
+  isApiDocumentationTabActive = false;
+
   ngOnInit(): void {
     this.tags$ = this.apiInformation$.pipe(
       map(apiInfos => {
@@ -49,6 +51,10 @@ export class ApiDocumentationComponent implements OnInit {
         );
       })
     );
+  }
+
+  onTabChange(event: MatTabChangeEvent) {
+    this.isApiDocumentationTabActive = event.index === 1;
   }
 
   getApiName(): string {

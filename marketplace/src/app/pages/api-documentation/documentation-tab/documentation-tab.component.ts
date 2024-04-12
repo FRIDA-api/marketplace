@@ -1,4 +1,4 @@
-import {Component, inject, Input, OnChanges, OnInit, PLATFORM_ID} from '@angular/core';
+import {Component, effect, inject, input, Input, PLATFORM_ID} from '@angular/core';
 import {ApiDataService, CompanyInformation} from "@common/services/api-data.service";
 import SwaggerUI from "swagger-ui";
 import {Observable} from "rxjs";
@@ -11,9 +11,10 @@ import {DOCUMENT, isPlatformBrowser} from "@angular/common";
   templateUrl: './documentation-tab.component.html',
   styleUrl: './documentation-tab.component.scss'
 })
-export class DocumentationTabComponent implements OnInit {
+export class DocumentationTabComponent {
 
   @Input() api!: string;
+  isActive = input<boolean>();
 
   private document = inject(DOCUMENT);
   private readonly platformId = inject(PLATFORM_ID);
@@ -21,30 +22,32 @@ export class DocumentationTabComponent implements OnInit {
 
   companyInformation$: Observable<CompanyInformation[]> = this.dataService.getApiDocumentation();
 
-  ngOnInit() {
-    if (!isPlatformBrowser(this.platformId)) {
-      console.log("Not supported for ssr renderd files");
-      return;
-    }
+  initializeApiDocumentation = effect(() => {
+     if (this.isActive()) {
+       if (!isPlatformBrowser(this.platformId)) {
+         console.log("Not supported for ssr renderd files");
+         return;
+       }
 
-    this.companyInformation$.subscribe(data => {
-      const dataUrl = this.findMatchingApi(data, this.api);
+       this.companyInformation$.subscribe(data => {
+         const dataUrl = this.findMatchingApi(data, this.api);
 
-      SwaggerUI({
-        url: dataUrl,
-        domNode: this.document.getElementById('swagger-ui'),
-        deepLinking: true,
-        defaultModelsExpandDepth: 4,
-        defaultModelExpandDepth: 4,
-        syntaxHighlight: {
-          activate: true,
-          theme: 'tomorrow-night',
-        },
-      });
-    })
-  }
+         SwaggerUI({
+           url: dataUrl,
+           domNode: this.document.getElementById('swagger-ui'),
+           deepLinking: true,
+           defaultModelsExpandDepth: 4,
+           defaultModelExpandDepth: 4,
+           syntaxHighlight: {
+             activate: true,
+             theme: 'tomorrow-night',
+           },
+         });
+       })
+     }
+  });
 
-  public findMatchingApi(companyInformation: CompanyInformation[], apiPathParameter?: string) {
+  private findMatchingApi(companyInformation: CompanyInformation[], apiPathParameter?: string) {
     for (const company of companyInformation) {
       for (const category of company.categories) {
         for (const api of category.apis) {
