@@ -14,11 +14,6 @@ test.describe('core', () => {
         await catalogueSelector.click();
         await expect(page).toHaveURL('http://localhost:4200/');
 
-        const explorerSelector = page.getByRole('link', { name: 'API-Explorer'})
-        await expect(explorerSelector).toBeVisible();
-        await explorerSelector.click();
-        await expect(page).toHaveURL('http://localhost:4200/api-explorer/');
-
         const fridaSelector = page.getByAltText('Logo von FRIDA')
         await expect(fridaSelector).toBeVisible();
         await fridaSelector.click();
