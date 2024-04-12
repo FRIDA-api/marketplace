@@ -24,29 +24,34 @@ import {UseCaseApiService} from "@common/services/use-case-api.service";
   styleUrl: './api-documentation.component.scss',
 })
 export class ApiDocumentationComponent implements OnInit {
+  @Input() apiPathParameter: string | undefined;
+
   private readonly useCasesApi = inject(UseCaseApiService);
   private readonly tagsApi = inject(TagsApiService)
-
-  //This parameter comes from the router path
-  @Input() apiPathParameter: string | undefined;
 
   apiInformation = this.useCasesApi.getUseCaseInformation();
   tagData = this.tagsApi.getTagInformation();
 
+  apiName = "";
   relevantTags: TagModel[] = []
   isApiDocumentationTabActive = false;
 
   ngOnInit(): void {
-    let currentApi = this.apiInformation.find(api => api.id === this.apiPathParameter)
-    this.relevantTags = this.tagData.filter(tag => currentApi!!.tags.includes(tag.id))
+    this.setRelevantTags()
+    this.setApiName()
   }
 
   onTabChange(event: MatTabChangeEvent) {
     this.isApiDocumentationTabActive = event.index === 1;
   }
 
-  getApiName(): string {
-    return this.apiPathParameter!!.toUpperCase().replaceAll("-", "_")
+  setApiName() {
+    this.apiName = this.apiPathParameter!!.toUpperCase().replaceAll("-", "_")
+  }
+
+  setRelevantTags(){
+    let currentApi = this.apiInformation.find(api => api.id === this.apiPathParameter)
+    this.relevantTags = this.tagData.filter(tag => currentApi!!.tags.includes(tag.id))
   }
 
   getIconPath(): string {

@@ -15,10 +15,10 @@
     </div>
     <div class="api-header-text">
       <h1 class="api-explorer-headline">
-        {{ "API_OVERVIEW." + getApiName() + ".HEADLINE" | translate }}
+        {{ "API_OVERVIEW." + apiName + ".HEADLINE" | translate }}
       </h1>
       <p class="api-explorer-subheadline">
-        {{ "API_OVERVIEW." + getApiName() + ".SUBHEADLINE" | translate }}
+        {{ "API_OVERVIEW." + apiName + ".SUBHEADLINE" | translate }}
       </p>
       <div class="tag-container">
         @for (tag of relevantTags; track tag.id) {
@@ -38,7 +38,7 @@
     (selectedTabChange)="onTabChange($event)"
   >
     <mat-tab label="{{ 'API_OVERVIEW.TAB_OVERVIEW' | translate }}"
-      ><app-overview-tab [apiName]="getApiName()"></app-overview-tab
+      ><app-overview-tab [apiName]="apiName"></app-overview-tab
     ></mat-tab>
     <mat-tab label="{{ 'API_OVERVIEW.TAB_DOCUMENTATION' | translate }}"
       ><app-documentation-tab
