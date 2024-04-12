@@ -1,41 +1,55 @@
 <section class="back-to-overview-section">
   <div class="back-to-overview-container">
     <p class="back-to-overview-arrow"><</p>
-    <p class="back-to-overview-text" routerLink="/">{{ "API_OVERVIEW.BACK_TO_OVERVIEW" | translate }}</p>
+    <p class="back-to-overview-text" routerLink="/">
+      {{ "API_OVERVIEW.BACK_TO_OVERVIEW" | translate }}
+    </p>
   </div>
-  <hr class="back-to-overview-line">
+  <hr class="back-to-overview-line" />
 </section>
 
 <section class="api-explorer-headline-section">
   <div class="api-header">
     <div class="api-icon">
-      <img [ngSrc]="getIconPath()" alt="" width="80" height="80">
+      <img [ngSrc]="getIconPath()" alt="" width="80" height="80" />
     </div>
     <div class="api-header-text">
-      <h1 class="api-explorer-headline">{{ "API_OVERVIEW." + getApiName() + ".HEADLINE"  | translate }}</h1>
-      <p class="api-explorer-subheadline">{{ "API_OVERVIEW." + getApiName() + ".SUBHEADLINE" | translate }}</p>
-      @if ({
-        tags: tags$ | async
-      }; as data) {
-        <div class="tag-container">
-          @for (tag of data.tags; track tag.tagId) {
-            <div class="tag" [style.background-color]="tag.tagColor">
-              {{ tag.tagNameDE }}
-            </div>
-          }
+      <h1 class="api-explorer-headline">
+        {{ "API_OVERVIEW." + getApiName() + ".HEADLINE" | translate }}
+      </h1>
+      <p class="api-explorer-subheadline">
+        {{ "API_OVERVIEW." + getApiName() + ".SUBHEADLINE" | translate }}
+      </p>
+      @if ({ tags: tags$ | async }; as data) {
+      <div class="tag-container">
+        @for (tag of data.tags; track tag.tagId) {
+        <div class="tag" [style.background-color]="tag.tagColor">
+          {{ tag.tagNameDE }}
         </div>
+        }
+      </div>
       }
     </div>
   </div>
 </section>
 
 <section class="api-explorer-tabs-section">
-  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center" (selectedTabChange)="onTabChange($event)">
-    <mat-tab label="{{ 'API_OVERVIEW.TAB_OVERVIEW' | translate }}"><app-overview-tab [apiName]="getApiName()"></app-overview-tab></mat-tab>
-    <mat-tab label="{{ 'API_OVERVIEW.TAB_DOCUMENTATION' | translate }}"><app-documentation-tab [api]="apiPathParameter!" [isActive]="isApiDocumentationTabActive"></app-documentation-tab></mat-tab>
+  <mat-tab-group
+    mat-stretch-tabs="false"
+    mat-align-tabs="left"
+    (selectedTabChange)="onTabChange($event)"
+  >
+    <mat-tab label="{{ 'API_OVERVIEW.TAB_OVERVIEW' | translate }}"
+      ><app-overview-tab [apiName]="getApiName()"></app-overview-tab
+    ></mat-tab>
+    <mat-tab label="{{ 'API_OVERVIEW.TAB_DOCUMENTATION' | translate }}"
+      ><app-documentation-tab
+        [api]="apiPathParameter!"
+        [isActive]="isApiDocumentationTabActive"
+      ></app-documentation-tab
+    ></mat-tab>
   </mat-tab-group>
 </section>
-
 
 <!--<div class="api-layout">-->
 <!--  <div class="sidemenu-container">-->

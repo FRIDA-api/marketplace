@@ -120,7 +120,6 @@ app-api-documentation .mat-expansion-panel-body {
 }
 
 .swagger-ui {
-
   .info {
     margin: 0 !important;
   }
@@ -201,6 +200,11 @@ app-api-documentation .mat-expansion-panel-body {
   }
 }
 
+.mat-mdc-tab-header {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
 .mat-expansion-panel {
   background-color: transparent !important;
   border: none !important;
