@@ -40,7 +40,7 @@ const data = require('assets/data/api-documentation.json');
 describe('ApiDocumentationComponent', () => {
   let component: ApiDocumentationComponent;
   let fixture: MockedComponentFixture;
- 
+
   const getPlatformId = () =>  global.currentSpec?.description === 'should log "Not supported for ssr renderd files"'? 'server' : 'browser';
   beforeEach(() =>
     MockBuilder(ApiDocumentationComponent)
@@ -49,7 +49,7 @@ describe('ApiDocumentationComponent', () => {
       .keep(HttpClientTestingModule)
       .provide({ provide: PLATFORM_ID, useFactory: getPlatformId })
       .then(() => {
-       
+
         fixture = MockRender(ApiDocumentationComponent, {
           apiPathParameter: 'pension-api',
         });
@@ -75,7 +75,7 @@ describe('ApiDocumentationComponent', () => {
     component.ngOnChanges();
     expect(console.log).toHaveBeenCalledWith('Not supported for ssr renderd files');
   });
- 
+
   it('should find company matching to path', () => {
     expect(component.findMatchingApi(data, 'pension-api')).toEqual(
       '/assets/api/FRIDA_PensionInformation_OA3_full_en.yaml'

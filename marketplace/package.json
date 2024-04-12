@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "test:local": "ng test --browsers=Chrome --watch=true",
     "test": "ng test",
     "serve:ssr:marketplace": "node dist/marketplace/server/server.mjs",
     "e2e:test": "npx playwright test",
