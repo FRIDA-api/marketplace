@@ -1,15 +1,81 @@
+@import "scss/colors.scss";
+
 .footer {
-  border-top: 1px solid rgba($color: #ffffff, $alpha: 0.3);
-  height: 100px;
+  background: radial-gradient(at top center, #22d9e0 0%, #000000 100%) no-repeat
+  scroll center center / cover;
 
   width: 100%;
+  padding: 65px 0 90px 0;
   position: relative;
   bottom: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.copyright {
-  color: #ffffff54;
-  font-size: 14px;
+
+  .frida-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .frida-headline {
+    color: $white;
+    font-size: 30px;
+    margin: 22px 0 11px 0;
+  }
+
+  .frida-text {
+    color: $white;
+    font-size: 18px;
+    margin: 0 0 30px 0;
+  }
+
+  .button-link {
+    text-decoration: none;
+    color: $white;
+    background-color: $primary;
+    padding: 12px 16px;
+    border-radius: 8px;
+  }
+
+  .extern-logos {
+    display: flex;
+
+    .extern-logo {
+      margin: 22px;
+      width: 64px;
+      height: 64px;
+      background-color: rgba($lightblack, .2);
+      border-radius: 32px;
+      display: block;
+      position: relative;
+
+      img {
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        top: 16px;
+        left: 16px;
+      }
+    }
+  }
+
+  .link-list {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding-top: 12px;
+
+    a {
+      font-size: 14px;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  .copyright {
+    margin-top: 22px;
+    color: rgba($white, .4);
+    font-size: 14px;
+  }
 }

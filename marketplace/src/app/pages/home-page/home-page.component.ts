@@ -1,47 +1,54 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import {Component, DestroyRef, inject} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { RouterLink } from '@angular/router';
 import { ApiDataService } from '@common/services/api-data.service';
 import { DownloadComponent } from "./download/download.component";
-import {UseCaseCardComponent} from "./use-case-card/use-case-card.component";
-
-export interface ApiDetails {
-  id: string;
-  name: string;
-  shortDescription: string;
-  iconPath: string;
-}
+import { UseCaseCardComponent } from "./use-case-card/use-case-card.component";
+import { TranslateModule } from "@ngx-translate/core";
+import {UseCaseApiService} from "@common/services/use-case-api.service";
+import {TagsApiService} from "@common/services/tags-api.service";
 
 @Component({
     selector: 'app-home-page',
     standalone: true,
     templateUrl: './home-page.component.html',
     styleUrl: './home-page.component.scss',
-  imports: [
-    MatCardModule,
-    CommonModule,
-    MatDividerModule,
-    NgOptimizedImage,
-    RouterLink,
-    DownloadComponent,
-    UseCaseCardComponent
-  ]
+    imports: [
+        MatCardModule,
+        CommonModule,
+        MatDividerModule,
+        NgOptimizedImage,
+        RouterLink,
+        DownloadComponent,
+        UseCaseCardComponent,
+        TranslateModule
+    ]
 })
 export class HomePageComponent {
-  private readonly apiService = inject(ApiDataService);
-  private readonly apiInformationService = inject(ApiDataService);
+  private readonly useCasesApi = inject(UseCaseApiService);
+  private readonly tagsApi = inject(TagsApiService);
 
-  apiInformation$ = this.apiService.getApiInformationData();
-  tagInformation$ = this.apiService.getTagData();
+  apiInformation = this.useCasesApi.getUseCaseInformation();
+  tagInformation = this.tagsApi.getTagInformation();
 
-
-  apiList$ = this.apiService.getApiInformationData();
-  pensionApi$ = this.apiInformationService.getApiDownloads('pension');
-  healthCareApi$ = this.apiInformationService.getApiDownloads('healthcare');
-  carclaimsApi$ = this.apiInformationService.getApiDownloads('carclaims');
-  cyberApi$ = this.apiInformationService.getApiDownloads('cyber');
-  documentApi$ = this.apiInformationService.getApiDownloads('document');
-  buildingApi$ = this.apiInformationService.getApiDownloads('building');
+  addedValuesData: { pathToImage: string, translationReference: string }[] = [
+    {
+      pathToImage: "assets/icons/icon-rest-api.svg",
+      translationReference: "HOMEPAGE.ADDED_VALUES_BOX_1",
+    },
+    {
+      pathToImage: "assets/icons/icon-use-case.svg",
+      translationReference: "HOMEPAGE.ADDED_VALUES_BOX_2",
+    },
+    {
+      pathToImage: "assets/icons/icon-state-of-the-Art.svg",
+      translationReference: "HOMEPAGE.ADDED_VALUES_BOX_3",
+    },
+    {
+      pathToImage: "assets/icons/icon-api-dokumentation.svg",
+      translationReference: "HOMEPAGE.ADDED_VALUES_BOX_4",
+    }
+  ];
 }

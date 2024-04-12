@@ -1,16 +1,20 @@
-<header class="header" #header>
-  <img
-    routerLink="/"
-    src="assets/icons/header-icon.png"
-    alt="Logo von FRIDA"
-    class="frida-image"
-  />
+<header class="header">
+  <a routerLink="/" tabindex="0">
+    <img
+      ngSrc="assets/icons/header-icon.png"
+      alt="Logo von FRIDA"
+      class="frida-image"
+      height="182" width="1024"
+    />
+  </a>
+
 
   <nav>
     <a
       class="header-link"
-      routerLink="/api-catalogue"
+      routerLink="/"
       routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
       ariaCurrentWhenActive="page"
       >{{ "HEADER.API_CATALOGUE" | translate }}</a
     >
@@ -22,15 +26,20 @@
       ariaCurrentWhenActive="page"
       >{{ "HEADER.API_EXPLORER" | translate }}</a
     >
+  </nav>
+
+  <section>
     <select #langSelect (change)="translate.use(langSelect.value)">
       @for(language of translate.getLangs(); track language) {
-      <option
-        [value]="language"
-        [selected]="language === translate.currentLang"
-      >
-        {{ language }}
-      </option>
+        <option
+          [value]="language"
+          [selected]="language === translate.currentLang"
+        >
+          {{ language }}
+        </option>
       }
     </select>
-  </nav>
+
+    <button class="contact-button">info&#64;freeinsurancedata.de</button>
+  </section>
 </header>

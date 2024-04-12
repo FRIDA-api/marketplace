@@ -6,10 +6,10 @@ test.describe('homepage', () => {
     await page.goto('http://localhost:4200/');
   });
 
-
-
-  test('has download information', async ({ page }) => {
-    await expect(page.getByRole('link', { name: 'https://github.com/FRIDA-api/FRIDA-car' })).toBeVisible();
+  test('show use-case cards', async ({ page}) => {
+    await expect(page.locator('.use-case-card-container').getByRole('heading')).toHaveCount(7);
+    await expect(page.locator('.use-case-card-container').getByRole('paragraph')).toHaveCount(7);
+    await expect(page.locator('.use-case-card-container').getByRole('link')).toHaveCount(7);
   });
 
 });

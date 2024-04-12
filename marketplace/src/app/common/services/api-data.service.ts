@@ -37,18 +37,6 @@ export class ApiDataService {
     });
   }
 
-  getTagData() {
-    return this.http.get<TagModel[]>(`${this.basePath}tag-information.json`, {
-      responseType: "json"
-    });
-  }
-
-  getApiInformationData() {
-    return this.http.get<ApiInformationModel[]>(`${this.basePath}api-information.json`, {
-      responseType: 'json',
-    });
-  }
-
   getApiDownloads(apiName: string) {
     return this.http.get<ApiDownloadModel[]>(
       `${this.basePath}api-${apiName}-download.json`,

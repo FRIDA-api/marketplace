@@ -2,8 +2,7 @@
 
 .container {
   position: relative;
-  height: calc(100% - 60px);
-  width: calc(100% - 60px);
+  height: 100%;
 
   background-color: white;
   padding: 30px;
@@ -32,14 +31,8 @@
   .title-container {
     display: flex;
 
-    .icon-container {
-      padding: 10px;
-      border-radius: 72px;
-      background-color: $primary;
-    }
-
     h2 {
-      margin-left: 16px;
+      margin: 8px 0 0 16px;
       color: $primary;
     }
   }
@@ -61,11 +54,5 @@
       padding: 4px 12px;
       border-radius: 10px;
     }
-  }
-}
-
-@media screen and (min-width: 1370px) {
-  .container {
-    width: 410px;
   }
 }
