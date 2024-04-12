@@ -26,6 +26,20 @@ describe('AppComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should set browser language to "de"', ()=> {
+    spyOn(component.translate, 'getBrowserLang').and.returnValue(undefined);
+    spyOn(component.translate, 'use');
+    component.ngOnInit()
+    expect(component.translate.use).toHaveBeenCalledWith('de');
+  })
+
+  it('should set browser language to "en"', ()=> {
+    spyOn(component.translate, 'getBrowserLang').and.returnValue('fr');
+    spyOn(component.translate, 'use');
+    component.ngOnInit()
+    expect(component.translate.use).toHaveBeenCalledWith('en');
+  })
+
   xit('should update scrollPosition when element is scrolled', () => {
     const scrollEvent = new Event('scroll');
     const scrollTop = 100;
