@@ -1,5 +1,3 @@
-import { ComponentFixture } from '@angular/core/testing';
-
 import { ApiDocumentationComponent } from './api-documentation.component';
 import {MockBuilder, MockedComponentFixture, MockRender, MockService} from "ng-mocks";
 import {TranslateModule} from "@ngx-translate/core";
@@ -8,13 +6,8 @@ import {ActivatedRoute} from "@angular/router";
 describe('ApiDocumentationComponent', () => {
   let component: ApiDocumentationComponent;
   let fixture: MockedComponentFixture;
-  const tagDataMock = [{
-    "tagId": "pension",
-    "tagNameDE": "Pension",
-    "tagNameEN": "Pension",
-    "tagColor": "#6FBEAB"
-  }];
-  const apiDataMock = {
+  const apiPathParameterMock = "pension-api"
+  const apiInformationMock = {
     "id": "pension-api",
     "nameDE": "PensionAPI",
     "nameEN": "PensionAPI",
@@ -25,6 +18,12 @@ describe('ApiDocumentationComponent', () => {
       "pension"
     ]
   };
+  const tagDataMock = [{
+    "tagId": "pension",
+    "tagNameDE": "Pension",
+    "tagNameEN": "Pension",
+    "tagColor": "#6FBEAB"
+  }];
 
   beforeEach(async () => {
     return MockBuilder(ApiDocumentationComponent)
@@ -34,7 +33,7 @@ describe('ApiDocumentationComponent', () => {
         useValue: MockService(ActivatedRoute),
       })
       .then(() => {
-        fixture = MockRender(ApiDocumentationComponent, {apiInformation: apiDataMock, tagData: tagDataMock});
+        fixture = MockRender(ApiDocumentationComponent, {apiPathParameter: apiPathParameterMock, apiInformation: apiInformationMock, tagData: tagDataMock});
         component = fixture.point.componentInstance;
       })
   });
