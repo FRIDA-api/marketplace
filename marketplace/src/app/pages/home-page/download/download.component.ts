@@ -45,5 +45,4 @@ export class DownloadComponent {
       downloads: [],
     },
   ];
-  downloadInformation = [];
 }
