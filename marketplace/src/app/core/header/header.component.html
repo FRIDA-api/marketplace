@@ -4,10 +4,10 @@
       ngSrc="assets/icons/header-icon.png"
       alt="Logo von FRIDA"
       class="frida-image"
-      height="182" width="1024"
+      height="182"
+      width="1024"
     />
   </a>
-
 
   <nav>
     <a
@@ -26,17 +26,24 @@
       ariaCurrentWhenActive="page"
       >{{ "HEADER.API_EXPLORER" | translate }}</a
     >
+    <a
+      class="header-link"
+      routerLink="/downloads"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      >{{ "HEADER.DOWNLOADS" | translate }}</a
+    >
   </nav>
 
   <section>
     <select #langSelect (change)="translate.use(langSelect.value)">
       @for(language of translate.getLangs(); track language) {
-        <option
-          [value]="language"
-          [selected]="language === translate.currentLang"
-        >
-          {{ language }}
-        </option>
+      <option
+        [value]="language"
+        [selected]="language === translate.currentLang"
+      >
+        {{ language }}
+      </option>
       }
     </select>
 

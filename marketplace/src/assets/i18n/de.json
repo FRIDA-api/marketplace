@@ -1,7 +1,8 @@
 {
   "HEADER": {
     "API_CATALOGUE": "API-Katalog",
-    "API_EXPLORER": "API-Explorer"
+    "API_EXPLORER": "API-Explorer",
+    "DOWNLOADS": "Downloads"
   },
   "FOOTER": {
     "FRIDA_SHORT": "FRIDA",
@@ -22,6 +23,22 @@
     "ADDED_VALUES_BOX_2": "Use Case orientiertes, schlankes Datenmodell",
     "ADDED_VALUES_BOX_3": "State-of-the-Art Mechanismen und Technologien im Hinblick auf die Identifizierung und Authentifizierung (u.a. OAuth2)",
     "ADDED_VALUES_BOX_4": "API-Dokumentation [GitHub] auf Englisch und Deutsch"
+  },
+  "DOWNLOADS": {
+    "TILES": {
+      "DATA_MODEL": {
+        "TITLE": "FRIDA Datenmodell"
+      },
+      "EU_SUMMARY": {
+        "TITLE": "EU Zusammenfassung"
+      },
+      "USE_CASES_WHITEPAPER": {
+        "TITLE": "Use-Cases Whitepaper"
+      },
+      "USE_CASE_CREATION": {
+        "TITLE": "Use-Case Erstellungsprozess"
+      }
+    }
   },
   "USE_CASES": {
     "PENSION_API": {

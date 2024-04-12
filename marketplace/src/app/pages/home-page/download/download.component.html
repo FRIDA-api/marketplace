@@ -1,12 +1,46 @@
 <a class="download-container" [href]="input?.downloadUrl" target="_blank">
   <div class="information-container">
-    <p class="download-text">Download {{input?.name}}</p>
+    <p class="download-text">Download {{ input?.name }}</p>
     <div class="metadata-container">
-      <img class="verion-image" [src]="'./assets/icons/version-icon.png'" alt="" width="16px" height="16px">
+      <img
+        class="verion-image"
+        [src]="'./assets/icons/version-icon.png'"
+        alt=""
+        width="16px"
+        height="16px"
+      />
       <span>{{ input?.version }}</span>
-      <img class="release-image" [src]="'./assets/icons/release-icon.png'" alt="" width="16px" height="16px">
+      <img
+        class="release-image"
+        [src]="'./assets/icons/release-icon.png'"
+        alt=""
+        width="16px"
+        height="16px"
+      />
       <span>{{ input?.releaseDate }}</span>
     </div>
   </div>
-  
 </a>
+<div class="container">
+  <a class="hover-container" tabindex="0"
+    ><span class="sr-only">{{ "DOWNLOADS." + +".TITLE" | translate }}</span></a
+  >
+  <div class="title-container">
+    <div class="icon-container">
+      <img [ngSrc]="''" alt="" width="52" height="52" />
+    </div>
+    <h2>{{ "USE_CASES." + +".TITLE" | translate }}</h2>
+  </div>
+  <div class="description-container">
+    <p>
+      {{ "USE_CASES." + +".DESCRIPTION" | translate }}
+    </p>
+  </div>
+  <div class="tag-container">
+    @for (tag of $any([]); track tag.id) {
+    <div class="tag" [style.background-color]="tag.tagColor">
+      {{ "TAGS." + tag.id | translate }}
+    </div>
+    }
+  </div>
+</div>
