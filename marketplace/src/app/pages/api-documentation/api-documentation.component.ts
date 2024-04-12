@@ -46,22 +46,7 @@ export class ApiDocumentationComponent implements OnInit {
   }
 
   getApiName(): string {
-    switch (this.apiPathParameter) {
-      case "pension-api":
-        return "PENSION_API"
-      case "car-claims-api":
-        return "CAR_CLAIMS_API"
-      case "real-estate-api":
-        return "REAL_ESTATE_API"
-      case "health-care-api":
-        return "HEALTH_CARE_API"
-      case "digital-documents-api":
-        return "DIGITAL_DOCUMENTS_API"
-      case "cyber-api":
-        return "CYBER_API"
-      default:
-        return ""
-    }
+    return this.apiPathParameter!!.toUpperCase().replaceAll("-", "_")
   }
 
   getIconPath(): string {
