@@ -21,17 +21,16 @@
   </nav>
 
   <section>
-    <select #langSelect (change)="translate.use(langSelect.value)">
-      @for(language of translate.getLangs(); track language) {
-        <option
-          [value]="language"
-          [selected]="language === translate.currentLang"
-        >
-          {{ language }}
-        </option>
+    <button class="language-button" (click)="switchLanguage()" (keydown.enter)="switchLanguage()" (keydown.space)="switchLanguage()">
+      @if (translate.currentLang === 'de') {
+        <img id="en-flag" ngSrc="assets/icons/en_flag.png" alt="Flag of the USA" height="12" width="18">
       }
-    </select>
 
-    <button class="contact-button">info&#64;freeinsurancedata.de</button>
+      @if (translate.currentLang === 'en') {
+        <img id="de-flag" ngSrc="assets/icons/de_flag.png" alt="Flag of Germany" height="12" width="18">
+      }
+    </button>
+
+    <a class="contact-button" href="mailto:info@freeinsurancedata.de">info&#64;freeinsurancedata.de</a>
   </section>
 </header>

@@ -10,23 +10,26 @@ describe('UseCaseCardComponent', () => {
   let fixture: MockedComponentFixture;
   const tagDataMock = [
     {
-      "tagId": "pension",
-      "tagNameDE": "Pension",
-      "tagNameEN": "Pension",
-      "tagColor": "#6FBEAB"
-    }];
-    const apiDataMock =
-      {
-        "id": "pension-api",
-        "nameDE": "PensionAPI",
-        "nameEN": "PensionAPI",
-        "descriptionDE": "Bereitstellung von Daten zur Transparenz in der Altersvorsorge z.B. mithilfe eines Rentencockpits.",
-        "descriptionEN": "Provision of data for transparency in pension provision, e.g. with the help of a pension cockpit.",
-        "iconPath": "./assets/icons/icon-pensionapi.svg",
-        "tags": [
-          "pension"
-        ]
-      };
+      id: "health",
+      tagNameDE: "Health",
+      tagNameEN: "Health",
+      tagColor: "#000000"
+    },
+    {
+      id: "pension",
+      tagNameDE: "Pension",
+      tagNameEN: "Pension",
+      tagColor: "#6FBEAB"
+    }
+  ];
+  const apiDataMock = {
+    id: "pension-api",
+    languageKey: "PENSION_API",
+    iconPath: "./assets/icons/icon-pensionapi.svg",
+    tags: [
+      "pension"
+    ]
+  };
   beforeEach(() =>
     MockBuilder(UseCaseCardComponent)
       .keep(TranslateModule.forRoot())
@@ -42,5 +45,10 @@ describe('UseCaseCardComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should find matching tag', () => {
+    expect(component.tagComputed().length).toEqual(1);
+    expect(component.tagComputed()[0].id).toEqual('pension');
   });
 });
