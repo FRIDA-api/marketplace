@@ -14,16 +14,11 @@ test.describe('core', () => {
       await catalogueSelector.click();
       await expect(page).toHaveURL('http://localhost:4200/');
 
-      const explorerSelector = page.getByRole('link', { name: 'API-Explorer'})
-      await expect(explorerSelector).toBeVisible();
-      await explorerSelector.click();
-      await expect(page).toHaveURL('http://localhost:4200/api-explorer/');
-
-      const fridaSelector = page.getByAltText('Logo von FRIDA')
-      await expect(fridaSelector).toBeVisible();
-      await fridaSelector.click();
-      await expect(page).toHaveURL('http://localhost:4200');
-    });
+        const fridaSelector = page.getByAltText('Logo von FRIDA')
+        await expect(fridaSelector).toBeVisible();
+        await fridaSelector.click();
+        await expect(page).toHaveURL('http://localhost:4200');
+      });
 
     test('language switch', async ({ page }) => {
       const selectorTextDE = page.getByRole('link', { name: 'API-Katalog'});

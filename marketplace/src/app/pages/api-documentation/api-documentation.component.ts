@@ -1,82 +1,46 @@
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 
 import {
   Component,
   Input,
-  OnChanges,
-  PLATFORM_ID,
-  inject,
+  inject, OnInit
 } from '@angular/core';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { Router, RouterModule } from '@angular/router';
-import { ApiDataService, CompanyInformation } from '@common/services/api-data.service';
-import { Observable } from 'rxjs';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {RouterModule} from '@angular/router';
 
-import SwaggerUI from 'swagger-ui';
+import {MatTabChangeEvent, MatTabsModule} from "@angular/material/tabs";
+import {OverviewTabComponent} from "./overview-tab/overview-tab.component";
+import {TranslateModule} from "@ngx-translate/core";
+import {DocumentationTabComponent} from "./documentation-tab/documentation-tab.component";
+import {TagsApiService} from "@common/services/tags-api.service";
+import {UseCaseApiService} from "@common/services/use-case-api.service";
+import {ApiInformationModel} from "@common/models/api-information.model";
+import {TagModel} from "@common/models/tag.model";
 
 @Component({
   selector: 'app-api-documentation',
   standalone: true,
-  imports: [CommonModule, MatExpansionModule, RouterModule],
+  imports: [CommonModule, MatExpansionModule, RouterModule, MatTabsModule, OverviewTabComponent, NgOptimizedImage, TranslateModule, DocumentationTabComponent],
   templateUrl: './api-documentation.component.html',
   styleUrl: './api-documentation.component.scss',
 })
-export class ApiDocumentationComponent implements OnChanges {
-
-  //This parameter comes from the router path
+export class ApiDocumentationComponent implements OnInit {
   @Input() apiPathParameter: string | undefined;
 
-  private document = inject(DOCUMENT);
-  private readonly router = inject(Router);
-  private readonly platformId = inject(PLATFORM_ID);
-  private readonly dataService = inject(ApiDataService);
+  private readonly useCasesApi = inject(UseCaseApiService);
+  private readonly tagsApi = inject(TagsApiService)
 
-  noApiFound: boolean = false;
-  companyInformation$: Observable<CompanyInformation[]> = this.dataService.getApiDocumentation();
+  apiInformation: ApiInformationModel | undefined;
+  tags: TagModel[] | undefined;
 
-  selectApi(apiUrl: string) {
-    this.router.navigateByUrl(`/api-explorer/${apiUrl}`);
+  isApiDocumentationTabActive = false;
+
+  ngOnInit() {
+    this.apiInformation = this.useCasesApi.getUseCaseInformation().find(api => api.id === this.apiPathParameter);
+    this.tags = this.tagsApi.getTagInformation().filter(tag => this.apiInformation!.tags.includes(tag.id));
   }
 
-  ngOnChanges(): void {
-    if (!isPlatformBrowser(this.platformId)) {
-      console.log("Not supported for ssr renderd files");
-      return;
-    }
-
-    this.companyInformation$.subscribe(data => {
-      const dataUrl = this.findMatchingApi(data, this.apiPathParameter);
-      if (dataUrl === "") {
-        this.noApiFound = true;
-        return;
-      }
-
-      this.noApiFound = false;
-      SwaggerUI({
-        url: dataUrl,
-        domNode: this.document.getElementById('swagger-ui'),
-        deepLinking: true,
-        defaultModelsExpandDepth: 4,
-        defaultModelExpandDepth: 4,
-        syntaxHighlight: {
-          activate: true,
-          theme: 'tomorrow-night',
-        },
-      });
-    })
-
-  }
-
-  public findMatchingApi(companyInformation: CompanyInformation[], apiPathParameter?: string) {
-    for (const company of companyInformation) {
-      for (const category of company.categories) {
-        for (const api of category.apis) {
-          if (api.url === apiPathParameter) {
-            return api.dataUrl;
-          }
-        }
-      }
-    }
-    return "";
+  onTabChange(event: MatTabChangeEvent) {
+    this.isApiDocumentationTabActive = event.index === 1;
   }
 }
