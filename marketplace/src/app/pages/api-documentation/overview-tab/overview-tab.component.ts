@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
 import { TranslateModule } from "@ngx-translate/core";
+import {ApiInformationModel} from "@common/models/api-information.model";
 
 @Component({
   selector: 'app-overview-tab',
@@ -14,5 +15,5 @@ import { TranslateModule } from "@ngx-translate/core";
 })
 export class OverviewTabComponent {
 
-  @Input() apiName!: string;
+  @Input() apiInformation!: ApiInformationModel;
 }

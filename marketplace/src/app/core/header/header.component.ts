@@ -1,6 +1,5 @@
 import {
   Component,
-  OnInit,
   inject,
 } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
@@ -14,14 +13,16 @@ import {NgOptimizedImage} from "@angular/common";
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   readonly translate = inject(TranslateService);
 
-  ngOnInit(): void {
-    this.translate.addLangs(['en', 'de']);
-    const browserLang = this.translate.getBrowserLang() ?? 'de';
-    this.translate.use(RegExp(/en|de/).exec(browserLang) ? browserLang : 'en');
+  switchLanguage() {
+    if (this.translate.currentLang === 'de') {
+      this.translate.use('en');
+    } else {
+      this.translate.use('de');
+    }
   }
 
 }

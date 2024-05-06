@@ -11,102 +11,33 @@
 <section class="api-explorer-headline-section">
   <div class="api-header">
     <div class="api-icon">
-      <img [ngSrc]="getIconPath()" alt="" width="80" height="80" />
+      <img [ngSrc]="apiInformation!.iconPath" alt="" width="80" height="80" />
     </div>
     <div class="api-header-text">
       <h1 class="api-explorer-headline">
-        {{ "API_OVERVIEW." + getApiName() + ".HEADLINE" | translate }}
+        {{ "API_OVERVIEW." + apiInformation!.languageKey + ".HEADLINE" | translate }}
       </h1>
       <p class="api-explorer-subheadline">
-        {{ "API_OVERVIEW." + getApiName() + ".SUBHEADLINE" | translate }}
+        {{ "API_OVERVIEW." + apiInformation!.languageKey + ".SUBHEADLINE" | translate }}
       </p>
-      @if ({ tags: tags$ | async }; as data) {
       <div class="tag-container">
-        @for (tag of data.tags; track tag.tagId) {
+        @for (tag of tags!; track tag.id) {
         <div class="tag" [style.background-color]="tag.tagColor">
-          {{ tag.tagNameDE }}
+          {{ "TAGS." + tag.id | translate }}
         </div>
         }
       </div>
-      }
     </div>
   </div>
 </section>
 
 <section class="api-explorer-tabs-section">
-  <mat-tab-group
-    mat-stretch-tabs="false"
-    mat-align-tabs="left"
-    (selectedTabChange)="onTabChange($event)"
-  >
-    <mat-tab label="{{ 'API_OVERVIEW.TAB_OVERVIEW' | translate }}"
-      ><app-overview-tab [apiName]="getApiName()"></app-overview-tab
-    ></mat-tab>
-    <mat-tab label="{{ 'API_OVERVIEW.TAB_DOCUMENTATION' | translate }}"
-      ><app-documentation-tab
-        [api]="apiPathParameter!"
-        [isActive]="isApiDocumentationTabActive"
-      ></app-documentation-tab
-    ></mat-tab>
+  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="left" (selectedTabChange)="onTabChange($event)">
+    <mat-tab label="{{ 'API_OVERVIEW.TAB_OVERVIEW' | translate }}">
+      <app-overview-tab [apiInformation]="apiInformation!"></app-overview-tab>
+    </mat-tab>
+    <mat-tab label="{{ 'API_OVERVIEW.TAB_DOCUMENTATION' | translate }}">
+      <app-documentation-tab [apiInformation]="apiInformation!" [isActive]="isApiDocumentationTabActive"></app-documentation-tab>
+    </mat-tab>
   </mat-tab-group>
 </section>
-
-<!--<div class="api-layout">-->
-<!--  <div class="sidemenu-container">-->
-<!--    <mat-accordion>-->
-<!--      @for (company of companyInformation$ | async; track company) {-->
-<!--      <mat-expansion-panel>-->
-<!--        <mat-expansion-panel-header>-->
-<!--          <mat-panel-title class="level-one-title">-->
-<!--            <img-->
-<!--              src="{{ company.pathToIcon }}"-->
-<!--              alt=""-->
-<!--              width="16px"-->
-<!--              height="16px"-->
-<!--              class="image"-->
-<!--            />-->
-<!--            {{ company.companyName }}</mat-panel-title-->
-<!--          >-->
-<!--        </mat-expansion-panel-header>-->
-
-<!--        @for(category of company.categories; track category) {-->
-<!--        <mat-expansion-panel>-->
-<!--          <mat-expansion-panel-header class="level-two-header">-->
-<!--            <mat-panel-title class="level-two-title">-->
-<!--              {{ category.categoryName }}</mat-panel-title-->
-<!--            >-->
-<!--          </mat-expansion-panel-header>-->
-
-<!--          @for(api of category.apis; track api) {-->
-<!--          <div (click)="selectApi(api.url)" class="level-three-title">-->
-<!--            {{ api.name }}-->
-<!--          </div>-->
-<!--          }-->
-<!--        </mat-expansion-panel>-->
-<!--        }-->
-<!--      </mat-expansion-panel>-->
-<!--      }-->
-<!--    </mat-accordion>-->
-<!--  </div>-->
-
-<!--  <div class="content">-->
-<!--    @if (!apiPathParameter || noApiFound) {-->
-<!--    <div class="select-text">-->
-<!--      <h1>API Documentation</h1>-->
-<!--      <p>-->
-<!--        This page shows the OpenAPI specifications of the different insurance-->
-<!--        APIs. To show one specification please select one on the left.-->
-<!--      </p>-->
-<!--      <p>-->
-<!--        The side menu contains companies that implement one or more FRIDA APIs.-->
-<!--        If you want to see the recommendations from FRIDA please select-->
-<!--        specifications under FRIDA.-->
-<!--      </p>-->
-<!--    </div>-->
-<!--    }-->
-<!--    <div-->
-<!--      id="swagger-ui"-->
-<!--      [ngStyle]="apiPathParameter && !noApiFound ? { display: 'block' } : { display: 'none' }"-->
-<!--    ></div>-->
-<!--  </div>-->
-<!--</div>-->
