@@ -38,6 +38,7 @@
   }
   .download-item-content-container {
     padding-left: 28px;
+    padding-bottom: 16px;
     display: flex;
     gap: 28px;
   }
@@ -103,6 +104,9 @@
   }
 }
 
+.description-container {
+  padding: 16px 8px;
+}
 .downloads-card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(410px, 100%), 1fr));
@@ -157,6 +161,10 @@
     text-align: start;
     width: 100%;
     li {
+      span {
+        display: inline-flex;
+        width: calc(100% - 23px);
+      }
       padding-bottom: 10px;
     }
     li::marker {

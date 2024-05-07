@@ -30,19 +30,47 @@ export class DownloadComponent {
           version: '1.0',
           date: '12.04.2024',
         },
+        {
+          title: 'test',
+          version: '1.0',
+          date: '12.04.2024',
+        },
       ],
     },
     {
       key: 'EU_SUMMARY',
-      downloads: [],
+      downloads: [
+        {
+          title: 'test',
+          version: '1.0',
+          date: '12.04.2024',
+        },
+      ],
     },
     {
       key: 'USE_CASES_WHITEPAPER',
-      downloads: [],
+      downloads: [
+        {
+          title: 'test',
+          version: '1.0',
+          date: '12.04.2024',
+        },
+      ],
     },
     {
       key: 'USE_CASE_CREATION',
-      downloads: [],
+      downloads: [
+        {
+          title: 'test',
+          version: '1.0',
+          date: '12.04.2024',
+        },
+        {
+          title: 'test',
+          version: '1.0',
+          date: '12.04.2024',
+        },
+      ],
     },
   ];
 }
