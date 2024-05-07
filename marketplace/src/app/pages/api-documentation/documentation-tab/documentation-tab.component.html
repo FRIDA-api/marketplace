@@ -1,13 +1,13 @@
 <div class="api-documentation-container">
   @if (apiInformation.githubLink) {
-    <div class="view-on-github-container">
+    <div class="view-on-github-container" id="view-on-github-container">
       <a class="view-on-github-link" [href]="apiInformation.githubLink" target="_blank">
         {{ "API_OVERVIEW.VIEW_ON_GITHUB" | translate }}
       </a>
     </div>
   }
   @if (!apiInformation.swaggerPath) {
-    <div class="no-swagger-container">
+    <div class="no-swagger-container" id="no-swagger-container">
       <p class="no-swagger-text">{{ "API_OVERVIEW.COMING_SOON_TEXT" | translate }}</p>
     </div>
   }
