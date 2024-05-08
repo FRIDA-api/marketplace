@@ -5,34 +5,40 @@
   </div>
 
   <div class="elevated-container">
-    <h1 class="use-case-headline">{{ "HOMEPAGE.USE_CASES_HEADLINE" | translate }}</h1>
-    <p class="use-case-subheadline">{{ "HOMEPAGE.USE_CASES_SUBHEADLINE" | translate }}</p>
+    <h1 class="use-case-headline">
+      {{ "HOMEPAGE.USE_CASES_HEADLINE" | translate }}
+    </h1>
+    <p class="use-case-subheadline">
+      {{ "HOMEPAGE.USE_CASES_SUBHEADLINE" | translate }}
+    </p>
     <div class="use-case-card-container auto-main-width">
       @for (api of apiInformation; track api.id) {
-        <app-use-case-card
-          [apiData]="api"
-          [tagsData]="tagInformation"
-        ></app-use-case-card>
+      <app-use-case-card
+        [apiData]="api"
+        [tagsData]="tagInformation"
+      ></app-use-case-card>
       }
     </div>
   </div>
 </section>
 
 <section class="added-values-section auto-main-width">
-  <h2 class="added-values-headline">{{ "HOMEPAGE.ADDED_VALUES_HEADLINE" | translate }}</h2>
-  <p class="added-values-info">{{ "HOMEPAGE.ADDED_VALUES_INFO" | translate }}</p>
+  <h2 class="added-values-headline">
+    {{ "HOMEPAGE.ADDED_VALUES_HEADLINE" | translate }}
+  </h2>
+  <p class="added-values-info">
+    {{ "HOMEPAGE.ADDED_VALUES_INFO" | translate }}
+  </p>
 
   <div class="added-value-boxes">
     @for (box of addedValuesData; track box.translationReference) {
-      <div class="added-value-box">
-        <img [src]="box.pathToImage" alt="">
-        <p>{{ box.translationReference | translate }}</p>
-      </div>
+    <div class="added-value-box">
+      <img [src]="box.pathToImage" alt="" />
+      <p>{{ box.translationReference | translate }}</p>
+    </div>
     }
   </div>
 </section>
-
-
 
 <!--<h1 class="download-headline">Download FRIDA API Models</h1>-->
 <!--<p class="download-description">If you have any questions, recommendations or bugs you want to share, please leave a GitHub Issue in the corresponding GitHub Repository linked below. In case you need private consultation or have a general request please reach out to us via mail <a href="mailto:frida@frida.com">frida&#64;frida.com</a></p>-->

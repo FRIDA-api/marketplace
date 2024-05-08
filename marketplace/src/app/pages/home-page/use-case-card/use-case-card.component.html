@@ -2,19 +2,20 @@
   <a class="hover-container" tabindex="0" [routerLink]="[apiData().id]"     ><span class="sr-only">{{ "USE_CASES." + apiData().languageKey + ".TITLE" | translate }}</span></a   >
   <div class="title-container">
     <div class="icon-container">
-      <img [ngSrc]="apiData().iconPath" alt="" width="52" height="52">
+      <img [ngSrc]="apiData().iconPath" alt="" width="52" height="52" />
     </div>
-    <h2>{{ 'USE_CASES.' + apiData().languageKey + '.TITLE' | translate}}</h2>
+    <h2>{{ "USE_CASES." + apiData().languageKey + ".TITLE" | translate }}</h2>
   </div>
   <div class="description-container">
-    <p>{{'USE_CASES.' + apiData().languageKey + '.DESCRIPTION' | translate}}</p>
+    <p>
+      {{ "USE_CASES." + apiData().languageKey + ".DESCRIPTION" | translate }}
+    </p>
   </div>
   <div class="tag-container">
     @for (tag of tagComputed(); track tag.id) {
-      <div class="tag" [style.background-color]="tag.tagColor">
-        {{ "TAGS." + tag.id | translate}}
-      </div>
+    <div class="tag" [style.background-color]="tag.tagColor">
+      {{ "TAGS." + tag.id | translate }}
+    </div>
     }
   </div>
 </div>
-

@@ -4,10 +4,10 @@
       ngSrc="assets/icons/header-icon.png"
       alt="Logo von FRIDA"
       class="frida-image"
-      height="182" width="1024"
+      height="182"
+      width="1024"
     />
   </a>
-
 
   <nav>
     <a
@@ -17,6 +17,14 @@
       [routerLinkActiveOptions]="{ exact: true }"
       ariaCurrentWhenActive="page"
       >{{ "HEADER.API_CATALOGUE" | translate }}</a
+    >
+
+    <a
+      class="header-link"
+      routerLink="/downloads"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      >{{ "HEADER.DOWNLOADS" | translate }}</a
     >
   </nav>
 

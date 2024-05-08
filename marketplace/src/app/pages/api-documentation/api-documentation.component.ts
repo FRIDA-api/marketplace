@@ -1,4 +1,4 @@
-import {CommonModule, NgOptimizedImage} from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 import {
   Component,
@@ -20,7 +20,16 @@ import {TagModel} from "@common/models/tag.model";
 @Component({
   selector: 'app-api-documentation',
   standalone: true,
-  imports: [CommonModule, MatExpansionModule, RouterModule, MatTabsModule, OverviewTabComponent, NgOptimizedImage, TranslateModule, DocumentationTabComponent],
+  imports: [
+    CommonModule,
+    MatExpansionModule,
+    RouterModule,
+    MatTabsModule,
+    OverviewTabComponent,
+    NgOptimizedImage,
+    TranslateModule,
+    DocumentationTabComponent,
+  ],
   templateUrl: './api-documentation.component.html',
   styleUrl: './api-documentation.component.scss',
 })
@@ -33,6 +42,7 @@ export class ApiDocumentationComponent implements OnInit {
   apiInformation: ApiInformationModel | undefined;
   tags: TagModel[] | undefined;
 
+  relevantTags: TagModel[] = [];
   isApiDocumentationTabActive = false;
 
   ngOnInit() {
