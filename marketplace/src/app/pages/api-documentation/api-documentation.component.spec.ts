@@ -105,5 +105,11 @@ describe('ApiDocumentationComponent', () => {
     }])
   });
 
-  // TODO: negative testfälle
+  it('should not find api information', () => {
+    component.apiPathParameter = "nonsense";
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(component.apiInformation).not.toBeDefined();
+    });
+  });
 });
