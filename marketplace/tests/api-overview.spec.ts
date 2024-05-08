@@ -23,6 +23,18 @@ test.describe('api-overview', () => {
     await expect(page.getByText("As a user of a pension cockpit, I can always keep an eye on my expected pension, identify gaps and actively manage my pension provision or seek advice from pension experts.", { exact: true })).toBeVisible();
   });
 
-  // TODO: Test für Schaltflächenwechsel
-  // 1. Wechseln, 2. Check ob Swagger UI vorhanden, 3. Zurückwechseln, 4. Gucken, ob Text da ist
+  test('should switch tabs', async ({ page }) => {
+    const overviewTab = page.getByRole('tab', {name: 'Overview'});
+    const apiDocumentationTab = page.getByRole('tab', {name: 'API Documentation'});
+
+    await apiDocumentationTab.click();
+
+    await expect(page.getByText("Customer perspective", { exact: true })).not.toBeVisible();
+    await expect(page.locator('.swagger-ui')).toBeVisible();
+
+    await overviewTab.click();
+
+    await expect(page.getByText("Customer perspective", { exact: true })).toBeVisible();
+    await expect(page.locator('.swagger-ui')).not.toBeVisible();
+  });
 });
