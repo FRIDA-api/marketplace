@@ -6,7 +6,7 @@ import {
   inject, OnInit
 } from '@angular/core';
 import {MatExpansionModule} from '@angular/material/expansion';
-import {RouterModule} from '@angular/router';
+import {Router, RouterModule} from '@angular/router';
 
 import {MatTabChangeEvent, MatTabsModule} from "@angular/material/tabs";
 import {OverviewTabComponent} from "./overview-tab/overview-tab.component";
@@ -39,6 +39,8 @@ export class ApiDocumentationComponent implements OnInit {
   private readonly useCasesApi = inject(UseCaseApiService);
   private readonly tagsApi = inject(TagsApiService)
 
+  private readonly router = inject(Router);
+
   apiInformation: ApiInformationModel | undefined;
   tags: TagModel[] | undefined;
 
@@ -47,6 +49,11 @@ export class ApiDocumentationComponent implements OnInit {
 
   ngOnInit() {
     this.apiInformation = this.useCasesApi.getUseCaseInformation().find(api => api.id === this.apiPathParameter);
+    if (this.apiInformation === undefined) {
+      this.router.navigateByUrl("");
+      return;
+    }
+
     this.tags = this.tagsApi.getTagInformation().filter(tag => this.apiInformation!.tags.includes(tag.id));
   }
 

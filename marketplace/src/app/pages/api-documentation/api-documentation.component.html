@@ -1,43 +1,45 @@
-<section class="back-to-overview-section">
-  <div class="back-to-overview-container">
-    <p class="back-to-overview-arrow"><</p>
-    <p class="back-to-overview-text" routerLink="/">
-      {{ "API_OVERVIEW.BACK_TO_OVERVIEW" | translate }}
-    </p>
-  </div>
-  <hr class="back-to-overview-line" />
-</section>
-
-<section class="api-explorer-headline-section">
-  <div class="api-header">
-    <div class="api-icon">
-      <img [ngSrc]="apiInformation!.iconPath" alt="" width="80" height="80" />
-    </div>
-    <div class="api-header-text">
-      <h1 class="api-explorer-headline">
-        {{ "API_OVERVIEW." + apiInformation!.languageKey + ".HEADLINE" | translate }}
-      </h1>
-      <p class="api-explorer-subheadline">
-        {{ "API_OVERVIEW." + apiInformation!.languageKey + ".SUBHEADLINE" | translate }}
+@if (apiInformation) {
+  <section class="back-to-overview-section">
+    <div class="back-to-overview-container">
+      <p class="back-to-overview-arrow"><</p>
+      <p class="back-to-overview-text" routerLink="/">
+        {{ "API_OVERVIEW.BACK_TO_OVERVIEW" | translate }}
       </p>
-      <div class="tag-container">
-        @for (tag of tags!; track tag.id) {
-        <div class="tag" [style.background-color]="tag.tagColor">
-          {{ "TAGS." + tag.id | translate }}
+    </div>
+    <hr class="back-to-overview-line" />
+  </section>
+
+  <section class="api-explorer-headline-section">
+    <div class="api-header">
+      <div class="api-icon">
+        <img [ngSrc]="apiInformation!.iconPath" alt="" width="80" height="80" />
+      </div>
+      <div class="api-header-text">
+        <h1 class="api-explorer-headline">
+          {{ "API_OVERVIEW." + apiInformation!.languageKey + ".HEADLINE" | translate }}
+        </h1>
+        <p class="api-explorer-subheadline">
+          {{ "API_OVERVIEW." + apiInformation!.languageKey + ".SUBHEADLINE" | translate }}
+        </p>
+        <div class="tag-container">
+          @for (tag of tags!; track tag.id) {
+          <div class="tag" [style.background-color]="tag.tagColor">
+            {{ "TAGS." + tag.id | translate }}
+          </div>
+          }
         </div>
-        }
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="api-explorer-tabs-section">
-  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="left" (selectedTabChange)="onTabChange($event)">
-    <mat-tab label="{{ 'API_OVERVIEW.TAB_OVERVIEW' | translate }}">
-      <app-overview-tab [apiInformation]="apiInformation!"></app-overview-tab>
-    </mat-tab>
-    <mat-tab label="{{ 'API_OVERVIEW.TAB_DOCUMENTATION' | translate }}">
-      <app-documentation-tab [apiInformation]="apiInformation!" [isActive]="isApiDocumentationTabActive"></app-documentation-tab>
-    </mat-tab>
-  </mat-tab-group>
-</section>
+  <section class="api-explorer-tabs-section">
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="left" (selectedTabChange)="onTabChange($event)">
+      <mat-tab label="{{ 'API_OVERVIEW.TAB_OVERVIEW' | translate }}">
+        <app-overview-tab [apiInformation]="apiInformation!"></app-overview-tab>
+      </mat-tab>
+      <mat-tab label="{{ 'API_OVERVIEW.TAB_DOCUMENTATION' | translate }}">
+        <app-documentation-tab [apiInformation]="apiInformation!" [isActive]="isApiDocumentationTabActive"></app-documentation-tab>
+      </mat-tab>
+    </mat-tab-group>
+  </section>
+}

@@ -12,4 +12,9 @@ test.describe('homepage', () => {
     await expect(page.locator('.use-case-card-container').getByRole('link')).toHaveCount(7);
   });
 
+  test('click use-case card', async ({ page}) => {
+    const contentCard = page.getByRole('link', {name: 'PensionAPI'});
+    await contentCard.click();
+    await expect(page).toHaveURL('http://localhost:4200/pension-api')
+  });
 });
