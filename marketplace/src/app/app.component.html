@@ -1,8 +1,11 @@
-<div #main id="main">
+<a class="skip-to-main-content-link" [routerLink]="router.url" [fragment]="'nav'" >Skip to Navigation</a>
+<a class="skip-to-main-content-link" [routerLink]="router.url" [fragment]="'main'" >Skip to Main Content </a>
 
-  <app-header></app-header>
+<div #top>
 
-  <main>
+  <app-header id="nav"></app-header>
+
+  <main id="main">
     <router-outlet></router-outlet>
   </main>
 

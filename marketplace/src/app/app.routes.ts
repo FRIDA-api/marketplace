@@ -2,15 +2,24 @@ import { Routes } from '@angular/router';
 
 import { ApiDocumentationComponent } from './pages/api-documentation/api-documentation.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { DownloadComponent } from './pages/home-page/download/download.component';
+import { DownloadComponent } from './pages/download/download.component';
+import {AccessibilityStatementComponent} from "./pages/accessibility-statement/accessibility-statement.component";
 
 export const routes: Routes = [
-  { path: '', component: HomePageComponent },
+  { path: '', component: HomePageComponent, title: 'Homepage - Marketplace - FRIDA' },
   {
     path: 'downloads',
     loadComponent: () =>
-      import('./pages/home-page/download/download.component').then(
+      import('./pages/download/download.component').then(
         () => DownloadComponent
+      ),
+    title: 'Download - Marketplace - FRIDA',
+  },
+  {
+    path: 'accessibility-statement',
+    loadComponent: () =>
+      import('./pages/accessibility-statement/accessibility-statement.component').then(
+        () => AccessibilityStatementComponent
       ),
   },
   {
@@ -20,6 +29,5 @@ export const routes: Routes = [
         () => ApiDocumentationComponent
       ),
   },
-
   { path: '**', redirectTo: '' },
 ];

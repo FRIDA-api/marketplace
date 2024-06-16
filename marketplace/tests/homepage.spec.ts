@@ -7,7 +7,7 @@ test.describe('homepage', () => {
   });
 
   test('show use-case cards', async ({ page}) => {
-    await expect(page.locator('.use-case-card-container').getByRole('heading')).toHaveCount(7);
+    await expect(page.locator('.use-case-card-container').getByRole('heading', { level: 2 })).toHaveCount(7);
     await expect(page.locator('.use-case-card-container').getByRole('paragraph')).toHaveCount(7);
     await expect(page.locator('.use-case-card-container').getByRole('link')).toHaveCount(7);
   });

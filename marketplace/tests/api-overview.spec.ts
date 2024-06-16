@@ -7,7 +7,7 @@ test.describe('api-overview', () => {
   });
 
   test('show correct content', async ({ page }) => {
-    await expect(page.getByRole('heading', { name: 'Use-Case: Pension API' })).toBeVisible();
+    await expect(page.getByRole('heading', { level: 1, name: 'Use-Case: Pension API' })).toBeVisible();
     await expect(page.getByText("Making pension assets accessible", { exact: true })).toBeVisible();
     await expect(page.getByText("Customer perspective", { exact: true })).toBeVisible();
     await expect(page.getByText("What can I actually expect in old age? How big is my pension gap?", { exact: true })).toBeVisible();
