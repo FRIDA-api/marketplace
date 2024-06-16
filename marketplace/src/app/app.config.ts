@@ -2,7 +2,12 @@ import {
   ApplicationConfig,
   importProvidersFrom
 } from '@angular/core';
-import { provideRouter, withComponentInputBinding } from '@angular/router';
+import {
+  InMemoryScrollingOptions,
+  provideRouter,
+  withComponentInputBinding,
+  withInMemoryScrolling
+} from '@angular/router';
 import {
   HttpClient,
   provideHttpClient,
@@ -26,9 +31,15 @@ export function createTranslateLoader(
     '.json'
   );
 }
+
+const scrollConfig: InMemoryScrollingOptions = {
+  scrollPositionRestoration: 'top',
+  anchorScrolling: 'enabled',
+};
+
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes, withComponentInputBinding()),
+    provideRouter(routes, withComponentInputBinding(), withInMemoryScrolling(scrollConfig)),
     provideHttpClient(withFetch()),
     importProvidersFrom([
       TranslateModule.forRoot({
