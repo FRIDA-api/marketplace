@@ -31,7 +31,7 @@ test.describe('core', () => {
       await expect(selectorTextEN).toBeVisible();
       await expect(selectorFlagEN).not.toBeVisible();
 
-      await page.getByRole('button').click();
+      await page.getByLabel('Switch language to German').click();
 
       await expect(selectorTextDE).toBeVisible();
       await expect(selectorFlagDE).not.toBeVisible();
