@@ -1,7 +1,7 @@
 import {CommonModule, isPlatformBrowser} from '@angular/common';
 import {
   Component,
-  ElementRef, Inject, inject, OnInit, PLATFORM_ID, Renderer2,
+  ElementRef, inject, OnInit, PLATFORM_ID, Renderer2,
   ViewChild,
 } from '@angular/core';
 import { Router, RouterLink, RouterOutlet} from '@angular/router';
@@ -18,6 +18,7 @@ import { TranslateService} from "@ngx-translate/core";
 })
 export class AppComponent implements OnInit {
   @ViewChild('top', { static: true }) el!: ElementRef;
+  @ViewChild('skipMainContent', {static: false} ) skipMainContent!: ElementRef;
 
   readonly translate = inject(TranslateService);
   readonly router = inject(Router);
@@ -25,8 +26,6 @@ export class AppComponent implements OnInit {
   private readonly platformId = inject(PLATFORM_ID);
 
   scrollPosition = 0;
-  skipToNavigation = `${this.router.url}#nav`;
-  skipToMain = `${this.router.url}#main`;
 
   ngOnInit(): void {
     this.translate.onLangChange.subscribe((event) => {
@@ -38,6 +37,10 @@ export class AppComponent implements OnInit {
     this.translate.addLangs(['en', 'de']);
     const browserLang = this.translate.getBrowserLang() ?? 'de';
     this.translate.use(RegExp(/en|de/).exec(browserLang) ? browserLang : 'en');
+  }
+
+  skipToMainContent() {
+    this.skipMainContent.nativeElement.focus();
   }
 
   backToTop() {
