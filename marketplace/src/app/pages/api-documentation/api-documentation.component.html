@@ -49,10 +49,15 @@
     </mat-tab>
     <mat-tab label="{{ 'API_OVERVIEW.TAB_DOCUMENTATION' | translate }}">
       <app-documentation-tab
-        style="min-height: 800px"
         [apiInformation]="apiInformation!"
         [isActive]="isApiDocumentationTabActive"
       ></app-documentation-tab>
     </mat-tab>
   </mat-tab-group>
 </section>
+<section class="join-now-section">
+  <a class="join-now-button" href="mailto:info@freeinsurancedata.de">
+    {{ "API_OVERVIEW.JOIN_NOW" | translate }}
+  </a>
+</section>
+}

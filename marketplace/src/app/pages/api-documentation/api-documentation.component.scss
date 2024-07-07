@@ -1,7 +1,6 @@
 @import "scss/colors.scss";
 
 .back-to-overview-section {
-
   .back-to-overview-container {
     width: 60%;
     margin-left: auto;
@@ -31,7 +30,7 @@
   }
 
   .back-to-overview-line {
-    border: .5px solid $lightgrey-2;
+    border: 0.5px solid $lightgrey-2;
   }
 }
 
@@ -50,7 +49,6 @@
     }
 
     .api-header-text {
-
       .api-explorer-headline {
         color: $primary;
         font-size: 40px;
@@ -87,4 +85,24 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+.join-now-section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.join-now-button {
+  background-color: $primary;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  font-size: 16px;
+  padding: 20px;
+  border-radius: 18px;
+  text-decoration: none;
+  width: fit-content;
 }
