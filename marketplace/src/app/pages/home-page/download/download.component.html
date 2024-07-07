@@ -48,10 +48,15 @@
             />
             <div>{{ download.title }}</div>
           </div>
-          <div class="download-item-content-container">
+          <a
+            class="download-item-content-container"
+            [href]="download.url"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <span>{{ download.version }}</span>
             <span>{{ download.date }}</span>
-          </div>
+          </a>
           }
         </div>
       </div>

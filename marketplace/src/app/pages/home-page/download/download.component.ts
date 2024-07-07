@@ -11,6 +11,7 @@ type Download = {
   title: string;
   version: string;
   date: string;
+  url: string;
 };
 @Component({
   selector: 'app-download',
@@ -24,51 +25,16 @@ export class DownloadComponent {
   downloadContainers: DownloadItem[] = [
     {
       key: 'DATA_MODEL',
-      downloads: [
-        {
-          title: 'test',
-          version: '1.0',
-          date: '12.04.2024',
-        },
-        {
-          title: 'test',
-          version: '1.0',
-          date: '12.04.2024',
-        },
-      ],
-    },
-    {
-      key: 'EU_SUMMARY',
-      downloads: [
-        {
-          title: 'test',
-          version: '1.0',
-          date: '12.04.2024',
-        },
-      ],
+      downloads: [],
     },
     {
       key: 'USE_CASES_WHITEPAPER',
       downloads: [
         {
           title: 'test',
-          version: '1.0',
-          date: '12.04.2024',
-        },
-      ],
-    },
-    {
-      key: 'USE_CASE_CREATION',
-      downloads: [
-        {
-          title: 'test',
-          version: '1.0',
-          date: '12.04.2024',
-        },
-        {
-          title: 'test',
-          version: '1.0',
-          date: '12.04.2024',
+          version: 'te',
+          date: 'te',
+          url: 'https://freeinsurancedata.de/#!/use-cases',
         },
       ],
     },
