@@ -1,9 +1,12 @@
-<div #main id="main">
+<button class="skip-to-main-content-link" (click)="skipToMainContent()">Skip to Main Content</button>
 
-  <app-header></app-header>
+<div #top>
 
-  <main>
-    <router-outlet></router-outlet>
+  <app-header id="nav"></app-header>
+
+  <main id="main">
+    <div #skipMainContent tabindex="-1"></div>
+    <router-outlet ></router-outlet>
   </main>
 
   <button

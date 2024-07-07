@@ -1,5 +1,5 @@
 <header class="header">
-  <a routerLink="/" tabindex="0">
+  <a routerLink="/">
     <img
       ngSrc="assets/icons/header-icon.png"
       alt="Logo von FRIDA"
@@ -16,7 +16,7 @@
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: true }"
       ariaCurrentWhenActive="page"
-      >{{ "HEADER.API_CATALOGUE" | translate }}</a
+    >{{ "HEADER.API_CATALOGUE" | translate }}</a
     >
 
     <a
@@ -24,12 +24,13 @@
       routerLink="/downloads"
       routerLinkActive="active"
       ariaCurrentWhenActive="page"
-      >{{ "HEADER.DOWNLOADS" | translate }}</a
+    >{{ "HEADER.DOWNLOADS" | translate }}</a
     >
   </nav>
 
   <section>
-    <button class="language-button" (click)="switchLanguage()" (keydown.enter)="switchLanguage()" (keydown.space)="switchLanguage()">
+    <button class="language-button" id="language-button" (click)="switchLanguage()" (keydown.enter)="switchLanguage()" (keydown.space)="switchLanguage()">
+      <label class="sr-only" for="language-button">{{ "HEADER.SWITCH_LANGUAGE" | translate }}</label>
       @if (translate.currentLang === 'de') {
         <img id="en-flag" ngSrc="assets/icons/en_flag.png" alt="Flag of the USA" height="12" width="18">
       }
@@ -39,6 +40,9 @@
       }
     </button>
 
-    <a class="contact-button" href="mailto:info@freeinsurancedata.de">info&#64;freeinsurancedata.de</a>
+    <a class="contact-button" aria-labelledby="contact-info" href="mailto:info@freeinsurancedata.de">
+      info&#64;freeinsurancedata.de
+      <span class="sr-only" id="contact-info">{{ "HEADER.EMAIL_INFO" | translate }}</span>
+    </a>
   </section>
 </header>

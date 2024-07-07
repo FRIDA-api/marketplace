@@ -107,11 +107,13 @@
 .description-container {
   padding: 16px 8px;
 }
+
 .downloads-card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(410px, 100%), 1fr));
   gap: 16px;
 }
+
 .goal-section {
   display: flex;
   justify-items: center;
@@ -122,7 +124,6 @@
   word-break: break-word;
 
   .goal-headline {
-    text-align: center;
     color: $primary;
     font-size: 30px;
     margin: 0;
@@ -132,43 +133,50 @@
   .goal-subheadline {
     width: 100%;
     color: #22d9e0;
-    text-align: start;
-    margin: 0px;
+    margin: 0;
     padding-bottom: 20px;
   }
+
   .goal-info {
     width: 80%;
     text-align: center;
     padding: 0 48px 38px 48px;
   }
-  .goal-box {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-    width: 100%;
-    border-radius: 20px;
 
+  .goal-box {
     padding: 41px;
     background-color: rgba($primary, 0.1);
-    text-align: center;
   }
-  .goal-grid {
-    height: max-content;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    text-align: start;
-    width: 100%;
-    li {
-      span {
-        display: inline-flex;
-        width: calc(100% - 23px);
-      }
-      padding-bottom: 10px;
+
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-items: left;
+  align-items: flex-start;
+  width: 100%;
+  border-radius: 20px;
+
+  .container-left {
+    width: 50%;
+    float: left;
+  }
+
+  .container-right {
+    width: 50%;
+    float: right;
+  }
+
+  li {
+    span {
+      display: inline-flex;
+      width: calc(100% - 23px);
     }
-    li::marker {
-      color: $primary;
-    }
+    padding-bottom: 10px;
+  }
+
+  li::marker {
+    color: $primary;
   }
 }

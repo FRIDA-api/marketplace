@@ -7,11 +7,13 @@ type DownloadItem = {
   key: string;
   downloads: Download[];
 };
+
 type Download = {
   title: string;
   version: string;
   date: string;
 };
+
 @Component({
   selector: 'app-download',
   standalone: true,
