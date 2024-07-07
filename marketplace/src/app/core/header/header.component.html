@@ -1,78 +1,71 @@
-<header class="header">
-  <a routerLink="/">
-    <img
-      ngSrc="assets/icons/header-icon.png"
-      alt="Logo von FRIDA"
-      class="frida-image"
-      height="182"
-      width="1024"
-    />
-  </a>
+<footer class="footer">
+  <img
+    class="frida-icon"
+    ngSrc="assets/icons/favicon_150x150.png"
+    alt=""
+    width="150"
+    height="150"
+  />
+  <h1 class="frida-headline">{{ "FOOTER.FRIDA_SHORT" | translate }}</h1>
+  <p class="frida-text">{{ "FOOTER.FRIDA_LONG" | translate }}</p>
+  <a
+    class="button-link"
+    href="https://www.freeinsurancedata.de"
+    target="_blank"
+    >{{ "FOOTER.FRIDA_MAIL" | translate }}</a
+  >
 
-  <nav>
+  <div class="extern-logos">
     <a
-      class="header-link"
-      routerLink="/"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-      ariaCurrentWhenActive="page"
-      >{{ "HEADER.API_CATALOGUE" | translate }}</a
+      class="extern-logo"
+      aria-labelledby="linkedin"
+      href="https://www.linkedin.com/company/free-insurance-data-initiative/"
+      target="_blank"
     >
-
-    <a
-      class="header-link"
-      routerLink="/downloads"
-      routerLinkActive="active"
-      ariaCurrentWhenActive="page"
-      >{{ "HEADER.DOWNLOADS" | translate }}</a
-    >
-  </nav>
-
-  <section>
-    <button
-      class="language-button"
-      id="language-button"
-      (click)="switchLanguage()"
-      (keydown.enter)="switchLanguage()"
-      (keydown.space)="switchLanguage()"
-    >
-      <label class="sr-only" for="language-button">{{
-        "HEADER.SWITCH_LANGUAGE" | translate
-      }}</label>
-      @if (translate.currentLang === 'de') {
-      <img
-        id="en-flag"
-        ngSrc="assets/icons/en_flag.png"
-        alt="Flag of the USA"
-        height="12"
-        width="18"
-      />
-      } @if (translate.currentLang === 'en') {
-      <img
-        id="de-flag"
-        ngSrc="assets/icons/de_flag.png"
-        alt="Flag of Germany"
-        height="12"
-        width="18"
-      />
-      }
-    </button>
-
-    <<<<<<< HEAD
-    <a class="contact-button" href="mailto:info@freeinsurancedata.de"
-      >info&#64;freeinsurancedata.de</a
-    >
-    =======
-    <a
-      class="contact-button"
-      aria-labelledby="contact-info"
-      href="mailto:info@freeinsurancedata.de"
-    >
-      info&#64;freeinsurancedata.de
-      <span class="sr-only" id="contact-info">{{
-        "HEADER.EMAIL_INFO" | translate
+      <span class="sr-only" id="linkedin">{{
+        "FOOTER.LINKEDIN" | translate
       }}</span>
+      <img
+        ngSrc="assets/icons/linkedin-in.svg"
+        alt="LinkedIn Logo"
+        width="150"
+        height="150"
+      />
     </a>
-    >>>>>>> origin/main
-  </section>
-</header>
+    <a
+      class="extern-logo"
+      aria-labelledby="twitter"
+      href="https://twitter.com/frida_germany"
+      target="_blank"
+    >
+      <span class="sr-only" id="twitter">{{
+        "FOOTER.TWITTER" | translate
+      }}</span>
+      <img
+        ngSrc="assets/icons/twitter.svg"
+        alt="Twitter Logo"
+        width="150"
+        height="150"
+      />
+    </a>
+  </div>
+
+  <div class="link-list">
+    <a href="https://freeinsurancedata.de/impressum/" target="_blank">{{
+      "FOOTER.IMPRINT" | translate
+    }}</a>
+    <a href="https://freeinsurancedata.de/datenschutz/" target="_blank">{{
+      "FOOTER.DATA_PROTECTION" | translate
+    }}</a>
+    <a
+      href="https://freeinsurancedata.de/wp-content/uploads/2022/10/20210611-Satzung.pdf"
+      target="_blank"
+      >{{ "FOOTER.STATUTES" | translate }}</a
+    >
+    <a routerLink="/accessibility-statement">{{
+      "FOOTER.ACCESSIBILITY_STATEMENT" | translate
+    }}</a>
+  </div>
+
+  <p class="copyright" [innerHTML]="'FOOTER.COPYRIGHT' | translate"></p>
+</footer>
