@@ -3,7 +3,7 @@ import { Component, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { RouterLink } from '@angular/router';
-import { DownloadComponent } from "./download/download.component";
+import { DownloadComponent } from "../download/download.component";
 import { UseCaseCardComponent } from "./use-case-card/use-case-card.component";
 import { TranslateModule } from "@ngx-translate/core";
 import {UseCaseApiService} from "@common/services/use-case-api.service";

@@ -2,17 +2,22 @@
   "HEADER": {
     "API_CATALOGUE": "API-Catalogue",
     "API_EXPLORER": "API-Explorer",
-    "DOWNLOADS": "Downloads"
+    "DOWNLOADS": "Downloads",
+    "SWITCH_LANGUAGE": "Switch language to German",
+    "EMAIL_INFO": "Contact information via e-mail"
   },
   "FOOTER": {
     "FRIDA_SHORT": "FRIDA",
     "FRIDA_LONG": "The Open Insurance Initiative in Germany",
     "FRIDA_MAIL": "www.freeinsurancedata.de",
+    "LINKEDIN": "LinkedIn",
+    "TWITTER": "Twitter",
     "IMPRINT": "Imprint",
     "DATA_PROTECTION": "Data protection notice",
     "PRIVACY_SETTINGS": "Change privacy settings",
     "STATUTES": "FRIDA Statutes",
-    "COPYRIGHT": "© Copyright 2024. all rights reserved.   FRIDA e.V. c/o InsurLab Germany Hohenzollernring 85-87 50672 Cologne info@freeinsurancedata.de"
+    "COPYRIGHT": "© Copyright 2024. all rights reserved.   FRIDA e.V. c/o InsurLab Germany Hohenzollernring 85-87 50672 Cologne info@freeinsurancedata.de",
+    "ACCESSIBILITY_STATEMENT": "Accessibility statement"
   },
   "HOMEPAGE": {
     "USE_CASES_HEADLINE": "FRIDA Use Cases",
@@ -27,6 +32,8 @@
   "DOWNLOADS": {
     "HEADLINE": "All downloads",
     "SUBHEADLINE": "You can download all documents here",
+    "DESC_VERSION": "version",
+    "DESC_DATE": "uploaded on",
     "GOAL": {
       "TITLE": "Our Goal",
       "TEXT": "Our aim is to encourage companies to provide their end customers with new services and added value based on our use cases and APIs. We also provide comprehensive information on the topic of open insurance and show how market players can position themselves now and in the future. Our white papers help you to categorize yourself and learn more about Open Insurance.",
@@ -61,6 +68,8 @@
     }
   },
   "USE_CASES": {
+    "LINK_DESCRIPTION_GENERAL": "Further information for ",
+    "TAG_DESCRIPTION_GENERAL": "Tags for ",
     "PENSION_API": {
       "TITLE": "PensionAPI",
       "DESCRIPTION": "Provision of data for transparency in pension provision, e.g. with the help of a pension cockpit."
@@ -223,5 +232,36 @@
       "CARD_3_HEADLINE": "Application",
       "CARD_3_TEXT": "The Building API can be used by customers, insurers, vendors and third-party/solution providers to achieve various goals (e.g. posting listings, simplified data exchange, optimization of real estate platforms)."
     }
+  },
+  "ACCESSIBILITY_STATEMENT": {
+    "HEADLINE": "Accessibility Statement for FRIDA Marketplace",
+    "SUBHEADLINE": "This is an accessibility statement from Free Insurance Data (FRIDA) e.V.",
+    "MEASURES_HEADLINE": "Measures to support accessibility",
+    "MEASURES_TEXT": "Free Insurance Data (FRIDA) e.V. takes the following measures to ensure accessibility of FRIDA Marketplace:",
+    "MEASURES_LIST_ONE": "Include accessibility throughout our internal policies.",
+    "MEASURES_LIST_TWO": "Assign clear accessibility goals and responsibilities.",
+    "CONFORMANCE_HEADLINE": "Conformance status",
+    "CONFORMANCE_TEXT": "The Web Content Accessibility Guidelines (WCAG) defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA. FRIDA Marketplace is partially conformant with WCAG 2.1 level AA. Partially conformant means that some parts of the content do not fully conform to the accessibility standard.",
+    "CONSIDERATIONS_HEADLINE": "Additional accessibility considerations",
+    "CONSIDERATIONS_TEXT": "With the exception of the AAA success criteria of the guidelines \"distinguishable\" and \"readable\" the website does conform to the WCAG 2.1 level AAA.",
+    "FEEDBACK_HEADLINE": "Feedback",
+    "FEEDBACK_TEXT": "We welcome your feedback on the accessibility of FRIDA Marketplace. Please let us know if you encounter accessibility barriers on FRIDA Marketplace:",
+    "FEEDBACK_LINK": "E-Mail:",
+    "FEEDBACK_POSTAL": "Postal Address: Hohenzollernring 85-87, 50672 Cologne, Germany",
+    "TECHNICAL_HEADLINE": "Technical specifications",
+    "TECHNICAL_TEXT_ONE": "Accessibility of FRIDA Marketplace relies on the following technologies to work with the particular combination of web browser and any assistive technologies or plugins installed on your computer:",
+    "TECHNICAL_TEXT_TWO": "These technologies are relied upon for conformance with the accessibility standards used.",
+    "LIMITATIONS_HEADLINE": "Limitations and alternatives",
+    "LIMITATIONS_TEXT_ONE": "Despite our best efforts to ensure accessibility of FRIDA Marketplace, there may be some limitations. Below is a description of known limitations, and potential solutions. Please contact us if you observe an issue not listed below.",
+    "LIMITATIONS_TEXT_TWO": "Known limitations for FRIDA Marketplace:",
+    "LIMITATIONS_LIST_ONE_STRONG": "API documentation on the API detail pages: ",
+    "LIMITATIONS_LIST_ONE_TEXT": "The API documentation can have multiple known and unknown accessibility limitations, because as neither the Open-API specifications nor the plugin that shows the Open-API specifications on the webpage are developed or can be directly controlled by us we cannot guarantee that this part of the webpage is fully accessible. We are open to any accessibility reports and will check our options to solve them. You can always download the Open-API specifications directly and use any more specialized tool to inspect the contents of the yaml files instead of using the presentation on our website. Furthermore you can always write the authors of the Open-API specifications directly via their open GitHub Repositories linked on our website.",
+    "LIMITATIONS_LIST_TWO_STRONG": "Color contrast: ",
+    "LIMITATIONS_LIST_TWO_TEXT": "The current cooperate image does include colors which do not have enough contrast to be considered accessible by the WCAG. We are currently looking into this case to find a solution for a WCAG compliant color scheme.",
+    "ASSESSMENT_HEADLINE": "Assessment approach",
+    "ASSESSMENT_TEXT": "Free Insurance Data (FRIDA) e.V. assessed the accessibility of FRIDA Marketplace by the following approaches:",
+    "ASSESSMENT_LIST_ONE": "Self-evaluation",
+    "DATE_HEADLINE": "Date",
+    "DATE_TEXT": "This statement was created on 16th of June 2024."
   }
 }

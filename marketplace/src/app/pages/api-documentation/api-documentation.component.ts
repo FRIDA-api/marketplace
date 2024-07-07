@@ -10,12 +10,13 @@ import {Router, RouterModule} from '@angular/router';
 
 import {MatTabChangeEvent, MatTabsModule} from "@angular/material/tabs";
 import {OverviewTabComponent} from "./overview-tab/overview-tab.component";
-import {TranslateModule} from "@ngx-translate/core";
+import {TranslateModule, TranslateService} from "@ngx-translate/core";
 import {DocumentationTabComponent} from "./documentation-tab/documentation-tab.component";
 import {TagsApiService} from "@common/services/tags-api.service";
 import {UseCaseApiService} from "@common/services/use-case-api.service";
 import {ApiInformationModel} from "@common/models/api-information.model";
 import {TagModel} from "@common/models/tag.model";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-api-documentation',
@@ -37,14 +38,15 @@ export class ApiDocumentationComponent implements OnInit {
   @Input() apiPathParameter: string | undefined;
 
   private readonly useCasesApi = inject(UseCaseApiService);
-  private readonly tagsApi = inject(TagsApiService)
+  private readonly tagsApi = inject(TagsApiService);
+  private readonly titleService = inject(Title);
+  private readonly translate = inject(TranslateService);
 
   private readonly router = inject(Router);
 
   apiInformation: ApiInformationModel | undefined;
   tags: TagModel[] | undefined;
 
-  relevantTags: TagModel[] = [];
   isApiDocumentationTabActive = false;
 
   ngOnInit() {
@@ -55,6 +57,10 @@ export class ApiDocumentationComponent implements OnInit {
     }
 
     this.tags = this.tagsApi.getTagInformation().filter(tag => this.apiInformation!.tags.includes(tag.id));
+
+    this.translate.get("API_OVERVIEW." + this.apiInformation.languageKey + ".HEADLINE").subscribe((translation: string) => {
+      this.titleService.setTitle(`API Documentation ${translation} - Marketplace - FRIDA`);
+    });
   }
 
   onTabChange(event: MatTabChangeEvent) {

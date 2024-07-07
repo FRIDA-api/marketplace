@@ -1,5 +1,5 @@
 <header class="header">
-  <a routerLink="/" tabindex="0">
+  <a routerLink="/">
     <img
       ngSrc="assets/icons/header-icon.png"
       alt="Logo von FRIDA"
@@ -31,10 +31,14 @@
   <section>
     <button
       class="language-button"
+      id="language-button"
       (click)="switchLanguage()"
       (keydown.enter)="switchLanguage()"
       (keydown.space)="switchLanguage()"
     >
+      <label class="sr-only" for="language-button">{{
+        "HEADER.SWITCH_LANGUAGE" | translate
+      }}</label>
       @if (translate.currentLang === 'de') {
       <img
         id="en-flag"
@@ -54,8 +58,21 @@
       }
     </button>
 
+    <<<<<<< HEAD
     <a class="contact-button" href="mailto:info@freeinsurancedata.de"
       >info&#64;freeinsurancedata.de</a
     >
+    =======
+    <a
+      class="contact-button"
+      aria-labelledby="contact-info"
+      href="mailto:info@freeinsurancedata.de"
+    >
+      info&#64;freeinsurancedata.de
+      <span class="sr-only" id="contact-info">{{
+        "HEADER.EMAIL_INFO" | translate
+      }}</span>
+    </a>
+    >>>>>>> origin/main
   </section>
 </header>

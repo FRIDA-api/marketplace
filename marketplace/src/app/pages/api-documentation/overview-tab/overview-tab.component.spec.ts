@@ -1,5 +1,3 @@
-import { ComponentFixture } from '@angular/core/testing';
-
 import { OverviewTabComponent } from './overview-tab.component';
 import {MockBuilder, MockedComponentFixture, MockRender} from "ng-mocks";
 import {TranslateModule} from "@ngx-translate/core";

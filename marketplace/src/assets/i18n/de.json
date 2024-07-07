@@ -2,17 +2,22 @@
   "HEADER": {
     "API_CATALOGUE": "API-Katalog",
     "API_EXPLORER": "API-Explorer",
-    "DOWNLOADS": "Downloads"
+    "DOWNLOADS": "Downloads",
+    "SWITCH_LANGUAGE": "Wechsel die Sprache zu Englisch",
+    "EMAIL_INFO": "Kontaktmöglichkeit zu FRIDA via E-Mail"
   },
   "FOOTER": {
     "FRIDA_SHORT": "FRIDA",
     "FRIDA_LONG": "Die Open Insurance Initiative in Deutschland",
     "FRIDA_MAIL": "www.freeinsurancedata.de",
+    "LINKEDIN": "LinkedIn",
+    "TWITTER": "Twitter",
     "IMPRINT": "Impressum",
     "DATA_PROTECTION": "Datenschutzhinweis",
     "PRIVACY_SETTINGS": "Privatsphäre-Einstellungen ändern",
     "STATUTES": "FRIDA Satzung",
-    "COPYRIGHT": "© Copyright 2024. All rights reserved.&nbsp;&nbsp;&nbsp;FRIDA e.V.&nbsp;&nbsp;&nbsp;c/o InsurLab Germany&nbsp;&nbsp;&nbsp;Hohenzollernring 85-87&nbsp;&nbsp;&nbsp;50672 Köln&nbsp;&nbsp;&nbsp;info@freeinsurancedata.de"
+    "COPYRIGHT": "© Copyright 2024. All rights reserved.&nbsp;&nbsp;&nbsp;FRIDA e.V.&nbsp;&nbsp;&nbsp;c/o InsurLab Germany&nbsp;&nbsp;&nbsp;Hohenzollernring 85-87&nbsp;&nbsp;&nbsp;50672 Köln&nbsp;&nbsp;&nbsp;info@freeinsurancedata.de",
+    "ACCESSIBILITY_STATEMENT": "Barrierefreiheitserklärung"
   },
   "HOMEPAGE": {
     "USE_CASES_HEADLINE": "FRIDA Use Cases",
@@ -27,6 +32,8 @@
   "DOWNLOADS": {
     "HEADLINE": "Alle Downloads",
     "SUBHEADLINE": "Laden Sie hier die Dokumente herunter",
+    "DESC_VERSION": "Version",
+    "DESC_DATE": "Hochgeladen am",
     "GOAL": {
       "TITLE": "Unser Ziel",
       "TEXT": "Unser Ziel ist es, dass wir Unternehmen ermutigen, ihren Endkunden neue Services und Mehrwerte anhand unserer Use Cases und APIs zur Verfügung zu stellen. Darüber hinaus informieren wir ganzheitlich über das Thema Open Insurance und zeigen auf, wie sich Marktteilnehmer jetzt und in Zukunft positionieren können. Unsere Whitepaper helfen dabei, sich selbst einzuordnen und auch mehr über Open Insurance zu erfahren.",
@@ -61,6 +68,8 @@
     }
   },
   "USE_CASES": {
+    "LINK_DESCRIPTION_GENERAL": "Detailinformationen zu ",
+    "TAG_DESCRIPTION_GENERAL": "Tags für ",
     "PENSION_API": {
       "TITLE": "PensionAPI",
       "DESCRIPTION": "Bereitstellung von Daten zur Transparenz in der Altersvorsorge z.B. mithilfe eines Rentencockpits."
@@ -223,5 +232,36 @@
       "CARD_3_HEADLINE": "Anwendung",
       "CARD_3_TEXT": "Die Building API kann von Kunden, Versicherern, Vetrieben und Dritt-/Lösungsanbietern genutzt werden um verschiedene Ziele zu erreichen (z.B. Inserate einstellen, vereinfachter Datenaustausch, Optimierung von Immobilienplattformen)."
     }
+  },
+  "ACCESSIBILITY_STATEMENT": {
+    "HEADLINE": "Erklärung zur Zugänglichkeit des FRIDA-Marktplatzes",
+    "SUBHEADLINE": "Dies ist eine Zugänglichkeitserklärung von Free Insurance Data (FRIDA) e.V.",
+    "MEASURES_HEADLINE": "Maßnahmen zur Unterstützung der Barrierefreiheit",
+    "MEASURES_TEXT": "Free Insurance Data (FRIDA) e.V. ergreift die folgenden Maßnahmen, um die Barrierefreiheit des FRIDA Marktplatzes zu gewährleisten:",
+    "MEASURES_LIST_ONE": "Berücksichtigen Sie Barrierefreiheit in unseren internen Richtlinien.",
+    "MEASURES_LIST_TWO": "Klare Ziele und Verantwortlichkeiten für die Barrierefreiheit zuweisen.",
+    "CONFORMANCE_HEADLINE": "Konformitätsstatus",
+    "CONFORMANCE_TEXT": "Die Web Content Accessibility Guidelines (WCAG) definieren Anforderungen an Designer und Entwickler zur Verbesserung der Zugänglichkeit für Menschen mit Behinderungen. Sie definieren drei Stufen der Konformität: Stufe A, Stufe AA und Stufe AAA. FRIDA Marketplace ist teilweise konform mit WCAG 2.1 Stufe AA. Teilweise konform bedeutet, dass einige Teile des Inhalts nicht vollständig mit dem Standard für Barrierefreiheit übereinstimmen.",
+    "CONSIDERATIONS_HEADLINE": "Zusätzliche Überlegungen zur Barrierefreiheit",
+    "CONSIDERATIONS_TEXT": "Mit Ausnahme der AAA-Erfolgskriterien der Richtlinien \"unterscheidbar\" und \"lesbar\" entspricht die Website der WCAG 2.1 Stufe AAA.",
+    "FEEDBACK_HEADLINE": "Feedback",
+    "FEEDBACK_TEXT": "Wir freuen uns über Ihr Feedback zur Barrierefreiheit von FRIDA Marketplace. Bitte teilen Sie uns mit, wenn Sie auf dem FRIDA Marketplace auf Barrieren stoßen:",
+    "FEEDBACK_LINK": "E-Mail:",
+    "FEEDBACK_POSTAL": "Postadresse: Hohenzollernring 85-87, 50672 Köln, Deutschland",
+    "TECHNICAL_HEADLINE": "Technische Spezifikationen",
+    "TECHNICAL_TEXT_ONE": "Die Zugänglichkeit des FRIDA-Marktplatzes hängt von den folgenden Technologien ab, die mit der jeweiligen Kombination aus Webbrowser und etwaigen unterstützenden Technologien oder Plugins, die auf Ihrem Computer installiert sind, funktionieren:",
+    "TECHNICAL_TEXT_TWO": "Diese Technologien sind für die Konformität mit den verwendeten Zugänglichkeitsstandards erforderlich.",
+    "LIMITATIONS_HEADLINE": "Beschränkungen und Alternativen",
+    "LIMITATIONS_TEXT_ONE": "Trotz unserer Bemühungen, die Zugänglichkeit von FRIDA Marketplace zu gewährleisten, kann es einige Einschränkungen geben. Nachfolgend finden Sie eine Beschreibung der bekannten Einschränkungen und mögliche Lösungen. Bitte kontaktieren Sie uns, wenn Sie ein Problem beobachten, das hier nicht aufgeführt ist.",
+    "LIMITATIONS_TEXT_TWO": "Bekannte Einschränkungen für FRIDA Marketplace:",
+    "LIMITATIONS_LIST_ONE_STRONG": "API-Dokumentation auf den API-Detailseiten: ",
+    "LIMITATIONS_LIST_ONE_TEXT": "Da weder die Open-API-Spezifikationen noch das Plugin, das die Open-API-Spezifikationen auf der Webseite anzeigt, von uns entwickelt werden oder direkt kontrolliert werden können, können wir nicht garantieren, dass dieser Teil der Webseite vollständig zugänglich ist. Wir sind offen für alle Berichte über die Zugänglichkeit und werden unsere Möglichkeiten prüfen, diese zu lösen. Sie können die Open-API-Spezifikationen jederzeit direkt herunterladen und ein spezielleres Tool verwenden, um den Inhalt der yaml-Dateien zu prüfen, anstatt die Präsentation auf unserer Website zu verwenden. Außerdem können Sie jederzeit die Autoren der Open-API-Spezifikationen direkt über ihre offenen GitHub-Repositories anschreiben, die auf unserer Website verlinkt sind.",
+    "LIMITATIONS_LIST_TWO_STRONG": "Farbkontrast: ",
+    "LIMITATIONS_LIST_TWO_TEXT": "Das aktuelle Kooperationsbild enthält Farben, die nicht genug Kontrast haben, um nach den WCAG als zugänglich zu gelten. Wir untersuchen derzeit diesen Fall, um eine Lösung für ein WCAG-konformes Farbschema zu finden.",
+    "ASSESSMENT_HEADLINE": "Bewertungsansatz",
+    "ASSESSMENT_TEXT": "Free Insurance Data (FRIDA) e.V. bewertete die Zugänglichkeit des FRIDA-Marktplatzes anhand der folgenden Ansätze:",
+    "ASSESSMENT_LIST_ONE": "Selbstevaluierung",
+    "DATE_HEADLINE": "Datum",
+    "DATE_TEXT": "Diese Erklärung wurde am 16. Juni 2024 erstellt."
   }
 }

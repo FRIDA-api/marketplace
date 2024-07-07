@@ -13,6 +13,10 @@
   justify-items: center;
   align-items: center;
   row-gap: 24px;
+
+  section {
+    padding: 14px 0;
+  }
 }
 
 .frida-image {
@@ -96,5 +100,9 @@
 @media (min-width: 900px) {
   .header {
     grid-template-columns: max-content 1fr max-content;
+  }
+
+  section {
+    padding: 0;
   }
 }
