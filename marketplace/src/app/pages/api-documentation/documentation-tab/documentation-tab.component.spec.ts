@@ -1,10 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DocumentationTabComponent } from './documentation-tab.component';
 import {MockBuilder, MockedComponentFixture, MockRender, MockService} from "ng-mocks";
 import {TranslateModule} from "@ngx-translate/core";
 import {HttpClientTestingModule} from "@angular/common/http/testing";
 import {ActivatedRoute} from "@angular/router";
+import {By} from "@angular/platform-browser";
 
 describe('DocumentationTabComponent', () => {
   let component: DocumentationTabComponent;
@@ -39,5 +38,57 @@ describe('DocumentationTabComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should show github button', () => {
+    component.apiInformation = {
+      id: "",
+      languageKey: "",
+      iconPath: "",
+      tags: [],
+      githubLink: "github-link",
+      swaggerPath: ""
+    };
+    fixture.detectChanges();
+    expect(fixture.debugElement.query(By.css("#view-on-github-container"))).not.toBeNull();
+  });
+
+  it('should not show github button', () => {
+    component.apiInformation = {
+      id: "",
+      languageKey: "",
+      iconPath: "",
+      tags: [],
+      githubLink: "",
+      swaggerPath: ""
+    };
+    fixture.detectChanges();
+    expect(fixture.debugElement.query(By.css("#view-on-github-container"))).toBeNull();
+  });
+
+  it('should show coming soon text', () => {
+    component.apiInformation = {
+      id: "",
+      languageKey: "",
+      iconPath: "",
+      tags: [],
+      githubLink: "",
+      swaggerPath: ""
+    };
+    fixture.detectChanges();
+    expect(fixture.debugElement.query(By.css('#no-swagger-container'))).not.toBeNull();
+  });
+
+  it('should not show coming soon text', () => {
+    component.apiInformation = {
+      id: "",
+      languageKey: "",
+      iconPath: "",
+      tags: [],
+      githubLink: "",
+      swaggerPath: "swagger-path"
+    };
+    fixture.detectChanges();
+    expect(fixture.debugElement.query(By.css('#no-swagger-container'))).toBeNull();
   });
 });

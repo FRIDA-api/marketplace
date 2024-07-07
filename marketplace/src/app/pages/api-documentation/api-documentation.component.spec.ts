@@ -96,12 +96,20 @@ describe('ApiDocumentationComponent', () => {
       githubLink: "https://github.com/FRIDA-api/FRIDA-pension",
       swaggerPath: "/assets/api/FRIDA_PensionInformation_OA3_full_en.yaml"
     })
-  })
+  });
 
   it('should find matching tags', () => {
     expect(component.tags).toEqual([{
       "id": "PENSION",
       "tagColor": "#6FBEAB"
     }])
-  })
+  });
+
+  it('should not find api information', () => {
+    component.apiPathParameter = "nonsense";
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(component.apiInformation).not.toBeDefined();
+    });
+  });
 });

@@ -119,11 +119,6 @@ app-api-documentation .mat-expansion-panel-body {
     margin: 0 !important;
   }
 
-  .arrow,
-  //.model-toggle.collapsed {
-  //  filter: invert(99%) sepia(0%) saturate(416%) hue-rotate(314deg)
-  //    brightness(116%) contrast(100%);
-  //}
   table,
   a,
   .opblock-summary-description,
@@ -171,8 +166,6 @@ app-api-documentation .mat-expansion-panel-body {
 .swagger-ui .model-toggle {
   top: 0px;
   vertical-align: middle;
-  //filter: invert(99%) sepia(0%) saturate(416%) hue-rotate(314deg)
-  //  brightness(116%) contrast(100%);
 }
 .swagger-ui .model-toggle:after {
   height: 1rem !important;
