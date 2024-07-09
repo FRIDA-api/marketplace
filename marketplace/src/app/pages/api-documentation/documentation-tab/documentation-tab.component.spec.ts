@@ -1,9 +1,10 @@
 import { DocumentationTabComponent } from './documentation-tab.component';
 import {MockBuilder, MockedComponentFixture, MockRender, MockService} from "ng-mocks";
 import {TranslateModule} from "@ngx-translate/core";
-import {HttpClientTestingModule} from "@angular/common/http/testing";
+import {provideHttpClientTesting} from "@angular/common/http/testing";
 import {ActivatedRoute} from "@angular/router";
 import {By} from "@angular/platform-browser";
+import {provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
 
 describe('DocumentationTabComponent', () => {
   let component: DocumentationTabComponent;
@@ -25,7 +26,7 @@ describe('DocumentationTabComponent', () => {
   beforeEach(async () => {
     return MockBuilder(DocumentationTabComponent)
       .keep(TranslateModule.forRoot())
-      .keep(HttpClientTestingModule)
+      .provide([provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()])
       .provide({
         provide: ActivatedRoute,
         useValue: MockService(ActivatedRoute),

@@ -8,11 +8,7 @@ import {
   withComponentInputBinding,
   withInMemoryScrolling
 } from '@angular/router';
-import {
-  HttpClient,
-  provideHttpClient,
-  withFetch
-} from '@angular/common/http';
+import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
 import {
   provideClientHydration,
   withHttpTransferCacheOptions,
