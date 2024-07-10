@@ -34,7 +34,7 @@
           {
             "name": "Get car claims API",
             "url": "car-claims-api",
-            "dataUrl": "/assets/api/FRIDA_CAR_OA3_full.en.yaml"
+            "dataUrl": "/assets/api/car-claims-api.yaml"
           },
           {
             "name": "Coming soon",

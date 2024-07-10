@@ -35,7 +35,7 @@ describe('ApiDocumentationComponent', () => {
         "INDUSTRIAL_LINES"
       ],
       githubLink: "https://github.com/FRIDA-api/FRIDA-car",
-      swaggerPath: "/assets/api/FRIDA_CAR_OA3_full.en.yaml"
+      swaggerPath: "/assets/api/car-claims-api.yaml"
     }
   ]
 
