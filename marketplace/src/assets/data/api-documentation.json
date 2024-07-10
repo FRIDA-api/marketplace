@@ -9,7 +9,7 @@
           {
             "name": "Get pension API",
             "url": "pension-api",
-            "dataUrl": "/assets/api/FRIDA_PensionInformation_OA3_full_en.yaml"
+            "dataUrl": "/assets/api/pension-api.yaml"
           },
           {
             "name": "Coming Soon",
