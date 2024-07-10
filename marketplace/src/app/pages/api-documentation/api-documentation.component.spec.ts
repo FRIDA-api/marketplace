@@ -105,12 +105,9 @@ describe('ApiDocumentationComponent', () => {
     }])
   });
 
-  // TODO: check why test fails and fix it
-  xit('should not find api information', () => {
+  it('should not find api information', () => {
     component.apiPathParameter = "nonsense";
-    fixture.detectChanges();
-    fixture.whenStable().then(() => {
-      expect(component.apiInformation).not.toBeDefined();
-    });
+    component.ngOnInit();
+    expect(component.apiInformation).not.toBeDefined();
   });
 });
