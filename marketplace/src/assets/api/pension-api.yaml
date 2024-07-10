@@ -1,61 +1,119 @@
 openapi: 3.0.1
 info:
   title: FRIDA PensionSerivce
-  description: base spec without dependencies
-  termsOfService: 'https://github.com/FRIDA-official'
+  description: This spec describes the pension service and its needed APIs
   contact:
-    email: anton.rott@accenture.com
+    email: jonas.knebel@gmx.de
+  version: '1.1'
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-  version: 0.0.1
 externalDocs:
-  description: Hier folgt noch ein Verweis auf die externe Doku
+  description: External documentation
   url: 'http://swagger.io'
-  
 servers:
-  - url: 'https://test-api-impl-backend-jaxrs.herokuapp.com/v2'
+- url: 'https://example.com/v1'
 paths:
-  /RentenKalkulation:
+  /Contracts:
     post:
-      summary: Nutzt oAuth2     
+        summary: Query all visible contracts defined in the user portal
+        security:
+          - oAuth2:
+            - Contracts
+        responses:
+          '200':
+            description: Success
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/VisibleContractsResponse'
+          '403':
+            description: Authorization error
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ErrorList'
+          '500':
+            description: Unexpected error
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ErrorList'
+        requestBody:
+          $ref: '#/components/requestBodies/VisibleContractsRequest'
+  /ContractDetails:
+    post:
+      summary: Query the details for a specific contract
       security:
         - oAuth2:
-          - RenteKalkulieren              
-      tags:
-      - Kalkulierung
-      operationId: berechneRente
+          - ContractDetails
       responses:
         '200':
-          description: Erfolgreiche Berechnung
+          description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RentenSummeResponse'
+                $ref: '#/components/schemas/ContractDetailsResponse'
         '403':
-          description: Authorisierungsfehler
+          description: Authorization error
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
         '500':
-          description: Generischer Fehler
+          description: Generic Error
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
       requestBody:
-        $ref: '#/components/requestBodies/RentenSummeRequest'
+        $ref: '#/components/requestBodies/ContractDetailsRequest'
 components:
   requestBodies:
-    RentenSummeRequest:
+    ContractDetailsRequest:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/RentenParameter'
-      description: Alle zur Rentenkalkulation benötigten Attribute
+            $ref: '#/components/schemas/ContractDetailsRequest'
+      description: Fetch contract details for a specific contract
+      required: true
+    VisibleContractsRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/VisibleContractsRequest'
+      description: Here, we use the user id of the specific user to know which contracts to fetch
       required: true
   schemas:
+    VisibleContractsRequest:
+      type: object
+      properties:
+        id_client:
+          type: string
+      required:
+        - id_client
+    VisibleContractsResponse:
+      type: object
+      properties:
+        contract_ids_of_client:
+          type: array
+          items:
+            type: string
+            description: contract id of client
+      required:
+        - contract_ids_of_client
+    Interest:
+      type: object
+      properties:
+        number_interest:
+          type: number
+          format: double
+    Factor:
+      type: object
+      properties:
+        number_factor:
+          type: number
+          format: double
     Amount:
       type: object
       properties:
@@ -63,6 +121,7 @@ components:
           type: number
           format: double
         currency:
+          description: According to ISO 4217 (https://de.wikipedia.org/wiki/ISO_4217)
           type: string
           format: string
           example: 'EUR'
@@ -96,113 +155,223 @@ components:
               meta:
                 type: object
                 description: Optional additional data for specific error types
-    RentenSummeResponse:
+    ContractDetailsRequest:
       type: object
-      required:
-      - summe
       properties:
-        responseUUID:
+        contract_id:
           type: string
           format: string
-        timestamp:
-          type: string
-          format: date-time
-        summe:
-          $ref: '#/components/schemas/Amount'
-    RentenParameter:
+          description: Unique Identifier for contract
+      required:
+        - contract_id
+    ContractDetailsResponse:
       type: object
       properties:
-        ArtderVersicherung:
-          type: string
-          example: "rente"
-        DatumderStandmitteilung:
-            $ref: '#/components/schemas/Date' 
-        Versicherungsbeginn:
-            $ref: '#/components/schemas/Date' 
-        DatumRentenbeginn:
-            $ref: '#/components/schemas/Date'
-        aktuelleBeitragszahlungen:
-            type: number
-            format: double
-        AktuellesVorsorgevermögen:
-            type: number
-            format: double
-        Garantiezins:
-            type: number
-            format: double
-        ausgewiesenederzeitigenÜberschussbeteiligung:
-            type: number
-            format: double
-        derzeitigeGesamtverzinsung:
-            type: number
-            format: double
-        HöhedergarantiertenAltersrente:
-            type: number
-            format: double
-        HöhederAltersrentebeiderzeitigenÜberschussbeteiligungen:
-            type: number
-            format: double
-        HöhedergarantiertenAltersrentebeiFortzahlungderderzeitigenBeiträge:
-            type: number
-            format: double
-        HöhederAltersrentebeiderzeitigenÜberschussbeteiligungenbeiFortzahlungderderzeitigenBeiträge:
-            type: number
-            format: double
-        FondskapitalbeiFondswachstumvonXProzentbeiRentenbeginn:
-            type: number
-            format: double
-        FondskapitalbeiFondswachstumvonXProzentbeiRentenbeginnbeiFortzahlungderderzeitigenBeiträge:
-            type: number
-            format: double
-        HochrechnungdesgarantiertenAltersvorsorgevermögens:
-            type: number
-            format: double
-        HochrechnungdesAltersvorsorgevermögens:
-            type: number
-            format: double
-        Rentenfaktor:
-            type: number
-            format: double
-        AktuellerRentenfaktorjeZehnTausendEuroVorsorgeguthaben:
-            type: number
-            format: double
-        GarantierterRentenfaktorjeZehnTausendEuroVorsorgeguthaben:
-            type: number
-            format: double
-        aktuellejährlichgezahlteZulagen:
-            type: number
-            format: double
-        zulagen:
-          type: object
+        contracts:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContractDetails'
+      required:
+        - contracts
+    ContractDetails:
+      type: object
+      properties:
+        contract:
           properties:
-            grundzulagen:
-              type: boolean
-            Kinderzulagen:
-              type: object
-              properties:
-                anzahlderKinderdieberücksichtigtwerden:
-                  type: integer
-        kinder:
-          type: object
-          properties:
-            anzahlderKinder:
-              type: integer
-            geburtsDatumDerKinder:
+            type_of_insurance:
+              type: string
+              enum:
+                - STATUTORY_HEALTH_INSURANCE
+                - CARE_INSURANCE
+                - STATUTORY_PENSION_INSURANCE
+                - PRIVATE_PENSION_INSURANCE
+                - COMPANY_PENSION
+                - ENDOWMENT_LIFE_INSURANCE
+            date_notification_status:
+              $ref: '#/components/schemas/Date'
+            date_start_insurance_contract:
+              $ref: '#/components/schemas/Date'
+            products:
               type: array
               items:
-                $ref: '#/components/schemas/Date'
+                type: object
+                properties:
+                  product_name:
+                    type: string
+                  product_layer:
+                    type: string
+                    description: 'Single digit number, ranging from 0-9, e.g. "3"'
+                    pattern: '^[0-9]$'
+                  allocation_company_pension_plan:
+                    type: string
+                  tax_law_specification:
+                    type: string
+                  employer_as_policyholder:
+                    type: boolean
+                  premium_payment_method:
+                    type: string
+                    enum:
+                      - ANNUALY_PAYMENT
+                      - QUARTALY_PAYMENT
+                      - SEMI_ANNUALY_PAYMENT
+                      - MONTHLY_PAYMENT
+                      - SINGLE_PAYMENT
+                  premium_payment_amount:
+                    $ref: '#/components/schemas/Amount'
+                  premium_employer_payment_included_current:
+                    $ref: '#/components/schemas/Amount'
+                  increase_premium:
+                    type: object
+                    properties:
+                      dynamically:
+                        type: boolean
+                      interval:
+                        type: string
+                        enum:
+                          - ANNUAL
+                          - BIENNIAL
+                          - TRIENNIAL
+                      rate:
+                        $ref: '#/components/schemas/Factor'
+                      last_assumptipon:
+                        $ref: '#/components/schemas/Date'
+                  id_chance_risk_category:
+                    type: string
+                    enum:
+                      - CRK1
+                      - CRK2
+                      - CRK3
+                      - CRK4
+                      - CRK5
+                  eligible_children:
+                    type: array
+                    description: Enter eligable childrens birthdates in this array. Leave empty, if there are none
+                    items:
+                      type: object
+                      properties:
+                        date_of_birth:
+                          $ref: '#/components/schemas/Date'
+                  elements:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        date_of_retirement_contract:
+                          $ref: '#/components/schemas/Date'
+                        amount_capital_retirement_guaranteed:
+                          type: object
+                          properties:
+                            current_premium:
+                              $ref: '#/components/schemas/Amount'
+                            as_of_today:
+                              $ref: '#/components/schemas/Amount'
+                            without_further_premium:
+                              $ref: '#/components/schemas/Amount'
+                        factor_pension_guaranteed:
+                          $ref: '#/components/schemas/Factor'
+                        interest_return_guaranteed:
+                          $ref: '#/components/schemas/Interest'
+                        amount_capital_extrapolation_guaranteed:
+                          $ref: '#/components/schemas/Amount'
+                        amount_pension_retirement_guaranteed:
+                          type: object
+                          properties:
+                            current_premium:
+                              $ref: '#/components/schemas/Amount'
+                            without_further_premium:
+                              $ref: '#/components/schemas/Amount'
+                            current_premium_and_government_subsidies:
+                              $ref: '#/components/schemas/Amount'
+                            without_further_premium_and_government_subsidies:
+                              $ref: '#/components/schemas/Amount'
+                        pension_bereaved_duration_guarateed:
+                          $ref: '#/components/schemas/Date'
+                        amount_capital_current:
+                          $ref: '#/components/schemas/Amount'
+                        amount_fund_capital_current:
+                          $ref: '#/components/schemas/Amount'
+                        amount_capital_extrapolation_current:
+                          $ref: '#/components/schemas/Amount'
+                        amount_surplus_participation_current:
+                          $ref: '#/components/schemas/Amount'
+                        buyback_value_with_cancellation_fees:
+                          $ref: '#/components/schemas/Amount'
+                        interest_return_current:
+                          $ref: '#/components/schemas/Interest'
+                        amount_premium_payments_total:
+                          $ref: '#/components/schemas/Amount'
+                        interest_basis_for_extrapolation:
+                          $ref: '#/components/schemas/Interest'
+                        amount_capital_assuming_fund_performance:
+                          type: object
+                          properties:
+                            current:
+                              $ref: '#/components/schemas/Amount'
+                            retirement_current_premium:
+                              $ref: '#/components/schemas/Amount'
+                            retirement_without_further_premium:
+                              $ref: '#/components/schemas/Amount'
+                        amount_fund_ongoing_charges_annually:
+                          $ref: '#/components/schemas/Amount'
+                        percent_guaranteed:
+                          type: number
+                          format: double
+                        factor_pension_current:
+                          $ref: '#/components/schemas/Factor'
+                        amount_pension_as_of_today:
+                          $ref: '#/components/schemas/Amount'
+                        amount_pension_assuming_surplus_participation_retirement:
+                          type: object
+                          properties:
+                            current_premium:
+                              $ref: '#/components/schemas/Amount'
+                            without_further_premium:
+                              $ref: '#/components/schemas/Amount'
+                            current_premium_and_government_subsidies:
+                              $ref: '#/components/schemas/Amount'
+                            without_further_premium_and_government_subsidies:
+                              $ref: '#/components/schemas/Amount'
+                        amount_pension_assuming_fund_performance:
+                              $ref: '#/components/schemas/Amount'
+                        amount_capital_government_subsidies_included_current:
+                          $ref: '#/components/schemas/Amount'
+                        government_subsidies_in_extrapolation_included:
+                          type: boolean
+                        full_utilization_government_subsidies:
+                          type: boolean
+                        indirectly_eligible_government_subsidies:
+                          type: boolean
+                        amount_government_subsidies_annual:
+                          $ref: '#/components/schemas/Amount'
+                        amount_government_subsidies_total:
+                          $ref: '#/components/schemas/Amount'
+                        occupational_disability:
+                          type: object
+                          properties:
+                            waive_premium:
+                              type: boolean
+                            amount_pension_guaranteed:
+                              $ref: '#/components/schemas/Amount'
+                            pension_duration:
+                              $ref: '#/components/schemas/Date'
+                        amount_capital_coverage_death_accidental:
+                          $ref: '#/components/schemas/Amount'
+                        amount_capital_coverage_death:
+                          $ref: '#/components/schemas/Amount'
   securitySchemes:
-    oAuth2:
+    oAuth2: 
       type: oauth2
       flows:
         implicit:
-          authorizationUrl: 'https://frida-demo.okta.com/oauth2/default/v1/authorize?nonce=kdkdkl'
+          authorizationUrl: 'https://login.freeinsurancedata.de/oauth2/default/v1/authorize?nonce=anything'
           scopes:
-            RenteKalkulieren: Read contract information
+            Contracts: Read all visible contracts
+            ContractDetails: Read contract details
             openid: OpenId subject
         authorizationCode:
-          authorizationUrl: 'https://frida-demo.okta.com/oauth2/default/v1/authorize?nonce=kdkdkl'
-          tokenUrl: 'https://frida-demo.okta.com/oauth2/default/v1/token?nonce=kdkdkl'
+          authorizationUrl: 'https://login.freeinsurancedata.de/oauth2/default/v1/authorize?nonce=anything'
+          tokenUrl: 'https://login.freeinsurancedata.de/oauth2/default/v1/token?nonce=anything'
           scopes:
-            RenteKalkulieren: Read contract information
+            Contracts: Read all visible contracts
+            ContractDetails: Read contract details
             openid: OpenId subject
