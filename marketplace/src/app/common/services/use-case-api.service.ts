@@ -15,7 +15,7 @@ export class UseCaseApiService {
         "PENSION"
       ],
       githubLink: "https://github.com/FRIDA-api/FRIDA-pension",
-      swaggerPath: "/assets/api/FRIDA_PensionInformation_OA3_full_en.yaml"
+      swaggerPath: "/assets/api/pension-api.yaml"
     },
     {
       id: "car-claims-api",
@@ -30,7 +30,7 @@ export class UseCaseApiService {
         "INDUSTRIAL_LINES"
       ],
       githubLink: "https://github.com/FRIDA-api/FRIDA-car",
-      swaggerPath: "/assets/api/FRIDA_CAR_OA3_full.en.yaml"
+      swaggerPath: "/assets/api/car-claims-api.yaml"
     },
     {
       id: "real-estate-api-policy",

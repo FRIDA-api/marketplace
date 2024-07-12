@@ -20,7 +20,7 @@ describe('ApiDocumentationComponent', () => {
         "PENSION"
       ],
       githubLink: "https://github.com/FRIDA-api/FRIDA-pension",
-      swaggerPath: "/assets/api/FRIDA_PensionInformation_OA3_full_en.yaml"
+      swaggerPath: "/assets/api/pension-api.yaml"
     },
     {
       id: "car-claims-api",
@@ -35,7 +35,7 @@ describe('ApiDocumentationComponent', () => {
         "INDUSTRIAL_LINES"
       ],
       githubLink: "https://github.com/FRIDA-api/FRIDA-car",
-      swaggerPath: "/assets/api/FRIDA_CAR_OA3_full.en.yaml"
+      swaggerPath: "/assets/api/car-claims-api.yaml"
     }
   ]
 
@@ -94,7 +94,7 @@ describe('ApiDocumentationComponent', () => {
         "PENSION"
       ],
       githubLink: "https://github.com/FRIDA-api/FRIDA-pension",
-      swaggerPath: "/assets/api/FRIDA_PensionInformation_OA3_full_en.yaml"
+      swaggerPath: "/assets/api/pension-api.yaml"
     })
   });
 
@@ -105,12 +105,9 @@ describe('ApiDocumentationComponent', () => {
     }])
   });
 
-  // TODO: check why test fails and fix it
-  xit('should not find api information', () => {
+  it('should not find api information', () => {
     component.apiPathParameter = "nonsense";
-    fixture.detectChanges();
-    fixture.whenStable().then(() => {
-      expect(component.apiInformation).not.toBeDefined();
-    });
+    component.ngOnInit();
+    expect(component.apiInformation).not.toBeDefined();
   });
 });
