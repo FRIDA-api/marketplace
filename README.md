@@ -6,3 +6,6 @@ This project is a web application whose purpose is to give an overview over the 
 
 # How to run?
 This is an standard angular project. To run the application move in the marketplace/marketplace directory and run ```npm install```. After the successful installation you can run ```npm run start``` to run the application. Alternatively you can start the application with ssr enabled when you run ```npm run serve:ssr:marketplace```.
+
+# Deployment
+The marketplace is deployed with the help of AWS Amplify. The deployment is described within the aplimfy.yml. The GitHub repository is connected with AWS Amplify via the AWS console. On every commit to the main branch the marketplace is deployed automatically.
