@@ -5,14 +5,22 @@
     </div>
     <h2>{{ "USE_CASES." + apiData().languageKey + ".TITLE" | translate }}</h2>
   </div>
-  <a class="hover-container" [routerLink]="[apiData().id]"><span class="sr-only">{{ "USE_CASES.LINK_DESCRIPTION_GENERAL" | translate }}{{ "USE_CASES." + apiData().languageKey + ".TITLE" | translate }}</span></a>
+  <a class="hover-container" [routerLink]="['apis/' + apiData().id]"
+    ><span class="sr-only"
+      >{{ "USE_CASES.LINK_DESCRIPTION_GENERAL" | translate
+      }}{{ "USE_CASES." + apiData().languageKey + ".TITLE" | translate }}</span
+    ></a
+  >
   <div class="description-container">
     <p>
       {{ "USE_CASES." + apiData().languageKey + ".DESCRIPTION" | translate }}
     </p>
   </div>
   <div class="tag-container">
-    <h3 class="sr-only">{{ "USE_CASES.TAG_DESCRIPTION_GENERAL" | translate }}{{ "USE_CASES." + apiData().languageKey + ".TITLE" | translate }}</h3>
+    <h3 class="sr-only">
+      {{ "USE_CASES.TAG_DESCRIPTION_GENERAL" | translate
+      }}{{ "USE_CASES." + apiData().languageKey + ".TITLE" | translate }}
+    </h3>
     @for (tag of tagComputed(); track tag.id) {
     <div class="tag" [style.background-color]="tag.tagColor">
       {{ "TAGS." + tag.id | translate }}
