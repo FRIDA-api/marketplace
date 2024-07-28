@@ -1,4 +1,9 @@
 @import "scss/colors.scss";
+
+.goal-list {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 .container {
   position: relative;
   height: 100%;
@@ -148,7 +153,6 @@
     padding: 41px;
     background-color: rgba($primary, 0.1);
   }
-
 }
 
 .flex-container {

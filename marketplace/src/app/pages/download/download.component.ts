@@ -24,21 +24,5 @@ type Download = {
 })
 export class DownloadComponent {
   @Input() input?: ApiDownloadModel | null;
-  downloadContainers: DownloadItem[] = [
-    {
-      key: 'DATA_MODEL',
-      downloads: [],
-    },
-    {
-      key: 'USE_CASES_WHITEPAPER',
-      downloads: [
-        {
-          title: 'test',
-          version: 'te',
-          date: 'te',
-          url: 'https://freeinsurancedata.de/#!/use-cases',
-        },
-      ],
-    },
-  ];
+  downloadContainers: DownloadItem[] = [];
 }
