@@ -7,7 +7,7 @@ test.describe('api-overview', () => {
 
   test('show correct content', async ({ page }) => {
     await expect(
-      page.getByRole('heading', { level: 1, name: 'Use-Case: Pension API' })
+      page.getByRole('heading', { level: 1, name: 'Use Case: Pension API' })
     ).toBeVisible();
     await expect(
       page.getByText('Making pension assets accessible', { exact: true })
