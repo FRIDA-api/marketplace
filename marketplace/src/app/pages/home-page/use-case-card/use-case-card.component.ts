@@ -1,8 +1,8 @@
+import { NgOptimizedImage } from '@angular/common';
 import { Component, computed, inject, input, Signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ApiInformationModel } from '@common/models/api-information.model';
 import { TagModel } from '@common/models/tag.model';
-import { NgOptimizedImage } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({

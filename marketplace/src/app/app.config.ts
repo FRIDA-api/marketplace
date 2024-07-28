@@ -1,12 +1,10 @@
-import {
-  ApplicationConfig,
-  importProvidersFrom
-} from '@angular/core';
+import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import {
   InMemoryScrollingOptions,
   provideRouter,
   withComponentInputBinding,
-  withInMemoryScrolling
+  withInMemoryScrolling,
+  withViewTransitions,
 } from '@angular/router';
 import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
 import {
@@ -18,14 +16,8 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { routes } from './app.routes';
 
-export function createTranslateLoader(
-  http: HttpClient,
-) {
-  return new TranslateHttpLoader(
-    http,
-    './assets/i18n/',
-    '.json'
-  );
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 const scrollConfig: InMemoryScrollingOptions = {
@@ -35,7 +27,11 @@ const scrollConfig: InMemoryScrollingOptions = {
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes, withComponentInputBinding(), withInMemoryScrolling(scrollConfig)),
+    provideRouter(
+      routes,
+      withComponentInputBinding(),
+      withInMemoryScrolling(scrollConfig)
+    ),
     provideHttpClient(withFetch()),
     importProvidersFrom([
       TranslateModule.forRoot({

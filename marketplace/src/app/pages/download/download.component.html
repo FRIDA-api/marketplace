@@ -24,7 +24,11 @@
               height="52"
             />
           </div>
-          <h2>{{ "DOWNLOADS.TILES." + downloadContainer.key + ".TITLE" | translate }} </h2>
+          <h2>
+            {{
+              "DOWNLOADS.TILES." + downloadContainer.key + ".TITLE" | translate
+            }}
+          </h2>
         </div>
 
         <div class="description-container">
@@ -39,7 +43,9 @@
             <a [href]="download.date">{{ download.title }}</a>
           </div>
           <div class="download-item-content-container">
-            <span class="sr-only">{{ "DOWNLOADS.DESC_VERSION" | translate }}</span>
+            <span class="sr-only">{{
+              "DOWNLOADS.DESC_VERSION" | translate
+            }}</span>
             <span>{{ download.version }}</span>
             <span class="sr-only">{{ "DOWNLOADS.DESC_DATE" | translate }}</span>
             <span>{{ download.date }}</span>
@@ -79,7 +85,7 @@
         </ul>
       </div>
       <div class="container-right">
-        <ul>
+        <ul class="goal-list">
           <li>
             <span>{{ "DOWNLOADS.GOAL.BOX.RIGHT.TEXT_1" | translate }}</span>
           </li>

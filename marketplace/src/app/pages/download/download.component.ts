@@ -12,6 +12,7 @@ type Download = {
   title: string;
   version: string;
   date: string;
+  url: string;
 };
 
 @Component({
@@ -23,56 +24,5 @@ type Download = {
 })
 export class DownloadComponent {
   @Input() input?: ApiDownloadModel | null;
-  downloadContainers: DownloadItem[] = [
-    {
-      key: 'DATA_MODEL',
-      downloads: [
-        {
-          title: 'test',
-          version: '1.0',
-          date: '12.04.2024',
-        },
-        {
-          title: 'test',
-          version: '1.0',
-          date: '12.04.2024',
-        },
-      ],
-    },
-    {
-      key: 'EU_SUMMARY',
-      downloads: [
-        {
-          title: 'test',
-          version: '1.0',
-          date: '12.04.2024',
-        },
-      ],
-    },
-    {
-      key: 'USE_CASES_WHITEPAPER',
-      downloads: [
-        {
-          title: 'test',
-          version: '1.0',
-          date: '12.04.2024',
-        },
-      ],
-    },
-    {
-      key: 'USE_CASE_CREATION',
-      downloads: [
-        {
-          title: 'test',
-          version: '1.0',
-          date: '12.04.2024',
-        },
-        {
-          title: 'test',
-          version: '1.0',
-          date: '12.04.2024',
-        },
-      ],
-    },
-  ];
+  downloadContainers: DownloadItem[] = [];
 }

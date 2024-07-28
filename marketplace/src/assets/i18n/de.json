@@ -16,8 +16,8 @@
     "DATA_PROTECTION": "Datenschutzhinweis",
     "PRIVACY_SETTINGS": "Privatsphäre-Einstellungen ändern",
     "STATUTES": "FRIDA Satzung",
-    "ACCESSIBILITY_STATEMENT": "Barrierefreiheitserklärung",
-    "COPYRIGHT": "© Copyright 2023. All rights reserved.&nbsp;&nbsp;&nbsp;FRIDA e.V.&nbsp;&nbsp;&nbsp;c/o InsurLab Germany&nbsp;&nbsp;&nbsp;Hohenzollernring 85-87&nbsp;&nbsp;&nbsp;50672 Köln&nbsp;&nbsp;&nbsp;info@freeinsurancedata.de"
+    "COPYRIGHT": "© Copyright 2024. All rights reserved.&nbsp;&nbsp;&nbsp;FRIDA e.V.&nbsp;&nbsp;&nbsp;c/o InsurLab Germany&nbsp;&nbsp;&nbsp;Hohenzollernring 85-87&nbsp;&nbsp;&nbsp;50672 Köln&nbsp;&nbsp;&nbsp;info@freeinsurancedata.de",
+    "ACCESSIBILITY_STATEMENT": "Barrierefreiheitserklärung"
   },
   "HOMEPAGE": {
     "USE_CASES_HEADLINE": "FRIDA Use Cases",
@@ -60,10 +60,10 @@
         "TITLE": "EU Zusammenfassung"
       },
       "USE_CASES_WHITEPAPER": {
-        "TITLE": "Use-Cases Whitepaper"
+        "TITLE": "Use Cases Whitepaper"
       },
       "USE_CASE_CREATION": {
-        "TITLE": "Use-Case Erstellungsprozess"
+        "TITLE": "Use Case Erstellungsprozess"
       }
     }
   },
@@ -75,7 +75,7 @@
       "DESCRIPTION": "Bereitstellung von Daten zur Transparenz in der Altersvorsorge z.B. mithilfe eines Rentencockpits."
     },
     "CAR_CLAIMS_API": {
-      "TITLE": "Car-ClaimsAPI",
+      "TITLE": "CarClaimsAPI",
       "DESCRIPTION": "Einheitliche Darstellung von Kfz- Versicherungsdaten (z.B. in einem digitalen Wallet), die im Schadenfall ausgetauscht und versendet werden können."
     },
     "REAL_ESTATE_API_POLICY": {
@@ -83,7 +83,7 @@
       "DESCRIPTION": "Austausch von Daten rund um die Gebäudeversicherung, damit diese bei bspw. Vergabe von Modernisierungsdarlehen verwendet werden können."
     },
     "HEALTH_CARE_API": {
-      "TITLE": "Health-CareAPI",
+      "TITLE": "HealthCareAPI",
       "DESCRIPTION": "Anwendungsfälle im Gesundheitsbereich, z.B. um das integrierte Vertrags- und Leistungsmanagement."
     },
     "DIGITAL_DOCUMENTS_API": {
@@ -117,10 +117,11 @@
     "BACK_TO_OVERVIEW": "Zurück zur Übersicht",
     "TAB_OVERVIEW": "Überblick",
     "TAB_DOCUMENTATION": "API Dokumentation",
+    "JOIN_NOW": "Jetzt mitmachen!",
     "VIEW_ON_GITHUB": "Jetzt die API-Spezifikation im Github anschauen",
     "COMING_SOON_TEXT": "Bald verfügbar ...",
     "PENSION_API": {
-      "HEADLINE": "Use-Case: Pension API",
+      "HEADLINE": "Use Case: Pension API",
       "SUBHEADLINE": "Rentenwerte zugänglich machen",
       "CUSTOMER_PERSPECTIVE_HEADLINE": "Kundenperspektive",
       "CUSTOMER_PERSPECTIVE_SUBHEADLINE": "Was erwartet mich eigentlich im Alter? Wie groß ist meine Rentenlücke?",
@@ -136,7 +137,7 @@
       "CARD_3_TEXT": "Als Nutzer eines Rentencockpits habe ich meine erwartete Rente stets im Blick, erkenne Lücken und manage meine Altersvorsorge aktiv oder suche Rat bei Vorsorgeexperten."
     },
     "CAR_CLAIMS_API": {
-      "HEADLINE": "Use-Case: Car Claims API",
+      "HEADLINE": "Use Case: Car Claims API",
       "SUBHEADLINE": "KFZ Daten und automatisierte Schadenmeldung",
       "CUSTOMER_PERSPECTIVE_HEADLINE": "Kundenperspektive",
       "CUSTOMER_PERSPECTIVE_SUBHEADLINE": "Immer wenn ich meine Versicherungsdaten einmal brauche, habe ich sie nicht zur Hand! Und gerade in einer Unfallsituation frage ich mich:",
@@ -152,7 +153,7 @@
       "CARD_3_TEXT": "Die Versicherung des Kunden verarbeitet die erfassten Schadendaten automatisiert."
     },
     "REAL_ESTATE_API_POLICY": {
-      "HEADLINE": "Use-Case: Building API",
+      "HEADLINE": "Use Case: Building API",
       "SUBHEADLINE": "Daten rund um Immobilien",
       "CUSTOMER_PERSPECTIVE_HEADLINE": "Kundenperspektive",
       "CUSTOMER_PERSPECTIVE_SUBHEADLINE": "Ich möchte Daten zu einem bzw. meinem Gebäude auf einer Plattform einsehen und entsprechend integrieren bzw. in unterschiedlichen Services nutzen. Neben den Daten, die ein Versicherer im Rahmen der Gebäudeversicherung erhebt und zur Verfügung stellen kann, können auch weitere Gebäudedaten von externen Quellen hinzugezogen werden",
@@ -168,7 +169,7 @@
       "CARD_3_TEXT": "Die Building API kann von Kunden, Versicherern, Vetrieben und Dritt-/Lösungsanbietern genutzt werden um verschiedene Ziele zu erreichen (z.B. Inserate einstellen, vereinfachter Datenaustausch, Optimierung von Immobilienplattformen)."
     },
     "HEALTH_CARE_API": {
-      "HEADLINE": "Use-Case: Health-Care API",
+      "HEADLINE": "Use Case: Health-Care API",
       "SUBHEADLINE": "Leistungen beantragen - simplified",
       "CUSTOMER_PERSPECTIVE_HEADLINE": "Kennen Sie das nicht auch, wenn ...",
       "CUSTOMER_PERSPECTIVE_SUBHEADLINE": "Sie beim Zahnarzt sitzen, eine neue Zahnkrone brauchen und sich fragen, wie das Ganze bezahlt werden soll? ",
@@ -184,7 +185,7 @@
       "CARD_3_TEXT": "Endverbraucher erhalten Zugriff auf ihre Daten und können diese mithilfe von neuen Services, z. B. in der App ihrer GKV oder PKV, zielgerichtet einsetzen."
     },
     "DIGITAL_DOCUMENTS_API": {
-      "HEADLINE": "Use-Case: Document API",
+      "HEADLINE": "Use Case: Document API",
       "SUBHEADLINE": "Alle Versicherungsdokumente auf einen Blick",
       "CUSTOMER_PERSPECTIVE_HEADLINE": "Kundenperspektive",
       "CUSTOMER_PERSPECTIVE_SUBHEADLINE": "Ich bekomme Post bzw. Unterlagen von den unterschiedlichen Versicherern per E-Mail, per Post oder über das jeweilige Kundenportal.",
@@ -200,7 +201,7 @@
       "CARD_3_TEXT": "Als Nutzer:in eines intelligenten digitalen Dokumenten-Safes habe ich meine Post vom Versicherer stets im Blick und manage diese selbst - ohne einen analogen Ordner."
     },
     "CYBER_API": {
-      "HEADLINE": "Use-Case: Cyber API",
+      "HEADLINE": "Use Case: Cyber API",
       "SUBHEADLINE": "Daten aus Assistance-Tools und KRIs",
       "CUSTOMER_PERSPECTIVE_HEADLINE": "IT-Sicherheit und Datenschutz",
       "CUSTOMER_PERSPECTIVE_SUBHEADLINE": "Die Informations- und Kommunikationstechnologie entwickelt sich rasant und führt bei Unternehmen bereits seit Jahren zu immer höheren Anforderungen in Bezug auf die IT-Security und den Datenschutz. Die eingesetzten Softwarelösungen setzten den Fokus auf das Erkennen und Steuern von Cyber-Risiken, Dokumentationspflichten sowie die Sensibilisierung von Mitarbeiter:innen. Hierbei wird schon jetzt eine Vielzahl an Daten generiert, die Unternehmen auch einsetzten können, um den Einkauf von Cyber-Risk Deckungen zu optimieren.",
@@ -216,7 +217,7 @@
       "CARD_3_TEXT": "Entwicklung von Sicherheitsprodukten, Steigerung der Kompetenz durch innovative High-Tech-Instrumente, Zielgerichtete Weiterentwicklung des Dienstleistungsangebots, KRI-Service als Kundenbetreuungs- und Akquise-Tool, Steigerung der Kundenzufriedenheit"
     },
     "REAL_ESTATE_API_RISK": {
-      "HEADLINE": "Use-Case: Building API",
+      "HEADLINE": "Use Case: Building API",
       "SUBHEADLINE": "Daten rund um Immobilien",
       "CUSTOMER_PERSPECTIVE_HEADLINE": "Kundenperspektive",
       "CUSTOMER_PERSPECTIVE_SUBHEADLINE": "Ich möchte Daten zu einem bzw. meinem Gebäude auf einer Plattform einsehen und entsprechend integrieren bzw. in unterschiedlichen Services nutzen. Neben den Daten, die ein Versicherer im Rahmen der Gebäudeversicherung erhebt und zur Verfügung stellen kann, können auch weitere Gebäudedaten von externen Quellen hinzugezogen werden",

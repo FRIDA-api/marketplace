@@ -16,7 +16,7 @@
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: true }"
       ariaCurrentWhenActive="page"
-    >{{ "HEADER.API_CATALOGUE" | translate }}</a
+      >{{ "HEADER.API_CATALOGUE" | translate }}</a
     >
 
     <a
@@ -24,25 +24,49 @@
       routerLink="/downloads"
       routerLinkActive="active"
       ariaCurrentWhenActive="page"
-    >{{ "HEADER.DOWNLOADS" | translate }}</a
+      >{{ "HEADER.DOWNLOADS" | translate }}</a
     >
   </nav>
 
   <section>
-    <button class="language-button" id="language-button" (click)="switchLanguage()" (keydown.enter)="switchLanguage()" (keydown.space)="switchLanguage()">
-      <label class="sr-only" for="language-button">{{ "HEADER.SWITCH_LANGUAGE" | translate }}</label>
+    <button
+      class="language-button"
+      id="language-button"
+      (click)="switchLanguage()"
+      (keydown.enter)="switchLanguage()"
+      (keydown.space)="switchLanguage()"
+    >
+      <label class="sr-only" for="language-button">{{
+        "HEADER.SWITCH_LANGUAGE" | translate
+      }}</label>
       @if (translate.currentLang === 'de') {
-        <img id="en-flag" ngSrc="assets/icons/en_flag.png" alt="Flag of the USA" height="12" width="18">
-      }
-
-      @if (translate.currentLang === 'en') {
-        <img id="de-flag" ngSrc="assets/icons/de_flag.png" alt="Flag of Germany" height="12" width="18">
+      <img
+        id="en-flag"
+        ngSrc="assets/icons/en_flag.png"
+        alt="Flag of the USA"
+        height="12"
+        width="18"
+      />
+      } @if (translate.currentLang === 'en') {
+      <img
+        id="de-flag"
+        ngSrc="assets/icons/de_flag.png"
+        alt="Flag of Germany"
+        height="12"
+        width="18"
+      />
       }
     </button>
 
-    <a class="contact-button" aria-labelledby="contact-info" href="mailto:info@freeinsurancedata.de">
+    <a
+      class="contact-button"
+      aria-labelledby="contact-info"
+      href="mailto:info@freeinsurancedata.de"
+    >
       info&#64;freeinsurancedata.de
-      <span class="sr-only" id="contact-info">{{ "HEADER.EMAIL_INFO" | translate }}</span>
+      <span class="sr-only" id="contact-info">{{
+        "HEADER.EMAIL_INFO" | translate
+      }}</span>
     </a>
   </section>
 </header>

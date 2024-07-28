@@ -1,12 +1,11 @@
 import { Routes } from '@angular/router';
 
+import { AccessibilityStatementComponent } from './pages/accessibility-statement/accessibility-statement.component';
 import { ApiDocumentationComponent } from './pages/api-documentation/api-documentation.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
 import { DownloadComponent } from './pages/download/download.component';
-import {AccessibilityStatementComponent} from "./pages/accessibility-statement/accessibility-statement.component";
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 export const routes: Routes = [
-  { path: '', component: HomePageComponent, title: 'Homepage - Marketplace - FRIDA' },
   {
     path: 'downloads',
     loadComponent: () =>
@@ -18,16 +17,20 @@ export const routes: Routes = [
   {
     path: 'accessibility-statement',
     loadComponent: () =>
-      import('./pages/accessibility-statement/accessibility-statement.component').then(
-        () => AccessibilityStatementComponent
-      ),
+      import(
+        './pages/accessibility-statement/accessibility-statement.component'
+      ).then(() => AccessibilityStatementComponent),
   },
   {
-    path: ':apiPathParameter',
+    path: 'apis/:apiPathParameter',
     loadComponent: () =>
       import('./pages/api-documentation/api-documentation.component').then(
         () => ApiDocumentationComponent
       ),
   },
-  { path: '**', redirectTo: '' },
+  {
+    path: '',
+    component: HomePageComponent,
+    title: 'Homepage - Marketplace - FRIDA',
+  },
 ];
