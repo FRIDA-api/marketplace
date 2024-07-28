@@ -1,3 +1,4 @@
+import { DOCUMENT, isPlatformBrowser, NgStyle } from '@angular/common';
 import {
   Component,
   effect,
@@ -6,11 +7,9 @@ import {
   Input,
   PLATFORM_ID,
 } from '@angular/core';
-import SwaggerUI from 'swagger-ui';
-import { DOCUMENT, isPlatformBrowser, NgStyle } from '@angular/common';
-import { UseCaseApiService } from '@common/services/use-case-api.service';
-import { TranslateModule } from '@ngx-translate/core';
 import { ApiInformationModel } from '@common/models/api-information.model';
+import { TranslateModule } from '@ngx-translate/core';
+import SwaggerUI from 'swagger-ui';
 
 @Component({
   selector: 'app-documentation-tab',
@@ -36,7 +35,7 @@ export class DocumentationTabComponent {
       SwaggerUI({
         url: this.apiInformation.swaggerPath,
         domNode: this.document.getElementById('swagger-ui'),
-        deepLinking: true,
+        deepLinking: false,
         defaultModelsExpandDepth: 4,
         defaultModelExpandDepth: 4,
         syntaxHighlight: {

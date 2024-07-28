@@ -12,7 +12,12 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $marketplace-primary: mat.m2-define-palette(mat.$m2-indigo-palette);
-$marketplace-accent: mat.m2-define-palette(mat.$m2-pink-palette, A200, A100, A400);
+$marketplace-accent: mat.m2-define-palette(
+  mat.$m2-pink-palette,
+  A200,
+  A100,
+  A400
+);
 
 // The warn palette is optional (defaults to red).
 $marketplace-warn: mat.m2-define-palette(mat.$m2-red-palette);
@@ -48,6 +53,19 @@ $marketplace-theme: mat.m2-define-light-theme(
 
 * {
   box-sizing: border-box;
+  --mdc-tab-indicator-active-indicator-color: #29b3b8;
+  --mat-tab-header-disabled-ripple-color: rgba(0, 0, 0, 0.38);
+  --mat-tab-header-pagination-icon-color: black;
+  --mat-tab-header-inactive-label-text-color: rgba(0, 0, 0, 0.6);
+  --mat-tab-header-active-label-text-color: #29b3b8;
+  --mat-tab-header-active-ripple-color: #29b3b8;
+  --mat-tab-header-inactive-ripple-color: #29b3b8;
+  --mat-tab-header-inactive-focus-label-text-color: rgba(0, 0, 0, 0.6);
+  --mat-tab-header-inactive-hover-label-text-color: rgba(0, 0, 0, 0.6);
+  --mat-tab-header-active-focus-label-text-color: #29b3b8;
+  --mat-tab-header-active-hover-label-text-color: #29b3b8;
+  --mat-tab-header-active-focus-indicator-color: #29b3b8;
+  --mat-tab-header-active-hover-indicator-color: #29b3b8;
 }
 
 body {
@@ -132,6 +150,13 @@ app-api-documentation .mat-expansion-panel-body {
     color: black !important;
   }
 }
+
+.swagger-ui .highlight-code {
+  *:not([style="color: rgb(181, 189, 104);"]) {
+    color: white !important;
+  }
+}
+
 .swagger-ui .model-box:has(div) {
   width: 100%;
   .model-box {
