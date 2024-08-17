@@ -1,0 +1,460 @@
+openapi: 3.0.1
+info:
+  title: FRIDA Car Claims Data Schema
+  description: 'Die FRIDA Schaden API - ermöglicht es Nutzer:innen im Schadenfall die wichtigsten Versicherungs- und Unfalldaten über eine Schadenplattform direkt an den Versicherer zu übertragen und den Schaden damit offiziel zu melden.'
+  termsOfService: 'https://github.com/FRIDA-official'
+  contact:
+    name: Florian Neuß
+    email: floneuss99@gmail.com
+    url: 'https://github.com/FRIDA-api/FRIDA-car'
+  license:
+    name: MIT
+    url: 'https://opensource.org/licenses/MIT'
+  version: 0.0.1
+servers:
+  - url: 'https://stoplight.io/mocks/claimstobe/claims-data-schema/444459889'
+    description: Mock API
+  - url: 'https://test-api-impl-backend-jaxrs.herokuapp.com/v2'
+    description: Staging
+  - url: 'https://test-api-impl-backend-jaxrs.xyz.com/v2'
+    description: Production
+tags:
+  - name: Claims
+    description: Claims
+externalDocs:
+  description: Hier folgt noch ein Verweis auf die externe Doku
+  url: 'http://swagger.io'
+paths:
+  /claimsdata:
+    get:
+      operationId: getClaim
+      summary: Get Claim
+      description: Get Claim
+      tags:
+        - Claims
+      responses:
+        '201':
+          description: Claim Data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Claimsdata'
+    post:
+      operationId: createClaim
+      summary: Create Claim
+      description: Create Claim
+      tags:
+        - Claims
+      requestBody:
+        $ref: '#/components/requestBodies/Claimdata'
+      responses:
+        '201':
+          $ref: '#/components/responses/Claimdata'
+        '403':
+          description: Authorization error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorList'
+        '500':
+          description: Generic Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorList'
+  '/claimsdata/{policyNumber}':
+    parameters:
+      - $ref: '#/components/parameters/policyNumber'
+    get:
+      operationId: getClaimByPID
+      summary: Get Claim by PID
+      description: Get Claim by PID
+      tags:
+        - Claims
+      parameters:
+        - $ref: '#/components/parameters/policyNumber'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Claimsdata'
+    put:
+      operationId: updateClaimByPID
+      summary: Update Claim by PID
+      description: Update Claim by PID
+      tags:
+        - Claims
+      parameters:
+        - $ref: '#/components/parameters/policyNumber'
+      requestBody:
+        $ref: '#/components/requestBodies/Claimdata'
+      responses:
+        '200':
+          description: Fetched a Claim-Data-Set by PolicyNumber
+          $ref: '#/components/responses/Claimdata'
+components:
+  schemas:
+    Claimsdata:
+      description: Holds all information required for submitting a `Comprehensive Claim` to the insurance company.
+      properties:
+        language:
+          type: string
+          example: DE
+          enum:
+            - DE
+            - EN
+            - FR
+            - ES
+            - IT
+            - NL
+            - PL
+        accidentDate:
+          type: string
+          description: Unfalldatum ohne Zeit
+          format: date
+          example: '2019-08-24'
+        accidentTime:
+          type: string
+          description: Unfall Zeit
+          format: time
+          example: '08:30:00'
+        accidentCoordinates:
+          type: string
+          description: '50°56’28.8″N 6°57’30.0″E Der erste Wert liegt zwischen -90 und 90, die Längengradangabe zwischen -180 und 180. // Nutzt Du die Bogenmaßangaben, muss am Schluss ein „W“ für „West“ oder „E“ für „East“ stehen'
+        accidentPostalCode:
+          type: string
+          description: PLZ
+          example: '50181'
+        accidentCity:
+          type: string
+          description: Ort
+          example: Bedburg
+        accidentStreetName:
+          type: string
+          description: Straße
+          example: Germaniastraße
+        accidentStreetNumber:
+          type: string
+          description: Hausnummer
+          example: 1b
+        accidentDescription:
+          type: string
+          description: Unfallbeschreibung
+        accidentPoliceNumber:
+          type: string
+          description: Unfallnummer der Polizei
+          example: 2024-ABC123
+        propertyDamage:
+          type: string
+          description: weitere Sachschäden ja/nein
+          enum:
+            - not_specified
+            - 'false'
+            - 'true'
+        propertyDamageDescription:
+          type: string
+          description: Beschreibung Sachschäden
+          example: Frontstoßstangenschaden
+        injuredPerson:
+          type: string
+          description: Verletzte Person ja/nein
+          enum:
+            - not_specified
+            - 'false'
+            - 'true'
+        injuredPersonNumber:
+          type: string
+          description: Anzahl verletzte Personen
+        witnessExists:
+          type: string
+          description: Zeuge ja/nein
+          enum:
+            - not_specified
+            - 'false'
+            - 'true'
+        witnessNumber:
+          type: string
+          description: Anzahl Zeugen
+        witness:
+          type: array
+          items:
+            $ref: '#/components/schemas/Witness'
+        policyholder:
+          description: Policyholder A
+          $ref: '#/components/schemas/Policyholder'
+        otherPolicyholder:
+          description: Policyholder B
+          $ref: '#/components/schemas/Policyholder'
+      required:
+        - policyholder
+        - otherPolicyholder
+        - propertyDamage
+        - injuredPerson
+        - witnessExists
+      type: object
+    Person:
+      description: 'Holds all information of a Person who could either be a `Witness`, or a part of a `Policyholder` or `Vehicle Driver`.'
+      properties:
+        formOfAdress:
+          type: string
+          description: Anrede
+          enum:
+            - no_adress
+            - Herr
+            - Frau
+        title:
+          type: string
+          description: Titel
+          enum:
+            - Dr.
+            - Dr. Dr.
+            - Prof.
+        lastName:
+          type: string
+          description: Nachname
+          example: Johnson
+        firstName:
+          type: string
+          description: Vorname
+          example: Alice
+        postalCode:
+          type: string
+          description: PLZ
+          example: '50181'
+        city:
+          type: string
+          description: Ort
+          example: Bedburg
+        streetName:
+          type: string
+          description: Straße
+          example: Germaniastraße
+        streetNumber:
+          type: string
+          description: Hausnummer
+          example: 1b
+        phoneNumber:
+          type: string
+          description: Telefonnummer
+          example: +49(40)321070
+        emailAddress:
+          type: string
+          description: E-Mail Adresse
+          example: example@gmail.com
+      type: object
+    Policyholder:
+      description: Holds all information of a `Policyholder`.
+      properties:
+        personalInformation:
+          $ref: '#/components/schemas/Person'
+        vehicleDriver:
+          $ref: '#/components/schemas/VehicleDriver'
+        inputTaxDeduction:
+          type: string
+          description: Vorsteuerabzug ja/nein
+          enum:
+            - not_specified
+            - 'false'
+            - 'true'
+        vehicleMake:
+          type: string
+          description: Fahrzeugmarke || will be extracted from <Policy Pass>
+          example: BMW
+        vehicleType:
+          type: string
+          description: Fahrzeugmodell || will be extracted from <Policy Pass>
+          example: M5
+        vehicleReg:
+          type: string
+          description: Kennzeichen ||will be extracted from <Policy Pass>
+          example: BM LD1234
+        insuranceCompany:
+          type: string
+          description: Versicherungsanbieter || will be extracted from <Companion Pass>
+          example: HDI
+        policyNumber:
+          type: string
+          description: Policennummer || will be extracted from <Policy Pass>
+          example: V-123-345-678-5
+        vin:
+          type: string
+          description: Fahrzeug-Identifizierungsnummer || will be extracted from <Policy Pass>
+          example: W0L000051T2123456
+        currentMileage:
+          type: integer
+          description: aktueller Kilometerstand
+          example: 1200
+        greencardNumber:
+          type: string
+          description: Grüne-Karte Nummer
+        greencardExpirydate:
+          type: string
+          description: Ablaufdatum der Grünen Karte
+          format: date
+        comprehensiveInsurance:
+          type: string
+          description: Vollkaskoversichert ja/nein
+          enum:
+            - not_specified
+            - 'false'
+            - 'true'
+      type: object
+    Witness:
+      description: Holds all information of a `Witness`.
+      properties:
+        personalInformation:
+          $ref: '#/components/schemas/Person'
+    VehicleDriver:
+      description: Holds all information of a `Vehicle Driver`.
+      properties:
+        personalInformation:
+          $ref: '#/components/schemas/Person'
+        driverLicensenumber:
+          type: string
+          description: Führerscheinnummer
+          example: DR123456
+        licenseIssuedBy:
+          type: string
+          description: Führerschein ausgestellt von
+        damagedCarImages:
+          maxItems: 8
+          type: array
+          description: Bilder vom Schaden
+          items:
+            type: object
+            properties:
+              file:
+                type: string
+                format: binary
+                description: Bild vom Schaden || native FileAPI des Clients (Dunkelverarbeitung)
+              path:
+                type: string
+                description: Pfad zum Bild
+        damagedWindowImages:
+          maxItems: 8
+          type: array
+          description: Bilder vom Glasschaden
+          items:
+            type: object
+            properties:
+              file:
+                type: string
+                format: binary
+                description: Bild vom Glasschaden || native FileAPI des Clients (Dunkelverarbeitung)
+              path:
+                type: string
+                description: Pfad zum Bild
+        driverDamagedpartsGraphic:
+          type: array
+          description: Auswahl der beschädigten Stellen
+          items:
+            type: string
+            enum:
+              - vorne links
+              - Seite vorne links
+              - Fahrertür links
+              - hintere Tür links
+              - Seite hinten links
+              - hinten links
+              - vorne rechts
+              - Seite vorne rechts
+              - Beifahrertür rechts
+              - Seite hinten rechts
+              - hinten rechts
+              - Motorhaube
+              - Frontscheibe
+              - Dach
+              - Heckscheibe
+              - Kofferraum
+            example: hinten links
+        driverVisibleDamage:
+          type: string
+          description: Beschreibung sichtbare Schäden
+        driverComments:
+          type: string
+          description: Bemerkungen des Fahrers
+        vehicleDrivingAbility:
+          type: string
+          description: Fahrbereitschaft des Fahrzeugs ja/nein
+          enum:
+            - 'true'
+            - 'false'
+        damageCausedBy:
+          type: array
+          description: Auswahl der Schadenursache
+          items:
+            type: string
+            enum:
+              - Auffahren
+              - Rangieren/Parken
+              - Missachtung der Vorfahrt
+              - Abbiegen
+              - Abkommen von der Fahrbahn
+              - Überholvorgang
+              - Spurwechsel
+              - Sonstiges
+            example: Auffahren
+        typeOfWildlife:
+          type: string
+          description: Tierart
+          example: Rehwild
+        certificateForWildlife:
+          type: string
+          description: Bestätigung durch Förster || native FileAPI des Clients (Dunkelverarbeitung)
+        garageLocation:
+          type: string
+          description: Werkstatt Standort
+          example: 50°56’28.8″N 6°57’30.0
+      type: object
+    ErrorList:
+      description: Error object
+      properties:
+        errors:
+          type: array
+          items:
+            type: object
+            required:
+              - code
+              - title
+              - detail
+            properties:
+              code:
+                type: string
+                description: The code of the error
+              title:
+                type: string
+                description: A displayable title of the error type
+              detail:
+                type: string
+                description: Detail of the error
+              meta:
+                type: object
+                description: Optional additional data for specific error types
+      required:
+        - errors
+      type: object
+  requestBodies:
+    Claimdata:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Claimsdata'
+  responses:
+    Claimdata:
+      description: Creates a new Claims-Data-Set
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Claimsdata'
+  parameters:
+    policyNumber:
+      name: policyNumber
+      in: path
+      description: Policy Number Headline
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
