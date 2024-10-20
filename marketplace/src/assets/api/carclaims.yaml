@@ -178,7 +178,7 @@ components:
         damagedCarImages:
           maxItems: 8
           type: array
-          description: Bilder vom Schaden
+          description: Bilder vom Schaden 1234
           items:
             type: object
             properties:
