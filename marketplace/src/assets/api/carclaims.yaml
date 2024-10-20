@@ -183,8 +183,7 @@ components:
             type: object
             properties:
               file:
-                type: string
-                format: binary
+                type: object
                 description: Bild vom Schaden || native FileAPI des Clients (Dunkelverarbeitung)
               path:
                 type: string
@@ -197,8 +196,7 @@ components:
             type: object
             properties:
               file:
-                type: string
-                format: binary
+                type: object
                 description: Bild vom Glasschaden || native FileAPI des Clients (Dunkelverarbeitung)
               path:
                 type: string
