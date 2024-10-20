@@ -368,7 +368,7 @@ components:
           type: string
           description: Unfallnummer der Polizei
           example: 2024-ABC123
-        propertyDamage:
+        hasVehicleDamage:
           type: string
           description: weitere Sachschäden ja/nein
           enum:
