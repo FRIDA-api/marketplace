@@ -178,12 +178,13 @@ components:
         damagedCarImages:
           maxItems: 8
           type: array
-          description: Bilder vom Schaden 1234
+          description: Bilder vom Schaden
           items:
             type: object
             properties:
               file:
-                type: object
+                type: string
+                format: byte
                 description: Bild vom Schaden || native FileAPI des Clients (Dunkelverarbeitung)
               path:
                 type: string
@@ -196,7 +197,8 @@ components:
             type: object
             properties:
               file:
-                type: object
+                type: string
+                format: byte
                 description: Bild vom Glasschaden || native FileAPI des Clients (Dunkelverarbeitung)
               path:
                 type: string
@@ -342,9 +344,6 @@ components:
           description: Unfall Zeit
           format: time
           example: '08:30:00'
-        accidentCoordinates:
-          type: string
-          description: 50°56’28.8″N 6°57’30.0″E Der erste Wert liegt zwischen -90 und 90, die Längengradangabe zwischen -180 und 180. // Nutzt Du die Bogenmaßangaben, muss am Schluss ein „W“ für „West“ oder „E“ für „East“ stehen
         accidentPostalCode:
           type: string
           description: PLZ
@@ -375,9 +374,9 @@ components:
             - not_specified
             - 'false'
             - 'true'
-        propertyDamageDescription:
+        vehicleDamageDescription:
           type: string
-          description: Beschreibung Sachschäden
+          description: Beschreibung der Sachschäden
           example: Frontstoßstangenschaden
         injuredPerson:
           type: string
@@ -418,7 +417,7 @@ components:
       required:
         - policyholder
         - otherPolicyholder
-        - propertyDamage
+        - hasVehicleDamage
         - injuredPerson
         - witnessExists
       type: object
