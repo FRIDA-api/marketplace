@@ -98,6 +98,7 @@ components:
       $ref: '#/components/schemas/errorList'
     person:
       description: Holds all information of a Person who could either be a `Witness`, or a part of a `Policyholder` or `Vehicle Driver`.
+      type: object
       properties:
         formOfAdress:
           type: string
@@ -145,7 +146,7 @@ components:
           type: string
           description: E-Mail Adresse
           example: example@gmail.com
-      type: object
+      additionalProperties: false
     witness:
       description: Holds all information of a `Witness`.
       properties:
@@ -153,6 +154,7 @@ components:
           $ref: '#/components/schemas/person'
     vehicleDriver:
       description: Holds all information of a `Vehicle Driver`.
+      type: object
       properties:
         personalInformation:
           $ref: '#/components/schemas/person'
@@ -177,6 +179,7 @@ components:
               path:
                 type: string
                 description: Pfad zum Bild
+            additionalProperties: false
         damagedWindowImages:
           maxItems: 8
           type: array
@@ -191,6 +194,7 @@ components:
               path:
                 type: string
                 description: Pfad zum Bild
+            additionalProperties: false
         driverDamagedpartsGraphic:
           type: array
           description: Auswahl der beschädigten Stellen
@@ -252,9 +256,10 @@ components:
           type: string
           description: Werkstatt Standort
           example: 50°56’28.8″N 6°57’30.0
-      type: object
+      additionalProperties: false
     policyholder:
       description: Holds all information of a `Policyholder`.
+      type: object
       properties:
         personalInformation:
           $ref: '#/components/schemas/person'
@@ -307,9 +312,10 @@ components:
             - not_specified
             - 'false'
             - 'true'
-      type: object
+      additionalProperties: false
     claimsData:
       description: Holds all information required for submitting a `Comprehensive Claim` to the insurance company.
+      type: object
       properties:
         language:
           type: string
@@ -408,9 +414,10 @@ components:
         - hasVehicleDamage
         - injuredPerson
         - witnessExists
-      type: object
+      additionalProperties: false
     errorList:
       description: Error object
+      type: object
       properties:
         errors:
           type: array
@@ -433,9 +440,10 @@ components:
               meta:
                 type: object
                 description: Optional additional data for specific error types
+              additionalProperties: false
       required:
         - errors
-      type: object
+      additionalProperties: false
   requestBodies:
     Claimdata:
       content:
