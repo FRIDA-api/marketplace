@@ -25,43 +25,6 @@ externalDocs:
   description: Hier folgt noch ein Verweis auf die externe Doku
   url: http://swagger.io
 paths:
-  /claimsdata:
-    get:
-      operationId: getClaim
-      summary: Get Claim
-      description: Get Claim
-      tags:
-        - Claims
-      responses:
-        '201':
-          description: Claim Data
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/claimsData'
-    post:
-      operationId: createClaim
-      summary: Create Claim
-      description: Create Claim
-      tags:
-        - Claims
-      requestBody:
-        $ref: '#/components/requestBodies/Claimdata'
-      responses:
-        '201':
-          $ref: '#/components/responses/Claimdata'
-        '403':
-          description: Authorization error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/errorList'
-        '500':
-          description: Generic Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/errorList'
   /claimsdata/{policyNumber}:
     parameters:
       - $ref: '#/components/parameters/policyNumber'
@@ -94,6 +57,31 @@ paths:
         '200':
           description: Fetched a Claim-Data-Set by PolicyNumber
           $ref: '#/components/responses/Claimdata'
+    post:
+      operationId: createClaimByPID
+      summary: Create Claim by PID
+      description: Create Claim by PID
+      tags:
+        - Claims
+      parameters:
+        - $ref: '#/components/parameters/policyNumber'
+      requestBody:
+        $ref: '#/components/requestBodies/Claimdata'
+      responses:
+        '201':
+          $ref: '#/components/responses/Claimdata'
+        '403':
+          description: Authorization error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errorList'
+        '500':
+          description: Generic Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errorList'
 components:
   schemas:
     Claimsdata:
