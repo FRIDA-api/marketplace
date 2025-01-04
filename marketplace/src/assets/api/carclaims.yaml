@@ -144,6 +144,7 @@ components:
           example: +49(40)321070
         emailAddress:
           type: string
+          format: email
           description: E-Mail Adresse
           example: example@gmail.com
       additionalProperties: false
