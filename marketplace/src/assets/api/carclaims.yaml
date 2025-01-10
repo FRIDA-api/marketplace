@@ -100,11 +100,11 @@ components:
       description: Holds all information of a Person who could either be a `Witness`, or a part of a `Policyholder` or `Vehicle Driver`.
       type: object
       properties:
-        formOfAdress:
+        formOfAddress:
           type: string
           description: Anrede
           enum:
-            - no_adress
+            - not_specified
             - Herr
             - Frau
         title:
