@@ -23,7 +23,7 @@ tags:
     description: Claims
 externalDocs:
   description: Hier folgt ein Verweis auf die externe Doku
-  url: http://swagger.io
+  url: http://stoplight.io
 paths:
   /claimsdata/{policyNumber}:
     parameters:
