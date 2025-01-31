@@ -231,6 +231,7 @@ components:
           type: string
           description: Fahrbereitschaft des Fahrzeugs ja/nein
           enum:
+            - not_specified
             - 'true'
             - 'false'
         damageCausedBy:
