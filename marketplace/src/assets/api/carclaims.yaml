@@ -12,7 +12,7 @@ info:
     url: https://opensource.org/licenses/MIT
   version: 0.0.1
 servers:
-  - url: https://stoplight.io/mocks/claimstobe/claims-data-schema/444459889
+  - url: https://stoplight.io/mocks/claimstobe/claims-data-schema/676129330
     description: Mock API
   - url: https://test-api-impl-backend-jaxrs.herokuapp.com/v2
     description: Staging
@@ -22,8 +22,8 @@ tags:
   - name: Claims
     description: Claims
 externalDocs:
-  description: Hier folgt ein Verweis auf die externe Doku
-  url: http://stoplight.io
+  description: Externe API Dokumentation
+  url: https://github.com/FRIDA-api/frida-car-dokumentation
 paths:
   /claimsdata/{policyNumber}:
     parameters:
@@ -234,20 +234,18 @@ components:
             - 'true'
             - 'false'
         damageCausedBy:
-          type: array
           description: Auswahl der Schadenursache
-          items:
-            type: string
-            enum:
-              - Auffahren
-              - Rangieren/Parken
-              - Missachtung der Vorfahrt
-              - Abbiegen
-              - Abkommen von der Fahrbahn
-              - Überholvorgang
-              - Spurwechsel
-              - Sonstiges
-            example: Auffahren
+          type: string
+          enum:
+            - Auffahren
+            - Rangieren/Parken
+            - Missachtung der Vorfahrt
+            - Abbiegen
+            - Abkommen von der Fahrbahn
+            - Überholvorgang
+            - Spurwechsel
+            - Sonstiges
+          example: Auffahren
         typeOfWildlife:
           type: string
           description: Tierart
@@ -392,7 +390,7 @@ components:
             - not_specified
             - 'false'
             - 'true'
-        witnessNumber:
+        witnessCount:
           type: string
           description: Anzahl Zeugen
         witness:
