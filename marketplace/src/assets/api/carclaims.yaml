@@ -96,6 +96,55 @@ components:
       $ref: '#/components/schemas/vehicleDriver'
     ErrorList:
       $ref: '#/components/schemas/errorList'
+    claimsDetails:
+      description: Holds detailed information of the claim
+      type: object
+      properties:
+        language:
+          type: string
+          example: DE
+          enum:
+            - DE
+            - EN
+            - FR
+            - ES
+            - IT
+            - NL
+            - PL
+        accidentDate:
+          type: string
+          description: Unfalldatum ohne Zeit
+          format: date
+          example: '2019-08-24'
+        accidentTime:
+          type: string
+          description: Unfall Zeit
+          format: time
+          example: '08:30:00'
+        accidentPostalCode:
+          type: string
+          description: PLZ
+          example: '50181'
+        accidentCity:
+          type: string
+          description: Ort
+          example: Bedburg
+        accidentStreetName:
+          type: string
+          description: Straße
+          example: Germaniastraße
+        accidentStreetNumber:
+          type: string
+          description: Hausnummer
+          example: 1b
+        accidentDescription:
+          type: string
+          description: Unfallbeschreibung
+        accidentPoliceNumber:
+          type: string
+          description: Unfallnummer der Polizei
+          example: 2024-ABC123
+      additionalProperties: false
     person:
       description: Holds all information of a Person who could either be a `Witness`, or a part of a `Policyholder` or `Vehicle Driver`.
       type: object
@@ -205,15 +254,16 @@ components:
             type: string
             enum:
               - vorne links
-              - Seite vorne links
-              - Fahrertür links
-              - hintere Tür links
-              - Seite hinten links
-              - hinten links
               - vorne rechts
+              - Seite vorne links
               - Seite vorne rechts
+              - Fahrertür links
               - Beifahrertür rechts
+              - hintere Tür links
+              - hintere Tür rechts
+              - Seite hinten links
               - Seite hinten rechts
+              - hinten links
               - hinten rechts
               - Motorhaube
               - Frontscheibe
@@ -319,50 +369,9 @@ components:
       description: Holds all information required for submitting a `Comprehensive Claim` to the insurance company.
       type: object
       properties:
-        language:
-          type: string
-          example: DE
-          enum:
-            - DE
-            - EN
-            - FR
-            - ES
-            - IT
-            - NL
-            - PL
-        accidentDate:
-          type: string
-          description: Unfalldatum ohne Zeit
-          format: date
-          example: '2019-08-24'
-        accidentTime:
-          type: string
-          description: Unfall Zeit
-          format: time
-          example: '08:30:00'
-        accidentPostalCode:
-          type: string
-          description: PLZ
-          example: '50181'
-        accidentCity:
-          type: string
-          description: Ort
-          example: Bedburg
-        accidentStreetName:
-          type: string
-          description: Straße
-          example: Germaniastraße
-        accidentStreetNumber:
-          type: string
-          description: Hausnummer
-          example: 1b
-        accidentDescription:
-          type: string
-          description: Unfallbeschreibung
-        accidentPoliceNumber:
-          type: string
-          description: Unfallnummer der Polizei
-          example: 2024-ABC123
+        claimsDetails:
+          description: Holds detailed information of the claim
+          $ref: '#/components/schemas/claimsDetails'
         hasVehicleDamage:
           type: string
           description: weitere Sachschäden ja/nein
