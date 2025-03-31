@@ -96,7 +96,7 @@ components:
       $ref: '#/components/schemas/vehicleDriver'
     ErrorList:
       $ref: '#/components/schemas/errorList'
-    claimsDetails:
+    carclaimsDetails:
       description: Holds detailed information of the claim
       type: object
       properties:
@@ -369,9 +369,9 @@ components:
       description: Holds all information required for submitting a `Comprehensive Claim` to the insurance company.
       type: object
       properties:
-        claimsDetails:
+        carclaimsDetails:
           description: Holds detailed information of the claim
-          $ref: '#/components/schemas/claimsDetails'
+          $ref: '#/components/schemas/carclaimsDetails'
         hasVehicleDamage:
           type: string
           description: weitere Sachschäden ja/nein
