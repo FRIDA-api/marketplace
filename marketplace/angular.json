@@ -16,7 +16,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
-          "options": {
+          "options": {          
             "allowedCommonJsDependencies": ["swagger-ui"],         
             "outputPath": "dist/marketplace",
             "index": "src/index.html",
@@ -35,6 +35,9 @@
               "src/styles.scss"
             ],
             "stylePreprocessorOptions": {
+              "sass": {
+                "silenceDeprecations": ["import"]
+              },
               "includePaths": [
                 "src/scss"
               ]

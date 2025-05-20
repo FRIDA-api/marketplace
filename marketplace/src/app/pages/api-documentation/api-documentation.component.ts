@@ -16,20 +16,19 @@ import { Title } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-api-documentation',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatExpansionModule,
-    RouterModule,
-    MatTabsModule,
-    OverviewTabComponent,
-    NgOptimizedImage,
-    TranslateModule,
-    DocumentationTabComponent,
-  ],
-  templateUrl: './api-documentation.component.html',
-  styleUrl: './api-documentation.component.scss',
+    selector: 'app-api-documentation',
+    imports: [
+        CommonModule,
+        MatExpansionModule,
+        RouterModule,
+        MatTabsModule,
+        OverviewTabComponent,
+        NgOptimizedImage,
+        TranslateModule,
+        DocumentationTabComponent,
+    ],
+    templateUrl: './api-documentation.component.html',
+    styleUrl: './api-documentation.component.scss'
 })
 export class ApiDocumentationComponent implements OnInit, OnDestroy {
   @Input() apiPathParameter: string | undefined;

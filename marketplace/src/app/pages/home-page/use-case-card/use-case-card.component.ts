@@ -6,11 +6,10 @@ import { TagModel } from '@common/models/tag.model';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-use-case-card',
-  standalone: true,
-  imports: [NgOptimizedImage, RouterLink, TranslateModule],
-  templateUrl: './use-case-card.component.html',
-  styleUrl: './use-case-card.component.scss',
+    selector: 'app-use-case-card',
+    imports: [NgOptimizedImage, RouterLink, TranslateModule],
+    templateUrl: './use-case-card.component.html',
+    styleUrl: './use-case-card.component.scss'
 })
 export class UseCaseCardComponent {
   protected readonly translate = inject(TranslateService);

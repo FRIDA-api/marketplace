@@ -7,11 +7,10 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import {NgOptimizedImage} from "@angular/common";
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [RouterLink, RouterLinkActive, TranslateModule, NgOptimizedImage],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+    selector: 'app-header',
+    imports: [RouterLink, RouterLinkActive, TranslateModule, NgOptimizedImage],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
 
