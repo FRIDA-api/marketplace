@@ -1,0 +1,226 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0-cysmo-async-20250221
+  title: Domain-Check Service
+servers:
+  - url: https://api.example.com/frida-api/cyber/domain-check/v1
+security:
+  - ApiKeyAuth: []
+paths:
+  /check-domain:
+    post:
+      operationId: create-domain-check
+      summary: Request a domain check
+      description: ''
+      requestBody:
+        description: Domain to be checked
+        required: true
+        content:
+          application/json:
+            schema:
+              type: string
+              description: The domain to be checked (in its ASCII representation)
+              example: example.com
+      responses:
+        '202':
+          description: Accepted
+          headers:
+            Location:
+              description: |
+                Path to the created domain check resource. Points to /check-domain/{id} (get-domain-check operation).
+              required: true
+              schema:
+                type: string
+                example: /frida-api/cyber/domain-check/v1/check-domain/aabc17c4-5493-4fad-9d2f-06c79884254a
+        '400':
+          description: Given domain is not valid
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          $ref: '#/components/responses/403AuthFailed'
+        '500':
+          $ref: '#/components/responses/500DomainCheckFailed'
+  /check-domain/{id}:
+    get:
+      operationId: get-domain-check
+      summary: Get a domain check result
+      parameters:
+        - name: id
+          in: path
+          description: Domain Check ID as returned by the create-domain-check operation.
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Domain check result
+          headers:
+            Expires:
+              description: Date until this domain check result can be retrieved. After this, the operation may return 404 Not Found
+              schema:
+                type: string
+                format: date-time
+                example: '2020-01-17T14:00:26.4193216+01:00'
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Result fields for unsupported checks may be omitted
+                properties:
+                  state:
+                    type: string
+                    enum:
+                      - PROCESSING
+                      - DONE
+                  checkLeaks:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Leak'
+                  checkPorts:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Service'
+                  checkSoftware:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/EOLProduct'
+                  checkSPF:
+                    $ref: '#/components/schemas/SPF'
+                required:
+                  - state
+              examples:
+                processing:
+                  value: |-
+                    {
+                      "state": "PROCESSING"
+                    }
+                done:
+                  value: |-
+                    {
+                      "state": "DONE",
+                      "checkSPF": {
+                        "isValidAndEffective": true
+                      }
+                    }
+        '403':
+          $ref: '#/components/responses/403AuthFailed'
+        '404':
+          description: A domain check for the requested ID does not exist (for your client) or is expired
+        '500':
+          $ref: '#/components/responses/500DomainCheckFailed'
+components:
+  responses:
+    403AuthFailed:
+      description: Authentication failed
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    500DomainCheckFailed:
+      description: Error during domain check
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    EOLProduct:
+      description: Describes an end-of-life product, including the system where it is running
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/Service'
+        - type: object
+          properties:
+            name:
+              type: string
+              description: Name (and Vendor, if known) of the product
+              example: Microsoft Windows Server 2012 R2
+            eolDate:
+              type: string
+              format: date
+              description: Date on which the product reached its end of life
+              example: '2023-10-10T00:00:00Z'
+          required:
+            - name
+            - eolDate
+    Error:
+      description: An error occured
+      type: object
+      properties:
+        message:
+          type: string
+          description: User-readable error message
+          example: Given domain is not valid
+    Leak:
+      description: Describes a data breach, leak or stolen credential containing E-Mail addresses belonging to the requested domain
+      type: object
+      properties:
+        leakName:
+          type: string
+          description: Name of the leak or its source
+          example: LinkedIn_2023_35M_Full
+        leakDate:
+          type: string
+          format: date
+          description: Date of the leak (or its publication, if former is unknown)
+          example: '2023-11-07T00:00:00Z'
+        affectedService:
+          type: string
+          description: Domain or URL connected to the leak (in particular relevant for stolen credentials), if known
+          example: linkedin.com
+        emailAddressCount:
+          type: integer
+          description: Number of unique E-Mail addresses for the requested domain in this leak
+          minimum: 1
+        passwordCount:
+          type: integer
+          description: Number of cleartext passwords for the E-Mail-Addresses
+          minimum: 0
+      required:
+        - leakName
+        - leakDate
+        - emailAddressCount
+        - passwordCount
+    Service:
+      description: Tuple describing an internet-reachable service (via IP)
+      type: object
+      properties:
+        hostnames:
+          type: array
+          items:
+            type: string
+          minItems: 0
+          example:
+            - www.example.com
+        address:
+          type: string
+          description: IPv4 or IPv6 address of the server providing the service
+          example: 192.0.2.0
+        port:
+          type: string
+          description: Port on which the service is reachable, preferably with transport protocol
+          example: 445/tcp
+        service:
+          type: string
+          description: Name of the provided service. Mandatory to avoid false positives on non-standard ports. Prefer IANA assigned service names.
+          example: smb
+      required:
+        - address
+        - port
+        - service
+    SPF:
+      description: Describes usage of the Sender Policy Framework (SPF) for the requested domain
+      type: object
+      properties:
+        isValidAndEffective:
+          type: boolean
+          description: Returns true if a valid SPF record according to RFC 7208 is set for the given domain and in way configured that mail from unauthorized senders gets rejected (FAIL policy).
+      required:
+        - isValidAndEffective
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
