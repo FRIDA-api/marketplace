@@ -97,6 +97,10 @@
     "REAL_ESTATE_API_RISK": {
       "TITLE": "RealEstateAPI (Risk)",
       "DESCRIPTION": "Exchange of property-related data from third-party systems (e.g. property tax, software providers such as SkenData, PriceHubble, etc.) An API is to be used to standardize data exchange with all providers."
+    },
+    "DOMAIN_CHECK_API": {
+      "TITLE": "DomainCheckAPI",
+      "DESCRIPTION": ""
     }
   },
   "TAGS": {

@@ -97,6 +97,10 @@
     "REAL_ESTATE_API_RISK": {
       "TITLE": "RealEstateAPI (Risk)",
       "DESCRIPTION": "Austausch von Daten rund um die Immobilie aus Drittsystemen (z.B. Grundsteuer, Softwareanbietern wie SkenData, PriceHubble etc.) Mithilfe einer API soll der Datenaustausch mit allen Anbietern vereinheitlicht werden."
+    },
+    "DOMAIN_CHECK_API": {
+      "TITLE": "DomainCheckAPI",
+      "DESCRIPTION": ""
     }
   },
   "TAGS": {

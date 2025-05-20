@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {ApiInformationModel} from "@common/models/api-information.model";
+import { ApiInformationModel } from "@common/models/api-information.model";
 
 @Injectable({
   providedIn: 'root'
@@ -93,7 +93,15 @@ export class UseCaseApiService {
       ],
       githubLink: "",
       swaggerPath: ""
-    }
+    },
+    {
+      id: "domain-check-api",
+      languageKey: "DOMAIN_CHECK_API",
+      iconPath: "./assets/icons/icon-cyberapi.svg",
+      tags: [],
+      githubLink: "https://github.com/FRIDA-api/Domain-Check",
+      swaggerPath: "/assets/api/Domain-Check-1.0.0.yaml"
+    },
   ]
 
   getUseCaseInformation() {
