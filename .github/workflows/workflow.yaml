@@ -2,7 +2,7 @@ name: Validate Changes
 on: [push]
 jobs:
   Build-Marketplace:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     defaults:
       run:
         working-directory: ./marketplace
@@ -28,7 +28,7 @@ jobs:
       - name: Build Marketplace
         run: npm run build
   Unit-Test-Marketplace:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     defaults:
       run:
         working-directory: ./marketplace
@@ -54,7 +54,7 @@ jobs:
       - name: Run unit tests
         run: npm run test
   E2E-Test-Marketplace:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     defaults:
       run:
         working-directory: ./marketplace
