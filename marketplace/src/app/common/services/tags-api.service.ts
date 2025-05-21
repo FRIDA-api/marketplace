@@ -54,6 +54,10 @@ export class TagsApiService {
     {
       "id": "HEALTH",
       "tagColor": "#7EF5F5"
+    },
+    {
+      "id":"SMALL_BUSINESS",
+      "tagColor": "#BADA55"
     }
   ]
 

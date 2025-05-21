@@ -91,8 +91,8 @@
       "DESCRIPTION": "Austausch von Dokumenten, um z.B. den Überblick über die eigene Versicherungspost zu erhalten."
     },
     "CYBER_API": {
-      "TITLE": "CyberAPI",
-      "DESCRIPTION": "Anwendungsfälle im Kontext von Cyber-Versicherungen (z.B. die Standardisierung von KRIs und den Austausch zwischen Drittanbietern und Versicherern)."
+      "TITLE": "CyberAPI - Domaincheck",
+      "DESCRIPTION": "Anwendungsfälle im Kontext von Cyber-Versicherungen (z.B. standardisierter Beratungsansatz durch Outside-In Scans)."
     },
     "REAL_ESTATE_API_RISK": {
       "TITLE": "RealEstateAPI (Risk)",
@@ -111,7 +111,8 @@
     "RISK_MANAGEMENT": "Risk Management",
     "CYBER": "Cyber",
     "DOCUMENTS": "Documents",
-    "HEALTH": "Health"
+    "HEALTH": "Health",
+    "SMALL_BUSINESS": "KMU"
   },
   "API_OVERVIEW": {
     "BACK_TO_OVERVIEW": "Zurück zur Übersicht",
@@ -202,19 +203,19 @@
     },
     "CYBER_API": {
       "HEADLINE": "Use Case: Cyber API",
-      "SUBHEADLINE": "Daten aus Assistance-Tools und KRIs",
+      "SUBHEADLINE": "Daten aus Assistance-Tools",
       "CUSTOMER_PERSPECTIVE_HEADLINE": "IT-Sicherheit und Datenschutz",
-      "CUSTOMER_PERSPECTIVE_SUBHEADLINE": "Die Informations- und Kommunikationstechnologie entwickelt sich rasant und führt bei Unternehmen bereits seit Jahren zu immer höheren Anforderungen in Bezug auf die IT-Security und den Datenschutz. Die eingesetzten Softwarelösungen setzten den Fokus auf das Erkennen und Steuern von Cyber-Risiken, Dokumentationspflichten sowie die Sensibilisierung von Mitarbeiter:innen. Hierbei wird schon jetzt eine Vielzahl an Daten generiert, die Unternehmen auch einsetzten können, um den Einkauf von Cyber-Risk Deckungen zu optimieren.",
+      "CUSTOMER_PERSPECTIVE_SUBHEADLINE": "Die Informations- und Kommunikationstechnologie entwickelt sich rasant und führt bei Unternehmen bereits seit Jahren zu immer höheren Anforderungen in Bezug auf die IT-Security und den Datenschutz. Die in vielen Unternehmen teilweise schon eingesetzten Softwarelösungen setzen den Fokus auf das Erkennen und Steuern von Cyber-Risiken, Dokumentationspflichten sowie die Sensibilisierung von Mitarbeiter:innen. Hierbei wird schon jetzt eine Vielzahl an Daten generiert, die Unternehmen auch einsetzen können, um den Einkauf von Cyber-Risk Deckungen zu optimieren.",
       "CUSTOMER_PERSPECTIVE_TEXT": "",
       "FRIDA_SOLUTION_HEADLINE": "Die FRIDA Cyber-Lösung",
-      "FRIDA_SOLUTION_SUBHEADLINE": "FRIDA setzt bei der Minimierung von Cyber-Risiken und deren Absicherung auf die Entwicklung standardisierter Key-Risk-Indicators (KRIs). Diese basieren auf dem Cyber-Fragebogen des GDV und der Expertise unserer Mitglieder. Dabei wird ein Minimum-Set an Datenpunkten definiert und um optionale Datenpunkte ergänzt. Die Datenpunkte werden geclustert in technische, organisatorische und rechtliche Maßnahmen und in gewichtete KRIs zusammengefasst.",
-      "FRIDA_SOLUTION_TEXT": "Die KRIs bieten den Markteilnehmern nicht nur die Klassifizierung und Minimierung der Risiken, sondern ermöglichen auch eine wiederkehrende Vergleichsanalyse getroffener Maßnahmen zur Risikominimierung. Mit Hilfe der FRIDA Schnittstelle können Daten zwischen den Marktakteuren ausgetauscht und turnusmäßig überprüft werden. Dabei steht bei uns das Thema Datenschutz, Datensicherheit und Datenhoheit durch Unternehmen an erster Stelle.",
+      "FRIDA_SOLUTION_SUBHEADLINE": "FRIDA setzt bei der Minimierung von Cyber-Risiken auf einen einfachen und standardisierten Beratungsansatz. Dieser basiert auf einem Domain-Check, welcher durch unsere Mitglieder - Assistance Tool Anbieter - ermöglicht wird. Dabei wird die Webadresse des Kunden auf (max.) vier definierte Kriterien (Datenpunkte) über einen Outside-In-Scan analysiert und das Ergebnis dem Versicherungsvermittler zur weiteren Beratung zur Verfügung gestellt.",
+      "FRIDA_SOLUTION_TEXT": "Durch den Scan und die Ergebnisse wird der Versicherungsvermittler nicht nur in die Lage versetzt, einen einfachen Einstieg in die Beratung zu finden. Er erhält auch die Möglichkeit Risiken und Bedrohungen auf eine für den Kunden verständliche Weise darzustellen und ihn so für  Cybersicherheitsfragen zu sensibilisieren. Mit Hilfe der FRIDA Schnittstelle können Daten zwischen den Marktakteuren ausgetauscht und überprüft werden. Dabei steht bei uns das Thema Datenschutz, Datensicherheit und Datenhoheit durch Unternehmen an erster Stelle.",
       "CARD_1_HEADLINE": "Versicherungsnehmer",
-      "CARD_1_TEXT": "Passgenaue Absicherung, Attraktives Preis-/Leistungsverhältnis der Versicherungslösung, Datensicherheit und volle Kontrolle über die eigenen Inputs, Komfortable Portabilität von Verträgen, Risiko- und Maßnahmencontrolling aufgrund KRI-Nutzung",
+      "CARD_1_TEXT": "Erhöhtes Risikobewusstsein durch Aufdeckung vorhandener Risiken. Reduzierung von Cyberrisiken, da gezielte Sicherheitsmaßnahmen auf Grundlage des Scans getroffen werden können. Kostenersparnis durch erhöhtes Bewusstsein und Prävention.",
       "CARD_2_HEADLINE": "Versicherer und Vertriebe",
-      "CARD_2_TEXT": "Aufbau von Cyberdeckungen mit sehr guten Product-Market Fit, Bestandsmonitoring Transparente, einheitliche Datenbasis und Vergleichbarkeit, Professionalisierung von Cyber-Policen, Zentrale Stelle für Risikoermittlung",
+      "CARD_2_TEXT": "Kundenspezifische Beratung. Effektive Risikokommunikation. Erhöhte Kundensensibilisierung. Sinkende Schadenquoten. Steigende Stückzahlen.",
       "CARD_3_HEADLINE": "Dritt-/Lösungsanbieter",
-      "CARD_3_TEXT": "Entwicklung von Sicherheitsprodukten, Steigerung der Kompetenz durch innovative High-Tech-Instrumente, Zielgerichtete Weiterentwicklung des Dienstleistungsangebots, KRI-Service als Kundenbetreuungs- und Akquise-Tool, Steigerung der Kundenzufriedenheit"
+      "CARD_3_TEXT": "Entwicklung von Sicherheitsprodukten. Steigerung der Kompetenz durch innovative High-Tech-Instrumente. Zielgerichtete Weiterentwicklung des Dienstleistungsangebots. Steigerung der Kundenzufriedenheit."
     },
     "REAL_ESTATE_API_RISK": {
       "HEADLINE": "Use Case: Building API",
