@@ -91,16 +91,12 @@
       "DESCRIPTION": "Exchange of documents, e.g. to maintain an overview of your own insurance mail."
     },
     "CYBER_API": {
-      "TITLE": "CyberAPI",
-      "DESCRIPTION": "Use cases in the context of cyber insurance (e.g. the standardization of KRIs and the exchange between third-party providers and insurers)."
+      "TITLE": "CyberAPI - Domaincheck",
+      "DESCRIPTION": "Use cases in the context of cyber insurance (e.g. standardized consulting approach through outside-in scans)."
     },
     "REAL_ESTATE_API_RISK": {
       "TITLE": "RealEstateAPI (Risk)",
       "DESCRIPTION": "Exchange of property-related data from third-party systems (e.g. property tax, software providers such as SkenData, PriceHubble, etc.) An API is to be used to standardize data exchange with all providers."
-    },
-    "DOMAIN_CHECK_API": {
-      "TITLE": "DomainCheckAPI",
-      "DESCRIPTION": ""
     }
   },
   "TAGS": {
@@ -115,7 +111,8 @@
     "RISK_MANAGEMENT": "Risk Management",
     "CYBER": "Cyber",
     "DOCUMENTS": "Documents",
-    "HEALTH": "Health"
+    "HEALTH": "Health",
+    "SMALL_BUSINESS": "SME" 
   },
   "API_OVERVIEW": {
     "BACK_TO_OVERVIEW": "Back to overview",
@@ -206,19 +203,19 @@
     },
     "CYBER_API": {
       "HEADLINE": "Use Case: Cyber API",
-      "SUBHEADLINE": "Data from assistance tools and KRIs",
+      "SUBHEADLINE": "Data from assistance tools",
       "CUSTOMER_PERSPECTIVE_HEADLINE": "IT security and data protection",
-      "CUSTOMER_PERSPECTIVE_SUBHEADLINE": "Information and communication technology is developing rapidly and has been leading to ever-increasing requirements for companies in terms of IT security and data protection for years. The software solutions used focus on identifying and managing cyber risks, documentation obligations and raising employee awareness. A large amount of data is already being generated, which companies can also use to optimize the purchase of cyber risk cover.",
+      "CUSTOMER_PERSPECTIVE_SUBHEADLINE": "Information and communication technology is developing rapidly and has been leading to ever-increasing requirements for companies in terms of IT security and data protection for years. Some of the software solutions already in use in many companies focus on identifying and managing cyber risks, documentation obligations and raising employee awareness. This is already generating a large amount of data that companies can use to optimize the purchase of cyber risk cover.",
       "CUSTOMER_PERSPECTIVE_TEXT": "",
       "FRIDA_SOLUTION_HEADLINE": "The FRIDA cyber solution",
-      "FRIDA_SOLUTION_SUBHEADLINE": "FRIDA relies on the development of standardized key risk indicators (KRIs) to minimize cyber risks and protect against them. These are based on the GDV's cyber questionnaire and the expertise of our members. A minimum set of data points is defined and supplemented by optional data points. The data points are clustered into technical, organizational and legal measures and summarized in weighted KRIs.",
-      "FRIDA_SOLUTION_TEXT": "The KRIs not only offer market participants the classification and minimization of risks, but also enable a recurring comparative analysis of measures taken to minimize risks. With the help of the FRIDA interface, data can be exchanged between market players and reviewed on a regular basis. Data protection, data security and data sovereignty by companies are our top priorities.",
+      "FRIDA_SOLUTION_SUBHEADLINE": "FRIDA relies on a simple and standardized consulting approach to minimize cyber risks. This is based on a domain check, which is made possible by our members - assistance tool providers. The customer's web address is analyzed for (max.) four defined criteria (data points) via an outside-in scan and the result is made available to the insurance intermediary for further advice.",
+      "FRIDA_SOLUTION_TEXT": "The scan and the results not only enable the insurance intermediary to find an easy entry point into the consultation. It also gives them the opportunity to present risks and threats in a way that customers can understand and thus sensitize them to cyber security issues. The FRIDA interface enables data to be exchanged and checked between market players. Data protection, data security and data sovereignty by companies are our top priority.",
       "CARD_1_HEADLINE": "Policyholder",
-      "CARD_1_TEXT": "Tailor-made cover, attractive price/performance ratio of the insurance solution, data security and full control over your own inputs, convenient portability of contracts, risk and measure controlling based on KRI use",
+      "CARD_1_TEXT": "Increased risk awareness through detection of existing risks. Reduction of cyber risks, as targeted security measures can be taken based on the scan. Cost savings through increased awareness and prevention.",
       "CARD_2_HEADLINE": "Insurers and distributors",
-      "CARD_2_TEXT": "Development of cyber cover with very good product-market fit, portfolio monitoring Transparent, uniform database and comparability, professionalization of cyber policies, central office for risk identification",
+      "CARD_2_TEXT": "Effective risk communication. Increased customer awareness. Decreasing loss ratios. Increasing quantities.",
       "CARD_3_HEADLINE": "Third-party/solution provider",
-      "CARD_3_TEXT": "Development of security products, Increasing expertise through innovative high-tech tools, Targeted further development of the range of services, KRI service as a customer support and acquisition tool, Increasing customer satisfaction"
+      "CARD_3_TEXT": "Development of safety products. Increasing expertise through innovative high-tech instruments. Targeted further development of the range of services. Increasing customer satisfaction"
     },
     "REAL_ESTATE_API_RISK": {
       "HEADLINE": "Use Case: Building API",

@@ -77,10 +77,11 @@ export class UseCaseApiService {
         "CYBER",
         "ASSISTANCE",
         "RISK_MANAGEMENT",
-        "INDUSTRIAL_LINES"
+        "INDUSTRIAL_LINES",
+        "SMALL_BUSINESS"
       ],
-      githubLink: "",
-      swaggerPath: ""
+      githubLink: "https://github.com/FRIDA-api/Domain-Check",
+      swaggerPath: "/assets/api/Domain-Check-1.0.0.yaml"
     },
     {
       id: "real-estate-api-risk",
@@ -94,14 +95,7 @@ export class UseCaseApiService {
       githubLink: "",
       swaggerPath: ""
     },
-    {
-      id: "domain-check-api",
-      languageKey: "DOMAIN_CHECK_API",
-      iconPath: "./assets/icons/icon-cyberapi.svg",
-      tags: [],
-      githubLink: "https://github.com/FRIDA-api/Domain-Check",
-      swaggerPath: "/assets/api/Domain-Check-1.0.0.yaml"
-    },
+   
   ]
 
   getUseCaseInformation() {
