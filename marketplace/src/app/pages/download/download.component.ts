@@ -16,11 +16,10 @@ type Download = {
 };
 
 @Component({
-  selector: 'app-download',
-  standalone: true,
-  imports: [CommonModule, TranslateModule, NgOptimizedImage],
-  templateUrl: './download.component.html',
-  styleUrl: './download.component.scss',
+    selector: 'app-download',
+    imports: [CommonModule, TranslateModule, NgOptimizedImage],
+    templateUrl: './download.component.html',
+    styleUrl: './download.component.scss'
 })
 export class DownloadComponent {
   @Input() input?: ApiDownloadModel | null;

@@ -12,11 +12,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import SwaggerUI from 'swagger-ui';
 
 @Component({
-  selector: 'app-documentation-tab',
-  standalone: true,
-  imports: [TranslateModule, NgStyle],
-  templateUrl: './documentation-tab.component.html',
-  styleUrl: './documentation-tab.component.scss',
+    selector: 'app-documentation-tab',
+    imports: [TranslateModule, NgStyle],
+    templateUrl: './documentation-tab.component.html',
+    styleUrl: './documentation-tab.component.scss'
 })
 export class DocumentationTabComponent {
   @Input() apiInformation!: ApiInformationModel;

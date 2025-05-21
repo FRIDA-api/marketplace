@@ -1,26 +1,20 @@
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
-import { RouterLink } from '@angular/router';
-import { DownloadComponent } from "../download/download.component";
 import { UseCaseCardComponent } from "./use-case-card/use-case-card.component";
 import { TranslateModule } from "@ngx-translate/core";
-import {UseCaseApiService} from "@common/services/use-case-api.service";
-import {TagsApiService} from "@common/services/tags-api.service";
+import { UseCaseApiService } from "@common/services/use-case-api.service";
+import { TagsApiService } from "@common/services/tags-api.service";
 
 @Component({
     selector: 'app-home-page',
-    standalone: true,
     templateUrl: './home-page.component.html',
     styleUrl: './home-page.component.scss',
     imports: [
         MatCardModule,
         CommonModule,
         MatDividerModule,
-        NgOptimizedImage,
-        RouterLink,
-        DownloadComponent,
         UseCaseCardComponent,
         TranslateModule
     ]
