@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {ApiInformationModel} from "@common/models/api-information.model";
+import { ApiInformationModel } from "@common/models/api-information.model";
 
 @Injectable({
   providedIn: 'root'
@@ -77,10 +77,11 @@ export class UseCaseApiService {
         "CYBER",
         "ASSISTANCE",
         "RISK_MANAGEMENT",
-        "INDUSTRIAL_LINES"
+        "INDUSTRIAL_LINES",
+        "SMALL_BUSINESS"
       ],
-      githubLink: "",
-      swaggerPath: ""
+      githubLink: "https://github.com/FRIDA-api/Domain-Check",
+      swaggerPath: "/assets/api/Domain-Check-1.0.0.yaml"
     },
     {
       id: "real-estate-api-risk",
@@ -93,7 +94,8 @@ export class UseCaseApiService {
       ],
       githubLink: "",
       swaggerPath: ""
-    }
+    },
+   
   ]
 
   getUseCaseInformation() {
