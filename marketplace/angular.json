@@ -16,8 +16,10 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
-          "options": {          
-            "allowedCommonJsDependencies": ["swagger-ui"],         
+          "options": {
+            "allowedCommonJsDependencies": [
+              "swagger-ui"
+            ],
             "outputPath": "dist/marketplace",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -36,7 +38,12 @@
             ],
             "stylePreprocessorOptions": {
               "sass": {
-                "silenceDeprecations": ["import"]
+                "silenceDeprecations": [
+                  "mixed-decls",
+                  "color-functions",
+                  "global-builtin",
+                  "import"
+                ]
               },
               "includePaths": [
                 "src/scss"
@@ -44,7 +51,7 @@
             },
             "scripts": [],
             "server": "src/main.server.ts",
-            "prerender": true,            
+            "prerender": true,
             "ssr": {
               "entry": "server.ts"
             }
@@ -98,6 +105,16 @@
               "zone.js",
               "zone.js/testing"
             ],
+            "stylePreprocessorOptions": {
+              "sass": {
+                "silenceDeprecations": [
+                  "mixed-decls",
+                  "color-functions",
+                  "global-builtin",
+                  "import"
+                ]
+              }
+            },
             "codeCoverage": true,
             "karmaConfig": "./karma.conf.js",
             "tsConfig": "tsconfig.spec.json",
