@@ -106,7 +106,7 @@ describe('ApiDocumentationComponent', () => {
   });
 
   it('should not find api information', () => {
-    component.apiPathParameter = "nonsense";
+    fixture.componentRef.setInput("apiPathParameter", "nonsense");
     component.ngOnInit();
     expect(component.apiInformation).not.toBeDefined();
   });

@@ -42,53 +42,57 @@ describe('DocumentationTabComponent', () => {
   });
 
   it('should show github button', () => {
-    component.apiInformation = {
+    fixture.componentRef.setInput('apiInformation', {
       id: "",
       languageKey: "",
       iconPath: "",
       tags: [],
       githubLink: "github-link",
       swaggerPath: ""
-    };
+    });
+ 
     fixture.detectChanges();
     expect(fixture.debugElement.query(By.css("#view-on-github-container"))).not.toBeNull();
   });
 
   it('should not show github button', () => {
-    component.apiInformation = {
+    fixture.componentRef.setInput('apiInformation', {
       id: "",
       languageKey: "",
       iconPath: "",
       tags: [],
       githubLink: "",
       swaggerPath: ""
-    };
+    });
+
     fixture.detectChanges();
     expect(fixture.debugElement.query(By.css("#view-on-github-container"))).toBeNull();
   });
 
   it('should show coming soon text', () => {
-    component.apiInformation = {
+    fixture.componentRef.setInput('apiInformation',{
       id: "",
       languageKey: "",
       iconPath: "",
       tags: [],
       githubLink: "",
       swaggerPath: ""
-    };
+    });
+  
     fixture.detectChanges();
     expect(fixture.debugElement.query(By.css('#no-swagger-container'))).not.toBeNull();
   });
 
   it('should not show coming soon text', () => {
-    component.apiInformation = {
+    fixture.componentRef.setInput('apiInformation', {
       id: "",
       languageKey: "",
       iconPath: "",
       tags: [],
       githubLink: "",
       swaggerPath: "swagger-path"
-    };
+    });
+  
     fixture.detectChanges();
     expect(fixture.debugElement.query(By.css('#no-swagger-container'))).toBeNull();
   });

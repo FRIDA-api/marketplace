@@ -54,8 +54,8 @@ describe('AppComponent', () => {
   });
   xit('should set scrollTop to 0 when backToTop is called', () => {
     const scrollTop = 100;
-    el.nativeElement.scrollTop = scrollTop;
+    component.el().nativeElement.scrollTop = scrollTop;
     component.backToTop();
-    expect(el.nativeElement.scrollTop).toBe(0);
+    expect(component.el().nativeElement.scrollTop).toBe(0);
   });
 });
