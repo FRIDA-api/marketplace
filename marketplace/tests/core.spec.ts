@@ -49,9 +49,10 @@ test.describe('core', () => {
     await expect(
       page.getByRole('link', { name: 'FRIDA Statutes' })
     ).toBeVisible();
+    const year = new Date().getFullYear();
     await expect(
       page.getByText(
-        '© Copyright 2024. all rights reserved. FRIDA e.V. c/o InsurLab Germany Hohenzollernring 85-87 50672 Cologne info@freeinsurancedata.de',
+        `© Copyright ${year}. all rights reserved. FRIDA e.V. c/o InsurLab Germany Hohenzollernring 85-87 50672 Cologne info@freeinsurancedata.de`,
         { exact: true }
       )
     ).toBeVisible();
