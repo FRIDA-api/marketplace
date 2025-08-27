@@ -1,40 +1,43 @@
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { DocumentationTabComponent } from './documentation-tab.component';
-import {MockBuilder, MockedComponentFixture, MockRender, MockService} from "ng-mocks";
-import {TranslateModule} from "@ngx-translate/core";
-import {provideHttpClientTesting} from "@angular/common/http/testing";
-import {ActivatedRoute} from "@angular/router";
-import {By} from "@angular/platform-browser";
-import {provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
+import { TranslateModule } from '@ngx-translate/core';
+import { ActivatedRoute } from '@angular/router';
+import { By } from '@angular/platform-browser';
+import { HttpClientTestingModule, provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('DocumentationTabComponent', () => {
   let component: DocumentationTabComponent;
-  let fixture: MockedComponentFixture;
+  let fixture: ComponentFixture<DocumentationTabComponent> 
 
   const mockData = {
     apiInformation: {
       id: "pension-api",
       languageKey: "PENSION_API",
       iconPath: "./assets/icons/icon-pensionapi.svg",
-      tags: [
-        "PENSION"
-      ],
+      tags: [ "PENSION" ],
       githubLink: "https://github.com/FRIDA-api/FRIDA-pension",
       swaggerPath: "/assets/api/pension-api.yaml"
     }
-  }
+  };
 
   beforeEach(async () => {
-    return MockBuilder(DocumentationTabComponent)
-      .keep(TranslateModule.forRoot())
-      .provide([provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()])
-      .provide({
-        provide: ActivatedRoute,
-        useValue: MockService(ActivatedRoute),
-      })
-      .then(() => {
-        fixture = MockRender(DocumentationTabComponent, mockData);
-        component = fixture.point.componentInstance;
-      })
+    await TestBed.configureTestingModule({
+      imports: [
+        TranslateModule.forRoot(),
+      ],
+      providers: [
+        provideHttpClient(),
+        provideHttpClientTesting(),
+        { provide: ActivatedRoute, useValue: { snapshot: { paramMap: { get: () => null } } }},
+      ]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(DocumentationTabComponent) ;
+    component = fixture.componentInstance;
+    fixture.componentRef.setInput('apiInformation', mockData.apiInformation);
+  
+    fixture.detectChanges();
   });
 
   it('should create', () => {
@@ -50,7 +53,6 @@ describe('DocumentationTabComponent', () => {
       githubLink: "github-link",
       swaggerPath: ""
     });
- 
     fixture.detectChanges();
     expect(fixture.debugElement.query(By.css("#view-on-github-container"))).not.toBeNull();
   });
@@ -64,13 +66,12 @@ describe('DocumentationTabComponent', () => {
       githubLink: "",
       swaggerPath: ""
     });
-
     fixture.detectChanges();
     expect(fixture.debugElement.query(By.css("#view-on-github-container"))).toBeNull();
   });
 
   it('should show coming soon text', () => {
-    fixture.componentRef.setInput('apiInformation',{
+    fixture.componentRef.setInput('apiInformation', {
       id: "",
       languageKey: "",
       iconPath: "",
@@ -78,7 +79,6 @@ describe('DocumentationTabComponent', () => {
       githubLink: "",
       swaggerPath: ""
     });
-  
     fixture.detectChanges();
     expect(fixture.debugElement.query(By.css('#no-swagger-container'))).not.toBeNull();
   });
@@ -92,7 +92,6 @@ describe('DocumentationTabComponent', () => {
       githubLink: "",
       swaggerPath: "swagger-path"
     });
-  
     fixture.detectChanges();
     expect(fixture.debugElement.query(By.css('#no-swagger-container'))).toBeNull();
   });
