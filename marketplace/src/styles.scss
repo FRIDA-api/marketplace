@@ -6,7 +6,8 @@
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
-@include mat.core();
+@include mat.elevation-classes();
+@include mat.app-background();
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
@@ -53,19 +54,19 @@ $marketplace-theme: mat.m2-define-light-theme(
 
 * {
   box-sizing: border-box;
-  --mdc-tab-indicator-active-indicator-color: #29b3b8;
-  --mat-tab-header-disabled-ripple-color: rgba(0, 0, 0, 0.38);
-  --mat-tab-header-pagination-icon-color: black;
-  --mat-tab-header-inactive-label-text-color: rgba(0, 0, 0, 0.6);
-  --mat-tab-header-active-label-text-color: #29b3b8;
-  --mat-tab-header-active-ripple-color: #29b3b8;
-  --mat-tab-header-inactive-ripple-color: #29b3b8;
-  --mat-tab-header-inactive-focus-label-text-color: rgba(0, 0, 0, 0.6);
-  --mat-tab-header-inactive-hover-label-text-color: rgba(0, 0, 0, 0.6);
-  --mat-tab-header-active-focus-label-text-color: #29b3b8;
-  --mat-tab-header-active-hover-label-text-color: #29b3b8;
-  --mat-tab-header-active-focus-indicator-color: #29b3b8;
-  --mat-tab-header-active-hover-indicator-color: #29b3b8;
+  --mat-tab-active-indicator-color: #29b3b8;
+  --mat-tab-disabled-ripple-color: rgba(0, 0, 0, 0.38);
+  --mat-tab-pagination-icon-color: black;
+  --mat-tab-inactive-label-text-color: rgba(0, 0, 0, 0.6);
+  --mat-tab-active-label-text-color: #29b3b8;
+  --mat-tab-active-ripple-color: #29b3b8;
+  --mat-tab-inactive-ripple-color: #29b3b8;
+  --mat-tab-inactive-focus-label-text-color: rgba(0, 0, 0, 0.6);
+  --mat-tab-inactive-hover-label-text-color: rgba(0, 0, 0, 0.6);
+  --mat-tab-active-focus-label-text-color: #29b3b8;
+  --mat-tab-active-hover-label-text-color: #29b3b8;
+  --mat-tab-active-focus-indicator-color: #29b3b8;
+  --mat-tab-active-hover-indicator-color: #29b3b8;
 }
 
 body {

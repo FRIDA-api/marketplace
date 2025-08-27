@@ -1,15 +1,15 @@
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { ApiDocumentationComponent } from './api-documentation.component';
-import {MockBuilder, MockedComponentFixture, MockRender, MockService} from "ng-mocks";
-import {TranslateModule} from "@ngx-translate/core";
-import {ActivatedRoute} from "@angular/router";
-import {MatTabsModule} from "@angular/material/tabs";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {UseCaseApiService} from "@common/services/use-case-api.service";
-import {TagsApiService} from "@common/services/tags-api.service";
+import { TranslateModule } from "@ngx-translate/core";
+import { ActivatedRoute } from "@angular/router";
+import { MatTabsModule } from "@angular/material/tabs";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { UseCaseApiService } from "@common/services/use-case-api.service";
+import { TagsApiService } from "@common/services/tags-api.service";
 
 describe('ApiDocumentationComponent', () => {
   let component: ApiDocumentationComponent;
-  let fixture: MockedComponentFixture;
+  let fixture: ComponentFixture<ApiDocumentationComponent>;
 
   const mockUseCaseInformation = [
     {
@@ -37,7 +37,7 @@ describe('ApiDocumentationComponent', () => {
       githubLink: "https://github.com/FRIDA-api/FRIDA-car",
       swaggerPath: "/assets/api/car-claims-api.yaml"
     }
-  ]
+  ];
 
   const mockTags = [
     {
@@ -52,34 +52,26 @@ describe('ApiDocumentationComponent', () => {
       "id": "CLAIMS",
       "tagColor": "#F79BE9"
     }
-  ]
+  ];
 
-  beforeEach(() =>
-    MockBuilder(ApiDocumentationComponent)
-      .keep(TranslateModule.forRoot())
-      .keep(MatTabsModule)
-      .keep(BrowserAnimationsModule)
-      .provide({
-        provide: ActivatedRoute,
-        useValue: MockService(ActivatedRoute),
-      })
-      .provide({
-        provide: UseCaseApiService,
-        useValue: MockService(UseCaseApiService, {
-          getUseCaseInformation: () => mockUseCaseInformation
-        })
-      })
-      .provide({
-        provide: TagsApiService,
-        useValue: MockService(TagsApiService, {
-          getTagInformation: () => mockTags
-        })
-      })
-      .then(() => {
-        fixture = MockRender(ApiDocumentationComponent, {apiPathParameter: "pension-api"});
-        component = fixture.point.componentInstance;
-      })
-  );
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [
+        TranslateModule.forRoot(),
+        MatTabsModule,
+      ],
+      providers: [
+        { provide: ActivatedRoute, useValue: { snapshot: { paramMap: { get: () => "pension-api" } } } },
+        { provide: UseCaseApiService, useValue: { getUseCaseInformation: () => mockUseCaseInformation } },
+        { provide: TagsApiService, useValue: { getTagInformation: () => mockTags } }
+      ]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(ApiDocumentationComponent);
+    component = fixture.componentInstance;
+    fixture.componentRef.setInput("apiPathParameter", "pension-api");
+    fixture.detectChanges();
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();
@@ -95,18 +87,19 @@ describe('ApiDocumentationComponent', () => {
       ],
       githubLink: "https://github.com/FRIDA-api/FRIDA-pension",
       swaggerPath: "/assets/api/pension-api.yaml"
-    })
+    });
   });
 
   it('should find matching tags', () => {
     expect(component.tags).toEqual([{
       "id": "PENSION",
       "tagColor": "#6FBEAB"
-    }])
+    }]);
   });
 
   it('should not find api information', () => {
-    component.apiPathParameter = "nonsense";
+    // Simulate changing input and reinvoking ngOnInit
+    fixture.componentRef.setInput("apiPathParameter" , "nonsense");
     component.ngOnInit();
     expect(component.apiInformation).not.toBeDefined();
   });

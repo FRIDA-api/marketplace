@@ -48,6 +48,5 @@ export const appConfig: ApplicationConfig = {
         includePostRequests: true,
       })
     ),
-    provideAnimations(),
   ],
 };

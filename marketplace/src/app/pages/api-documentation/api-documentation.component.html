@@ -52,11 +52,11 @@
     (selectedTabChange)="onTabChange($event)"
   >
     <mat-tab label="{{ 'API_OVERVIEW.TAB_OVERVIEW' | translate }}">
-      <app-overview-tab [apiInformation]="apiInformation!"></app-overview-tab>
+      <app-overview-tab [apiInformation]="apiInformation"></app-overview-tab>
     </mat-tab>
     <mat-tab label="{{ 'API_OVERVIEW.TAB_DOCUMENTATION' | translate }}">
       <app-documentation-tab
-        [apiInformation]="apiInformation!"
+        [apiInformation]="apiInformation"
         [isActive]="isApiDocumentationTabActive"
       ></app-documentation-tab>
     </mat-tab>

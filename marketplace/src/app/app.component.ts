@@ -7,7 +7,7 @@ import {
   OnInit,
   PLATFORM_ID,
   Renderer2,
-  ViewChild,
+  viewChild
 } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { FooterComponent } from './core/footer/footer.component';
@@ -16,21 +16,19 @@ import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    HeaderComponent,
-    FooterComponent,
-    RouterLink,
-  ],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    imports: [
+        CommonModule,
+        RouterOutlet,
+        HeaderComponent,
+        FooterComponent,
+    ]
 })
 export class AppComponent implements OnInit, OnDestroy {
-  @ViewChild('top', { static: true }) el!: ElementRef;
-  @ViewChild('skipMainContent', { static: false }) skipMainContent!: ElementRef;
+  readonly el = viewChild.required<ElementRef>('top');
+  readonly skipMainContent = viewChild.required<ElementRef>('skipMainContent');
 
   readonly translate = inject(TranslateService);
   readonly router = inject(Router);
@@ -63,10 +61,10 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   skipToMainContent() {
-    this.skipMainContent.nativeElement.focus();
+    this.skipMainContent().nativeElement.focus();
   }
 
   backToTop() {
-    this.el.nativeElement.scrollTop = 0;
+    this.el().nativeElement.scrollTop = 0;
   }
 }

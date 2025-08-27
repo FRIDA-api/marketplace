@@ -9,7 +9,7 @@ module.exports = function (config) {
   config.set({
     basePath: "",
     exclude: [],
-    frameworks: ["jasmine", "@angular-devkit/build-angular"],
+    frameworks: ["jasmine"],
     plugins: [
       require("karma-jasmine"),
       require("karma-chrome-launcher"),
@@ -40,7 +40,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ["ChromiumHeadless"],
+    browsers: ["Chrome"],
     singleRun: true,
     restartOnFileChange: true,
   });
