@@ -1,11 +1,13 @@
-import { DOCUMENT, isPlatformBrowser, NgStyle } from '@angular/common';
+import { isPlatformBrowser, NgStyle } from '@angular/common';
 import {
   Component,
   effect,
+  ElementRef,
   inject,
   input,
   Input,
-  PLATFORM_ID,
+  NgZone,
+  PLATFORM_ID, viewChild
 } from '@angular/core';
 import { ApiInformationModel } from '@common/models/api-information.model';
 import { TranslateModule } from '@ngx-translate/core';
@@ -20,20 +22,21 @@ import SwaggerUI from 'swagger-ui';
 export class DocumentationTabComponent {
   @Input() apiInformation!: ApiInformationModel;
   isActive = input<boolean>();
+  private readonly ngZone = inject(NgZone);
+  swaggerUi = viewChild<ElementRef<HTMLDivElement>>('swaggerUi')
 
-  private document = inject(DOCUMENT);
   private readonly platformId = inject(PLATFORM_ID);
 
   initializeApiDocumentation = effect(() => {
+    this.ngZone.runOutsideAngular(() => {
     if (this.isActive()) {
       if (!isPlatformBrowser(this.platformId)) {
         console.log('Not supported for ssr renderd files');
         return;
       }
-
-      SwaggerUI({
+     SwaggerUI({
         url: this.apiInformation.swaggerPath,
-        domNode: this.document.getElementById('swagger-ui'),
+        domNode: this.swaggerUi()?.nativeElement,
         deepLinking: false,
         defaultModelsExpandDepth: 4,
         defaultModelExpandDepth: 4,
@@ -42,6 +45,6 @@ export class DocumentationTabComponent {
           theme: 'tomorrow-night',
         },
       });
-    }
+    }})
   });
 }

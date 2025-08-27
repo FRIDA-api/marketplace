@@ -10,8 +10,8 @@
     <div class="no-swagger-container" id="no-swagger-container">
       <p class="no-swagger-text">{{ "API_OVERVIEW.COMING_SOON_TEXT" | translate }}</p>
     </div>
-  }
+  }  
   <div class="swagger-container" [ngStyle]="apiInformation.swaggerPath ? { display: 'block' } : { display: 'none' }">
-    <div id="swagger-ui"></div>
+    <div #swaggerUi></div>
   </div>
 </div>
