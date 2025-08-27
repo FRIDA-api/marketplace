@@ -22,6 +22,6 @@
     <a routerLink="/accessibility-statement">{{ "FOOTER.ACCESSIBILITY_STATEMENT" | translate }}</a>
   </div>
 
-  <p class="copyright" [innerHTML]="'FOOTER.COPYRIGHT' | translate"></p>
+  <p class="copyright" [innerHTML]="'FOOTER.COPYRIGHT' | translate : {year: year()}"></p>
 
 </footer>
