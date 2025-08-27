@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, input} from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
 import { TranslateModule } from "@ngx-translate/core";
 import {ApiInformationModel} from "@common/models/api-information.model";
@@ -14,5 +14,5 @@ import {ApiInformationModel} from "@common/models/api-information.model";
 })
 export class OverviewTabComponent {
 
-  @Input() apiInformation!: ApiInformationModel;
+  readonly apiInformation = input.required<ApiInformationModel>();
 }

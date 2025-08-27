@@ -5,7 +5,6 @@ import {
   ElementRef,
   inject,
   input,
-  Input,
   NgZone,
   PLATFORM_ID, viewChild
 } from '@angular/core';
@@ -20,7 +19,7 @@ import SwaggerUI from 'swagger-ui';
     styleUrl: './documentation-tab.component.scss'
 })
 export class DocumentationTabComponent {
-  @Input() apiInformation!: ApiInformationModel;
+  readonly apiInformation = input.required<ApiInformationModel>();
   isActive = input<boolean>();
   private readonly ngZone = inject(NgZone);
   swaggerUi = viewChild<ElementRef<HTMLDivElement>>('swaggerUi')
@@ -35,7 +34,7 @@ export class DocumentationTabComponent {
         return;
       }
      SwaggerUI({
-        url: this.apiInformation.swaggerPath,
+        url: this.apiInformation().swaggerPath,
         domNode: this.swaggerUi()?.nativeElement,
         deepLinking: false,
         defaultModelsExpandDepth: 4,

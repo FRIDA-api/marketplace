@@ -44,18 +44,18 @@ describe('AppComponent', () => {
     const scrollEvent = new Event('scroll');
     const scrollTop = 100;
 
-    spyOnProperty(component.el.nativeElement, 'scrollTop', 'get').and.returnValue(scrollTop);
-    fromEvent(component.el.nativeElement, 'scroll')
+    spyOnProperty(component.el().nativeElement, 'scrollTop', 'get').and.returnValue(scrollTop);
+    fromEvent(component.el().nativeElement, 'scroll')
       //.pipe(takeUntilDestroyed(component['destroyRef']))
       .subscribe(() => {
         expect(component.scrollPosition).toBe(scrollTop);
       });
-    component.el.nativeElement.dispatchEvent(scrollEvent);
+    component.el().nativeElement.dispatchEvent(scrollEvent);
   });
   xit('should set scrollTop to 0 when backToTop is called', () => {
     const scrollTop = 100;
-    component.el.nativeElement.scrollTop = scrollTop;
+    el.nativeElement.scrollTop = scrollTop;
     component.backToTop();
-    expect(component.el.nativeElement.scrollTop).toBe(0);
+    expect(el.nativeElement.scrollTop).toBe(0);
   });
 });

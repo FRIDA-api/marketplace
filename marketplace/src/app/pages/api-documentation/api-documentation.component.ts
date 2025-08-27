@@ -1,6 +1,6 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 
-import { Component, Input, inject, OnInit, OnDestroy } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy, input } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { Router, RouterModule } from '@angular/router';
 
@@ -31,7 +31,7 @@ import { Subscription } from 'rxjs';
     styleUrl: './api-documentation.component.scss'
 })
 export class ApiDocumentationComponent implements OnInit, OnDestroy {
-  @Input() apiPathParameter: string | undefined;
+  readonly apiPathParameter = input<string>();
 
   private readonly useCasesApi = inject(UseCaseApiService);
   private readonly tagsApi = inject(TagsApiService);
@@ -49,7 +49,7 @@ export class ApiDocumentationComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.apiInformation = this.useCasesApi
       .getUseCaseInformation()
-      .find((api) => api.id === this.apiPathParameter);
+      .find((api) => api.id === this.apiPathParameter());
     if (this.apiInformation === undefined) {
       this.router.navigateByUrl('');
       return;

@@ -1,5 +1,5 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { ApiDownloadModel } from '@common/models/api-download.model';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -22,6 +22,6 @@ type Download = {
     styleUrl: './download.component.scss'
 })
 export class DownloadComponent {
-  @Input() input?: ApiDownloadModel | null;
+  readonly input = input<ApiDownloadModel | null>();
   downloadContainers: DownloadItem[] = [];
 }
