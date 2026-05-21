@@ -15,7 +15,8 @@ export class UseCaseApiService {
         "PENSION"
       ],
       githubLink: "https://github.com/FRIDA-api/FRIDA-pension",
-      swaggerPath: "/assets/api/pension-api.yaml"
+      swaggerPath: "/assets/api/pension-api.yaml",
+      livedemoLink: ""
     },
     {
       id: "car-claims-api",
@@ -30,7 +31,8 @@ export class UseCaseApiService {
         "INDUSTRIAL_LINES"
       ],
       githubLink: "https://github.com/FRIDA-api/FRIDA-car",
-      swaggerPath: "/assets/api/car-claims-api.yaml"
+      swaggerPath: "/assets/api/car-claims-api.yaml",
+      livedemoLink: "https://carclaims.freeinsurancedata.com/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwb2xpY3lOdW1iZXIiOiJWLTEyMy00NTYtNzg5LTAiLCJmb3JtT2ZBZGRyZXNzIjoiRnJhdSIsInRpdGxlIjoiRHIuIiwibGFzdE5hbWUiOiJNdXN0ZXJmcmF1IiwiZmlyc3ROYW1lIjoiRnJpZGEiLCJwb3N0YWxDb2RlIjoiMTIzNDUiLCJjaXR5IjoiS8O2bG4iLCJzdHJlZXROYW1lIjoiVGVzdHN0cmHDn2UiLCJob3VzZU51bWJlciI6IjU2IiwidGVsZXBob25lIjoiKzQ5IDA5IDg3NjU0MzIiLCJlbWFpbEFkZHJlc3MiOiJmcmlkYS5tdXN0ZXJmcmF1QGV4YW1wbGUuY29tIiwiaW5zdXJhbmNlQ29tcGFueSI6IkhESSIsImNoYXNzaXNOdW1iZXIiOiJVRVJURVJSMUpaM1czODU2ODIiLCJsaWNlbnNlUGxhdGUiOiJGLVhZIDEyMyIsImNhckJyYW5kIjoiQk1XIiwiY2FyTW9kZWwiOiJYMyIsImlhdCI6MTc1ODI1OTY4NH0.hCvsIROLlPMT34a7KFXDvTjVbLUFP6y3ZtFfY8sgbAA"
     },
     {
       id: "real-estate-api-policy",
@@ -95,7 +97,6 @@ export class UseCaseApiService {
       githubLink: "",
       swaggerPath: ""
     },
-   
   ]
 
   getUseCaseInformation() {

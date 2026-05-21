@@ -118,8 +118,10 @@
     "BACK_TO_OVERVIEW": "Zurück zur Übersicht",
     "TAB_OVERVIEW": "Überblick",
     "TAB_DOCUMENTATION": "API Dokumentation",
+    "TAB_LIVEDEMO": "Live Demo",
     "JOIN_NOW": "Jetzt mitmachen!",
     "VIEW_ON_GITHUB": "Jetzt die API-Spezifikation im Github anschauen",
+    "VIEW_LIVEDEMO": "Jetzt die Live-Demo anschauen",
     "COMING_SOON_TEXT": "Bald verfügbar ...",
     "PENSION_API": {
       "HEADLINE": "Use Case: Pension API",

@@ -112,12 +112,13 @@
     "CYBER": "Cyber",
     "DOCUMENTS": "Documents",
     "HEALTH": "Health",
-    "SMALL_BUSINESS": "SME" 
+    "SMALL_BUSINESS": "SME"
   },
   "API_OVERVIEW": {
     "BACK_TO_OVERVIEW": "Back to overview",
     "TAB_OVERVIEW": "Overview",
     "TAB_DOCUMENTATION": "API Documentation",
+    "TAB_LIVEDEMO": "Live Demo",
     "VIEW_ON_GITHUB": "View the API specification on Github",
     "JOIN_NOW": "Join now!",
     "COMING_SOON_TEXT": "Coming soon ...",
