@@ -46,7 +46,8 @@ export class UseCaseApiService {
         "INDUSTRIAL_LINES"
       ],
       githubLink: "",
-      swaggerPath: ""
+      swaggerPath: "",
+      livedemoLink: ""
     },
     {
       id: "health-care-api",
@@ -58,7 +59,8 @@ export class UseCaseApiService {
         "MOBILE"
       ],
       githubLink: "",
-      swaggerPath: ""
+      swaggerPath: "",
+      livedemoLink: ""
     },
     {
       id: "digital-documents-api",
@@ -69,7 +71,8 @@ export class UseCaseApiService {
         "INDUSTRIAL_LINES"
       ],
       githubLink: "",
-      swaggerPath: ""
+      swaggerPath: "",
+      livedemoLink: ""
     },
     {
       id: "cyber-api",
@@ -83,7 +86,8 @@ export class UseCaseApiService {
         "SMALL_BUSINESS"
       ],
       githubLink: "https://github.com/FRIDA-api/Domain-Check",
-      swaggerPath: "/assets/api/Domain-Check-1.0.0.yaml"
+      swaggerPath: "/assets/api/Domain-Check-1.0.0.yaml",
+      livedemoLink: ""
     },
     {
       id: "real-estate-api-risk",
@@ -95,7 +99,8 @@ export class UseCaseApiService {
         "MOBILE"
       ],
       githubLink: "",
-      swaggerPath: ""
+      swaggerPath: "",
+      livedemoLink: ""
     },
   ]
 

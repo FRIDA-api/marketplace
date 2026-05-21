@@ -137,7 +137,9 @@
       "CARD_2_HEADLINE": "Auswahl Rentencockpit",
       "CARD_2_TEXT": "Als Endverbraucher entscheide ich mich für ein Rentencockpit meiner Wahl und erteile diesem mein Einverständnis für den Datenzugriff. Hier können aber auch andere Services entstehen (z.B. Digitaler Nachlass).",
       "CARD_3_HEADLINE": "Alle Rentenwerte an einem Ort",
-      "CARD_3_TEXT": "Als Nutzer eines Rentencockpits habe ich meine erwartete Rente stets im Blick, erkenne Lücken und manage meine Altersvorsorge aktiv oder suche Rat bei Vorsorgeexperten."
+      "CARD_3_TEXT": "Als Nutzer eines Rentencockpits habe ich meine erwartete Rente stets im Blick, erkenne Lücken und manage meine Altersvorsorge aktiv oder suche Rat bei Vorsorgeexperten.",
+      "LIVEDEMO_SUBHEADLINE": "",
+      "LIVEDEMO_DESCRIPTION": ""
     },
     "CAR_CLAIMS_API": {
       "HEADLINE": "Use Case: Car Claims API",
@@ -153,7 +155,9 @@
       "CARD_2_HEADLINE": "Unfallsituation",
       "CARD_2_TEXT": "Der Kunde nutzt das Fahrzeug und gerät in eine Unfallsituation (Schadenfall tritt ein). Der Kunde teilt per QR-Code auf seinem Policen-Pass die (eigenen) wichtigsten Versicherungsdaten mit dem Unfallpartner. Der Geschädigte erfasst die Daten vom Unfallpartner per Schaden-Pass.",
       "CARD_3_HEADLINE": "Schadendaten",
-      "CARD_3_TEXT": "Die Versicherung des Kunden verarbeitet die erfassten Schadendaten automatisiert."
+      "CARD_3_TEXT": "Die Versicherung des Kunden verarbeitet die erfassten Schadendaten automatisiert.",
+      "LIVEDEMO_SUBHEADLINE": "Die <b>FRIDA Carclaims-Next Livedemo</b> zeigt, wie der digitale Schadenprozess Ende-zu-Ende funktioniert.",
+      "LIVEDEMO_DESCRIPTION": "Vom Erfassen der Fahrzeug- und Personendaten über die Beschreibung des Schadens bis zur Übergabe an die Backend-Systeme – alle Schritte laufen hier in einer durchgängigen standardisierten Prozesskette zusammen. Die Anwendung nutzt die <b>FRIDA Car Claims Data API</b>, um Daten strukturiert und konsistent auszutauschen. Damit wird sichtbar, wie Frontend, API und Backend ineinandergreifen und wie Integrationen mit Partnern reibungslos umgesetzt werden können."
     },
     "REAL_ESTATE_API_POLICY": {
       "HEADLINE": "Use Case: Building API",
@@ -169,7 +173,9 @@
       "CARD_2_HEADLINE": "Standardisierter Datenaustausch",
       "CARD_2_TEXT": "Standardisierung externer Quellen rund um Immobilien wie zum Beispiel Satellitendaten, Drittdienste zur Ermittlung von Grundstücksgrößen.",
       "CARD_3_HEADLINE": "Anwendung",
-      "CARD_3_TEXT": "Die Building API kann von Kunden, Versicherern, Vetrieben und Dritt-/Lösungsanbietern genutzt werden um verschiedene Ziele zu erreichen (z.B. Inserate einstellen, vereinfachter Datenaustausch, Optimierung von Immobilienplattformen)."
+      "CARD_3_TEXT": "Die Building API kann von Kunden, Versicherern, Vetrieben und Dritt-/Lösungsanbietern genutzt werden um verschiedene Ziele zu erreichen (z.B. Inserate einstellen, vereinfachter Datenaustausch, Optimierung von Immobilienplattformen).",
+      "LIVEDEMO_SUBHEADLINE": "",
+      "LIVEDEMO_DESCRIPTION": ""
     },
     "HEALTH_CARE_API": {
       "HEADLINE": "Use Case: Health-Care API",
@@ -185,7 +191,9 @@
       "CARD_2_HEADLINE": "Digitale Leistungseinrichtung",
       "CARD_2_TEXT": "Die API ermöglicht, dass Informationen aus einem Heil- und Kostenplan (HKP) zwischen GKV und PKV geteilt und die Leistungsregulierung in Gang gesetzt werden kann.",
       "CARD_3_HEADLINE": "Datenhoheit und -transparenz",
-      "CARD_3_TEXT": "Endverbraucher erhalten Zugriff auf ihre Daten und können diese mithilfe von neuen Services, z. B. in der App ihrer GKV oder PKV, zielgerichtet einsetzen."
+      "CARD_3_TEXT": "Endverbraucher erhalten Zugriff auf ihre Daten und können diese mithilfe von neuen Services, z. B. in der App ihrer GKV oder PKV, zielgerichtet einsetzen.",
+      "LIVEDEMO_SUBHEADLINE": "",
+      "LIVEDEMO_DESCRIPTION": ""
     },
     "DIGITAL_DOCUMENTS_API": {
       "HEADLINE": "Use Case: Document API",
@@ -201,7 +209,9 @@
       "CARD_2_HEADLINE": "Auswahl Dokumenten-\"Safe\"",
       "CARD_2_TEXT": "Als Endverbraucher entscheide ich mich für einen digitalen Dokumenten-Safe meiner Wahl und erteile diesem mein Einverständnis für den Datenzugriff.",
       "CARD_3_HEADLINE": "Alle Versicherungsdokumente an einem Ort",
-      "CARD_3_TEXT": "Als Nutzer:in eines intelligenten digitalen Dokumenten-Safes habe ich meine Post vom Versicherer stets im Blick und manage diese selbst - ohne einen analogen Ordner."
+      "CARD_3_TEXT": "Als Nutzer:in eines intelligenten digitalen Dokumenten-Safes habe ich meine Post vom Versicherer stets im Blick und manage diese selbst - ohne einen analogen Ordner.",
+      "LIVEDEMO_SUBHEADLINE": "",
+      "LIVEDEMO_DESCRIPTION": ""
     },
     "CYBER_API": {
       "HEADLINE": "Use Case: Cyber API",
@@ -217,7 +227,9 @@
       "CARD_2_HEADLINE": "Versicherer und Vertriebe",
       "CARD_2_TEXT": "Kundenspezifische Beratung. Effektive Risikokommunikation. Erhöhte Kundensensibilisierung. Sinkende Schadenquoten. Steigende Stückzahlen.",
       "CARD_3_HEADLINE": "Dritt-/Lösungsanbieter",
-      "CARD_3_TEXT": "Entwicklung von Sicherheitsprodukten. Steigerung der Kompetenz durch innovative High-Tech-Instrumente. Zielgerichtete Weiterentwicklung des Dienstleistungsangebots. Steigerung der Kundenzufriedenheit."
+      "CARD_3_TEXT": "Entwicklung von Sicherheitsprodukten. Steigerung der Kompetenz durch innovative High-Tech-Instrumente. Zielgerichtete Weiterentwicklung des Dienstleistungsangebots. Steigerung der Kundenzufriedenheit.",
+      "LIVEDEMO_SUBHEADLINE": "",
+      "LIVEDEMO_DESCRIPTION": ""
     },
     "REAL_ESTATE_API_RISK": {
       "HEADLINE": "Use Case: Building API",
@@ -233,7 +245,9 @@
       "CARD_2_HEADLINE": "Standardisierter Datenaustausch",
       "CARD_2_TEXT": "Standardisierung externer Quellen rund um Immobilien wie zum Beispiel Satellitendaten, Drittdienste zur Ermittlung von Grundstücksgrößen.",
       "CARD_3_HEADLINE": "Anwendung",
-      "CARD_3_TEXT": "Die Building API kann von Kunden, Versicherern, Vetrieben und Dritt-/Lösungsanbietern genutzt werden um verschiedene Ziele zu erreichen (z.B. Inserate einstellen, vereinfachter Datenaustausch, Optimierung von Immobilienplattformen)."
+      "CARD_3_TEXT": "Die Building API kann von Kunden, Versicherern, Vetrieben und Dritt-/Lösungsanbietern genutzt werden um verschiedene Ziele zu erreichen (z.B. Inserate einstellen, vereinfachter Datenaustausch, Optimierung von Immobilienplattformen).",
+      "LIVEDEMO_SUBHEADLINE": "",
+      "LIVEDEMO_DESCRIPTION": ""
     }
   },
   "ACCESSIBILITY_STATEMENT": {
