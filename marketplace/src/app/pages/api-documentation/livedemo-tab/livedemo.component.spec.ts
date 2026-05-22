@@ -51,7 +51,7 @@ describe('LivedemoTabComponent', () => {
       iconPath: "",
       tags: [],
       githubLink: "github-link",
-      swaggerPath: ""
+      livedemoLink: "https://demo-link"
     });
     fixture.detectChanges();
     expect(fixture.debugElement.query(By.css("#view-on-github-container"))).not.toBeNull();
@@ -77,10 +77,10 @@ describe('LivedemoTabComponent', () => {
       iconPath: "",
       tags: [],
       githubLink: "",
-      swaggerPath: ""
+      livedemoLink: ""
     });
     fixture.detectChanges();
-    expect(fixture.debugElement.query(By.css('#no-swagger-container'))).not.toBeNull();
+    expect(fixture.debugElement.query(By.css('#no-livedemo-container'))).not.toBeNull();
   });
 
   it('should not show coming soon text', () => {
@@ -90,9 +90,9 @@ describe('LivedemoTabComponent', () => {
       iconPath: "",
       tags: [],
       githubLink: "",
-      swaggerPath: "swagger-path"
+      livedemoLink: "https://demo-link"
     });
     fixture.detectChanges();
-    expect(fixture.debugElement.query(By.css('#no-swagger-container'))).toBeNull();
+    expect(fixture.debugElement.query(By.css('#no-livedemo-container'))).toBeNull();
   });
 });
