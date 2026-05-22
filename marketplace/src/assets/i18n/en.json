@@ -112,13 +112,15 @@
     "CYBER": "Cyber",
     "DOCUMENTS": "Documents",
     "HEALTH": "Health",
-    "SMALL_BUSINESS": "SME" 
+    "SMALL_BUSINESS": "SME"
   },
   "API_OVERVIEW": {
     "BACK_TO_OVERVIEW": "Back to overview",
     "TAB_OVERVIEW": "Overview",
     "TAB_DOCUMENTATION": "API Documentation",
+    "TAB_LIVEDEMO": "Live Demo",
     "VIEW_ON_GITHUB": "View the API specification on Github",
+    "VIEW_LIVEDEMO": "View the live demo of this API",
     "JOIN_NOW": "Join now!",
     "COMING_SOON_TEXT": "Coming soon ...",
     "PENSION_API": {
@@ -135,7 +137,9 @@
       "CARD_2_HEADLINE": "Pension cockpit selection",
       "CARD_2_TEXT": "As the end consumer, I decide on a pension cockpit of my choice and give it my consent for data access. However, other services can also be created here (e.g. digital estate).",
       "CARD_3_HEADLINE": "All pension assets in one place",
-      "CARD_3_TEXT": "As a user of a pension cockpit, I can always keep an eye on my expected pension, identify gaps and actively manage my pension provision or seek advice from pension experts."
+      "CARD_3_TEXT": "As a user of a pension cockpit, I can always keep an eye on my expected pension, identify gaps and actively manage my pension provision or seek advice from pension experts.",
+      "LIVEDEMO_SUBHEADLINE": "",
+      "LIVEDEMO_DESCRIPTION": ""
     },
     "CAR_CLAIMS_API": {
       "HEADLINE": "Use Case: Car Claims API",
@@ -151,7 +155,9 @@
       "CARD_2_HEADLINE": "Accident situation",
       "CARD_2_TEXT": "The customer uses the vehicle and gets into an accident situation (claim occurs). The customer uses the QR code on their policy pass to share their (own) most important insurance data with the accident partner. The injured party records the data from the accident partner using the claims pass.",
       "CARD_3_HEADLINE": "Claims data",
-      "CARD_3_TEXT": "The customer's insurance company processes the recorded claims data automatically."
+      "CARD_3_TEXT": "The customer's insurance company processes the recorded claims data automatically.",
+      "LIVEDEMO_SUBHEADLINE": "The <b>FRIDA Carclaims-Next Livedemo</b> shows how the digital claims process works end-to-end.",
+      "LIVEDEMO_DESCRIPTION": "From capturing vehicle and personal data, describing the damage, to transferring it to backend systems – all steps are combined here in a continuous, standardized process chain.\n\nThe application uses the <b>FRIDA Car Claims Data API</b> to exchange data in a structured and consistent way. This makes it clear how frontend, API, and backend interact and how integrations with partners can be implemented smoothly."
     },
     "REAL_ESTATE_API_POLICY": {
       "HEADLINE": "Use Case: Building API",
@@ -167,7 +173,9 @@
       "CARD_2_HEADLINE": "Standardized data exchange",
       "CARD_2_TEXT": "Standardization of external sources relating to real estate, such as satellite data, third-party services for determining property sizes",
       "CARD_3_HEADLINE": "Application",
-      "CARD_3_TEXT": "The Building API can be used by customers, insurers, vendors and third-party/solution providers to achieve various goals (e.g. posting listings, simplified data exchange, optimization of real estate platforms)."
+      "CARD_3_TEXT": "The Building API can be used by customers, insurers, vendors and third-party/solution providers to achieve various goals (e.g. posting listings, simplified data exchange, optimization of real estate platforms).",
+       "LIVEDEMO_SUBHEADLINE": "",
+       "LIVEDEMO_DESCRIPTION": ""
     },
     "HEALTH_CARE_API": {
       "HEADLINE": "Use Case: Health-Care API",
@@ -183,7 +191,9 @@
       "CARD_2_HEADLINE": "Digital service facility",
       "CARD_2_TEXT": "The API enables information from a treatment and cost plan (HKP) to be shared between SHI and private health insurers and benefit regulation to be initiated.",
       "CARD_3_HEADLINE": "Data sovereignty and transparency",
-      "CARD_3_TEXT": "End consumers receive access to their data and can use it in a targeted manner with the help of new services, e.g. in their SHI or private health insurance app."
+      "CARD_3_TEXT": "End consumers receive access to their data and can use it in a targeted manner with the help of new services, e.g. in their SHI or private health insurance app.",
+      "LIVEDEMO_SUBHEADLINE": "",
+      "LIVEDEMO_DESCRIPTION": ""
     },
     "DIGITAL_DOCUMENTS_API": {
       "HEADLINE": "Use Case: Document API",
@@ -199,7 +209,9 @@
       "CARD_2_HEADLINE": "Selection of documents\"Safe\"",
       "CARD_2_TEXT": "As the end user, I choose a digital document safe of my choice and give it my consent for data access.",
       "CARD_3_HEADLINE": "All insurance documents in one place",
-      "CARD_3_TEXT": "As a user of an intelligent digital document safe, I always have my mail from the insurer in view and manage it myself - without an analog folder."
+      "CARD_3_TEXT": "As a user of an intelligent digital document safe, I always have my mail from the insurer in view and manage it myself - without an analog folder.",
+      "LIVEDEMO_SUBHEADLINE": "",
+      "LIVEDEMO_DESCRIPTION": ""
     },
     "CYBER_API": {
       "HEADLINE": "Use Case: Cyber API",
@@ -215,7 +227,9 @@
       "CARD_2_HEADLINE": "Insurers and distributors",
       "CARD_2_TEXT": "Effective risk communication. Increased customer awareness. Decreasing loss ratios. Increasing quantities.",
       "CARD_3_HEADLINE": "Third-party/solution provider",
-      "CARD_3_TEXT": "Development of safety products. Increasing expertise through innovative high-tech instruments. Targeted further development of the range of services. Increasing customer satisfaction"
+      "CARD_3_TEXT": "Development of safety products. Increasing expertise through innovative high-tech instruments. Targeted further development of the range of services. Increasing customer satisfaction",
+      "LIVEDEMO_SUBHEADLINE": "",
+      "LIVEDEMO_DESCRIPTION": ""
     },
     "REAL_ESTATE_API_RISK": {
       "HEADLINE": "Use Case: Building API",
@@ -231,7 +245,9 @@
       "CARD_2_HEADLINE": "Standardized data exchange",
       "CARD_2_TEXT": "Standardization of external sources relating to real estate, such as satellite data, third-party services for determining property sizes",
       "CARD_3_HEADLINE": "Application",
-      "CARD_3_TEXT": "The Building API can be used by customers, insurers, vendors and third-party/solution providers to achieve various goals (e.g. posting listings, simplified data exchange, optimization of real estate platforms)."
+      "CARD_3_TEXT": "The Building API can be used by customers, insurers, vendors and third-party/solution providers to achieve various goals (e.g. posting listings, simplified data exchange, optimization of real estate platforms).",
+      "LIVEDEMO_SUBHEADLINE": "",
+      "LIVEDEMO_DESCRIPTION": ""
     }
   },
   "ACCESSIBILITY_STATEMENT": {

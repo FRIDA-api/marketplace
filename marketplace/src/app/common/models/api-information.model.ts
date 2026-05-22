@@ -5,4 +5,5 @@ export interface ApiInformationModel {
   tags: string[];
   githubLink: string;
   swaggerPath: string;
+  livedemoLink?: string;
 }

@@ -60,6 +60,12 @@
         [isActive]="isApiDocumentationTabActive"
       ></app-documentation-tab>
     </mat-tab>
+    <mat-tab label="{{ 'API_OVERVIEW.TAB_LIVEDEMO' | translate }}">
+      <app-livedemo-tab
+        [apiInformation]="apiInformation"
+        [isActive]="isLiveDemoTabActive">
+      </app-livedemo-tab>
+    </mat-tab>
   </mat-tab-group>
 </section>
 <section class="join-now-section">

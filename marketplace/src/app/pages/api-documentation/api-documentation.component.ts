@@ -14,6 +14,7 @@ import { ApiInformationModel } from '@common/models/api-information.model';
 import { TagModel } from '@common/models/tag.model';
 import { Title } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
+import { LivedemoTabComponent } from './livedemo-tab/livedemo-tab.component';
 
 @Component({
     selector: 'app-api-documentation',
@@ -26,6 +27,7 @@ import { Subscription } from 'rxjs';
         NgOptimizedImage,
         TranslateModule,
         DocumentationTabComponent,
+        LivedemoTabComponent,
     ],
     templateUrl: './api-documentation.component.html',
     styleUrl: './api-documentation.component.scss'
@@ -45,6 +47,7 @@ export class ApiDocumentationComponent implements OnInit, OnDestroy {
   private subs = new Subscription();
 
   isApiDocumentationTabActive = false;
+  isLiveDemoTabActive = false;
 
   ngOnInit() {
     this.apiInformation = this.useCasesApi
@@ -76,5 +79,6 @@ export class ApiDocumentationComponent implements OnInit, OnDestroy {
 
   onTabChange(event: MatTabChangeEvent) {
     this.isApiDocumentationTabActive = event.index === 1;
+    this.isLiveDemoTabActive = event.index === 2;
   }
 }

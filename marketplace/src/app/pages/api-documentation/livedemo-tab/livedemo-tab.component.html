@@ -1,0 +1,30 @@
+@if (apiInformation().livedemoLink) {
+<section class="livedemo-tab-information-section">
+  <div class="api-information">
+    <div class="customer-perspective">
+      <h2 class="information-headline">FRIDA Carclaims – Livedemo</h2>
+      <p class="information-subheadline"
+        [innerHTML]="'API_OVERVIEW.' + apiInformation().languageKey + '.LIVEDEMO_SUBHEADLINE' | translate"></p>
+      <p class="information-text"
+        [innerHTML]="'API_OVERVIEW.' + apiInformation().languageKey + '.LIVEDEMO_DESCRIPTION' | translate"></p>
+    </div>
+    <div class="api-icon">
+      <img ngSrc="assets/icons/img-live-demo-card.svg" alt="Live Demo Card" width="600" height="320">
+    </div>
+  </div>
+</section>
+
+<div class="api-livedemo-container">
+  <div class="view-on-github-container" id="view-on-github-container">
+    <a class="view-on-github-link" [href]="apiInformation().livedemoLink" target="_blank">
+      {{ "API_OVERVIEW.VIEW_LIVEDEMO" | translate }}
+    </a>
+  </div>
+</div>
+} @else {
+<div class="api-livedemo-container">
+  <div class="no-livedemo-container" id="no-livedemo-container">
+    <p class="no-livedemo-text">{{ "API_OVERVIEW.COMING_SOON_TEXT" | translate }}</p>
+  </div>
+</div>
+}

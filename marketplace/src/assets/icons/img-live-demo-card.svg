@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="475" height="320" viewBox="0 0 475 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Live Demo Card">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#85cfcc"/>
+      <stop offset="100%" stop-color="#a2e7eb"/>
+    </linearGradient>
+    <filter id="f1" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- background clouds - behind card -->
+  <path xmlns="http://www.w3.org/2000/svg" fill="#e6e7e9" d="M259.167 141.439a51.241 51.241 0 0 0-27.209-71.822v-.073A69.5 69.5 0 0 0 95.149 52.181 49.595 49.595 0 0 0 30.317 93.56a38.082 38.082 0 0 0 7.915 75.332c.587 0 1.166-.039 1.742-.073-.013.58-.086 1.147-.086 1.729a67.867 67.867 0 0 0 120.655 42.674 39.655 39.655 0 0 0 63.688-9.617 36.4 36.4 0 0 0 34.934-62.166" data-name="Pfad 11737" transform="translate(20, 10)" opacity="0.6"/>
+  <!-- second cloud - bottom right behind card -->
+  <path xmlns="http://www.w3.org/2000/svg" fill="#e6e7e9" d="M259.167 141.439a51.241 51.241 0 0 0-27.209-71.822v-.073A69.5 69.5 0 0 0 95.149 52.181 49.595 49.595 0 0 0 30.317 93.56a38.082 38.082 0 0 0 7.915 75.332c.587 0 1.166-.039 1.742-.073-.013.58-.086 1.147-.086 1.729a67.867 67.867 0 0 0 120.655 42.674 39.655 39.655 0 0 0 63.688-9.617 36.4 36.4 0 0 0 34.934-62.166" data-name="Pfad 11737-2" transform="translate(200, 80)" opacity="0.6"/>
+
+  <!-- gradient card -->
+
+  <rect x="80" y="50" rx="22" ry="22" width="340" height="210" fill="url(#g1)" filter="url(#f1)"/>
+  <!-- outer card outline -->
+  <rect x="80" y="50" rx="22" ry="22" width="340" height="210" fill="none" stroke="#626266" stroke-width="5" opacity="0.8"/>
+
+  <g xmlns="http://www.w3.org/2000/svg" transform="translate(130,105)">
+    <rect x="-36" y="-36" width="160" height="120" rx="14" ry="14" fill="rgba(255,255,255,0.12)"/>
+    <rect x="-24" y="-24" width="128" height="88" rx="10" ry="10" fill="rgba(255,255,255,0.18)"/>
+    <g transform="translate(-6,0)">
+      <rect x="0" y="-12" width="64" height="24" rx="4" ry="4" fill="white" opacity="0.95"/>
+      <rect x="0" y="18" width="64" height="10" rx="3" ry="3" fill="white" opacity="0.2"/>
+      <circle cx="84" cy="0" r="14" fill="rgba(255,255,255,0.18)"/>
+      <path d="M84 -8 L98 0 L84 8" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/>
+    </g>
+  </g>
+
+  <g xmlns="http://www.w3.org/2000/svg" transform="translate(300,150)" opacity="0.95">
+    <path d="M0 16 C20 -20, 60 -20, 80 16" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <path d="M12 40 C36 -8, 84 -8, 108 40" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+  </g>
+
+  <!-- text label -->
+  <text x="110" y="230" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial"
+        font-size="36" font-weight="600" fill="#626266" opacity="0.95">LIVE DEMO</text>
+</svg>
